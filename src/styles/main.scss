@@ -1,4 +1,9 @@
-@import './markdown.css';
+@import './root';
+@import './markdown';
+
+* {
+  box-sizing: border-box;
+}
 
 html,
 body,

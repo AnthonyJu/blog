@@ -23,7 +23,7 @@
       "vite-plugin-pwa/client"
     ],
     "paths": {
-      "~/*": ["src/*"]
+      "@/*": ["src/*"]
     }
   },
   "vueCompilerOptions": {

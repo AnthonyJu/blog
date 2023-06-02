@@ -2,6 +2,8 @@ declare interface Window {
   // extend the window
 }
 
+// declare module 'element-plus/dist/locale/zh-cn.mjs'
+
 // with vite-plugin-vue-markdown, markdown files can be treated as Vue components
 declare module '*.md' {
   import { type DefineComponent } from 'vue'
