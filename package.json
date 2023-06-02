@@ -35,7 +35,7 @@
     "@unocss/eslint-config": "^0.52.7",
     "@vitejs/plugin-vue": "^4.2.3",
     "@vue/test-utils": "^2.3.2",
-    "critters": "^0.0.18",
+    "critters": "^0.0.16",
     "cross-env": "^7.0.3",
     "eslint": "^8.41.0",
     "https-localhost": "^4.7.1",
