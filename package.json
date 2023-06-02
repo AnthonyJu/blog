@@ -1,7 +1,7 @@
 {
   "type": "module",
   "private": true,
-  "packageManager": "pnpm@8.6.0",
+  "packageManager": "pnpm@8.5.1",
   "scripts": {
     "dev": "vite",
     "build": "vite-ssg build",
@@ -42,7 +42,7 @@
     "lint-staged": "^13.2.2",
     "markdown-it-link-attributes": "^4.0.1",
     "markdown-it-shiki": "^0.9.0",
-    "pnpm": "^8.6.0",
+    "pnpm": "^8.5.1",
     "sass": "^1.62.1",
     "shiki": "^0.14.2",
     "simple-git-hooks": "^2.8.1",
