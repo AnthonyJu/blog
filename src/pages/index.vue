@@ -13,7 +13,7 @@
 
         <div class="flex items-end px-10px pb-10px text-left text-14px opacity-55">
           <div i-carbon-calendar-heat-map mr-5px />
-          <div>{{ formatTimeAgo(new Date('2023-03-02')) }} (2023-03-02)</div>
+          <div>{{ formatTimeAgo(new Date('2023-06-02')) }} (2023-06-02)</div>
         </div>
       </div>
     </div>
