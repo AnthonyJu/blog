@@ -9,12 +9,12 @@
 // import zhCn from 'element-plus/dist/locale/zh-cn.mjs'
 // https://github.com/vueuse/head
 useHead({
-  title: 'JuPeng\'s Blog',
+  title: 'Ju Peng\'s Mini Site',
   meta: [
-    { name: 'description', content: '鞠鹏的个人博客网站' },
+    { name: 'description', content: 'Ju Peng\'s Mini Site' },
     {
       name: 'theme-color',
-      content: () => isDark.value ? '#00aba9' : '#ffffff',
+      content: () => isDark.value ? '#121213' : '#ffffff',
     },
   ],
 })

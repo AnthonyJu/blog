@@ -12,7 +12,6 @@
 <script setup lang="ts">
 import Header from './components/header.vue'
 import Footer from './components/footer.vue'
-import Background from './components/background.vue'
 
 const scroll = ref<HTMLElement>()
 const { y } = useScroll(scroll)
