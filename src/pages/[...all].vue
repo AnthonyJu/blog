@@ -20,32 +20,32 @@ meta:
 
 <style lang="scss" scoped>
 button {
- display: flex;
- gap: 10px;
- align-items: center;
- justify-content: center;
- padding: 16px 24px 16px 28px;
- font-family: inherit;
- font-size: 13px;
- font-weight: 500;
- color: #516d91;
- text-transform: uppercase;
- letter-spacing: 0.4px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 24px 16px 28px;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  color: #516d91;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
   cursor: pointer;
- background-color: #E5EDF5;
- border-color: rgb(255 255 255 / 33.3%);
- border-style: solid;
- border-width: 2px;
- border-radius: 40px;
- box-shadow: -2px -1px 8px 0 #fff, 2px 1px 8px 0 rgb(95 157 231 / 48%);
- transition: 0.2s;
- transform: translate(0, 0) rotate(0deg);
+  background-color: #e5edf5;
+  border-color: rgba(255,255,255,0.333);
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 40px;
+  box-shadow: -2px -1px 8px 0 #fff, 2px 1px 8px 0 rgba(95,157,231,0.48);
+  transition: 0.2s;
+  transform: translate(0, 0) rotate(0deg);
 }
 
 button:hover {
- color: #7e97b8;
- background-color: #e0e8ef;
- box-shadow: -4px -2px 16px 0 #fff, 4px 2px 16px 0 rgb(95 157 231 / 48%);
+  color: #7e97b8;
+  background-color: #e0e8ef;
+  box-shadow: -4px -2px 16px 0 #fff, 4px 2px 16px 0 rgba(95,157,231,0.48);
 
 }
 </style>

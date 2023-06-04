@@ -12,14 +12,15 @@
         :key="site.name"
         :href="site.url"
         :title="site.name"
-        target="_blank"
         class="flex-center text-18px text-#3f9dff transition-all duration-200"
         hover="text-#c784ed scale-110 dark:text-#57f0e6"
       >
         <div :class="site.icon" mr-2 />{{ site.name }}
       </a>
     </div>
-    <p class="mb-100px mt-30px animate-bounce-in text-20px">今朝有酒今朝醉，I can do this all day。</p>
+    <p class="mb-100px mt-30px animate-bounce-in text-20px">
+      今朝有酒今朝醉，I can do this all day。
+    </p>
   </div>
   <Background />
 </template>
@@ -33,7 +34,7 @@ meta:
 const sites = [
   {
     name: 'Blog',
-    url: 'https://blog.jupeng.top/',
+    url: 'https://blog.jupeng.top',
     icon: 'i-carbon-blog',
   },
   {

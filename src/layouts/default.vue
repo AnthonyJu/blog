@@ -2,7 +2,7 @@
   <main ref="scroll" class="relative full items-center" overflow="x-hidden y-auto">
     <Header :class="{ header: y > 0 }" :width="width" />
     <article class="m-auto max-w-70ch w-[calc(100%-30px)] p-15px" :style="{ minHeight }">
-      <router-view />
+      <RouterView />
     </article>
     <Footer />
     <Background />
