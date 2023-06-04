@@ -70,15 +70,15 @@ const navList = [
     path: '/',
   },
   {
-    name: '归档',
-    path: '/',
+    name: '文章',
+    path: '/article',
   },
   {
     name: '密语',
-    path: '/cryptolalia',
+    path: '/',
   },
   {
-    name: '实验室',
+    name: '乐活',
     path: '/',
   },
   {
