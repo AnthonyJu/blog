@@ -1,5 +1,5 @@
 <template>
-  <div class="sticky left-0 top-0 z-10 flex-center" width="100%">
+  <header class="sticky left-0 top-0 z-10 flex-center">
     <div class="h-60px max-w-100ch w-full flex-b-c px-15px">
       <!-- Logo -->
       <div class="logo h-40px w-110px" />
@@ -29,7 +29,7 @@
         <!-- Theme -->
         <div class="ml-20px h-20px w-36px overflow-hidden">
           <div class="toggleWrapper origin-left-top scale-40">
-            <input id="dn" :checked="isDark" type="checkbox" @change="toggleDark()">
+            <input id="dn" :checked="isDark" type="checkbox" @click="toggleTheme">
             <label for="dn" class="toggle">
               <span class="toggle__handler">
                 <span v-for="i in 3" :key="i" class="crater" :class="`crater--${i}`" />
@@ -41,10 +41,10 @@
 
         <!-- Burger -->
         <label v-if="width <= 500" for="burger" class="burger relative ml-20px">
-          <input id="burger" v-model="show" type="checkbox">
+          <input id="burger" v-model="showBurger" type="checkbox">
           <span /><span /><span />
           <nav
-            v-show="show"
+            v-show="showBurger"
             class="absolute right-0px top-30px w-80px flex-col-center gap-8px rounded bg-$bg-color py-10px"
             shadow="~ dark:shadow-gray-600"
           >
@@ -61,13 +61,12 @@
         </label>
       </div>
     </div>
-  </div>
+  </header>
 </template>
 
 <script setup lang="ts">
 defineProps<{ width: number }>()
 
-const show = ref(false)
 const navList = [
   {
     name: 'Index',
@@ -91,20 +90,50 @@ const navList = [
   },
 ]
 
+// 使用view-transition进行主题过渡
+function toggleTheme(e: MouseEvent) {
+  const x = e.clientX
+  const y = e.clientY
+  const radius = Math.hypot(
+    Math.max(x, window.innerWidth - x),
+    Math.max(y, window.innerHeight - y),
+  )
+
+  // @ts-expect-error failed to resolve types
+  const trans = document.startViewTransition(() => {
+    const root = document.documentElement
+    isDark.value = root.classList.contains('light')
+    root.classList.remove(isDark.value ? 'light' : 'dark')
+    root.classList.add(isDark.value ? 'dark' : 'light')
+  })
+
+  trans.ready.then(() => {
+    const clipPath = [
+    `circle(0px at ${x}px ${y}px)`,
+    `circle(${radius}px at ${x}px ${y}px)`,
+    ]
+    document.documentElement.animate(
+      {
+        clipPath: isDark.value ? clipPath : [...clipPath].reverse(),
+      },
+      {
+        duration: 500,
+        easing: 'ease-in',
+        pseudoElement: `::view-transition-${isDark.value ? 'new' : 'old'}(root)`,
+      },
+    )
+  })
+}
+
+const showBurger = ref(false)
 function delayCloseHandle() {
   setTimeout(() => {
-    show.value = false
+    showBurger.value = false
   }, 60)
 }
 </script>
 
 <style lang="scss" scoped>
-.header {
-  background-image: radial-gradient(transparent 1px,var(--bg-color) 1px);
-  background-size: 4px 4px;
-  backdrop-filter: saturate(50%) blur(4px);
-}
-
 .logo {
   background-image: url('@/assets/logo.png');
   background-repeat: no-repeat;

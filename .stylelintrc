@@ -1,3 +1,15 @@
 {
-    "extends": "@anthony-ju/stylelint-config"
+    "extends": "@anthony-ju/stylelint-config",
+    "rules": {
+        "selector-pseudo-element-no-unknown": [
+            true,
+            {
+                "ignorePseudoElements": [
+                    "v-deep",
+                    "view-transition-new",
+                    "view-transition-old"
+                ]
+            }
+        ]
+    }
 }

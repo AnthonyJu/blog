@@ -18,11 +18,11 @@
       </div>
     </div>
 
-    <!-- <el-pagination
-      class="bg-light-100 rounded-20px mt-40px py-4px px-10px dark:bg-dark-600"
+    <el-pagination
+      class="mt-40px rounded-20px bg-light-100 px-10px py-4px dark:bg-dark-600"
       layout="prev, pager, next"
       :total="50"
-    /> -->
+    />
   </div>
 </template>
 

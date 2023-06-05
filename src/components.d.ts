@@ -10,6 +10,10 @@ export {}
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     Background: typeof import('./components/Background.vue')['default']
+    ElConfigProvider: typeof import('element-plus/es')['ElConfigProvider']
+    ElPagination: typeof import('element-plus/es')['ElPagination']
+    ElScrollbar: typeof import('element-plus/es')['ElScrollbar']
+    ElScrollBar: typeof import('element-plus/es')['ElScrollBar']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }

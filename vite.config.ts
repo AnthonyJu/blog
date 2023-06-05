@@ -14,6 +14,10 @@ import Unocss from 'unocss/vite'
 import Shiki from 'markdown-it-shiki'
 import WebfontDownload from 'vite-plugin-webfont-dl'
 
+// @ts-expect-error failed to resolve types
+import ElementPlus from 'unplugin-element-plus/vite'
+import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+
 export default defineConfig({
   server: {
     hmr: true,
@@ -26,6 +30,14 @@ export default defineConfig({
   resolve: {
     alias: {
       '@/': `${path.resolve(__dirname, 'src')}/`,
+    },
+  },
+
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: '@use "@/styles/element/index.scss" as *;',
+      },
     },
   },
 
@@ -61,6 +73,7 @@ export default defineConfig({
         'src/stores',
       ],
       vueTemplate: true,
+      resolvers: [ElementPlusResolver({ importStyle: 'sass' })],
     }),
 
     // https://github.com/antfu/unplugin-vue-components
@@ -69,7 +82,13 @@ export default defineConfig({
       extensions: ['vue', 'md'],
       // allow auto import and register components used in markdown
       include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
+      resolvers: [ElementPlusResolver({ importStyle: 'sass' })],
       dts: 'src/components.d.ts',
+    }),
+
+    // https://github.com/element-plus/unplugin-element-plus
+    ElementPlus({
+      useSource: true,
     }),
 
     // https://github.com/antfu/unocss
