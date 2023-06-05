@@ -3,46 +3,50 @@
     <div class="h-60px max-w-100ch w-full flex-b-c px-15px">
       <!-- Logo -->
       <div class="logo h-40px w-110px" />
+
       <div class="flex-center">
         <!--  Nav -->
-        <nav v-if="width > 500" class="flex gap-15px text-14px">
+        <nav v-if="width > 500" class="flex gap-20px">
           <router-link
             v-for="item in navList"
             :key="item.path"
             :to="item.path"
-            class="hover:text-#c784ed dark:hover:text-#57f0e6"
+            hover="text-#c784ed dark:text-#57f0e6"
           >
             {{ item.name }}
           </router-link>
         </nav>
 
+        <!-- Github -->
+        <a href="https://github.com/AnthonyJu/blog" target="_blank">
+          <div
+            class="ml-20px cursor-pointer text-18px"
+            hover="text-#c784ed dark:text-#57f0e6"
+            i-carbon-logo-github
+          />
+        </a>
+
         <!-- Theme -->
-        <div class="h-20px w-36px overflow-hidden" :class="width > 500 ? 'ml-10px' : 'mr-10px'">
+        <div class="ml-20px h-20px w-36px overflow-hidden">
           <div class="toggleWrapper origin-left-top scale-40">
             <input id="dn" :checked="isDark" type="checkbox" @change="toggleDark()">
             <label for="dn" class="toggle">
               <span class="toggle__handler">
-                <span class="crater crater--1" />
-                <span class="crater crater--2" />
-                <span class="crater crater--3" />
+                <span v-for="i in 3" :key="i" class="crater" :class="`crater--${i}`" />
               </span>
-              <span class="star star--1" />
-              <span class="star star--2" />
-              <span class="star star--3" />
-              <span class="star star--4" />
-              <span class="star star--5" />
-              <span class="star star--6" />
+              <span v-for="i in 6" :key="i" class="star" :class="`star--${i}`" />
             </label>
           </div>
         </div>
 
         <!-- Burger -->
-        <label v-if="width <= 500" for="burger" class="burger relative">
+        <label v-if="width <= 500" for="burger" class="burger relative ml-20px">
           <input id="burger" v-model="show" type="checkbox">
           <span /><span /><span />
           <nav
             v-show="show"
-            class="absolute right-0px top-30px w-80px flex-col-center gap-8px rounded bg-$bg-color py-10px shadow dark:shadow-gray-600"
+            class="absolute right-0px top-30px w-80px flex-col-center gap-8px rounded bg-$bg-color py-10px"
+            shadow="~ dark:shadow-gray-600"
           >
             <router-link
               v-for="item in navList"
@@ -66,27 +70,23 @@ defineProps<{ width: number }>()
 const show = ref(false)
 const navList = [
   {
-    name: '首页',
+    name: 'Index',
     path: '/',
   },
   {
-    name: '文章',
-    path: '/article',
+    name: 'Blog',
+    path: '/blog',
   },
   {
-    name: '密语',
-    path: '/',
+    name: 'Note',
+    path: '/note',
   },
   {
-    name: '乐活',
-    path: '/',
+    name: 'Roast',
+    path: '/roast',
   },
   {
-    name: '留言板',
-    path: '/',
-  },
-  {
-    name: '关于',
+    name: 'About',
     path: '/about',
   },
 ]
