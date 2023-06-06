@@ -2,18 +2,29 @@
   <div class="flex-col-center">
     <div class="grid w-full gap-20px" :class="`grid-cols-${gridNum}`">
       <div
-        v-for="i in 15" :key="i"
+        v-for="blog in blogs" :key="blog.path"
         class="h-250px flex-col-center overflow-hidden rounded-3 bg-#ffffff99 dark:bg-#00000099"
       >
-        <img h-150px w-full src="@/assets/article.png">
+        <!-- poster -->
+        <img
+          class="h-150px w-full"
+          object="cover"
+          :src="getImg(blog.meta!.poster as string)"
+        >
 
-        <div flex-center flex-1 px-10px pt-5px>
-          文章即将上线，敬请期待
+        <!-- title -->
+        <div
+          class="flex-center flex-1 px-10px pt-5px"
+          cursor="pointer"
+          @click="$router.push(blog.path)"
+        >
+          {{ blog.meta!.title }}
         </div>
 
+        <!-- date -->
         <div class="flex items-end px-10px pb-10px text-left text-14px opacity-55">
           <div i-carbon-calendar-heat-map mr-5px />
-          <div>{{ formatTimeAgo(new Date('2023-06-02')) }} (2023-06-02)</div>
+          <div>{{ blog.meta!.date }}</div>
         </div>
       </div>
     </div>
@@ -27,7 +38,7 @@
 </template>
 
 <script setup lang='ts'>
-import { formatTimeAgo } from '@vueuse/core'
+import pages from '~pages'
 
 const { width } = useWindowSize()
 
@@ -36,6 +47,11 @@ const gridNum = computed(() => {
   else if (width.value <= 800) return 2
   else return 3
 })
+
+const blogs = pages.filter(page => page.path.startsWith('/blog/'))
+function getImg(poster: string) {
+  return new URL(`/src/assets/blog/${poster}`, import.meta.url).href
+}
 </script>
 
 <style lang='scss' scoped>
