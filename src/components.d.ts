@@ -13,6 +13,7 @@ declare module '@vue/runtime-core' {
     CounterApp: typeof import('./components/CounterApp.vue')['default']
     ElConfigProvider: typeof import('element-plus/lib')['ElConfigProvider']
     ElPagination: typeof import('element-plus/lib')['ElPagination']
+    ElTag: typeof import('element-plus/lib')['ElTag']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }

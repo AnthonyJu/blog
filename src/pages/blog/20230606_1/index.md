@@ -1,18 +1,19 @@
 ---
-title: 测试文章
+title: 文章测试标题
 meta:
   - name: description
-    content: Hello World
+    content: 编译Markdown到Vue组件,vite plugin md的精简版。
   - name: keywords
-    content: super duper SEO
+    content: vue, markdown, vite
 ---
 
 <route lang="yaml">
 meta:
-  title: 文章测试
-  desc: 编译Markdown到Vue组件,vite-plugin-md的精简版。
+  title: 文章测试标题
+  desc: 编译Markdown到Vue组件,vite plugin md的精简版。
+  tags: [vue, markdown, vite]
   poster: 20230606_1/20230606_1.png
-  date: 2023-06-06 12:00:00
+  date: 2023-06-06 23:17:56
 </route>
 
 # vite-plugin-vue-markdown

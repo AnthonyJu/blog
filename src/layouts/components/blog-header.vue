@@ -11,7 +11,7 @@
             v-for="item in navList"
             :key="item.path"
             :to="item.path"
-            hover="text-#c784ed dark:text-#57f0e6"
+            hover="text-$text-hover"
           >
             {{ item.name }}
           </router-link>
@@ -21,7 +21,7 @@
         <a href="https://github.com/AnthonyJu/blog" target="_blank">
           <div
             class="ml-20px cursor-pointer text-18px"
-            hover="text-#c784ed dark:text-#57f0e6"
+            hover="text-$text-hover"
             i-carbon-logo-github
           />
         </a>
