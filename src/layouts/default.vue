@@ -2,8 +2,11 @@
   <section ref="scroll" class="relative full items-center" overflow="x-hidden y-auto">
     <BlogHeader :class="{ filterClass: y > 0 }" :width="width" />
     <article class="m-auto max-w-70ch w-[calc(100%-30px)] p-15px" :style="{ minHeight }">
-      <Back />
-      <RouterView />
+      <router-view v-slot="{ Component }">
+        <transition name="fade" mode="out-in">
+          <component :is="Component" />
+        </transition>
+      </router-view>
     </article>
     <BlogFooter />
     <Background />
@@ -11,7 +14,6 @@
 </template>
 
 <script setup lang="ts">
-import Back from './components/back.vue'
 import BlogHeader from './components/blog-header.vue'
 import BlogFooter from './components/blog-footer.vue'
 
@@ -33,5 +35,17 @@ const minHeight = computed(() => {
 
 .dark .filterClass {
   background-color: #000c;
+}
+</style>
+
+<style>
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
 }
 </style>

@@ -9,6 +9,7 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    Back: typeof import('./components/Back.vue')['default']
     Background: typeof import('./components/Background.vue')['default']
     CounterApp: typeof import('./components/CounterApp.vue')['default']
     ElCollapse: typeof import('element-plus/lib')['ElCollapse']

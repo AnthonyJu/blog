@@ -1,38 +1,40 @@
 <template>
-  <div h-30px pr-15px text-right>Some bits and pieces of notes</div>
-  <div class="overflow-hidden rounded bg-#fff9 dark:bg-#0009">
-    <el-collapse class="custom-collapse rounded" accordion>
-      <el-collapse-item v-for="item in noteTypes" :key="item.name">
-        <!-- collapse title -->
-        <template #title>
-          <span :class="isDark ? item.darkIcon ?? item.icon : item.icon" ml-20px mr-12px text-18px />
-          {{ item.name }}
-        </template>
+  <div>
+    <div h-30px pr-15px text-right>Some bits and pieces of notes</div>
+    <div class="overflow-hidden rounded bg-#fff9 dark:bg-#0009">
+      <el-collapse class="custom-collapse rounded" accordion>
+        <el-collapse-item v-for="item in noteTypes" :key="item.name">
+          <!-- collapse title -->
+          <template #title>
+            <span :class="isDark ? item.darkIcon ?? item.icon : item.icon" ml-20px mr-12px text-18px />
+            {{ item.name }}
+          </template>
 
-        <!-- collapse content -->
-        <div
-          v-for="(note, index) in item.notes"
-          :key="note.path"
-          class="hover:bg- flex cursor-pointer justify-between py-12px pl-55px pr-20px"
-          @click="$router.push(note.path)"
-        >
-          <!-- title -->
-          <div class="flex-1 truncate">
-            {{ index + 1 }}、{{ note.title }}
+          <!-- collapse content -->
+          <div
+            v-for="(note, index) in item.notes"
+            :key="note.path"
+            class="hover:bg- flex cursor-pointer justify-between py-12px pl-55px pr-20px"
+            @click="$router.push(note.path)"
+          >
+            <!-- title -->
+            <div class="flex-1 truncate">
+              {{ index + 1 }}、{{ note.title }}
+            </div>
+
+            <!-- tags -->
+            <div class="truncate text-12px" :title="note.tags.join('，')">
+              <el-tag v-for="tag in note.tags" :key="tag" class="mr-5px">
+                {{ tag }}
+              </el-tag>
+            </div>
           </div>
 
-          <!-- tags -->
-          <div class="truncate text-12px" :title="note.tags.join('，')">
-            <el-tag v-for="tag in note.tags" :key="tag" class="mr-5px">
-              {{ tag }}
-            </el-tag>
-          </div>
-        </div>
-
-        <!-- empty -->
-        <div v-if="item.notes?.length === 0" class="px-20px py-12px">嘤 嘤 嘤，马上了</div>
-      </el-collapse-item>
-    </el-collapse>
+          <!-- empty -->
+          <div v-if="item.notes?.length === 0" class="px-20px py-12px">嘤 嘤 嘤，马上了</div>
+        </el-collapse-item>
+      </el-collapse>
+    </div>
   </div>
 </template>
 
