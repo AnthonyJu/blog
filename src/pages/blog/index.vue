@@ -23,7 +23,7 @@
 
         <div class="w-full flex-col-center flex-1 justify-around px-10px py-4px">
           <!-- title -->
-          <div class="truncate text-18px" :title="blog.title">
+          <div class="truncate" :title="blog.title">
             {{ blog.title }}
           </div>
 
@@ -55,7 +55,7 @@
 </template>
 
 <script setup lang='ts'>
-import type { BlogInfo } from '@/types/blog'
+import type { BlogInfo } from '@/types/index'
 import pages from '~pages'
 
 const { width } = useWindowSize()
@@ -81,6 +81,7 @@ const blogs = computed(() => allBlogs.slice((current.value - 1) * 15, current.va
 function handleCurrentChange(cur: number) {
   current.value = cur
 }
+
 // 获取图片
 function getImg(poster: string) {
   return new URL(`/src/assets/blog/${poster}`, import.meta.url).href

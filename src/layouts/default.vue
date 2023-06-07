@@ -20,7 +20,7 @@ const { y } = useScroll(scroll)
 
 const { width, height } = useWindowSize()
 const minHeight = computed(() => {
-  return `${height.value - 60 - 60 - 30}px`
+  return `${height.value - 60 - 60}px`
 })
 </script>
 

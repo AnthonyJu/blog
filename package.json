@@ -31,6 +31,7 @@
     "@anthony-ju/eslint-config": "^0.1.1",
     "@anthony-ju/stylelint-config": "^0.1.0",
     "@iconify-json/carbon": "^1.1.17",
+    "@iconify-json/vscode-icons": "^1.1.25",
     "@types/markdown-it-link-attributes": "^3.0.1",
     "@types/nprogress": "^0.2.0",
     "@unocss/eslint-config": "^0.52.7",

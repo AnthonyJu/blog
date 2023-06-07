@@ -49,6 +49,9 @@ devDependencies:
   '@iconify-json/carbon':
     specifier: ^1.1.17
     version: 1.1.17
+  '@iconify-json/vscode-icons':
+    specifier: ^1.1.25
+    version: 1.1.25
   '@types/markdown-it-link-attributes':
     specifier: ^3.0.1
     version: 3.0.1
@@ -1980,6 +1983,12 @@ packages:
 
   /@iconify-json/carbon@1.1.17:
     resolution: {integrity: sha512-FJCHUNP+iEGZILqu5YjByV+RBrWCsMo7YWXBJSpRMvaeVH3yjK3TI8UIc7lmPGI1NRmjThiaqjxMqe7CgQY55Q==}
+    dependencies:
+      '@iconify/types': 2.0.0
+    dev: true
+
+  /@iconify-json/vscode-icons@1.1.25:
+    resolution: {integrity: sha512-TA4NuBffMLHlAAZ2URBtPy39+SuO35ThjUvaaUrd8+/KYijIUAU5prHW8j+EGVtajFZl+DT1TxAVdOXpijuFSg==}
     dependencies:
       '@iconify/types': 2.0.0
     dev: true

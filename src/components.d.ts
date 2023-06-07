@@ -11,7 +11,10 @@ declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     Background: typeof import('./components/Background.vue')['default']
     CounterApp: typeof import('./components/CounterApp.vue')['default']
+    ElCollapse: typeof import('element-plus/lib')['ElCollapse']
+    ElCollapseItem: typeof import('element-plus/lib')['ElCollapseItem']
     ElConfigProvider: typeof import('element-plus/lib')['ElConfigProvider']
+    ElIcon: typeof import('element-plus/lib')['ElIcon']
     ElPagination: typeof import('element-plus/lib')['ElPagination']
     ElTag: typeof import('element-plus/lib')['ElTag']
     RouterLink: typeof import('vue-router')['RouterLink']
