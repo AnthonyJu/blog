@@ -11,6 +11,6 @@
 <script setup lang='ts'>
 const route = useRoute()
 const showBack = computed(() => {
-  return route.path.startsWith('/blog/')
+  return route.path.startsWith('/blog/') || route.path.startsWith('/note/')
 })
 </script>

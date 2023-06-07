@@ -92,6 +92,13 @@ const navList = [
 
 // 使用view-transition进行主题过渡
 function toggleTheme(e: MouseEvent) {
+  // 不支持view-transition则直接切换主题
+  // @ts-expect-error failed to resolve types
+  if (!document.startViewTransition) {
+    toggleDark()
+    return
+  }
+
   const x = e.clientX
   const y = e.clientY
   const radius = Math.hypot(
@@ -101,8 +108,8 @@ function toggleTheme(e: MouseEvent) {
 
   // @ts-expect-error failed to resolve types
   const trans = document.startViewTransition(() => {
+    toggleDark()
     const root = document.documentElement
-    isDark.value = root.classList.contains('light')
     root.classList.remove(isDark.value ? 'light' : 'dark')
     root.classList.add(isDark.value ? 'dark' : 'light')
   })
