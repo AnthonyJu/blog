@@ -1,7 +1,7 @@
 <template>
-  <section ref="scroll" class="relative full items-center" overflow="x-hidden y-auto">
-    <BlogHeader :class="{ filterClass: y > 0 }" :width="width" />
-    <article class="m-auto max-w-70ch w-[calc(100%-30px)] p-15px" :style="{ minHeight }">
+  <section id="backtop-target" ref="scroll" class="relative full items-center" overflow="x-hidden y-auto">
+    <BlogHeader :class="{ filterClass: y > 0 }" />
+    <article class="m-auto w-[calc(100%-30px)] p-15px" :class="articleWidth" :style="{ minHeight }">
       <router-view v-slot="{ Component }">
         <transition name="fade" mode="out-in">
           <component :is="Component" />
@@ -11,18 +11,25 @@
     <BlogFooter />
     <Background />
   </section>
+  <el-backtop target="#backtop-target" />
 </template>
 
 <script setup lang="ts">
+import Background from './components/Background.vue'
 import BlogHeader from './components/blog-header.vue'
 import BlogFooter from './components/blog-footer.vue'
 
 const scroll = ref<HTMLElement>()
 const { y } = useScroll(scroll)
 
-const { width, height } = useWindowSize()
+const { height } = useWindowSize()
 const minHeight = computed(() => {
   return `${height.value - 60 - 60}px`
+})
+
+const route = useRoute()
+const articleWidth = computed(() => {
+  return route.path === '/' ? 'max-w-100ch' : 'max-w-70ch'
 })
 </script>
 

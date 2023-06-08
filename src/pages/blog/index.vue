@@ -76,7 +76,11 @@ const allBlogs = pages.filter(page => page.path.startsWith('/blog/')).map((page)
   }
 }) as any as BlogInfo[]
 // 每页15条
-const blogs = computed(() => allBlogs.slice((current.value - 1) * 15, current.value * 15))
+const blogs = computed(() => {
+  // return allBlogs.slice((current.value - 1) * 15, current.value * 15)
+  // 生成20条假数据相同的博客
+  return Array.from({ length: 15 }, () => allBlogs[0])
+})
 // 翻页
 function handleCurrentChange(cur: number) {
   current.value = cur

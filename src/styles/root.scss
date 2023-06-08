@@ -1,6 +1,7 @@
 :root {
   --text-color: #000;
   --bg-color: #fff;
+  --bg-color-opacity: #fff9;
   --border-color: #dcdfe6;
   --text-hover: #c784ed;
 }
@@ -8,6 +9,7 @@
 .dark {
   --text-color: #fff;
   --bg-color: #000;
+  --bg-color-opacity: #0009;
   --border-color: #4c4d4f;
   --text-hover: #57f0e6;
 }

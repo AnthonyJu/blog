@@ -65,7 +65,7 @@
 </template>
 
 <script setup lang="ts">
-defineProps<{ width: number }>()
+const { width } = useWindowSize()
 
 const navList = [
   {
