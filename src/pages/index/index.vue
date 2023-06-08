@@ -1,220 +1,23 @@
 <template>
   <el-row :gutter="20">
-    <el-col :xs="24" :sm="6">
-      <div relative flex-center>
-        <img
-          class="max-h-255px rounded-50% shadow"
-          border="~ gray-500"
-          src="@/assets/avatar.png"
-          alt="AnthonyJu"
-        >
-        <!-- Focusing -->
-        <div
-          class="group absolute bottom-8% left-80% flex-center rounded-18px bg-$bg-color-opacity p-6px"
-          cursor="default"
-        >
-          🎯
-          <span class="hidden w-0 pr-4px text-12px" group-hover="w-54px block">
-            Focusing
-          </span>
-        </div>
-      </div>
-      <!-- Info -->
-      <div px-2px>
-        <div class="mt-10px text-20px font-bold">Ju Peng</div>
-        <div class="relative text-18px text-dark-300 -top-6px dark:text-gray-300">AnthonyJu</div>
-        <div mb-10px>巴山楚水凄凉地，Responsibility。</div>
-      </div>
-      <div class="btn">
-        <strong>Follow Me</strong>
-        <div id="container-stars">
-          <div id="stars" />
-        </div>
-
-        <div id="glow">
-          <div class="circle" />
-          <div class="circle" />
-        </div>
-      </div>
+    <el-col :xs="24" :sm="7" :lg="6">
+      <Left />
     </el-col>
-    <el-col :xs="24" :sm="18" :lg="12">
-      <div bg-red>center</div>
+    <el-col :xs="24" :sm="17" :lg="12">
+      <CenterContent />
     </el-col>
     <el-col hidden-sm-and-down :lg="6">
-      <Weather />
+      <Right />
     </el-col>
   </el-row>
 </template>
 
 <script setup lang="ts">
-
+import Left from './components/left.vue'
+import Right from './components/right.vue'
+import CenterContent from './components/center.vue'
 </script>
 
 <style>
-.btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 42px;
-  cursor: pointer;
-  user-select: none;
-  background-image: linear-gradient(#444444a0, #444444a0),
-    linear-gradient(137.48deg, #c592ff 10%,#8991fc 45%, #5194f8 67%, rgb(27, 181, 241) 87%);
-  background-clip: content-box, border-box;
-  background-origin: border-box;
-  background-size: 300% 300%;
-  border: double 3px transparent;
-  border-radius: 14px;
-  transition: 0.5s;
-  animation: gradient-301 5s ease infinite;
-  backdrop-filter: blur(1rem);
-}
-
-.dark .btn {
-  background-image: linear-gradient(#212121, #212121),
-    linear-gradient(137.48deg, #b16dff 10%,#6973ff 45%, #1a69df 67%, rgb(9, 140, 192) 87%);
-}
-
-#container-stars {
-  position: absolute;
-  z-index: -1;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  border-radius: 13px;
-  transition: 0.5s;
-  backdrop-filter: blur(1rem);
-}
-
-strong {
-  z-index: 2;
-  font-size: 12px;
-  color: #fff;
-  letter-spacing: 5px;
-}
-
-#glow {
-  position: absolute;
-  display: flex;
-  width: 100%;
-}
-
-.circle {
-  z-index: -1;
-  width: 100%;
-  height: 30px;
-  filter: blur(2rem);
-  animation: pulse-3011 4s infinite;
-}
-
-.circle:nth-of-type(1) {
-  background: rgba(254, 83, 186, 0.636);
-}
-
-.circle:nth-of-type(2) {
-  background: rgba(142, 81, 234, 0.704);
-}
-
-.btn:hover #container-stars {
-  z-index: 1;
-}
-
-.btn:hover {
-  transform: scale(1.1)
-}
-
-.btn:active {
-  background-clip: content-box, border-box;
-  background-origin: border-box;
-  border: double 4px #fe53bb;
-  animation: none;
-}
-
-.btn:active .circle {
-  background: #fe53bb;
-}
-
-#stars {
-  position: relative;
-  width: 200rem;
-  height: 200rem;
-  background: transparent;
-}
-
-#stars::after {
-  position: absolute;
-  top: -10rem;
-  left: -100rem;
-  width: 100%;
-  height: 100%;
-  content: '';
-  background-image: radial-gradient(#fff 1px, transparent 1%);
-  background-size: 50px 50px;
-  animation: anim-star-rotate 90s linear infinite;
-}
-
-#stars::before {
-  position: absolute;
-  top: 0;
-  left: -50%;
-  width: 170%;
-  height: 500%;
-  content: '';
-  background-image: radial-gradient(#fff 1px, transparent 1%);
-  background-size: 50px 50px;
-  opacity: 0.5;
-  animation: anim-star 60s linear infinite;
-}
-
-@keyframes anim-star {
-  from {
-    transform: translateY(0);
-  }
-
-  to {
-    transform: translateY(-135rem);
-  }
-}
-
-@keyframes anim-star-rotate {
-  from {
-    transform: rotate(360deg);
-  }
-
-  to {
-    transform: rotate(0);
-  }
-}
-
-@keyframes gradient-301 {
-  0% {
-    background-position: 0% 50%;
-  }
-
-  50% {
-    background-position: 100% 50%;
-  }
-
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-@keyframes pulse-3011 {
-  0% {
-    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
-    transform: scale(0.75);
-  }
-
-  70% {
-    box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
-    transform: scale(1);
-  }
-
-  100% {
-    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
-    transform: scale(0.75);
-  }
-}
+/* TODO hidden-sm-and-down */
 </style>
