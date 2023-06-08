@@ -1,5 +1,6 @@
 declare interface Window {
   // extend the window
+  WIDGET: any
 }
 
 declare module 'element-plus/dist/locale/zh-cn.mjs'

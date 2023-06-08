@@ -24,5 +24,6 @@ declare module '@vue/runtime-core' {
     ElTag: typeof import('element-plus/lib')['ElTag']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    Weather: typeof import('./components/Weather.vue')['default']
   }
 }
