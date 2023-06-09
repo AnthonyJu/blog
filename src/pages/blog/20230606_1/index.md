@@ -16,8 +16,6 @@ meta:
   date: 2023-06-06 23:17:56
 </route>
 
-<Back path="/blog" />
-
 # vite-plugin-vue-markdown
 
 [![NPM version](https://img.shields.io/npm/v/vite-plugin-vue-markdown?color=a1b858)](https://www.npmjs.com/package/vite-plugin-vue-markdown)

@@ -10,15 +10,12 @@ export {}
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     Back: typeof import('./components/Back.vue')['default']
-    Background: typeof import('./components/Background.vue')['default']
     CounterApp: typeof import('./components/CounterApp.vue')['default']
     ElBacktop: typeof import('element-plus/lib')['ElBacktop']
-    ElCard: typeof import('element-plus/lib')['ElCard']
     ElCol: typeof import('element-plus/lib')['ElCol']
     ElCollapse: typeof import('element-plus/lib')['ElCollapse']
     ElCollapseItem: typeof import('element-plus/lib')['ElCollapseItem']
     ElConfigProvider: typeof import('element-plus/lib')['ElConfigProvider']
-    ElIcon: typeof import('element-plus/lib')['ElIcon']
     ElPagination: typeof import('element-plus/lib')['ElPagination']
     ElRow: typeof import('element-plus/lib')['ElRow']
     ElTag: typeof import('element-plus/lib')['ElTag']

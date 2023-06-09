@@ -9,8 +9,6 @@ meta:
   date: 2023-06-06 23:17:56
 </route>
 
-<Back  path="/note" />
-
 # HTML5新特性
 
 ## 一、HTML5新特性
