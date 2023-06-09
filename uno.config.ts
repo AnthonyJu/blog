@@ -16,6 +16,7 @@ export default defineConfig({
     'flex-items': 'flex items-center',
     'flex-b-c': 'flex justify-between items-center',
     'flex-center': 'flex justify-center items-center',
+    'flex-center-r': 'flex justify-end items-center',
     'flex-col-center': 'flex flex-col justify-center items-center',
     'turn-dark': 'invert-100 hue-rotate-180',
   },

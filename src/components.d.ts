@@ -19,6 +19,7 @@ declare module '@vue/runtime-core' {
     ElPagination: typeof import('element-plus/lib')['ElPagination']
     ElRow: typeof import('element-plus/lib')['ElRow']
     ElTag: typeof import('element-plus/lib')['ElTag']
+    Pagination: typeof import('./components/Pagination.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     Weather: typeof import('./components/Weather.vue')['default']

@@ -43,14 +43,8 @@
       </div>
     </div>
 
-    <el-pagination
-      v-if="allBlogs.length > 15"
-      class="mt-40px rounded-20px bg-light-100 px-10px py-4px dark:bg-dark-600"
-      layout="prev, pager, next"
-      :page-size="15"
-      :total="allBlogs.length"
-      :current-change="handleCurrentChange"
-    />
+    <!-- Pagination -->
+    <Pagination v-model="current" m-auto w-fit :total="allBlogs.length" />
   </div>
 </template>
 
@@ -68,6 +62,7 @@ const gridNum = computed(() => {
 
 // 当前页
 const current = ref(1)
+
 // 取出所有以 /blog/ 开头的bole路由
 const allBlogs = pages.filter(page => page.path.startsWith('/blog/')).map((page) => {
   return {
@@ -75,16 +70,15 @@ const allBlogs = pages.filter(page => page.path.startsWith('/blog/')).map((page)
     path: page.path,
   }
 }) as any as BlogInfo[]
+
 // 每页15条
 const blogs = computed(() => {
-  // return allBlogs.slice((current.value - 1) * 15, current.value * 15)
+  // const start = (current.value - 1) * 15
+  // const end = current.value * 15
+  // return allBlogs.slice(start, end)
   // 生成20条假数据相同的博客
   return Array.from({ length: 15 }, () => allBlogs[0])
 })
-// 翻页
-function handleCurrentChange(cur: number) {
-  current.value = cur
-}
 
 // 获取图片
 function getImg(poster: string) {
