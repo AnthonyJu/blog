@@ -1,17 +1,15 @@
 <template>
-  <section id="backtop-target" ref="scroll" class="relative full items-center" overflow="x-hidden y-auto">
-    <BlogHeader :class="{ filterClass: y > 0 }" />
-    <article class="m-auto p-15px" :class="articleWidth" :style="{ minHeight }">
-      <router-view v-slot="{ Component }">
-        <transition name="fade" mode="out-in">
-          <component :is="Component" />
-        </transition>
-      </router-view>
-    </article>
-    <BlogFooter />
-    <Background />
-  </section>
-  <el-backtop target="#backtop-target" />
+  <BlogHeader :class="{ filterClass: y > 0 }" />
+  <article class="m-auto p-15px" :class="articleWidth" :style="{ minHeight }">
+    <router-view v-slot="{ Component }">
+      <transition name="fade" mode="out-in">
+        <component :is="Component" />
+      </transition>
+    </router-view>
+    <el-backtop target="#app" />
+  </article>
+  <BlogFooter />
+  <Background />
 </template>
 
 <script setup lang="ts">
@@ -19,8 +17,7 @@ import Background from './components/background.vue'
 import BlogHeader from './components/blog-header.vue'
 import BlogFooter from './components/blog-footer.vue'
 
-const scroll = ref<HTMLElement>()
-const { y } = useScroll(scroll)
+const { y } = useScroll(document)
 
 const { height } = useWindowSize()
 const minHeight = computed(() => `${height.value - 60 - 60}px`)
