@@ -23,3 +23,28 @@ html.dark .shiki-light {
 html:not(.dark) .shiki-dark {
   display: none;
 }
+
+.prose th {
+  background-color: #75b6d655;
+}
+
+.prose th,
+.prose td {
+  border: 1px solid #75b6d677;
+
+  .dark & {
+    border: 1px solid #75b6d633;
+  }
+}
+
+.prose tr {
+  border: 1px solid #75b6d677;
+
+  .dark & {
+    border: 1px solid #75b6d633;
+  }
+}
+
+.prose tr:nth-child(2n) {
+  background-color: #759dd633;
+}

@@ -10,10 +10,10 @@
     <!-- Focusing -->
     <div
       absolute flex-center rounded-18px
-      class="group bottom-8% left-80% bg-$bg-color-opacity p-6px"
+      class="group bottom-8% left-80% bg-$bg-color-opacity px-10px py-6px"
       cursor="default"
     >
-      🎯<span class="hidden w-0 pr-4px text-12px" group-hover="w-54px block">
+      🎯<span class="hidden w-0 pl-4px text-12px" group-hover="w-56px block">
         Focusing
       </span>
     </div>

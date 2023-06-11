@@ -9,7 +9,6 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
-    Back: typeof import('./components/Back.vue')['default']
     CounterApp: typeof import('./components/CounterApp.vue')['default']
     ElBacktop: typeof import('element-plus/lib')['ElBacktop']
     ElCol: typeof import('element-plus/lib')['ElCol']

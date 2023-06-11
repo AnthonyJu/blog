@@ -17,7 +17,7 @@ import Background from './components/background.vue'
 import BlogHeader from './components/blog-header.vue'
 import BlogFooter from './components/blog-footer.vue'
 
-const { y } = useScroll(document)
+const { y } = useWindowScroll()
 
 const { height } = useWindowSize()
 const minHeight = computed(() => `${height.value - 60 - 60}px`)
@@ -44,7 +44,7 @@ function setArticleWidth() {
 }
 
 .dark .filterClass {
-  background-color: #000c;
+  background-color: #0e0c1acc;
 }
 </style>
 

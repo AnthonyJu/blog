@@ -73,11 +73,9 @@ const allBlogs = pages.filter(page => page.path.startsWith('/blog/')).map((page)
 
 // 每页15条
 const blogs = computed(() => {
-  // const start = (current.value - 1) * 15
-  // const end = current.value * 15
-  // return allBlogs.slice(start, end)
-  // 生成20条假数据相同的博客
-  return Array.from({ length: 15 }, () => allBlogs[0])
+  const start = (current.value - 1) * 15
+  const end = current.value * 15
+  return allBlogs.slice(start, end)
 })
 
 // 获取图片
