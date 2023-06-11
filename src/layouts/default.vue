@@ -1,5 +1,5 @@
 <template>
-  <BlogHeader :class="{ filterClass: y > 0 }" />
+  <LayoutHeader :class="{ filterClass: y > 0 }" />
   <article class="m-auto p-15px" :class="articleWidth" :style="{ minHeight }">
     <router-view v-slot="{ Component }">
       <transition name="fade" mode="out-in">
@@ -8,14 +8,14 @@
     </router-view>
     <el-backtop target="#app" />
   </article>
-  <BlogFooter />
+  <LayoutFooter />
   <Background />
 </template>
 
 <script setup lang="ts">
 import Background from './components/background.vue'
-import BlogHeader from './components/blog-header.vue'
-import BlogFooter from './components/blog-footer.vue'
+import LayoutHeader from './components/layout-header.vue'
+import LayoutFooter from './components/layout-footer.vue'
 
 const { y } = useWindowScroll()
 

@@ -12,7 +12,7 @@
           <img
             class="full transition duration-1000 ease-in-out"
             object="cover"
-            :src="getImg(blog.poster)"
+            :src="getImg(blog.path)"
             :alt="blog.title"
           >
         </div>
@@ -79,8 +79,8 @@ const blogs = computed(() => {
 })
 
 // 获取图片
-function getImg(poster: string) {
-  return new URL(`/src/assets/blog/${poster}`, import.meta.url).href
+function getImg(path: string) {
+  return new URL(`/src/assets/${path.replace('/', '')}/poster.png`, import.meta.url).href
 }
 </script>
 

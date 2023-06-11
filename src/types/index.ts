@@ -2,7 +2,6 @@ export interface BlogInfo {
   title: string
   desc: string
   tags: string[]
-  poster: string
   path: string
   date: string
 }
