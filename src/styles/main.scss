@@ -5,8 +5,12 @@
 
 * {
   box-sizing: border-box;
-  padding: 0;
+}
+
+body,
+#app {
   margin: 0;
+  padding: 0;
 }
 
 html.dark {
