@@ -12,7 +12,6 @@ import VueDevTools from 'vite-plugin-vue-devtools'
 import LinkAttributes from 'markdown-it-link-attributes'
 import Unocss from 'unocss/vite'
 import Shiki from 'markdown-it-shiki'
-import WebfontDownload from 'vite-plugin-webfont-dl'
 
 // @ts-expect-error failed to resolve types
 import ElementPlus from 'unplugin-element-plus/vite'
@@ -146,9 +145,6 @@ export default defineConfig({
         ],
       },
     }),
-
-    // https://github.com/feat-agency/vite-plugin-webfont-dl
-    WebfontDownload(),
 
     // https://github.com/webfansplz/vite-plugin-vue-devtools
     VueDevTools(),

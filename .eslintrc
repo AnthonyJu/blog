@@ -3,5 +3,6 @@
     "@antfu",
     "@unocss",
     "@anthony-ju/eslint-config"
-  ]
+  ],
+  "ignorePatterns":["src/assets/**/*","*.yaml","*.scss"]
 }

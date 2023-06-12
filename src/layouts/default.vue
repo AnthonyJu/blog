@@ -32,7 +32,7 @@ watch(() => route.path, () => {
 }, { immediate: true })
 
 function setArticleWidth() {
-  articleWidth.value = route.path === '/' ? 'max-w-110ch' : 'max-w-70ch'
+  articleWidth.value = route.path === '/' ? 'max-w-100ch' : 'max-w-70ch'
 }
 </script>
 
