@@ -1,7 +1,7 @@
 <template>
   <div relative flex-center>
     <img
-      class="max-h-255px rounded-50% shadow"
+      class="avatar max-h-255px rounded-50%"
       border="~ gray-500"
       src="@/assets/avatar.png"
       alt="AnthonyJu"
@@ -27,7 +27,7 @@
   </div>
 
   <!-- Btn -->
-  <div class="btn">
+  <div class="btn mb-20px">
     <strong>Follow Me</strong>
     <div id="container-stars"><div id="stars" /></div>
     <div id="glow"><div class="circle" /><div class="circle" /></div>
@@ -39,6 +39,10 @@
 </script>
 
 <style lang="scss" scoped>
+.avatar {
+  box-shadow: rgba(142, 142, 142, 0.5) 0 6px 15px 0;
+}
+
 .btn {
   display: flex;
   align-items: center;

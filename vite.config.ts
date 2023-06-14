@@ -71,6 +71,7 @@ export default defineConfig({
       dirs: [
         'src/composables',
         'src/stores',
+        'src/utils',
       ],
       vueTemplate: true,
       resolvers: [ElementPlusResolver({ importStyle: 'sass', ssr: true })],

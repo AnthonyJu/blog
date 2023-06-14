@@ -9,6 +9,8 @@ declare module 'vue' {
   export interface GlobalComponents {
     CounterApp: typeof import('./components/CounterApp.vue')['default']
     ElBacktop: typeof import('element-plus/lib')['ElBacktop']
+    ElCarousel: typeof import('element-plus/lib')['ElCarousel']
+    ElCarouselItem: typeof import('element-plus/lib')['ElCarouselItem']
     ElCol: typeof import('element-plus/lib')['ElCol']
     ElCollapse: typeof import('element-plus/lib')['ElCollapse']
     ElCollapseItem: typeof import('element-plus/lib')['ElCollapseItem']

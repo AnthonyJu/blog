@@ -1,12 +1,13 @@
 <template>
-  <el-row :gutter="20">
+  <el-row :gutter="25">
     <el-col :xs="24" :sm="7" :lg="6">
       <Left />
+      <Right v-if="width < 1200" />
     </el-col>
     <el-col :xs="24" :sm="17" :lg="12">
       <CenterContent />
     </el-col>
-    <el-col hidden-sm-and-down :lg="6">
+    <el-col v-if="width >= 1200" :lg="6">
       <Right />
     </el-col>
   </el-row>
@@ -16,8 +17,6 @@
 import Left from './components/left.vue'
 import Right from './components/right.vue'
 import CenterContent from './components/center.vue'
-</script>
 
-<style>
-/* TODO hidden-sm-and-down */
-</style>
+const { width } = useWindowSize()
+</script>
