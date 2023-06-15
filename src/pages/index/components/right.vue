@@ -11,11 +11,11 @@
   </div>
 
   <!-- 最新的5条toast -->
-  <div class="box mt-20px px-8px">
+  <div class="box mt-20px cursor-pointer px-8px" @click="$router.push('/roast')">
     <p
       v-for="item in roastList.slice(0, 5)"
       :key="item.date"
-      class="cursor-pointer truncate border-b border-#ccc3 p-8px last:border-none"
+      class="truncate border-b border-#ccc3 p-8px last:border-none"
       :title="useTimeAgo(item.date).value"
     >
       {{ item.content }}

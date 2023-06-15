@@ -1,14 +1,13 @@
 <template>
-  <el-carousel height="240px" class="box">
-    <el-carousel-item v-for="item in 4" :key="item">
-      <h3 class="full flex-center" text="2xl">{{ item }}</h3>
+  <el-carousel class="box">
+    <el-carousel-item v-for="index in 4" :key="index">
+      <img
+        :key="index" opacity="75"
+        :src="`https://api.yimian.xyz/img?type=moe&size=1920x1080&index=${index}`"
+      >
     </el-carousel-item>
   </el-carousel>
 </template>
-
-<script setup lang='ts'>
-
-</script>
 
 <style lang='scss' scoped>
 .box {
