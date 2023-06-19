@@ -15,7 +15,7 @@ title: 关于我
 - 🏢 Working in a certain Qingdao Technology Co., Ltd. from 2020 to now
 
 ### My hobbies ✨
-- 🏕️ Camp
+- ⛺️ Camp
 - 💻 Coding
 - 🍗 Foodie
 - 🎮 Play games

@@ -1,5 +1,5 @@
 <template>
-  <el-row :gutter="25">
+  <el-row :gutter="15">
     <el-col :xs="24" :sm="7" :lg="6">
       <Left />
       <Right v-if="width < 1200" />

@@ -1,7 +1,7 @@
 <template>
   <div relative flex-center>
     <img
-      class="avatar max-h-255px rounded-50%"
+      class="avatar max-h-210px rounded-50%"
       border="~ gray-500"
       src="@/assets/avatar.png"
       alt="AnthonyJu"
@@ -9,8 +9,8 @@
 
     <!-- Focusing -->
     <div
-      absolute flex-center rounded-18px
-      class="group bottom-8% left-80% bg-$bg-color-opacity px-10px py-6px"
+      absolute z-10 flex-center cursor-pointer rounded-18px
+      class="group bottom-8% left-75% bg-$bg-color-opacity px-9px py-6px"
       cursor="default"
     >
       🎯<span class="hidden w-0 pl-4px text-12px" group-hover="w-56px block">

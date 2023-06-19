@@ -2,7 +2,7 @@
   <el-carousel class="box">
     <el-carousel-item v-for="index in 4" :key="index">
       <img
-        :key="index" opacity="75"
+        :key="index" opacity="100"
         :src="`https://api.yimian.xyz/img?type=moe&size=1920x1080&index=${index}`"
       >
     </el-carousel-item>
