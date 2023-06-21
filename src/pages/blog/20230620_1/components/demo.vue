@@ -12,7 +12,7 @@
 
   <el-row :gutter="20">
     <el-col :span="12" :xs="24">
-      <div class="params-code mt-30px py-16px!">
+      <div class="bg-box mt-30px py-16px!">
         <div>圆角</div>
         <el-slider v-model="radius" />
         <div mt-8px>模糊</div>
@@ -22,7 +22,7 @@
       </div>
     </el-col>
     <el-col :span="12" :xs="24">
-      <div class="params-code mt-30px">
+      <div class="bg-box mt-30px">
         <div flex-b-c pb-6px>
           <span text-primary>代码实现</span>
           <el-button type="primary" link size="default" title="copy" @click="copy(cssCode)">
@@ -58,15 +58,6 @@ watch(copied, (val) => {
 </script>
 
 <style>
-.params-code {
-  padding: 10px 15px;
-  background-color: rgba(255, 255, 255, 0.25);
-  border: 0.625px solid rgba(255, 255, 255, 0.25);
-  border-radius: 25px;
-  box-shadow: rgba(142, 142, 142, 0.25) 0 6px 15px 0;
-  backdrop-filter: blur(6px);
-}
-
 .circle-org {
   position: absolute;
   top: 0;

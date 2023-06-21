@@ -86,3 +86,15 @@ html:not(.dark) .shiki-dark {
 .prose :where(:not(pre) > code):not(:where(.not-prose,.not-prose *))::before, .prose :where(:not(pre) > code):not(:where(.not-prose,.not-prose *))::after {
   content: '' !important;
 }
+
+// 引用
+blockquote {
+  padding: 0.5em 1em;
+  margin: 2em 0 !important;
+  font-style: normal !important;
+  background-color: rgba(255, 255, 255, 0.25);
+  border-left: 4px solid var(--el-color-primary) !important;
+  border-radius: 8px;
+  box-shadow: rgba(142, 142, 142, 0.25) 0 6px 15px 0;
+  backdrop-filter: blur(6px);
+}
