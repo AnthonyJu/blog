@@ -53,7 +53,7 @@ const cssCode = computed(() => {
 const { copy, copied } = useClipboard({ source: cssCode })
 
 watch(copied, (val) => {
-  if (val) ElMessage({ message: '复制成功', type: 'success', duration: 0 })
+  if (val) ElMessage.success('复制成功')
 })
 </script>
 
