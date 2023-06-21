@@ -2,7 +2,7 @@
   <div relative pb-70px pt-50px>
     <div class="circle-org" />
     <div class="circle-blue" />
-    <div :key="cssCode" m-auto h-180px w-300px :style="cssCode" />
+    <div :key="cssCode" m-auto h-180px w-300px flex-center :style="cssCode">Matted Glass</div>
   </div>
 
   <div>

@@ -74,10 +74,10 @@ html:not(.dark) .shiki-dark {
 }
 
 // 行内代码
-.prose :where(pre,code):not(:where(.not-prose,.not-prose *)) {
+.prose :where(:not(pre) > code):not(:where(.not-prose,.not-prose *)) {
   padding: 2px 6px;
   margin: 0 4px;
-  font-family: 'none' !important;
+  font-family: 'DM Mono', monospace !important;
   font-weight: 500 !important;
   background: var(--line-code-bg) !important;
   border-radius: 6px;
