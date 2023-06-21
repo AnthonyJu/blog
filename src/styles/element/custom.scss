@@ -1,3 +1,6 @@
 .el-message {
-  --el-message-bg-color: #fff;
+  --el-message-bg-color: var(--bg-color-opacity) !important;
+
+  border: none !important;
+  box-shadow: 0 2px 6px 0 var(--shadow-color)  !important;
 }

@@ -1,27 +1,36 @@
 <template>
-  <div relative py-50px>
+  <div relative pb-70px pt-50px>
     <div class="circle-org" />
     <div class="circle-blue" />
-    <div :key="cssCode" m-auto h-180px w-300px :style="cssCode.replaceAll('<br />', '')" />
+    <div :key="cssCode" m-auto h-180px w-300px :style="cssCode" />
   </div>
 
-  <div mb-20px>
-    其次是不同场景下需要的毛玻璃效果也不一样，每次都需要去一点一点的调试代码，
-    这样很麻烦，所以我把这些效果都封装成了一个功能组件，只需要对某些固定的参数进行修改就可以了。
+  <div>
+    不同场景下需要的效果也不一样🧐，每次都需要去一点一点的调试代码，这样很麻烦😪，
+    所以我把这些效果封装成了一个功能组件，只需要对某些固定的参数进行修改，再直接拷贝代码就可以了😊。
   </div>
 
   <el-row :gutter="20">
-    <el-col :span="12">
-      <div>圆角</div>
-      <el-slider v-model="radius" />
-      <div mt-8px>模糊</div>
-      <el-slider v-model="blur" :max="20" />
-      <div mt-8px>透明</div>
-      <el-slider v-model="opacity" :format-tooltip="(val) => val / 100" />
+    <el-col :span="12" :xs="24">
+      <div class="params-code mt-30px py-16px!">
+        <div>圆角</div>
+        <el-slider v-model="radius" />
+        <div mt-8px>模糊</div>
+        <el-slider v-model="blur" :max="20" />
+        <div mt-8px>透明</div>
+        <el-slider v-model="opacity" :format-tooltip="(val) => val / 100" />
+      </div>
     </el-col>
-    <el-col :span="12">
-      <div mb-8px>代码实现</div>
-      <div v-html="cssCode" />
+    <el-col :span="12" :xs="24">
+      <div class="params-code mt-30px">
+        <div flex-b-c pb-6px>
+          <span text-primary>代码实现</span>
+          <el-button type="primary" link size="default" title="copy" @click="copy(cssCode)">
+            <div i-carbon:copy />
+          </el-button>
+        </div>
+        <div v-html="cssCode.replaceAll(';', ';<br />')" />
+      </div>
     </el-col>
   </el-row>
 </template>
@@ -33,16 +42,31 @@ const opacity = ref(25)
 
 const cssCode = computed(() => {
   return `
-    border-radius: ${radius.value}px;<br />
-    backdrop-filter: blur(${blur.value}px);<br />
-    box-shadow: rgba(142, 142, 142, ${opacity.value / 100}) 0 6px 15px 0;<br />
-    background-color: rgba(255, 255, 255, ${opacity.value / 100});<br />
-    border: 1px solid rgba(255, 255, 255, ${opacity.value / 100});<br />
+    background-color: rgba(255, 255, 255, ${opacity.value / 100});
+    border: 1px solid rgba(255, 255, 255, ${opacity.value / 100});
+    border-radius: ${radius.value}px;
+    box-shadow: rgba(142, 142, 142, ${opacity.value / 100}) 0 6px 15px 0;
+    backdrop-filter: blur(${blur.value}px);
   `
+})
+
+const { copy, copied } = useClipboard({ source: cssCode })
+
+watch(copied, (val) => {
+  if (val) ElMessage({ message: '复制成功', type: 'success', duration: 0 })
 })
 </script>
 
 <style>
+.params-code {
+  padding: 10px 15px;
+  background-color: rgba(255, 255, 255, 0.25);
+  border: 0.625px solid rgba(255, 255, 255, 0.25);
+  border-radius: 25px;
+  box-shadow: rgba(142, 142, 142, 0.25) 0 6px 15px 0;
+  backdrop-filter: blur(6px);
+}
+
 .circle-org {
   position: absolute;
   top: 0;
@@ -57,11 +81,25 @@ const cssCode = computed(() => {
 .circle-blue {
   position: absolute;
   right: 20%;
-  bottom: 5%;
+  bottom: 10%;
   width: 100px;
   height: 100px;
   background: linear-gradient(135deg,#de82ca,#259fac);
   border-radius: 50%;
   animation: bounce-down 8s linear infinite;
+}
+
+@keyframes bounce-down {
+  0% {
+    transform: translateY(-10px);
+  }
+
+  50% {
+    transform: translateY(20px);
+  }
+
+  100% {
+    transform: translateY(-10px);
+  }
 }
 </style>

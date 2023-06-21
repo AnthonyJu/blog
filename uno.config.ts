@@ -18,6 +18,7 @@ export default defineConfig({
     'flex-center-r': 'flex justify-end items-center',
     'flex-col-center': 'flex flex-col justify-center items-center',
     'turn-dark': 'invert-100 hue-rotate-180',
+    'text-primary': 'text-$el-color-primary',
   },
   presets: [
     presetUno(),
