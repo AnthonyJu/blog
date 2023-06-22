@@ -17,19 +17,19 @@
           >
         </div>
 
-        <div class="desc absolute top-0 hidden h-150px flex-center animate-fade-in bg-#00000099 p-10px text-center text-14px text-#fff">
+        <div class="desc absolute top-0 hidden h-150px w-full flex-center animate-fade-in bg-#00000099 p-10px text-center text-14px text-#fff">
           {{ blog.desc }}
         </div>
 
-        <div class="w-full flex-col-center flex-1 justify-around px-10px py-4px">
+        <div class="w-full flex-col-center flex-1 justify-around py-4px">
           <!-- title -->
           <div class="truncate" :title="blog.title">
             {{ blog.title }}
           </div>
 
           <!-- tags -->
-          <div class="w-full flex-center truncate" :title="blog.tags.join(',')">
-            <el-tag v-for="tag in blog.tags" :key="tag" class="mr-5px" round>
+          <div class="w-full flex-center gap-5px truncate" :title="blog.tags.join(',')">
+            <el-tag v-for="tag in blog.tags" :key="tag" round>
               {{ tag }}
             </el-tag>
           </div>

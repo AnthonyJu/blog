@@ -3,15 +3,15 @@ title: 背景毛玻璃效果
 meta:
   - name: description
     content: 在网页开发过程中，些许的背景毛玻璃效果，会让页面看起来更加的高级一些。
-  - keywords: 背景, css, 毛玻璃
+  - keywords: MattedGlass, CSS, Blur
 ---
 
 <route lang="yaml">
 meta:
   title: 背景毛玻璃效果
   desc: 在网页开发过程中，些许的背景毛玻璃效果，会让页面看起来更加的高级一些。
-  tags: [背景, css, 毛玻璃]
-  date: 2023-06-11 22:28:56
+  tags: [MattedGlass, CSS, Blur]
+  date: 2023-06-12 22:28:56
 </route>
 
 # 背景毛玻璃效果
