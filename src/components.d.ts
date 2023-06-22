@@ -7,7 +7,6 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
-    CounterApp: typeof import('./components/CounterApp.vue')['default']
     ElBacktop: typeof import('element-plus/lib')['ElBacktop']
     ElButton: typeof import('element-plus/lib')['ElButton']
     ElCard: typeof import('element-plus/lib')['ElCard']
@@ -24,6 +23,5 @@ declare module 'vue' {
     Pagination: typeof import('./components/Pagination.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
-    Weather: typeof import('./components/Weather.vue')['default']
   }
 }

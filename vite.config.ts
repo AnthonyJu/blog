@@ -148,7 +148,9 @@ export default defineConfig({
     }),
 
     // https://github.com/webfansplz/vite-plugin-vue-devtools
-    VueDevTools(),
+    VueDevTools({
+      appendTo: 'scripts/index.ts',
+    }),
   ],
 
   // https://github.com/antfu/vite-ssg

@@ -80,7 +80,7 @@ const blogs = computed(() => {
 
 // 获取图片
 function getImg(path: string) {
-  return new URL(`/src/assets/${path.replace('/', '')}/poster.png`, import.meta.url).href
+  return new URL(`/src/pages/${path.replace('/', '')}/poster.png`, import.meta.url).href
 }
 </script>
 
