@@ -12,7 +12,7 @@
 
   <el-row :gutter="20">
     <el-col :span="12" :xs="24">
-      <div class="bg-box mt-30px py-16px!">
+      <div class="blog-box mt-30px py-16px">
         <div>圆角</div>
         <el-slider v-model="radius" />
         <div mt-8px>模糊</div>
@@ -22,7 +22,7 @@
       </div>
     </el-col>
     <el-col :span="12" :xs="24">
-      <div class="bg-box mt-30px">
+      <div class="blog-box mt-30px px-15px py-10px">
         <div flex-b-c pb-6px>
           <span text-primary>代码实现</span>
           <el-button type="primary" link size="default" title="copy" @click="copy(cssCode)">

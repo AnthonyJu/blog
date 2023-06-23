@@ -1,5 +1,5 @@
 <template>
-  <el-carousel class="bg-box rounded-12px border-none p-0">
+  <el-carousel class="blog-box rounded-12px border-none">
     <el-carousel-item
       v-for="index in 4"
       :key="index"

@@ -24,6 +24,12 @@ html:not(.dark) .shiki-dark {
   display: none;
 }
 
+// 分割线
+.prose hr {
+  --un-prose-hr: #75b6d633;
+}
+
+// 表格
 .prose th {
   background-color: #75b6d655;
 }
@@ -49,6 +55,7 @@ html:not(.dark) .shiki-dark {
   background-color: #759dd633;
 }
 
+// 标题
 .prose h1 {
   font-size: 1.6em;
 }

@@ -5,14 +5,14 @@ title: HTML5新特性
 <route lang="yaml">
 meta:
   title: HTML5 新特性
-  tags: [HTML5]
+  tags: [HTML5, Feature]
   date: 2023-06-06 23:17:56
 </route>
 
 # HTML5新特性
 
 ## 1、语义化标签
- 
+
 html5语义标签，可以使开发者更方便清晰构建页面的布局
 
 | 标签      | 描述                               |
@@ -123,7 +123,7 @@ canvas是HTML5新增的，一个可以使用脚本(通常为JavaScript) 在其�
 - SVG是可伸缩的
 - SVG图像可在任何的分辨率下被高质量的打印
 - SVG可在图像质量不下降的情况下被放大
- 
+
 
 ### SVG与Canvas区别
 

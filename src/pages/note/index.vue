@@ -88,6 +88,10 @@ const noteTypes = ref<NoteType[]>([
     icon: 'i-vscode-icons:file-type-light-shaderlab',
     darkIcon: 'i-vscode-icons:file-type-shaderlab',
   },
+  {
+    name: 'Markdown',
+    icon: 'i-vscode-icons:file-type-markdown',
+  },
 ])
 
 const allNotes = pages.filter(page => page.path.startsWith('/note/')).map((page) => {
