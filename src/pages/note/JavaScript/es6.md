@@ -1137,7 +1137,7 @@ proxy.push(4)
 
 - **回调地狱，其实就是回调函数嵌套过多导致的**
 
-![回调地狱](@/assets/note/javascript/回调地狱.jpeg)
+![回调地狱](@/assets/note/javascript/callback-hell.png)
 
 - 当代码成为这个结构以后，已经没有维护的可能了
 
