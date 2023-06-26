@@ -7,6 +7,16 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
+    ElBacktop: typeof import('element-plus/lib')['ElBacktop']
+    ElButton: typeof import('element-plus/lib')['ElButton']
+    ElCarousel: typeof import('element-plus/lib')['ElCarousel']
+    ElCarouselItem: typeof import('element-plus/lib')['ElCarouselItem']
+    ElCol: typeof import('element-plus/lib')['ElCol']
+    ElConfigProvider: typeof import('element-plus/lib')['ElConfigProvider']
+    ElPagination: typeof import('element-plus/lib')['ElPagination']
+    ElRow: typeof import('element-plus/lib')['ElRow']
+    ElSlider: typeof import('element-plus/lib')['ElSlider']
+    ElTag: typeof import('element-plus/lib')['ElTag']
     Pagination: typeof import('./components/Pagination.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']

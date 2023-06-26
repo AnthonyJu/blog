@@ -6,7 +6,7 @@
         <component :is="Component" />
       </transition>
     </router-view>
-    <el-backtop target="#app" />
+    <el-backtop />
   </article>
   <LayoutFooter />
   <Background />
