@@ -14,6 +14,7 @@ declare module 'vue' {
     ElCollapse: typeof import('element-plus/lib')['ElCollapse']
     ElCollapseItem: typeof import('element-plus/lib')['ElCollapseItem']
     ElConfigProvider: typeof import('element-plus/lib')['ElConfigProvider']
+    ElPagination: typeof import('element-plus/lib')['ElPagination']
     ElRow: typeof import('element-plus/lib')['ElRow']
     ElTag: typeof import('element-plus/lib')['ElTag']
     Pagination: typeof import('./components/Pagination.vue')['default']
