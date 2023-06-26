@@ -23,7 +23,7 @@
             </div>
 
             <!-- tags -->
-            <div class="truncate text-12px" :title="note.tags.join('，')">
+            <div class="truncate text-12px" :title="note.tags?.join('，')">
               <el-tag v-for="tag in note.tags" :key="tag" class="mr-5px">
                 {{ tag }}
               </el-tag>

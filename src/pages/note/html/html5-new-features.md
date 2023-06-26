@@ -5,7 +5,7 @@ title: HTML5新特性
 <route lang="yaml">
 meta:
   title: HTML5 新特性
-  tags: [HTML5, Feature]
+  tags: [HTML5, New Feature]
   date: 2023-06-06 23:17:56
 </route>
 

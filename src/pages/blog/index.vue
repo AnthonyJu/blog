@@ -28,7 +28,7 @@
           </div>
 
           <!-- tags -->
-          <div class="w-full flex-center gap-5px truncate" :title="blog.tags.join(',')">
+          <div class="w-full flex-center gap-5px truncate" :title="blog.tags?.join(',')">
             <el-tag v-for="tag in blog.tags" :key="tag" round>
               {{ tag }}
             </el-tag>
