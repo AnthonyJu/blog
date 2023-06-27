@@ -15,7 +15,7 @@ title: 关于我
 - 🏢 Working in a certain Qingdao Technology Co., Ltd. from 2020 to now
 
 ### My hobbies ✨
-- ⛺️ Camp
+- 🏕️ Camp
 - 💻 Coding
 - 🍗 Foodie
 - 🎮 Play games
@@ -35,9 +35,9 @@ title: 关于我
 - Github: [AnthonyJu](https://github.com/AnthonyJu)
 - WeChat: <span class="group" underline cursor-pointer>
             hwy961117
-            <img 
-              group-hover:block 
+            <img
+              group-hover:block
               hidden w-300px fixed inset-0 m-auto
-              src="@/assets/wechat.png" 
+              src="@/assets/wechat.png"
             >
           </span>

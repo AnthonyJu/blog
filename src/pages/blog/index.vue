@@ -49,6 +49,7 @@
 </template>
 
 <script setup lang='ts'>
+import PosterPng from '@/assets/avatar.png'
 import type { BlogInfo } from '@/types/index'
 import pages from '~pages'
 
@@ -80,7 +81,8 @@ const blogs = computed(() => {
 
 // 获取图片
 function getImg(path: string) {
-  return new URL(`/src/pages/${path.replace('/', '')}/poster.png`, import.meta.url).href
+  const url = new URL(`/src/pages/${path.replace('/', '')}/poster.png`, import.meta.url).href
+  return url.endsWith('poster.png') ? url : PosterPng
 }
 </script>
 

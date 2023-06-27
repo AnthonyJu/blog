@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite-ssg build",
+    "create:blog": "plop --plopfile ./plop/config.js",
     "lint": "eslint . --ext .ts,.vue",
     "lint:style": "stylelint --fix \"src/**/*.{vue,css,scss}\"",
     "preview": "vite preview",
@@ -41,6 +42,7 @@
     "lint-staged": "^13.2.2",
     "markdown-it-link-attributes": "^4.0.1",
     "markdown-it-shiki": "^0.9.0",
+    "plop": "^3.1.2",
     "pnpm": "^8.6.3",
     "sass": "^1.63.4",
     "shiki": "^0.14.2",
