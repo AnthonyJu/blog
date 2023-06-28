@@ -9,7 +9,7 @@ meta:
 meta:
   title: 第一篇博客
   desc: 🥳 历经许久，终于亲手搭建完成了，从今天开始就正式开始记录啦。
-  tags: [Welcome, FirstBlog]
+  keywords: [Welcome, FirstBlog]
   date: 2023-06-10 17:24:56
 </route>
 

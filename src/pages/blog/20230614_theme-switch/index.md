@@ -10,7 +10,7 @@ meta:
 meta:
   title: 炫酷主题切换
   desc: 在切换主题的时候，通过View Transitions API，实现炫酷的主题切换效果。
-  tags: [DarkMode, View Transitions]
+  keywords: [DarkMode, View Transitions]
   date: 2023-06-14 20:15:26
 </route>
 

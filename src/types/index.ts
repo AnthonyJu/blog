@@ -1,7 +1,7 @@
 export interface BlogInfo {
   title: string
   desc: string
-  tags: string[]
+  keywords: string[]
   path: string
   date: string
 }

@@ -10,7 +10,7 @@ meta:
 meta:
   title: 背景毛玻璃效果
   desc: 在网页开发过程中，些许的背景毛玻璃效果，会让页面看起来更加的高级一些。
-  tags: [MattedGlass, CSS, Blur]
+  keywords: [MattedGlass, CSS, Blur]
   date: 2023-06-12 22:28:56
 </route>
 
