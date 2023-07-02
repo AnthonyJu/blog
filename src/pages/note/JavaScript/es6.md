@@ -260,7 +260,7 @@ console.log(myName.endsWith('g')) // true
 
 repeat()方法返回一个新字符串,表示将原字符串重复n次。
 
-````javascript
+```javascript
 const myName = 'kerwin'
 
 console.log(myName.repeat(3)) // kerwinkerwinkerwin
@@ -269,7 +269,7 @@ console.log(myName.repeat(0)) // ""
 console.log(myName.repeat(3.5)) // kerwinkerwinkerwin
 
 console.log(myName.repeat('3'))// kerwinkerwinkerwin
-````
+```
 
 ## 6.数值扩展
 

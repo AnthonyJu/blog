@@ -35,7 +35,7 @@
     "@types/nprogress": "^0.2.0",
     "@unocss/eslint-config": "^0.53.4",
     "@vitejs/plugin-vue": "^4.2.3",
-    "critters": "^0.0.19",
+    "critters": "^0.0.16",
     "cross-env": "^7.0.3",
     "eslint": "^8.44.0",
     "https-localhost": "^4.7.1",

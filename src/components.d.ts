@@ -15,7 +15,6 @@ declare module 'vue' {
     ElCollapse: typeof import('element-plus/lib')['ElCollapse']
     ElCollapseItem: typeof import('element-plus/lib')['ElCollapseItem']
     ElConfigProvider: typeof import('element-plus/lib')['ElConfigProvider']
-    ElImage: typeof import('element-plus/lib')['ElImage']
     ElPagination: typeof import('element-plus/lib')['ElPagination']
     ElRow: typeof import('element-plus/lib')['ElRow']
     ElSlider: typeof import('element-plus/lib')['ElSlider']
