@@ -4,7 +4,11 @@
       v-for="index in 4"
       :key="index"
     >
-      <img :key="index" class="banner" :src="`https://api.yimian.xyz/img?type=moe&size=1920x1080&index=${index}`">
+      <img
+        :key="index"
+        class="banner"
+        :src="`https://api.yimian.xyz/img?type=moe&size=1920x1080&index=${index}`"
+      >
     </el-carousel-item>
   </el-carousel>
 </template>

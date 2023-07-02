@@ -1,7 +1,11 @@
 <template>
   <div>
     <div v-for="(item, index) in roastList" :key="item.id" mb-40px flex>
-      <img class="h-64px w-64px rounded-50% shadow" border="~ gray-500" src="@/assets/avatar.png" alt="AnthonyJu">
+      <img
+        class="h-64px w-64px rounded-50% shadow"
+        border="~ gray-500"
+        src="@/assets/avatar.png" alt="AnthonyJu"
+      >
       <div
         class="roast-content ml-20px max-w-70% flex-col rounded px-8px py-4px text-#fff"
         :style="{ 'background': colorList[index % 5], '--before-color': colorList[index % 5] }"

@@ -45,7 +45,8 @@
           <span /><span /><span />
           <nav
             v-show="showBurger"
-            class="absolute right-0px top-30px w-80px flex-col-center gap-8px rounded bg-$bg-color py-10px"
+            class="w-80px flex-col-center gap-8px rounded bg-$bg-color py-10px"
+            position="absolute right-0px top-30px"
             shadow="~ dark:shadow-gray-600"
           >
             <router-link
@@ -330,7 +331,9 @@ function delayCloseHandle() {
     transform: translate3d(-7px, 0, 0);
   }
 
-  input:checked + .toggle .star--4, input:checked + .toggle .star--5, input:checked + .toggle .star--6 {
+  input:checked + .toggle .star--4,
+  input:checked + .toggle .star--5,
+  input:checked + .toggle .star--6 {
     opacity: 1;
     transform: translate3d(0, 0, 0);
   }

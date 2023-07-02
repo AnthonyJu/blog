@@ -6,7 +6,10 @@
         <el-collapse-item v-for="item in noteTypes" :key="item.name">
           <!-- collapse title -->
           <template #title>
-            <span :class="isDark ? item.darkIcon ?? item.icon : item.icon" ml-20px mr-12px text-18px />
+            <span
+              :class="isDark ? item.darkIcon ?? item.icon : item.icon"
+              class="ml-20px mr-12px text-18px"
+            />
             {{ item.name }}
           </template>
 

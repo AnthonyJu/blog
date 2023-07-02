@@ -3,7 +3,8 @@
     <div class="grid w-full gap-20px" :class="`grid-cols-${gridNum}`">
       <div
         v-for="blog in blogs" :key="blog.title"
-        class="blog relative h-250px flex-col-center overflow-hidden rounded-3 bg-#ffffff99 dark:bg-#00000099"
+        class="blog relative h-250px flex-col-center overflow-hidden rounded-3"
+        bg="#ffffff99 dark:#00000099"
         cursor="pointer"
         @click="$router.push(blog.path)"
       >
@@ -17,7 +18,10 @@
           >
         </div>
 
-        <div class="desc absolute top-0 hidden h-150px w-full flex-center animate-fade-in bg-#00000099 p-10px text-center text-14px text-#fff">
+        <div
+          class="desc absolute top-0 hidden h-150px flex-center animate-fade-in bg-#000000aa p-10px"
+          text="center #fff 14px"
+        >
           {{ blog.desc }}
         </div>
 

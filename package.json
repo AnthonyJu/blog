@@ -16,7 +16,7 @@
     "sizecheck": "npx vite-bundle-visualizer"
   },
   "dependencies": {
-    "@unhead/vue": "^1.1.28",
+    "@unhead/vue": "^1.1.29",
     "@unocss/reset": "^0.53.4",
     "@vueuse/core": "^10.2.1",
     "@vueuse/head": "^1.1.26",
@@ -29,7 +29,7 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.39.6",
-    "@anthony-ju/eslint-config": "^0.1.2",
+    "@anthony-ju/eslint-config": "^0.1.4",
     "@anthony-ju/stylelint-config": "^0.1.1",
     "@types/markdown-it-link-attributes": "^3.0.1",
     "@types/nprogress": "^0.2.0",
