@@ -11,7 +11,7 @@ export default function (
   const minute = date.getMinutes()
   const second = date.getSeconds()
 
-  const today = `${year}${month < 10 ? `0${month}` : month}${day}`
+  const today = `${year}${month < 10 ? `0${month}` : month}${day < 10 ? `0${day}` : day}`
   plop.setHelper('date', () => {
     return `${year}-${month < 10 ? `0${month}` : month}-${
       day < 10 ? `0${day}` : day
