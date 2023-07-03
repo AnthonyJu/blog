@@ -9,6 +9,10 @@
   box-sizing: border-box;
 }
 
+body {
+  cursor: url('../assets/cursor.cur'), auto;
+}
+
 body,
 #app {
   padding: 0;

@@ -1,13 +1,15 @@
 <template>
   <div class="box flex">
-    <div
+    <routerLink
       v-for="item in statistics"
       :key="item.name"
+      :to="item.path"
+      hover="text-$text-hover"
       class="my-10px flex-col-center flex-1"
     >
       <span text-18px>{{ item.count }}</span>
       <span>{{ item.name }}</span>
-    </div>
+    </routerLink>
   </div>
 
   <!-- 最新的5条toast -->
@@ -35,14 +37,17 @@ import roastList from '@/pages/roast/roastList'
 const statistics = [
   {
     name: 'blogs',
+    path: '/blog',
     count: pages.filter(page => page.path.startsWith('/blog/')).length,
   },
   {
     name: 'notes',
+    path: '/note',
     count: pages.filter(page => page.path.startsWith('/note/')).length,
   },
   {
     name: 'roasts',
+    path: '/roast',
     count: roastList.length,
   },
 ]
@@ -81,7 +86,7 @@ onMounted(() => {
   box-shadow: rgba(142, 142, 142, 0.3) 0 0 5px 0;
   backdrop-filter: blur(5px);
 
-  div {
+  a {
     border-right: 1px solid rgba(255, 255, 255, 0.4);
 
     &:last-child {
