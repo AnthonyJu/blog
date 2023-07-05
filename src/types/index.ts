@@ -3,6 +3,7 @@ export interface BlogInfo {
   desc: string
   keywords: string[]
   path: string
+  poster: string
   date: string
 }
 

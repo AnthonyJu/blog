@@ -13,8 +13,9 @@
           <img
             class="full transition duration-1000 ease-in-out"
             object="cover"
-            :src="getImg(blog.path)"
+            :src="blog.poster"
             :alt="blog.title"
+            @error="blog.poster = PosterPng"
           >
         </div>
 
@@ -65,9 +66,6 @@ const gridNum = computed(() => {
   else return 3
 })
 
-// 当前页
-const current = ref(1)
-
 // 取出所有以 /blog/ 开头的bole路由
 const allBlogs = pages.filter(page => page.path.startsWith('/blog/')).map((page) => {
   return {
@@ -76,18 +74,19 @@ const allBlogs = pages.filter(page => page.path.startsWith('/blog/')).map((page)
   }
 }) as any as BlogInfo[]
 
-// 每页15条
-const blogs = computed(() => {
-  const start = (current.value - 1) * 15
-  const end = current.value * 15
-  return allBlogs.slice(start, end)
-})
+// 当前页
+const current = ref(1)
+const blogs = ref<BlogInfo[]>()
 
-// 获取图片
-function getImg(path: string) {
-  const url = new URL(`/src/pages/${path.replace('/', '')}/poster.png`, import.meta.url).href
-  return url.endsWith('poster.png') ? url : PosterPng
-}
+// 监听页码变化
+watchEffect(() => {
+  blogs.value = allBlogs.slice((current.value - 1) * 15, current.value * 15)
+  // 获取图片
+  blogs.value.forEach(async (blog) => {
+    const url = await import(`./${blog.path.replace('/blog/', '')}/poster.png`)
+    blog.poster = url.default
+  })
+})
 </script>
 
 <style lang='scss' scoped>

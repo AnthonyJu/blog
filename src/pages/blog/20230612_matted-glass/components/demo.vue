@@ -12,7 +12,7 @@
 
   <el-row :gutter="20">
     <el-col :span="12" :xs="24">
-      <div class="blog-box mt-30px py-16px">
+      <div class="blog-box mt-30px p-16px">
         <div>圆角</div>
         <el-slider v-model="radius" />
         <div mt-8px>模糊</div>
