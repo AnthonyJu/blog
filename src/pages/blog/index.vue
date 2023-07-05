@@ -15,7 +15,6 @@
             object="cover"
             :src="blog.poster"
             :alt="blog.title"
-            @error="blog.poster = PosterPng"
           >
         </div>
 
@@ -66,16 +65,17 @@ const gridNum = computed(() => {
   else return 3
 })
 
+// 获取所有博客的封面图
+const allPoster = import.meta.glob<{ default: string }>('./**/poster.png', { eager: true })
+
 // 取出所有以 /blog/ 开头的bole路由
 const allBlogs = pages.filter(page => page.path.startsWith('/blog/')).map((page) => {
   return {
     ...page.meta,
     path: page.path,
+    poster: allPoster[`./${page.path.replace('/blog/', '')}/poster.png`]?.default ?? PosterPng,
   }
 }) as any as BlogInfo[]
-
-// 获取所有博客的封面图
-const allPoster = import.meta.glob<{ default: string }>('./**/poster.png', { eager: true })
 
 // 当前页
 const current = ref(1)
@@ -84,10 +84,10 @@ const blogs = ref<BlogInfo[]>()
 // 监听页码变化
 watchEffect(() => {
   blogs.value = allBlogs.slice((current.value - 1) * 15, current.value * 15)
-  // 获取图片
-  blogs.value.forEach((blog) => {
-    blog.poster = allPoster[`./${blog.path.replace('/blog/', '')}/poster.png`].default
-  })
+  // // 获取图片
+  // blogs.value.forEach((blog) => {
+  //   blog.poster = allPoster[`./${blog.path.replace('/blog/', '')}/poster.png`].default
+  // })
 })
 </script>
 
