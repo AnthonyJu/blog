@@ -53,7 +53,7 @@
 </template>
 
 <script setup lang='ts'>
-import PosterPng from '@/assets/avatar.png'
+import AvatarPng from '@/assets/avatar.png'
 import type { BlogInfo } from '@/types/index'
 import pages from '~pages'
 
@@ -70,25 +70,19 @@ const allPoster = import.meta.glob<{ default: string }>('./**/poster.png', { eag
 
 // 取出所有以 /blog/ 开头的bole路由
 const allBlogs = pages.filter(page => page.path.startsWith('/blog/')).map((page) => {
+  const posterPath = `./${page.path.replace('/blog/', '')}/poster.png`
+  // eslint-disable-next-line no-console
+  console.log(allPoster[posterPath]?.default)
   return {
     ...page.meta,
     path: page.path,
-    poster: allPoster[`./${page.path.replace('/blog/', '')}/poster.png`]?.default ?? PosterPng,
+    poster: allPoster[posterPath]?.default ?? AvatarPng,
   }
 }) as any as BlogInfo[]
 
 // 当前页
 const current = ref(1)
-const blogs = ref<BlogInfo[]>()
-
-// 监听页码变化
-watchEffect(() => {
-  blogs.value = allBlogs.slice((current.value - 1) * 15, current.value * 15)
-  // // 获取图片
-  // blogs.value.forEach((blog) => {
-  //   blog.poster = allPoster[`./${blog.path.replace('/blog/', '')}/poster.png`].default
-  // })
-})
+const blogs = computed(() => allBlogs.slice((current.value - 1) * 15, current.value * 15))
 </script>
 
 <style lang='scss' scoped>
