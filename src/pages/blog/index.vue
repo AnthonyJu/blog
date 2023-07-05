@@ -72,7 +72,7 @@ const allPoster = import.meta.glob<{ default: string }>('./**/poster.png', { eag
 const allBlogs = pages.filter(page => page.path.startsWith('/blog/')).map((page) => {
   const posterPath = `./${page.path.replace('/blog/', '')}/poster.png`
   // eslint-disable-next-line no-console
-  console.log(allPoster[posterPath]?.default)
+  console.log(posterPath, allPoster[posterPath]?.default)
   return {
     ...page.meta,
     path: page.path,
