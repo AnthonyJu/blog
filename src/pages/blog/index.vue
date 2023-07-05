@@ -71,8 +71,6 @@ const allPoster = import.meta.glob<{ default: string }>('./**/poster.png', { eag
 // 取出所有以 /blog/ 开头的bole路由
 const allBlogs = pages.filter(page => page.path.startsWith('/blog/')).map((page) => {
   const posterPath = `./${page.path.replace('/blog/', '')}/poster.png`
-  // eslint-disable-next-line no-console
-  console.log(posterPath, allPoster[posterPath]?.default)
   return {
     ...page.meta,
     path: page.path,
