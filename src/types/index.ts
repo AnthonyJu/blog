@@ -1,15 +1,6 @@
-export interface BlogInfo {
-  title: string
-  desc: string
-  keywords: string[]
-  path: string
-  poster: string
-  date: string
-}
-
 export interface Note {
   title: string
-  tags: string[]
+  keywords: string[]
   path: string
   date: string
 }
@@ -19,4 +10,14 @@ export interface NoteType {
   icon: string
   darkIcon?: string
   notes?: Note[]
+}
+
+export interface BlogInfo extends Note {
+  desc: string
+  poster: string
+}
+
+export interface Article extends Note {
+  desc?: string
+  poster?: string
 }

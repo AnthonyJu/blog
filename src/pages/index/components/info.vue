@@ -1,10 +1,11 @@
 <template>
   <div relative flex-center>
     <img
-      class="avatar max-h-210px rounded-50%"
+      class="avatar max-h-210px cursor-pointer rounded-50%"
       border="~ gray-500"
       src="@/assets/avatar.png"
       alt="AnthonyJu"
+      @click="$router.push('/about')"
     >
 
     <!-- Focusing -->

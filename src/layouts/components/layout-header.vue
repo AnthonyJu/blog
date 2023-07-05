@@ -11,20 +11,29 @@
             v-for="item in navList"
             :key="item.path"
             :to="item.path"
+            active-class="text-$text-hover"
             hover="text-$text-hover"
           >
             {{ item.name }}
           </router-link>
         </nav>
 
+        <!-- Search -->
+        <router-link
+          class="ml-20px cursor-pointer text-18px"
+          hover="text-$text-hover"
+          to="/search"
+          i-iconamoon-search
+        />
+
         <!-- Github -->
-        <a href="https://github.com/AnthonyJu/blog" target="_blank">
-          <div
-            class="ml-20px cursor-pointer text-18px"
-            hover="text-$text-hover"
-            i-carbon-logo-github
-          />
-        </a>
+        <a
+          class="ml-20px cursor-pointer text-20px"
+          hover="text-$text-hover"
+          href="https://github.com/AnthonyJu/blog"
+          target="_blank"
+          i-carbon-logo-github
+        />
 
         <!-- Theme -->
         <div class="ml-20px h-20px w-36px overflow-hidden">

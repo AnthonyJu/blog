@@ -25,10 +25,10 @@
               {{ index + 1 }}、{{ note.title }}
             </div>
 
-            <!-- tags -->
-            <div class="truncate text-12px" :title="note.tags?.join('，')">
-              <el-tag v-for="tag in note.tags" :key="tag" class="mr-5px">
-                {{ tag }}
+            <!-- keywords -->
+            <div class="truncate text-12px" :title="note.keywords?.join('，')">
+              <el-tag v-for="keyword in note.keywords" :key="keyword" class="mr-5px">
+                {{ keyword }}
               </el-tag>
             </div>
           </div>

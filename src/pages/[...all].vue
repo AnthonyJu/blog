@@ -1,5 +1,5 @@
 <template>
-  <div class="h-[calc(100%-60px)] w-full flex-col-center">
+  <div class="min-h-100vh flex-col-center">
     <img class="w-400px" src="@/assets/404.png">
     <h3 class="m-0">
       访问的资源不存在

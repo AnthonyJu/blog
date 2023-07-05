@@ -5,7 +5,7 @@ title: JS基础知识
 <route lang="yaml">
 meta:
   title: JS基础知识
-  tags: [JS, Basic]
+  keywords: [JS, Basic]
   date: 2023-06-18 10:10:28
 </route>
 

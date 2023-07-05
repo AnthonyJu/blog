@@ -5,7 +5,7 @@ title: git commit 提交规范
 <route lang="yaml">
 meta:
   title: git commit 提交规范
-  tags: [git commit, Specification]
+  keywords: [Git commit, Specification]
   date: 2023-06-16 22:10:28
 </route>
 

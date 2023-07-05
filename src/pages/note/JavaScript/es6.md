@@ -5,7 +5,7 @@ title: ES6新特性
 <route lang="yaml">
 meta:
   title: ES6新特性
-  tags: [ES6, New Features]
+  keywords: [ES6, New Features]
   date: 2023-06-18 14:22:19
 </route>
 

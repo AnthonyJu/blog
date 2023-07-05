@@ -5,7 +5,7 @@ title: ES7-ES13新特性
 <route lang="yaml">
 meta:
   title: ES7-ES13新特性
-  tags: [ES6-ES13, New Features]
+  keywords: [ES6-ES13, New Features]
   date: 2023-06-18 19:47:21
 </route>
 

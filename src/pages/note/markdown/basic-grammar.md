@@ -5,7 +5,7 @@ title: Markdown 基本语法
 <route lang="yaml">
 meta:
   title: Markdown 基本语法
-  tags: [Markdown, Grammar]
+  keywords: [Markdown, Grammar]
   date: 2023-06-08 21:46:19
 </route>
 
