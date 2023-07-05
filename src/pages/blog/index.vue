@@ -74,6 +74,9 @@ const allBlogs = pages.filter(page => page.path.startsWith('/blog/')).map((page)
   }
 }) as any as BlogInfo[]
 
+// 获取所有博客的封面图
+const allPoster = import.meta.glob<{ default: string }>('./**/poster.png')
+
 // 当前页
 const current = ref(1)
 const blogs = ref<BlogInfo[]>()
@@ -82,9 +85,10 @@ const blogs = ref<BlogInfo[]>()
 watchEffect(() => {
   blogs.value = allBlogs.slice((current.value - 1) * 15, current.value * 15)
   // 获取图片
-  blogs.value.forEach(async (blog) => {
-    const url = await import(`./${blog.path.replace('/blog/', '')}/poster.png`)
-    blog.poster = url.default
+  blogs.value.forEach((blog) => {
+    allPoster[`./${blog.path.replace('/blog/', '')}/poster.png`]().then((url) => {
+      blog.poster = url.default
+    })
   })
 })
 </script>
