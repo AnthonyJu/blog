@@ -10,7 +10,7 @@
     <!-- Focusing -->
     <div
       absolute z-10 flex-center cursor-pointer rounded-18px
-      class="group bottom-8% left-75% bg-$bg-color-opacity px-9px py-6px"
+      class="group bottom-8% left-75% bg-$bg-color-opacity px-10px py-6px"
       cursor="default"
     >
       🎯<span class="hidden w-0 pl-4px text-12px" group-hover="w-56px block">
@@ -27,11 +27,11 @@
   </div>
 
   <!-- Btn -->
-  <div class="btn mb-20px">
+  <a class="btn mb-20px" href="https://github.com/AnthonyJu" target="_blank">
     <strong>Follow Me</strong>
     <div id="container-stars"><div id="stars" /></div>
     <div id="glow"><div class="circle" /><div class="circle" /></div>
-  </div>
+  </a>
 </template>
 
 <script setup lang='ts'>

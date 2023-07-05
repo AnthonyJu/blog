@@ -24,7 +24,7 @@ meta:
 
 > 代码：<a href="/sakura.js" download="sakura.js">点击下载 sakura.js</a>
 
-食用方式：直接引入即可
+食用方式：直接引入即可（默认开启）
 
 ```html
 <script src="/sakura.js"></script>
@@ -36,16 +36,27 @@ meta:
 const SAKURA_NUM = 30
 ```
 
+启用与禁用方式：
+
+```ts
+toggleSakura()
+```
+
 ## 点击时的烟花 🎆
 
 嘎嘎秀有木有😂
 
 > 代码：<a href="/fireworks.js" download="fireworks.js">点击下载 fireworks.js</a>
 
-食用方式：直接引入即可
+食用方式：直接引入即可（默认开启）
 
 ```html
 <script src="/fireworks.js"></script>
+```
+
+启用与禁用方式：
+```ts
+toggleFireworks()
 ```
 
 ## 鼠标 🖱️ 默认光标

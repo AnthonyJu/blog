@@ -21,7 +21,7 @@
             @click="$router.push(note.path)"
           >
             <!-- title -->
-            <div class="flex-1 truncate hover:opacity-75">
+            <div class="flex-1 truncate" hover="text-$text-hover">
               {{ index + 1 }}、{{ note.title }}
             </div>
 

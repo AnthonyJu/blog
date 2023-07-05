@@ -28,7 +28,7 @@ html.dark {
 }
 
 // 隐藏滚动条
-::-webkit-scrollbar {
+body::-webkit-scrollbar {
   display: none;
 }
 

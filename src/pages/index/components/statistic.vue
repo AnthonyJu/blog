@@ -13,7 +13,10 @@
   </div>
 
   <!-- 最新的5条toast -->
-  <div class="box mt-20px cursor-pointer px-8px" @click="$router.push('/roast')">
+  <div
+    class="box mt-20px cursor-pointer px-8px"
+    @click="$router.push('/roast')"
+  >
     <p
       v-for="item in roastList.slice(0, 5)"
       :key="item.date"
