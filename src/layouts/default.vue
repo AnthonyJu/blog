@@ -1,13 +1,14 @@
 <template>
   <LayoutHeader :class="{ filterClass: y > 0 }" />
   <article class="m-auto p-15px" :class="articleWidth" :style="{ minHeight }">
-    <router-view v-slot="{ Component }">
-      <transition name="fade" mode="out-in">
-        <component :is="Component" />
-      </transition>
-    </router-view>
-    <el-backtop />
+    <transition name="fade" mode="out-in">
+      <div :key="route.path">
+        <router-view />
+        <LayoutAside v-if="showAside" />
+      </div>
+    </transition>
   </article>
+  <el-backtop />
   <LayoutFooter />
   <Background />
 </template>
@@ -16,10 +17,11 @@
 import Background from './components/background.vue'
 import LayoutHeader from './components/layout-header.vue'
 import LayoutFooter from './components/layout-footer.vue'
+import LayoutAside from './components/layout-aside.vue'
 
 const { y } = useWindowScroll()
 
-const { height } = useWindowSize()
+const { height, width } = useWindowSize()
 const minHeight = computed(() => `${height.value - 60 - 60}px`)
 
 const route = useRoute()
@@ -34,6 +36,11 @@ watch(() => route.path, () => {
 function setArticleWidth() {
   articleWidth.value = route.path === '/' ? 'max-w-100ch' : 'max-w-70ch'
 }
+
+const showAside = computed(() => {
+  const isBlogOrNote = route.path.startsWith('/blog/') || route.path.startsWith('/note/')
+  return isBlogOrNote && width.value >= 1280
+})
 </script>
 
 <style lang="scss" scoped>

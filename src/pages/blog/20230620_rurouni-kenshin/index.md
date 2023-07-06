@@ -28,11 +28,11 @@ meta:
 
 > 原文：https://blog.vuejs.org/posts/vue-3-3
 
-## 一、`<script setup>` + TypeScript DX改进
+## 一、`<script setup>` + TS DX改进
 
-### 1.宏中的导入类型和复杂类型支持
+### 1. 支持类型导入和复杂类型
 
-以前，和的类型参数位置中使用的类型仅限于局部类型，并且仅支持类型文本和接口。这是因为Vue需要能够分析props接口上的属性，以便生成相应的运行时选项 `defineProps` `defineEmits` 。
+以前，`defineProps` `defineEmits` 的类型参数位置中使用的类型仅限于局部类型，并且仅支持类型文本和接口。这是因为Vue需要能够分析props接口上的属性，以便生成相应的运行时选项。
 
 这个限制现在在3.3中得到了解决。编译器现在可以解析导入的类型，并支持有限的复杂类型集：
 
@@ -45,13 +45,13 @@ defineProps<Props & { extraProp?: string }>()
 </script>
 ```
 
-请注意，复杂类型支持是基于AST的，因此不是100%全面的。一些需要实际类型分析的复杂类型，例如不支持条件类型。可以对单个props的类型使用条件类型，但不能对整个props对象使用条件类型。
+请注意，复杂类型支持是基于`AST`的，因此不是100%全面的。一些需要实际类型分析的复杂类型，例如不支持条件类型。可以对单个props的类型使用条件类型，但不能对整个props对象使用条件类型。
 
 > 详细信息：[PR#8083](https://github.com/vuejs/core/pull/8083)
 
-### Generic Components  通用组件
+### 2. 泛型组件
 
-使用的组件现在可以通过属性接受泛型类型参数： `<script setup>` `generic`
+使用 `<script setup>` 的组件现在可以通过 `generic` 属性接受泛型类型参数:
 
 ```vue
 <script setup lang="ts" generic="T">
@@ -62,7 +62,7 @@ defineProps<{
 </script>
 ```
 
-值与TypeScript中的参数列表完全相同。例如，可以使用多个参数、约束、默认类型和引用导入的类型： `generic` `<...>` `extends`
+`generic`的值与TypeScript中`<...>之间`的参数列表用法完全相同。例如，您可以使用多个参数、`extend约束`、默认类型和引用导入的类型：
 
 ```vue
 <script setup lang="ts" generic="T extends string | number, U extends Item">
@@ -75,14 +75,14 @@ defineProps<{
 </script>
 ```
 
-此功能以前需要显式选择加入，但现在在最新版本的volar / vue-tsc中默认启用。
+此功能以前需要显式选择加入，但现在在最新版本的`volar/vue-tsc`中默认启用。
 
 > 讨论：[RFC#436](https://github.com/vuejs/rfcs/discussions/436)
 > 相关：[generic defineComponent() - PR#7963](https://github.com/vuejs/core/pull/7963)
 
-### 2.更符合人体工程学 `defineEmits`
+### 3. `defineEmits`
 
-以前，的类型参数仅支持调用签名语法： `defineEmits`
+以前，`defineEmits`的类型参数仅支持调用签名语法：
 
 ```ts
 // 之前
@@ -92,7 +92,7 @@ const emit = defineEmits<{
 }>()
 ```
 
-该类型与的返回类型匹配，但编写起来有点冗长和笨拙。3.3引入了一种更符合人体工程学的声明发射的方式，类型为： `emit`
+该类型与`emit`的返回类型匹配，但编写起来有点冗长和笨拙。3.3引入了一种更符合人体工程学的声明发射的方式，类型为：
 
 ```ts
 // 之后
@@ -105,9 +105,9 @@ const emit = defineEmits<{
 
 仍然支持调用签名语法。
 
-### 3.带 `defineSlots` 的类型插槽
+### 3. defineSlots 设置 slots 类型
 
-新的宏可以用来声明预期的插槽和它们各自的预期插槽属性： `defineSlots`
+新的`defineSlots`宏可以用来声明预期的插槽和它们各自的预期插槽属性：
 
 ```vue
 <script setup lang="ts">
@@ -118,12 +118,19 @@ defineSlots<{
 </script>
 ```
 
-`defineSlots()` 只接受类型参数，不接受运行时参数。类型参数应该是类型文字，其中属性键是插槽名称，值是插槽函数。函数的第一个参数是插槽期望接收的props，其类型将用于模板中的插槽props。的返回值与从`defineSlots` `useSlots`返回的slots对象相同。
+`defineSlots()`只接受一个类型参数，没有运行时参数。类型参数应该是一个类型字面量
+
+  - key 是 slot 名称
+  - value 是 slot 函数
+
+`defineSlots`的返回值与 `useSlots` 返回的 slots 对象相同。
 
 目前的一些限制：
 
 - volar / vue-tsc中尚未实现所需的插槽检查。
-- Slot 函数的返回类型目前是忽略的，是任何类型，但我们可能会在将来利用它进行  slot 内容检查。
+- Slot 函数的返回类型目前是忽略的，是任何类型，但我们可能会在将来利用它进行 slot 内容检查。
+
+除了在`<script setup>`中使用 defineSlots 定义 slots 类型，还能在 `defineComponent` 中的 slots 属性中定义。
 
 也有相应的使用选项。这两个API都没有运行时含义，并且纯粹用作IDE和 `slots` `defineComponent` `vue-tsc`的类型提示。
 
@@ -134,7 +141,7 @@ defineSlots<{
 ### 1. reactive 解构
 
 之前是 Reactivity Transform 提案的一部分（已被废弃），现在已被拆分为单独的功能。
-该功能可以解构的 props 并保持响应性，并提供了一种更符合人体工程学的方式来声明 props 的默认值：
+该功能可以解构 props 并保持响应性，并提供了一种更符合人体工程学的方式来声明 props 的默认值：
 
 ```vue
 <template>
@@ -165,9 +172,10 @@ export default { plugins: [vue({ propsDestructure: true })] }
 
 ### 2. defineModel
 
-以前，对于支持双向绑定的组件，它需要:
- 1. 声明一个prop
- 2. 当打算更新prop时触发相应的事件： `update:propName`
+以前，对于支持v-model双向绑定的组件，它需要:
+
+  1. 声明一个prop
+  2. 当打算更新prop时触发相应的事件： `update:propName`
 
 ```vue
 <!-- 之前 -->
@@ -186,7 +194,7 @@ function onInput(e) {
 </script>
 ```
 
-3.3简化了新宏的使用。宏自动注册一个prop，并返回一个可以直接变异的ref： `defineModel`
+3.3使用新`defineModel`宏简化了用法。宏自动注册一个prop，并返回一个ref：
 
 ```vue
 <!-- 之后 -->
@@ -217,13 +225,16 @@ export default { plugins: [vue({ defineModel: true })] }
 
 ```vue
 <script setup>
-defineOptions({ inheritAttrs: false })
+defineOptions({
+  name: 'MyComponent',
+  inheritAttrs: false,
+})
 </script>
 ```
 
-### 2.toRef toValue 提供更好的Getter支持
+### 2. toRef toValue 提供Getter支持
 
-`toRef` 已得到增强，以支持将值/getter/现有refs规范化为refs：
+`toRef` 已得到增强，以支持将`values/getters/ref`规范化为ref：
 
 ```ts
 // 等同于 ref(1)
@@ -234,7 +245,8 @@ toRef(() => props.foo)
 toRef(existingRef)
 ```
 
-调用 toRef 类似于 computed，但如果 getter 没有昂贵的计算，toRef 会更高效；toValue 则相反，将 values/getters/ref 标准化为 value：
+调用 toRef 类似于`computed`，但如果 getter 没有昂贵的计算，toRef 会更高效；
+toValue 则相反，将 values/getters/ref 标准化为 value：
 
 ```ts
 toValue(1) //       --> 1
@@ -248,9 +260,9 @@ toValue(() => 1) // --> 1
 
 目前，Vue的类型自动注册全局JSX类型。这可能会导致与其他需要JSX类型推断的库（特别是React）一起使用的冲突。
 
-从 3.3 开始，Vue 支持通过 TypeScript 的jsxImportSource选项指定 JSX 命名空间。这允许用户根据他们的用例选择全局或每个文件选择加入。
+从 3.3 开始，Vue 支持通过 TypeScript 的`jsxImportSource`选项指定 JSX 命名空间。这允许用户根据他们的用例选择全局或每个文件选择加入。
 
-为了向后兼容，3.3 仍然全局注册 JSX 命名空间。我们计划在 3.4 中移除默认的全局注册。jsxImportSource如果您将 TSX 与 Vue 一起使用，则应在升级到 3.3 后向您添加`tsconfig.json`以避免在 3.4 中损坏。
+为了向后兼容，3.3 仍然全局注册 JSX 命名空间。我们计划在 3.4 中移除默认的全局注册。`jsxImportSource`如果您将 TSX 与 Vue 一起使用，则应在升级到 3.3 后向您添加`tsconfig.json`以避免在 3.4 中损坏。
 
 ## 五、维护基础设施改进
 
@@ -260,5 +272,3 @@ toValue(() => 1) // --> 1
 - 通过从Jest迁移到[Vitest](https://vitest.dev/)来实现更快的测试。
 - 通过移动`@microsoft/api-extractor` `rollup-plugin-dts` 得到更快的类型生成。
 - 在发布前，通过[ecosystem-ci-catches](https://github.com/vuejs/ecosystem-ci)回归的主要生态系统依赖者进行全面回归测试！
-
-按照计划，我们的目标是在2023年开始发布更小、更频繁的功能版本。请继续收看！

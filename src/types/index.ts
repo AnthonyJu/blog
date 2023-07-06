@@ -21,3 +21,9 @@ export interface Article extends Note {
   desc?: string
   poster?: string
 }
+
+export interface Contents {
+  id: string
+  title: string
+  children: Contents[]
+}

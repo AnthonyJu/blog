@@ -18,6 +18,7 @@ declare module 'vue' {
     ElInput: typeof import('element-plus/lib')['ElInput']
     ElPagination: typeof import('element-plus/lib')['ElPagination']
     ElRow: typeof import('element-plus/lib')['ElRow']
+    ElScrollbar: typeof import('element-plus/lib')['ElScrollbar']
     ElSlider: typeof import('element-plus/lib')['ElSlider']
     ElTag: typeof import('element-plus/lib')['ElTag']
     Pagination: typeof import('./components/Pagination.vue')['default']

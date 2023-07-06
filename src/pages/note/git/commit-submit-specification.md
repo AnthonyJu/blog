@@ -11,7 +11,7 @@ meta:
 
 # git commit 提交规范
 
-## 1、commit message 的格式
+## 一、commit message 的格式
 
 每次提交，Commit message 都包括三个部分：Header，Body 和 Footer。
 
@@ -25,7 +25,7 @@ meta:
 
 其中，Header 是必需的，Body 和 Footer 可以省略。
 
-## 2、type
+## 二、type
 
 type 用于说明 commit 的类别，只允许使用下面 7 个标识。
 
@@ -41,19 +41,19 @@ chore：构建过程或辅助工具的变动
 
 如果 type 为 feat 和 fix，则该 commit 将肯定出现在 Change log 之中。
 
-## 3、scope
+## 三、scope
 
 scope 用于说明 commit 影响的范围，比如数据层、控制层、视图层等等，视项目不同而不同。
 
-## 4、subject
+## 四、subject
 
 subject 是 commit 目的的简短描述，不超过 50 个字符。
 
-## 5、body
+## 五、body
 
 body 部分是对本次 commit 的详细描述，可以分成多行。
 
-## 6、footer
+## 六、footer
 
 footer 部分只用于两种情况。
 

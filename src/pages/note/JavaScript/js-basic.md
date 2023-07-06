@@ -9,7 +9,9 @@ meta:
   date: 2023-06-18 10:10:28
 </route>
 
-## 1. JS的数据类型
+# JS基础知识
+
+## 一、JS的数据类型
 
 ### 基本数据类型
 
@@ -21,7 +23,7 @@ JS中有6种基本数据类型，分别为：`String`、`Number`、`Boolean`、`
 
 引用数据类型包括`Object`、`Array`、`Function`、`Date`、`RegExp`等。
 
-## 2. JS的数据类型判断
+## 二、JS的数据类型判断
 
 ### typeof
 
@@ -69,7 +71,7 @@ Object.prototype.toString.call(new Date()) // '[object Date]'
 Object.prototype.toString.call(/\d+/g)
 ```
 
-## 3. JS的数据类型转换
+## 三、JS的数据类型转换
 
 ### 转换为字符串
 
@@ -89,7 +91,7 @@ Object.prototype.toString.call(/\d+/g)
 
 - `Boolean()`：可以将任意类型的值转换为布尔值，但是`null`、`undefined`、`NaN`、`''`、`0`、`false`转换后的结果是`false`，其余的值都是`true`。
 
-## 4. JS的内置对象
+## 四、JS的内置对象
 
 ### Math
 
@@ -204,7 +206,7 @@ RegExp.prototype.test() // 判断字符串是否符合正则表达式
 RegExp.prototype.exec() // 匹配正则表达式
 ```
 
-## 5. JS的函数
+## 五、JS的函数
 
 ### 函数的定义
 
@@ -403,7 +405,7 @@ const fn = () => {
 fn() // 箭头函数
 ```
 
-## 6. JS的运算符
+## 六、JS的运算符
 
 ### 算术运算符
 
@@ -482,7 +484,7 @@ console.log(1 > 2 ? 1 : 2) // 2
 console.log((1, 2)) // 2
 ```
 
-## 7. JS的语句
+## 七、JS的语句
 
 ### 条件语句
 
@@ -541,7 +543,7 @@ return
 throw
 ```
 
-## 8. JS的对象
+## 八、JS的对象
 
 ### 对象的定义
 
@@ -655,7 +657,7 @@ for (const key in obj) {
 }
 ```
 
-## 9. JS的数组
+## 九、JS的数组
 
 ### 数组的定义
 

@@ -11,7 +11,7 @@ meta:
 
 # HTML5新特性
 
-## 1、语义化标签
+## 一、语义化标签
 
 html5语义标签，可以使开发者更方便清晰构建页面的布局
 
@@ -31,7 +31,7 @@ html5语义标签，可以使开发者更方便清晰构建页面的布局
 | mark    | 定义文档的主内容                   |
 | time    | 定义日期/时间                      |
 
-## 2、视频和音频
+## 二、视频和音频
 
 html5提供了音频和视频文件的标准，既使用audio元素。
 
@@ -55,7 +55,7 @@ html5提供了音频和视频文件的标准，既使用audio元素。
 </video>
 ```
 
-## 3、增强型表单
+## 三、增强型表单
 
 html5修改一些新的input输入特性，改善更好的输入控制和验证
 
@@ -98,13 +98,13 @@ html5新增表单属性
 | autofocus    | 规定在页面加载时，域自动获得焦点      |
 | multiple     | 规定input元素中可选择多个值         |
 
-## 4、Canvas
+## 四、Canvas
 
 canvas是HTML5新增的，一个可以使用脚本(通常为JavaScript) 在其中绘制图像的HTML`元素。它可以用来制作照片集或者制作简单(也不是那么简单)的动画，甚至可以进行实时视频处理和渲染。
 
-## 5、SVG
+## 五、SVG
 
-### 什么是SVG?
+### 1. 什么是SVG?
 
 - SVG指可伸缩矢量图形
 - SVG用于定义用于网络的基于矢量的图形
@@ -114,7 +114,7 @@ canvas是HTML5新增的，一个可以使用脚本(通常为JavaScript) 在其�
 
 
 
-### SVG的优势
+### 2. SVG的优势
 
 与其他图像格式相比，是哟个SVG的优势在于：
 
@@ -125,7 +125,7 @@ canvas是HTML5新增的，一个可以使用脚本(通常为JavaScript) 在其�
 - SVG可在图像质量不下降的情况下被放大
 
 
-### SVG与Canvas区别
+### 3. SVG与Canvas区别
 
 - SVG适用于描述XML中的2D图形的语言
 - Canvas随时随地绘制2D图形（使用javaScript）
@@ -141,7 +141,7 @@ canvas是HTML5新增的，一个可以使用脚本(通常为JavaScript) 在其�
 | 文字呈现功能比较简单             | 适合大型渲染区域的应用程序 |
 | 最合适图像密集的游戏             | 不适合游戏应用             |
 
-## 6、地理定位
+## 六、地理定位
 
 使用getCurrentPosition()方法来获取用户的位置。
 
@@ -159,7 +159,7 @@ function getLocation(){
 }
 ```
 
-## 7、拖放API
+## 七、拖放API
 
 拖放是一种常见的特性，即捉取对象以后拖到另一个位置。
 
@@ -186,7 +186,7 @@ function drag(ev){
 | 拖动结束     | ondrop      | 将被拖动元素放在目标元素内时运行脚本           |
 | 拖动结束     | ondragend   | 在拖动操作结束时运行脚本                       |
 
-## 8、WebStorage
+## 八、WebStorage
 
 WebStorage是HTML新增的本地存储解决方案之一，但并不是取代cookie而指定的标准，cookie作为HTTP协议的一部分用来处理客户端和服务器的通信是不可或缺的，session正式依赖与实现的客户端状态保持。WebStorage的意图在于解决本来不应该cookie做，却不得不用cookie的本地存储。
 
@@ -206,7 +206,7 @@ localStorage.clear();//删除所有数据
 let key = localStorage.key(index);//得到某个索引的值
 ```
 
-## 9、WebSocket
+## 九、WebSocket
 
   WebSocket协议为web应用程序客户端和服务端之间提供了一种全双工通信机制。
 
@@ -222,7 +222,7 @@ let key = localStorage.key(index);//得到某个索引的值
 
  （5）协议标识符是ws（如果加密，为wss），如ws://localhost:8023
 
-## 10、WebWorker
+## 十、WebWorker
 
 Web Worker可以通过加载一个脚本文件，进而创建一个独立工作的线程，在主线程之外运行。
 
