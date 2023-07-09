@@ -14,8 +14,8 @@
       class="group bottom-8% left-75% bg-$bg-color-opacity px-10px py-6px"
       cursor="default"
     >
-      🎯<span class="hidden w-0 pl-4px text-12px" group-hover="w-56px block">
-        Focusing
+      🎯<span class="clip hidden w-0 pl-4px text-12px" group-hover="w-fit block">
+        Setting
       </span>
     </div>
   </div>
@@ -82,9 +82,9 @@
 
 strong {
   z-index: 2;
-  font-size: 12px;
+  font-size: 14px;
   color: #fff;
-  letter-spacing: 5px;
+  letter-spacing: 4px;
 }
 
 #glow {

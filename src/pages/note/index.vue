@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div h-30px pr-15px text-right>Some bits and pieces of notes</div>
+    <div class="clip h-30px pr-15px text-right">Some bits and pieces of notes</div>
     <div class="overflow-hidden rounded bg-#fff9 dark:bg-#0009">
       <el-collapse class="custom-collapse rounded" accordion>
         <el-collapse-item v-for="item in noteTypes" :key="item.name">
@@ -14,22 +14,24 @@
           </template>
 
           <!-- collapse content -->
-          <div
-            v-for="(note, index) in item.notes"
-            :key="note.path"
-            class="hover:bg- flex cursor-pointer justify-between py-12px pl-55px pr-20px"
-            @click="$router.push(note.path)"
-          >
-            <!-- title -->
-            <div class="flex-1 truncate" hover="text-$text-hover">
-              {{ index + 1 }}、{{ note.title }}
-            </div>
+          <div class="py-5px">
+            <div
+              v-for="(note, index) in item.notes"
+              :key="note.path"
+              class="flex cursor-pointer justify-between py-5px pl-55px pr-20px"
+              @click="$router.push(note.path)"
+            >
+              <!-- title -->
+              <div class="clip flex-1 truncate" hover="text-$text-hover">
+                {{ index + 1 }}、{{ note.title }}
+              </div>
 
-            <!-- keywords -->
-            <div class="truncate text-12px" :title="note.keywords?.join('，')">
-              <el-tag v-for="keyword in note.keywords" :key="keyword" class="mr-5px">
-                {{ keyword }}
-              </el-tag>
+              <!-- keywords -->
+              <div class="truncate text-12px" :title="note.keywords?.join('，')">
+                <el-tag v-for="keyword in note.keywords" :key="keyword" class="mr-5px">
+                  {{ keyword }}
+                </el-tag>
+              </div>
             </div>
           </div>
 

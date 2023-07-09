@@ -1,5 +1,5 @@
 <template>
-  <div class="box flex">
+  <div class="matted-box flex">
     <routerLink
       v-for="item in statistics"
       :key="item.name"
@@ -14,7 +14,7 @@
 
   <!-- 最新的5条toast -->
   <div
-    class="box mt-20px cursor-pointer px-8px"
+    class="matted-box mt-20px cursor-pointer px-8px"
     @click="$router.push('/roast')"
   >
     <p
@@ -83,7 +83,7 @@ onMounted(() => {
 </script>
 
 <style lang='scss' scoped>
-.box {
+.matted-box {
   background-color: rgba(124, 168, 255, 0.15);
   border-radius: 12px;
   box-shadow: rgba(142, 142, 142, 0.3) 0 0 5px 0;

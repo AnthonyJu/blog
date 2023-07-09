@@ -105,7 +105,7 @@ const emit = defineEmits<{
 
 仍然支持调用签名语法。
 
-### 3. defineSlots 设置 slots 类型
+### 4. defineSlots 设置 slots 类型
 
 新的`defineSlots`宏可以用来声明预期的插槽和它们各自的预期插槽属性：
 

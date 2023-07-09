@@ -57,37 +57,62 @@ html:not(.dark) .shiki-dark {
 
 // 标题
 .prose h1 {
+  display: flex;
   font-size: 1.6em;
 }
 
 .prose h2 {
+  display: flex;
   font-size: 1.4em;
 }
 
 .prose h3 {
+  display: flex;
   font-size: 1.3em;
 }
 
 .prose h4 {
+  display: flex;
   font-size: 1.2em;
 }
 
 .prose h5 {
+  display: flex;
   font-size: 1.1em;
 }
 
 .prose h6 {
+  display: flex;
   font-size: 1.1em;
+}
+
+.prose a {
+  background: var(--vp-background-rainbow-darker)!important;
+  /* stylelint-disable-next-line property-no-vendor-prefix */
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+.dark .prose a {
+  background: var(--vp-background-rainbow-lighter)!important;
+  /* stylelint-disable-next-line property-no-vendor-prefix */
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
 }
 
 // 行内代码
 .prose :where(:not(pre) > code):not(:where(.not-prose,.not-prose *)) {
-  padding: 2px 6px;
-  margin: 0 4px;
+  padding: 2px 5px;
+  margin: 0 2px;
   font-family: 'DM Mono', monospace !important;
   font-weight: 500 !important;
-  background: var(--line-code-bg) !important;
+  background: var(--line-code-bg)!important;
   border-radius: 6px;
+
+  // color: #fff !important;
+  // background: var(--vp-background-rainbow)!important;
 }
 
 .prose :where(:not(pre) > code):not(:where(.not-prose,.not-prose *))::before, .prose :where(:not(pre) > code):not(:where(.not-prose,.not-prose *))::after {

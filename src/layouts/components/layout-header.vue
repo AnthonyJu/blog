@@ -6,12 +6,12 @@
 
       <div class="flex-center">
         <!--  Nav -->
-        <nav v-if="width > 500" class="flex gap-20px">
+        <nav v-if="width > 500" class="flex gap-20px text-18px">
           <router-link
             v-for="item in navList"
             :key="item.path"
             :to="item.path"
-            active-class="text-$text-hover"
+            active-class="clip font-900"
             hover="text-$text-hover"
           >
             {{ item.name }}
@@ -21,6 +21,7 @@
         <!-- Search -->
         <router-link
           class="ml-20px cursor-pointer text-18px"
+          active-class="clip-bg text-19px"
           hover="text-$text-hover"
           to="/search"
           i-iconamoon-search

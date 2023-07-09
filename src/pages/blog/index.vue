@@ -1,48 +1,49 @@
 <template>
-  <div class="flex-col-center">
-    <div class="grid w-full gap-20px" :class="`grid-cols-${gridNum}`">
-      <div
-        v-for="blog in blogs" :key="blog.title"
-        class="blog relative h-250px flex-col-center overflow-hidden rounded-3"
-        bg="#ffffff99 dark:#00000099"
-        cursor="pointer"
-        @click="$router.push(blog.path)"
-      >
-        <!-- poster -->
-        <div class="h-150px w-full overflow-hidden">
-          <img
-            class="full transition duration-1000 ease-in-out"
-            object="cover"
-            :src="blog.poster"
-            :alt="blog.title"
-          >
-        </div>
-
+  <div class="grid flex-col-center gap-20px" :class="`grid-cols-${gridNum}`">
+    <div
+      v-for="blog in blogs"
+      :key="blog.title"
+      class="group h-250px flex-col-center cursor-pointer overflow-hidden rounded-3"
+      bg="#ffffff99 dark:#00000099"
+      @click="$router.push(blog.path)"
+    >
+      <!-- poster -->
+      <div class="relative w-full flex-1 overflow-hidden rounded-t-3">
+        <img
+          class="full transition duration-1000 ease-in-out"
+          object="cover"
+          :src="blog.poster"
+          :alt="blog.title"
+          group-hover="scale-120"
+        >
         <div
-          class="desc absolute top-0 hidden h-150px flex-center animate-fade-in bg-#000000aa p-10px"
+          class="hidden full flex-center animate-fade-in bg-#000000aa p-10px"
           text="center #fff 14px"
+          position="absolute top-0"
+          group-hover="flex"
         >
           {{ blog.desc }}
         </div>
+      </div>
 
-        <div class="w-full flex-col-center flex-1 justify-around py-4px">
-          <!-- title -->
-          <div class="truncate" :title="blog.title">
-            {{ blog.title }}
-          </div>
+      <!-- info -->
+      <div class="group h-100px w-full flex-col-center justify-around py-4px">
+        <!-- title -->
+        <div class="clip w-full truncate text-center" :title="blog.title">
+          {{ blog.title }}
+        </div>
 
-          <!-- tags -->
-          <div class="w-full flex-center gap-5px truncate" :title="blog.keywords?.join(',')">
-            <el-tag v-for="tag in blog.keywords" :key="tag" round>
-              {{ tag }}
-            </el-tag>
-          </div>
+        <!-- tags -->
+        <div class="w-full flex-center gap-5px truncate" :title="blog.keywords?.join(',')">
+          <el-tag v-for="tag in blog.keywords" :key="tag" round>
+            {{ tag }}
+          </el-tag>
+        </div>
 
-          <!-- date -->
-          <div class="flex-center text-14px opacity-65" :title="`编写于：${blog.date}`">
-            <div i-carbon-calendar-heat-map mr-5px />
-            <div>{{ blog.date }}</div>
-          </div>
+        <!-- date -->
+        <div class="flex-center text-14px opacity-65" :title="`编写于：${blog.date}`">
+          <div i-carbon-calendar-heat-map mr-5px />
+          <div>{{ blog.date }}</div>
         </div>
       </div>
     </div>
@@ -84,20 +85,12 @@ const blogs = computed(() => allBlogs.slice((current.value - 1) * 15, current.va
 </script>
 
 <style lang='scss' scoped>
-.blog {
-  &:hover {
-    img {
-      transform: scale(1.2);
-    }
-
-    .desc {
-      display: flex;
-    }
-  }
-}
-
 .grid-cols-1 {
   grid-template-columns: repeat(1,minmax(0,1fr));
+
+  .group {
+    height: 300px;
+  }
 }
 
 .grid-cols-2 {
