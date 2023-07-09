@@ -33,11 +33,11 @@ title: 关于我
 ### Contact Me ☎️
 - Email: [1662345805@qq.com](mailto:1662345805@qq.com)
 - Github: [AnthonyJu](https://github.com/AnthonyJu)
-- WeChat: <span class="group" underline cursor-pointer>
+- WeChat: <a class="group" underline cursor-pointer href="#hwy961117">
             hwy961117
             <img
               group-hover:block
               hidden w-300px fixed inset-0 m-auto
               src="@/assets/wechat.png"
             >
-          </span>
+          </a>

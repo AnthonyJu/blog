@@ -29,7 +29,7 @@
       <!-- info -->
       <div class="group h-100px w-full flex-col-center justify-around py-4px">
         <!-- title -->
-        <div class="clip w-full truncate text-center" :title="blog.title">
+        <div class="w-full truncate text-center" :title="blog.title">
           {{ blog.title }}
         </div>
 
