@@ -14,7 +14,8 @@
       class="group bottom-8% left-75% bg-$bg-color-opacity px-10px py-6px"
       cursor="default"
     >
-      🎯<span class="clip hidden w-0 pl-4px text-12px" group-hover="w-fit block">
+      <span class="h-24px w-16px">🎯</span>
+      <span class="clip hidden w-0 pl-4px text-12px" group-hover="w-fit block">
         Setting
       </span>
     </div>
@@ -45,6 +46,7 @@
 }
 
 .btn {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -65,13 +67,13 @@
 }
 
 .dark .btn {
-  background-image: linear-gradient(#212121, #212121),
+  background-image: linear-gradient(#212121cc, #212121cc),
     linear-gradient(137.48deg, #b16dff 10%,#6973ff 45%, #1a69df 67%, rgb(9, 140, 192) 87%);
 }
 
 #container-stars {
   position: absolute;
-  z-index: -1;
+  z-index: 1;
   width: 100%;
   height: 100%;
   overflow: hidden;
