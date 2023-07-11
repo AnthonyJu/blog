@@ -94,12 +94,22 @@ html:not(.dark) .shiki-dark {
   -webkit-text-fill-color: transparent !important;
 }
 
+.safari .prose a {
+  color: var(--vp-rainbow-darker);
+  -webkit-text-fill-color: unset !important;
+}
+
 .dark .prose a {
   background: var(--vp-background-rainbow-lighter)!important;
   /* stylelint-disable-next-line property-no-vendor-prefix */
   -webkit-background-clip: text !important;
   background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
+}
+
+.safari.dark .prose a {
+  color: var(--vp-rainbow-lighter);
+  -webkit-text-fill-color: unset !important;
 }
 
 // 行内代码
