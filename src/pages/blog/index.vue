@@ -3,7 +3,7 @@
     <div
       v-for="blog in blogs"
       :key="blog.title"
-      class="group h-250px flex-col-center cursor-pointer overflow-hidden rounded-3"
+      class="group blog-item h-250px flex-col-center cursor-pointer overflow-hidden rounded-3"
       bg="#ffffff99 dark:#00000099"
       @click="$router.push(blog.path)"
     >
@@ -88,7 +88,7 @@ const blogs = computed(() => allBlogs.slice((current.value - 1) * 15, current.va
 .grid-cols-1 {
   grid-template-columns: repeat(1,minmax(0,1fr));
 
-  .group {
+  .blog-item {
     height: 300px;
   }
 }

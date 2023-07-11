@@ -21,7 +21,7 @@
   -webkit-text-fill-color: transparent !important;
 }
 
-.safari .clip {
+.not-chrome .clip {
   color: var(--vp-rainbow-darker);
   -webkit-text-fill-color: unset !important;
 }
@@ -34,7 +34,7 @@
   -webkit-text-fill-color: transparent !important;
 }
 
-.safari.dark .clip {
+.not-chrome.dark .clip {
   color: var(--vp-rainbow-lighter);
   -webkit-text-fill-color: unset !important;
 }
@@ -43,7 +43,7 @@
   background-image: var(--vp-background-rainbow-darker)!important;
 }
 
-.safari .clip-bg {
+.not-chrome .clip-bg {
   color: var(--vp-rainbow-darker);
   background-image: none !important;
 }
@@ -52,7 +52,7 @@
   background-image: var(--vp-background-rainbow-lighter)!important;
 }
 
-.safari.dark .clip-bg {
+.not-chrome.dark .clip-bg {
   color: var(--vp-rainbow-lighter);
   background-image: none !important;
 }

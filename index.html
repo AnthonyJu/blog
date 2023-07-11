@@ -19,9 +19,9 @@
         document.documentElement.classList.toggle('light', true)
       }
     })()
-    // 如果是Safari浏览器，添加一个类名
-    if (navigator.userAgent.includes('Safari') && !navigator.userAgent.includes('Chrome')) {
-      document.documentElement.classList.add('safari')
+    // 如果不是Chrome内核浏览器，添加一个类名
+    if (!navigator.userAgent.includes('Chrome')) {
+      document.documentElement.classList.add('not-chrome')
     }
   </script>
 </head>

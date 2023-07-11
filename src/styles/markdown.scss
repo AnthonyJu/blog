@@ -94,7 +94,7 @@ html:not(.dark) .shiki-dark {
   -webkit-text-fill-color: transparent !important;
 }
 
-.safari .prose a {
+.not-chrome .prose a {
   color: var(--vp-rainbow-darker);
   -webkit-text-fill-color: unset !important;
 }
@@ -107,7 +107,7 @@ html:not(.dark) .shiki-dark {
   -webkit-text-fill-color: transparent !important;
 }
 
-.safari.dark .prose a {
+.not-chrome.dark .prose a {
   color: var(--vp-rainbow-lighter);
   -webkit-text-fill-color: unset !important;
 }

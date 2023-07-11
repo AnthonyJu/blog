@@ -30,12 +30,17 @@
       <div
         v-for="res in results"
         :key="res.path"
-        class="h-100px flex-col-center cursor-pointer rounded-3 p-15px duration-500 ease-in-out"
+        flex-col-center
+        overflow="hidden"
+        class="relative h-100px cursor-pointer rounded-3 p-15px duration-500 ease-in-out"
         bg="#ffffff77 dark:#00000077"
         hover="text-18px"
         @click="$router.push(res.path)"
       >
-        <p class="clip w-full flex-1 truncate text-center">
+        <div class="badge absolute">
+          <span>{{ res.path.startsWith('/blog') ? 'Blog' : 'Note' }}</span>
+        </div>
+        <p class="w-full flex-1 truncate text-center">
           {{ res.meta.title }}
         </p>
         <div class="w-full flex-center gap-5px truncate" :title="res.meta.keywords?.join(',')">
@@ -115,6 +120,7 @@ const results = computed(() => {
     text-align: center;
 
     &::placeholder {
+      color: #ccc;
       text-align: center;
     }
   }
@@ -134,5 +140,25 @@ const results = computed(() => {
 
 .grid-cols-3 {
   grid-template-columns: repeat(3,minmax(0,1fr));
+}
+
+.badge {
+  top: -5px;
+  left: -23px;
+  width: 0;
+  height: 0;
+  border-right: 32px solid transparent;
+  border-bottom: 32px solid var(--vp-rainbow);
+  border-left: 32px solid transparent;
+  transform: rotate(-45deg);
+
+  span {
+    position: absolute;
+    top: 12px;
+    left: -13px;
+    font-size: 14px;
+    color: #fff;
+    text-align: center;
+  }
 }
 </style>

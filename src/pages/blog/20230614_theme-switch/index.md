@@ -135,11 +135,11 @@ const isDark = root.classList.contains('dark')
 - TS类型不支持，需要使用 `@ts-expect-error` 来忽略类型检查。
 - CSS中如果使用了stylelint，需要忽略 `::view-transition` 伪元素。
 - 该 API 目前还处于`实验阶段`，可能会有较大的改动，不建议在生产环境中使用（我用了🤨）。
-- 如果你无法切换，那就是你的浏览器不支持该 API，可以使用 [can i use](https://caniuse.com/?search=view-transition) 查看浏览器兼容性。
 
 ## 尝试一下
 
 点击下面的按钮（或点击顶部的切换按钮），切换一下主题吧！🤗
+如果在切换时没有圆圈效果，那就是你的浏览器不支持该 API，可以使用 [can i use](https://caniuse.com/?search=view-transition) 查看浏览器兼容性。
 
 <script setup lang="ts">
 import { toggleTheme } from '@/utils/toggleTheme'
