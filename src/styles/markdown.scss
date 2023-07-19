@@ -87,6 +87,7 @@ html:not(.dark) .shiki-dark {
 }
 
 .prose a {
+  font-weight: 900;
   background: var(--vp-background-rainbow-darker)!important;
   /* stylelint-disable-next-line property-no-vendor-prefix */
   -webkit-background-clip: text !important;
@@ -100,6 +101,7 @@ html:not(.dark) .shiki-dark {
 }
 
 .dark .prose a {
+  font-weight: 900;
   background: var(--vp-background-rainbow-lighter)!important;
   /* stylelint-disable-next-line property-no-vendor-prefix */
   -webkit-background-clip: text !important;
@@ -108,6 +110,7 @@ html:not(.dark) .shiki-dark {
 }
 
 .not-chrome.dark .prose a {
+  font-weight: 900;
   color: var(--vp-rainbow-lighter);
   -webkit-text-fill-color: unset !important;
 }
