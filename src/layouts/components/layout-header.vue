@@ -6,7 +6,7 @@
 
       <div class="flex-center">
         <!--  Nav -->
-        <nav v-if="width > 500" class="flex gap-20px text-18px">
+        <nav v-if="width >= 600" class="flex gap-20px text-18px">
           <router-link
             v-for="item in navList"
             :key="item.path"
@@ -50,7 +50,7 @@
         </div>
 
         <!-- Burger -->
-        <label v-if="width <= 500" for="burger" class="burger relative ml-20px">
+        <label v-if="width < 600" for="burger" class="burger relative ml-20px">
           <input id="burger" v-model="showBurger" type="checkbox">
           <span /><span /><span />
           <nav
