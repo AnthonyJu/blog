@@ -1,7 +1,7 @@
 .blog-box {
   background-color: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(6px);
   border: 0.625px solid rgba(255, 255, 255, 0.25);
   border-radius: 25px;
   box-shadow: rgba(142, 142, 142, 0.25) 0 6px 15px 0;
-  backdrop-filter: blur(6px);
 }

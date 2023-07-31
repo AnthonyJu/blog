@@ -59,11 +59,11 @@
   background-clip: content-box, border-box;
   background-origin: border-box;
   background-size: 300% 300%;
+  backdrop-filter: blur(1rem);
   border: double 3px transparent;
   border-radius: 14px;
   transition: 0.5s;
   animation: gradient-301 5s ease infinite;
-  backdrop-filter: blur(1rem);
 }
 
 .dark .btn {
@@ -77,9 +77,9 @@
   width: 100%;
   height: 100%;
   overflow: hidden;
+  backdrop-filter: blur(1rem);
   border-radius: 13px;
   transition: 0.5s;
-  backdrop-filter: blur(1rem);
 }
 
 strong {

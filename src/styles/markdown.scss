@@ -89,7 +89,6 @@ html:not(.dark) .shiki-dark {
 .prose a {
   font-weight: 900;
   background: var(--vp-background-rainbow-darker)!important;
-  /* stylelint-disable-next-line property-no-vendor-prefix */
   -webkit-background-clip: text !important;
   background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
@@ -103,7 +102,6 @@ html:not(.dark) .shiki-dark {
 .dark .prose a {
   font-weight: 900;
   background: var(--vp-background-rainbow-lighter)!important;
-  /* stylelint-disable-next-line property-no-vendor-prefix */
   -webkit-background-clip: text !important;
   background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
@@ -124,7 +122,7 @@ html:not(.dark) .shiki-dark {
   background: var(--line-code-bg)!important;
   border-radius: 6px;
 
-  // color: #fff !important;
+  // color:var(--vp-background-rainbow) !important;
   // background: var(--vp-background-rainbow)!important;
 }
 
@@ -138,8 +136,8 @@ blockquote {
   margin: 2em 0 !important;
   font-style: normal !important;
   background-color: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(6px);
   border-left: 4px solid var(--el-color-primary) !important;
   border-radius: 8px;
   box-shadow: rgba(142, 142, 142, 0.25) 0 6px 15px 0;
-  backdrop-filter: blur(6px);
 }
