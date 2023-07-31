@@ -12,8 +12,6 @@ import VueDevTools from 'vite-plugin-vue-devtools'
 import LinkAttributes from 'markdown-it-link-attributes'
 import Unocss from 'unocss/vite'
 import Shiki from 'markdown-it-shiki'
-
-// @ts-expect-error failed to resolve types
 import ElementPlus from 'unplugin-element-plus/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 

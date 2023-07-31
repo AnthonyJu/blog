@@ -17,7 +17,7 @@
         </div>
       </div>
     </div>
-    <Pagination v-model="current" m-auto w-fit :total="roastList.length" />
+    <Pagination v-model="current" m-auto w-fit :total="allRoasts.length" />
   </div>
 </template>
 

@@ -46,6 +46,5 @@ button:hover {
   color: #7e97b8;
   background-color: #e0e8ef;
   box-shadow: -4px -2px 16px 0 #fff, 4px 2px 16px 0 rgba(95,157,231,0.48);
-
 }
 </style>
