@@ -1,6 +1,6 @@
 <template>
   <div :class="results.length ? '' : 'mt-100px'">
-    <h1 class="h-50px text-center text-20px">搜索博客与笔记</h1>
+    <h1 class="clip h-50px text-center text-20px">搜索博客与笔记</h1>
     <el-input
       v-model="searchValue"
       size="large"
@@ -11,7 +11,7 @@
       @focus="placeholder = ''"
       @blur="placeholder = '搜索目标为文章标题与关键词'"
     />
-    <div class="my-20px max-h-105px flex-center flex-wrap gap-10px overflow-hidden">
+    <div class="my-25px max-h-105px flex-center flex-wrap gap-10px overflow-hidden">
       <div
         v-for="keyword in allKeywords"
         :key="keyword"
@@ -20,8 +20,8 @@
         bg="#ffffff77 dark:#00000077"
         @click="searchValue = keyword.split(/ \(\s/)[0]"
       >
-        <div class="clip flex-center">
-          <p i-el-tag mr-5px class="text-10px text-$el-color-primary dark:text-#fff" />
+        <div class="flex-center text-$el-color-primary">
+          <p i-el-tag mr-5px class="text-10px text-$el-color-primary" />
           {{ keyword }}
         </div>
       </div>
@@ -40,7 +40,7 @@
         <div class="badge absolute">
           <span>{{ res.path.startsWith('/blog') ? 'Blog' : 'Note' }}</span>
         </div>
-        <p class="w-full flex-1 truncate text-center">
+        <p class="w-full flex-1 truncate text-center" :title="res.meta.title">
           {{ res.meta.title }}
         </p>
         <div class="w-full flex-center gap-5px truncate" :title="res.meta.keywords?.join(',')">
@@ -116,12 +116,26 @@ const results = computed(() => {
   --el-input-hover-border-color: var(--el-color-primary);
   --el-input-border-radius: 20px;
 
-  .el-input__inner {
-    text-align: center;
+  .el-input__wrapper {
+    background-color: #fff9;
+    box-shadow: 0 0 0 1.5px var(--el-input-border-color, var(--el-border-color)) inset;
 
-    &::placeholder {
-      color: #ccc;
+    .el-input__inner {
       text-align: center;
+
+      &::placeholder {
+        color: #ccc;
+        text-align: center;
+      }
+    }
+  }
+
+}
+
+.dark {
+  .search-input {
+    .el-input__wrapper {
+      background-color: transparent;
     }
   }
 }

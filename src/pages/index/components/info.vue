@@ -15,8 +15,8 @@
       cursor="default"
     >
       <span class="h-24px w-16px">🎯</span>
-      <span class="clip hidden w-0 pl-4px text-12px" group-hover="w-fit block">
-        Setting
+      <span class="clip hidden w-0 pl-6px text-12px" group-hover="w-fit block">
+        Striving
       </span>
     </div>
   </div>
