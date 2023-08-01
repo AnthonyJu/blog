@@ -89,6 +89,10 @@ const noteTypes = ref<NoteType[]>([
     icon: 'i-vscode-icons:file-type-git',
   },
   {
+    name: 'ArcGIS Map',
+    icon: 'i-vscode-icons:file-type-map',
+  },
+  {
     name: 'Unity',
     icon: 'i-vscode-icons:file-type-light-shaderlab',
     darkIcon: 'i-vscode-icons:file-type-shaderlab',
@@ -109,7 +113,7 @@ const allNotes = pages.filter(page => page.path.startsWith('/note/')).map((page)
 noteTypes.value = noteTypes.value.map((item) => {
   return {
     ...item,
-    notes: allNotes.filter(note => note.path.includes(`/note/${item.name.toLowerCase()}`)),
+    notes: allNotes.filter(note => note.path.includes(`/note/${item.name.split(' ').join('-').toLowerCase()}`)),
   }
 })
 </script>
