@@ -11,7 +11,7 @@
             v-for="item in navList"
             :key="item.path"
             :to="item.path"
-            active-class="clip font-900"
+            active-class="clip"
             hover="text-$text-hover"
           >
             {{ item.name }}

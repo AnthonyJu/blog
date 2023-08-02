@@ -14,7 +14,6 @@
 }
 
 .clip {
-  font-weight: 900;
   background: var(--vp-background-rainbow-darker)!important;
   -webkit-background-clip: text !important;
   background-clip: text !important;
@@ -27,7 +26,6 @@
 }
 
 .dark .clip {
-  font-weight: 900;
   background: var(--vp-background-rainbow-lighter)!important;
   -webkit-background-clip: text !important;
   background-clip: text !important;
@@ -35,7 +33,6 @@
 }
 
 .not-chrome.dark .clip {
-  font-weight: 900;
   color: var(--vp-rainbow-lighter);
   -webkit-text-fill-color: unset !important;
 }
