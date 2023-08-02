@@ -20,7 +20,7 @@
     <p
       v-for="item in roastList.slice(0, 5)"
       :key="item.date"
-      :title="useTimeAgo(item.date).value"
+      :title="`${useTimeAgo(item.date).value}：${item.content}`"
       class="truncate border-b border-#fff6 p-8px last:border-none"
     >
       {{ item.content }}

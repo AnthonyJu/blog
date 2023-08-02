@@ -1,10 +1,10 @@
 <template>
   <el-row :gutter="20">
-    <el-col :xs="24" :sm="7" :lg="6">
+    <el-col :xs="24" :sm="7">
       <Info />
       <Statistic />
     </el-col>
-    <el-col :xs="24" :sm="17" :lg="18">
+    <el-col :xs="24" :sm="17">
       <MainContent />
     </el-col>
   </el-row>
