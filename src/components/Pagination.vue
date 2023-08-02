@@ -20,3 +20,9 @@ function currentChange(cur: number) {
   modelValue.value = cur
 }
 </script>
+
+<style lang="scss">
+.dark .el-pagination {
+  background-color: #fff1;
+}
+</style>
