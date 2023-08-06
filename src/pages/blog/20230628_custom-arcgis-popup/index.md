@@ -20,12 +20,13 @@ meta:
 
 ## 1. 手动开启 Popup
 
-  ArcGIS Map 的 Popup 组件可以手动开启的，开启方式如下：
+ArcGIS Map 的 Popup 组件可以手动开启的，开启方式如下：
 
-  ```ts
-  import Map from '@arcgis/core/Map'
-  import MapView from '@arcgis/core/views/MapView'
+```ts
+import Map from '@arcgis/core/Map'
+import MapView from '@arcgis/core/views/MapView'
 
+onMounted(() => {
   // 创建 Map 实例
   const map = new Map({ basemap: 'topo-vector' })
 
@@ -37,19 +38,19 @@ meta:
     zoom: 13
   })
 
-  // 手动开启 Popup 组件，监听底图点击事件时，如果不开启autoOpenEnabled，鼠标左键是无法触发 Popup 组件的
   view.when(() => {
-    view.popup.autoOpenEnabled = true
-
+    // 禁用弹出窗口自动出现，并使用单击事件手动打开弹出窗口。
+    view.popupEnabled = false
     view.on('click', (e) => {
-      view.popup.open({
+      view.openPopup({
         location: e.mapPoint,
         title: 'Popup Title',
         content: 'Popup Content'
       })
     })
   })
-  ```
+})
+```
 
 ## 2. 替换 content
 
@@ -68,69 +69,48 @@ import CustomPopup from './CustomPopup.vue'
 const content = document.createElement('div')
 
 createApp(CustomPopup, {
-  popup: view.popup,
+  view,
   onEventEmit: (arg: any) => {
-    console.log(arg)
+    alert(arg)
   },
-}).mount(div)
+}).mount(content)
 
-view.popup.open({ content, location: e.mapPoint })
+view.openPopup({ title: 'custom popup', content, location: e.mapPoint })
 ```
 
 子组件示例：
 
 ```vue
 <template>
-  <div class="h-400px bg-blue">
-    <el-button type="primary" @click="onClick">
-      EventEmit
-    </el-button>
-    <el-button type="primary" size="default" @click="popup.close()">
-      Close Popup
-    </el-button>
+  <div class="h-200px flex-col-center bg-#fff">
+    <div mb-10>自定义子组件</div>
+    <div>
+      <el-button type="primary" @click="onClick">
+        触发父组件事件
+      </el-button>
+      <el-button type="primary" @click="view.closePopup()">
+        关闭弹窗
+      </el-button>
+    </div>
   </div>
 </template>
 
 <script setup lang='ts'>
-import type Popup from '@arcgis/core/widgets/Popup'
+import type MapView from '@arcgis/core/views/MapView'
 
 const props = defineProps<{
-  popup: Popup
+  view: MapView
 }>()
 const emit = defineEmits<{
   eventEmit: [arg: string]
 }>()
 
+console.log(props.view)
+
 function onClick() {
-  emit('eventEmit', 'arg from child')
+  emit('eventEmit', '我是子组件传递的参数')
 }
 </script>
-
-<style lang="scss">
-.esri-popup {
-  box-shadow: none;
-
-  .esri-popup__main-container {
-    background-color: transparent;
-
-    .esri-popup__header,
-    .esri-popup__footer {
-      display: none;
-    }
-
-    .esri-popup__content {
-      margin: 0;
-
-      --calcite-ui-background: transparent;
-      --calcite-ui-foreground-1: transparent;
-
-      .esri-widget {
-        background-color: transparent;
-      }
-    }
-  }
-}
-</style>
 ```
 
 ## 3. 注意事项
@@ -138,8 +118,9 @@ function onClick() {
 > 第一次打开 Popup 组件时，会比较慢，因为需要加载 Dom 的相关资源，后续打开就会很快了。你可以在触发开启 Popup 的地方，将鼠标样式改为`progress`，在 CustomPopup 组件中，当元素展示在视口中时，将鼠标样式改为`default`。
 
 ```ts
-// 由于我是用了 VueUse 的 useElementVisibility 方法，所以这里的代码是这样的
-const popupRef = ref() // CustomPopup 组件的根元素 ref
+// 由于我使用了 VueUse 的 useElementVisibility 方法，所以这里的代码是这样的
+// CustomPopup 组件的根元素 ref
+const popupRef = ref()
 const targetIsVisible = useElementVisibility(popupRef)
 watch(targetIsVisible, (visible) => {
   if (visible) document.body.style.cursor = 'default'
@@ -155,7 +136,9 @@ if (!view.popup.visible && view.popup.title !== 'custom popup') {
 }
 ```
 
-## 4. 示例
+> 本次使用的 ArcGIS 版本为4.27，如果你使用的版本不同，可能会出现一些问题，如：`view.openPopup` 无法打开 Popup，这时你可以使用 `view.popup.open` 来打开，其次使用 `view.popupEnabled` 属性可能会报错，这时你可以使用 `view.popup.autoOpenEnabled` 属性来代替，具体的属性和方法，可以查看 [ArcGIS API for JavaScript](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-MapView.html)。
 
-<!-- TODO: 示例 -->
+## 4. 示例与源码
+
+<CustomFrame route="/arcgis/costom-popup" />
 

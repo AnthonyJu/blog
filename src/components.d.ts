@@ -7,7 +7,9 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
+    CustomFrame: typeof import('./components/CustomFrame.vue')['default']
     ElBacktop: typeof import('element-plus/lib')['ElBacktop']
+    ElButton: typeof import('element-plus/lib')['ElButton']
     ElCarousel: typeof import('element-plus/lib')['ElCarousel']
     ElCarouselItem: typeof import('element-plus/lib')['ElCarouselItem']
     ElCheckbox: typeof import('element-plus/lib')['ElCheckbox']
@@ -21,6 +23,7 @@ declare module 'vue' {
     ElRow: typeof import('element-plus/lib')['ElRow']
     ElScrollbar: typeof import('element-plus/lib')['ElScrollbar']
     ElTag: typeof import('element-plus/lib')['ElTag']
+    Frame: typeof import('./components/CustomFrame.vue')['default']
     Pagination: typeof import('./components/Pagination.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
