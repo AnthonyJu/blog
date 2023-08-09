@@ -87,10 +87,22 @@ html:not(.dark) .shiki-dark {
 }
 
 .prose a {
-  background: var(--vp-background-rainbow-darker)!important;
+  position: relative;
+  background: var(--vp-background-rainbow-darker) !important;
   -webkit-background-clip: text !important;
   background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
+
+  &::after {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    content: '';
+    background: var(--vp-background-rainbow-darker);
+    opacity: 0.8;
+  }
 }
 
 .not-chrome .prose a {
