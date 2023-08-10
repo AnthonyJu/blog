@@ -11,13 +11,14 @@ export default function (
   const minute = date.getMinutes()
   const second = date.getSeconds()
 
-  const today = `${year}${month < 10 ? `0${month}` : month}${day < 10 ? `0${day}` : day}`
+  const realMonth = month < 10 ? `0${month}` : month
+  const realDay = day < 10 ? `0${day}` : day
+  const realHour = hour < 10 ? `0${hour}` : hour
+  const realMinute = minute < 10 ? `0${minute}` : minute
+  const realSecond = second < 10 ? `0${second}` : second
+
   plop.setHelper('date', () => {
-    return `${year}-${month < 10 ? `0${month}` : month}-${
-      day < 10 ? `0${day}` : day
-    } ${hour < 10 ? `0${hour}` : hour}:${minute < 10 ? `0${minute}` : minute}:${
-      second < 10 ? `0${second}` : second
-    }`
+    return `${year}-${realMonth}-${realDay} ${realHour}:${realMinute}:${realSecond}`
   })
 
   plop.setGenerator('blog', {
@@ -47,7 +48,7 @@ export default function (
     actions: [
       {
         type: 'add',
-        path: `../src/pages/blog/${today}_{{fileName}}/index.md`,
+        path: `../src/pages/blog/${year}/${realMonth}/${realDay}/{{fileName}}.md`,
         templateFile: './blog/index.md.hbs',
         data: {
           title: '{{title}}',
