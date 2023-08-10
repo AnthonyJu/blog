@@ -34,5 +34,5 @@
       "@vue-macros/volar/define-slots"
     ]
   },
-  "exclude": ["public", "dist", "node_modules", "plop/config.js"]
+  "exclude": ["public", "dist", "node_modules", "plop"]
 }

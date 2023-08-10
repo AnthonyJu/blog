@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite-ssg build",
-    "create:blog": "plop --plopfile ./plop/config.js",
+    "create:blog": "plop --plopfile ./plop/blog/config.js",
+    "add:roast": "plop --plopfile ./plop/roast/config.js",
     "lint": "eslint . --ext .ts,.vue",
     "lint:style": "stylelint --fix \"src/**/*.{vue,css,scss}\"",
     "preview": "vite preview",
