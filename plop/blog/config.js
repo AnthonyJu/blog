@@ -33,8 +33,8 @@ export default function (
     actions: [
       {
         type: 'add',
-        path: `../../src/pages/blog/${year}/${realMonth}/${realDay}/{{fileName}}.md`,
-        templateFile: './blog/index.md.hbs',
+        path: `../../src/pages/blog/${year}/${realMonth}/${realDay}/{{fileName}}/index.md`,
+        templateFile: './index.md.hbs',
         data: {
           date,
           title: '{{title}}',
