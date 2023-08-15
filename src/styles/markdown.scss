@@ -86,6 +86,11 @@ html:not(.dark) .shiki-dark {
   font-size: 1.1em;
 }
 
+.prose :where(img,video):not(:where(.not-prose,.not-prose *)) {
+  max-width: 100%;
+  margin: auto;
+}
+
 .prose a {
   position: relative;
   background: var(--vp-background-rainbow-darker) !important;

@@ -24,7 +24,7 @@ meta:
 
 在 Unity 中创建一个新的相机，设置好相机的位置和旋转，设置为相机的 `Projection 为 Orthographic`，设置好相机的 `Size`，这个值决定了相机的视野大小，也就是小地图的大小。然后设置相机的 `Culling Mask`，只渲染地图层，不渲染其他层，这样就可以只渲染地图了。当然你可也根据自己的需求， 去设置需要渲染的层。
 
-<!-- ![image](./images/1.png) -->
+![camera ](./images/camera.png)
 
 ## 2. 创建 RenderTexture
 
