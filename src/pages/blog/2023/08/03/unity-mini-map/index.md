@@ -14,7 +14,7 @@ meta:
   date: 2023-08-15 21:40:33
 </route>
 
-# unity 中实现小地图
+# Unity 中实现小地图
 
   最近在做一个 VR 项目，由于地图场景有很多个，并且具有一定规模，需要一个小地图来指引用户所在位置。
   
@@ -22,7 +22,7 @@ meta:
 
 ## 1. 创建小地图相机
 
-在 Unity 中创建一个新的相机，设置好相机的位置和旋转，设置为相机的 `Projection 为 Orthographic`，设置好相机的 `Size`，这个值决定了相机的视野大小，也就是小地图的大小。然后设置相机的 `Culling Mask`，只渲染地图层，不渲染其他层，这样就可以只渲染地图了。当然你可也根据自己的需求， 去设置需要渲染的层。
+在 Unity 中创建一个新的相机，设置好相机的位置和旋转，设置为相机的 `Projection` 为 `Orthographic`，设置好相机的 `Size`，这个值决定了相机的视野大小，也就是小地图的大小。然后设置相机的 `Culling Mask`，只渲染地图层，不渲染其他层，这样就可以只渲染地图了。当然你可也根据自己的需求， 去设置需要渲染的层。
 
 ![camera ](./images/camera.png)
 
@@ -67,8 +67,6 @@ Vector3 pos = transform.position - camera.transform.position;
 // 将比较后的位置赋值给位置图标的 localPosition 属性
 positionImage.localPosition = new Vector3(pos.x / size, pos.z / size, 0);
 ```
-
-> 在第一步中设置了 `Size`，这个值决定了相机的视野大小，也就是小地图的大小，所以在第四步中，在赋值时，我们需要计算缩放比例，如果我们的 `Size` 为 
 
 ## 6. 核心代码
 
