@@ -83,21 +83,6 @@ onMounted(() => {
 </script>
 
 <style lang='scss' scoped>
-.matted-box {
-  background-color: rgba(124, 168, 255, 0.15);
-  backdrop-filter: blur(5px);
-  border-radius: 12px;
-  box-shadow: rgba(142, 142, 142, 0.3) 0 0 5px 0;
-
-  a {
-    border-right: 1px solid rgba(255, 255, 255, 0.4);
-
-    &:last-child {
-      border-right: none;
-    }
-  }
-}
-
 ::v-deep(#he-plugin-simple) {
   pointer-events: none;
 
