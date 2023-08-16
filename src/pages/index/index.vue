@@ -5,13 +5,15 @@
       <Statistic />
     </el-col>
     <el-col :xs="24" :sm="17">
-      <MainContent />
+      <Carousel />
+      <Things />
     </el-col>
   </el-row>
 </template>
 
 <script setup lang="ts">
 import Info from './components/info.vue'
+import Things from './components/things.vue'
 import Statistic from './components/statistic.vue'
-import MainContent from './components/main-content.vue'
+import Carousel from './components/carousel.vue'
 </script>
