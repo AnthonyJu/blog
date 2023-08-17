@@ -2,14 +2,14 @@
 title: 给博客添加点特效
 meta:
   - name: description
-    content: 给网站增加了一些华丽的特效：飘落的樱花，点击时的烟花，鼠标默认光标
+    content: 给网站增加了一些华丽的特效：飘落的樱花，点击时的烟花，鼠标默认光标。
   - keywords: Effect, Sakura, Cursor
 ---
 
 <route lang="yaml">
 meta:
   title: 给博客添加点特效
-  desc: 给网站增加了一些华丽的特效：飘落的樱花🌸，点击时的烟花🎆，鼠标🖱️默认光标
+  desc: 给网站增加了一些华丽的特效：飘落的樱花🌸，点击时的烟花🎆，鼠标🖱️默认光标。
   keywords: [Effect, Sakura, Cursor]
   date: 2023-06-22 21:35:29
 </route>

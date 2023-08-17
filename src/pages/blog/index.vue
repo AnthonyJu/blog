@@ -54,8 +54,6 @@
 </template>
 
 <script setup lang='ts'>
-import AvatarPng from '@/assets/avatar.png'
-import type { BlogInfo } from '@/types/index'
 import pages from '~pages'
 
 const { width } = useWindowSize()
@@ -66,23 +64,7 @@ const gridNum = computed(() => {
   else return 3
 })
 
-// 获取所有博客的封面图
-const allPoster = import.meta.glob<{ default: string }>(
-  './**/poster.png',
-  { eager: true },
-)
-
-// 取出所有以 /blog/ 开头的bole路由
-const allBlogs = pages
-  .filter(page => page.path.startsWith('/blog/'))
-  .map((page) => {
-    const posterPath = `.${page.path.replace('/blog', '')}/poster.png`
-    return {
-      ...page.meta,
-      path: page.path,
-      poster: allPoster[posterPath]?.default ?? AvatarPng,
-    }
-  }) as BlogInfo[]
+const allBlogs = getAllBlogs(pages)
 
 // 当前页
 const current = ref(1)
