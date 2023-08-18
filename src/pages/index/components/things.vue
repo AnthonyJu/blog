@@ -1,11 +1,11 @@
 <template>
-  <div class="clip h-47px flex-center pt-28px text-18px">
+  <div class="clip h-47px flex-center pt-20px text-18px">
     <span truncate :title="oneWord">{{ oneWord }}</span>
   </div>
   <router-link
     v-for="blog in blogs"
     :key="blog.path"
-    class="matted-box mt-26px h-160px flex overflow-hidden transition duration-500 ease-in-out"
+    class="matted-box mt-20px h-160px flex overflow-hidden transition duration-500 ease-in-out"
     cursor="pointer"
     hover="scale-103"
     :to="blog.path"
