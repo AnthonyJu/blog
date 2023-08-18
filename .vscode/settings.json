@@ -1,5 +1,21 @@
 {
-  "cSpell.words": ["Vitesse", "Vite", "unocss", "vitest", "vueuse", "pinia", "demi", "antfu", "iconify", "intlify", "vitejs", "unplugin", "pnpm"],
+  "cSpell.words": [
+    "antfu",
+    "demi",
+    "iconify",
+    "intlify",
+    "ishan",
+    "pinia",
+    "pnpm",
+    "unocss",
+    "unplugin",
+    "vhan",
+    "Vite",
+    "vitejs",
+    "Vitesse",
+    "vitest",
+    "vueuse"
+  ],
   "prettier.enable": false,
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true

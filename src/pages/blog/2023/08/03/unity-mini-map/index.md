@@ -2,14 +2,14 @@
 title: Unity 中实现小地图
 meta:
   - name: description
-    content: 最近在做一个 VR 项目，由于地图场景有很多个，并且具有一定规模，需要一个小地图来指引用户所在位置
+    content: 最近在做一个 VR 项目，由于地图场景有很多个，并且具有一定规模，需要一个小地图来指引用户所在位置。
   - keywords: Unity,MiniMap,VR
 ---
 
 <route lang="yaml">
 meta:
   title: Unity 中实现小地图
-  desc: 最近在做一个 VR 项目，由于地图场景有很多个，并且具有一定规模，需要一个小地图来指引用户所在位置
+  desc: 最近在做一个 VR 项目，由于地图场景有很多个，并且具有一定规模，需要一个小地图来指引用户所在位置。
   keywords: [Unity,MiniMap,VR ]
   date: 2023-08-15 21:40:33
 </route>
@@ -17,7 +17,7 @@ meta:
 # Unity 中实现小地图
 
   最近在做一个 VR 项目，由于地图场景有很多个，并且具有一定规模，需要一个小地图来指引用户所在位置。
-  
+
   利用 Unity 的 `Camera` 渲染到 `RenderTexture`，然后将 RenderTexture 作为材质贴图，渲染到 `RawImage` UI 上，就可以实现小地图功能，接下来就是具体的实现过程。
 
 ## 1. 创建小地图相机

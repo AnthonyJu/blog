@@ -1,12 +1,14 @@
 <template>
-  <div class="clip pt-17px text-center text-18px">隔着人潮呼救像只困兽，呼吸颤抖去泪流，去相拥。</div>
-  <div
+  <div class="clip h-47px flex-center pt-28px text-18px">
+    <span truncate :title="oneWord">{{ oneWord }}</span>
+  </div>
+  <router-link
     v-for="blog in blogs"
     :key="blog.path"
     class="matted-box mt-26px h-160px flex overflow-hidden transition duration-500 ease-in-out"
     cursor="pointer"
     hover="scale-103"
-    @click="() => $router.push(blog.path)"
+    :to="blog.path"
   >
     <!-- poster -->
     <img
@@ -45,12 +47,13 @@
         </div>
       </div>
     </div>
-  </div>
+  </router-link>
 </template>
 
 <script setup lang='ts'>
-import type { BlogInfo } from '@/types/index'
+import axios from 'axios'
 import pages from '~pages'
+import type { BlogInfo } from '@/types/index'
 
 const allBlogs = getAllBlogs(pages)
 
@@ -68,6 +71,23 @@ const blogs = computed(() => {
 })
 
 const { width } = useWindowSize()
+
+// 获取随机一言 https://api.vvhan.com/api/ian?type=json
+interface OneWord {
+  success: boolean
+  data: {
+    vhan: string
+    source: string
+  }
+}
+const oneWord = ref('前进吧，星星在你的头上闪耀哦！')
+onMounted(() => {
+  width.value > 600 && axios.get('https://api.vvhan.com/api/ian?type=json').then((res: { data: OneWord }) => {
+    if (res.data.success) {
+      oneWord.value = `${res.data.data.vhan} ——${res.data.data.source}`
+    }
+  })
+})
 </script>
 
 <style lang='scss' scoped>
