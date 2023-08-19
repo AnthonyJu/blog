@@ -11,6 +11,8 @@ import zhCn from 'element-plus/dist/locale/zh-cn.mjs'
 useHead({
   title: 'Ju Peng\'s Blog',
   meta: [
+    { name: 'updated', content: new Date().toISOString() },
+    { name: 'keywords', content: 'Ju Peng, Blog' },
     { name: 'description', content: 'Ju Peng\'s Blog' },
     {
       name: 'theme-color',
