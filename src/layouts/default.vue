@@ -1,6 +1,6 @@
 <template>
   <LayoutHeader :class="{ filterClass: y > 0 }" />
-  <article class="m-auto p-15px" :class="articleWidth" :style="{ minHeight }">
+  <article class="m-auto px-15px" :class="articleWidth" :style="{ minHeight }">
     <transition name="fade" mode="out-in">
       <div :key="route.path">
         <router-view />
@@ -22,7 +22,9 @@ import LayoutAside from './components/layout-aside.vue'
 const { y } = useWindowScroll()
 
 const { height, width } = useWindowSize()
-const minHeight = computed(() => `${height.value - 60 - 60}px`)
+// 70: header height
+// 60: footer height
+const minHeight = computed(() => `${height.value - 70 - 60}px`)
 
 const route = useRoute()
 const articleWidth = ref('')
