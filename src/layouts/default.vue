@@ -27,7 +27,7 @@ const { height, width } = useWindowSize()
 const minHeight = computed(() => `${height.value - 70 - 60}px`)
 
 const route = useRoute()
-const articleWidth = ref('')
+const articleWidth = ref('max-w-100ch')
 
 // 根据路由设置显示宽度
 watch(() => route.path, () => {

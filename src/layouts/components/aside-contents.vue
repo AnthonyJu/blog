@@ -4,7 +4,7 @@
       <a :href="`#${item.id}`" :title="item.title" @click="scrollTo($event, item.id)">
         <p
           class="my-4px truncate text-14px"
-          :class="hightlightId === item.id ? 'clip' : 'opacity-85'"
+          :class="hightlightId === item.id ? 'clip dark:font-900' : 'opacity-85'"
         >
           {{ item.title }}
         </p>

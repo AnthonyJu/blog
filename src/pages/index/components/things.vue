@@ -5,9 +5,8 @@
   <router-link
     v-for="blog in blogs"
     :key="blog.path"
-    class="matted-box mt-20px h-160px flex overflow-hidden transition duration-500 ease-in-out"
+    class="matted-box mt-20px h-160px flex overflow-hidden transition duration-400 ease-in-out"
     cursor="pointer"
-    hover="scale-103"
     :to="blog.path"
   >
     <!-- poster -->
@@ -98,5 +97,12 @@ onMounted(() => {
   text-overflow: ellipsis;
   -webkit-line-clamp: 2; // 行数
   -webkit-box-orient: vertical;
+}
+
+.matted-box:hover{
+  box-shadow: 0 0 20px #aaa;
+}
+.dark .matted-box:hover{
+  box-shadow: 0 0 20px #bbb;
 }
 </style>

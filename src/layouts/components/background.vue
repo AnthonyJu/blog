@@ -11,13 +11,13 @@
   width: 100%;
   height: 80vh;
   background:
-    radial-gradient(at 71% 77%,#7d7aff 0,transparent 21%),
-    radial-gradient(at 36% 47%,#00fff0 0,transparent 50%),
-    radial-gradient(at 54% 29%,#00fff0 0,transparent 28%),
-    radial-gradient(at 45% 51%,#7d7aff 0,transparent 53%),
-    radial-gradient(at 73% 44%,#2121e2 0,transparent 54%),
-    radial-gradient(at 24% 7%,#2121e2 0,transparent 40%),
-    radial-gradient(at 76% 46%,#7d7aff 0,transparent 50%);
+    radial-gradient(at 71% 77%, #7d7aff 0, transparent 21%),
+    radial-gradient(at 36% 47%, #219dac 0, transparent 50%),
+    radial-gradient(at 54% 29%, #0062ff 0, transparent 28%),
+    radial-gradient(at 45% 51%, #7d7aff 0, transparent 53%),
+    radial-gradient(at 73% 44%, #2121e2 0, transparent 54%),
+    radial-gradient(at 24% 7%, #2121e2 0, transparent 40%),
+    radial-gradient(at 76% 46%, #7d7aff 0, transparent 50%);
   filter: blur(44px);
   transform: translateX(-50%) rotate(-4deg);
 }
