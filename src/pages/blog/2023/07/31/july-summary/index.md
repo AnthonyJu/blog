@@ -38,6 +38,6 @@ meta:
 
 ## 台风天下的青岛上空
 
-  嘎嘎好看，借鉴一手别人拍的：
+  嘎嘎好看😎，借鉴一手别人拍的：
 
   <video src="./images/4.mp4" controls="controls" width="100%" height="auto"></video>

@@ -10,19 +10,19 @@
               :class="isDark ? item.darkIcon ?? item.icon : item.icon"
               class="ml-20px mr-12px text-18px"
             />
-            {{ item.name }}
+            <span class="font-14px">{{ item.name }}</span>
           </template>
 
           <!-- collapse content -->
           <div class="py-5px">
-            <div
+            <router-link
               v-for="(note, index) in item.notes"
               :key="note.path"
+              :to="note.path"
               class="flex cursor-pointer justify-between py-5px pl-55px pr-20px"
-              @click="$router.push(note.path)"
             >
               <!-- title -->
-              <div class="clip flex-1 truncate" hover="text-$text-hover">
+              <div class="font-14px flex-1 truncate" hover="text-$text-hover">
                 {{ index + 1 }}、{{ note.title }}
               </div>
 
@@ -32,7 +32,7 @@
                   {{ keyword }}
                 </el-tag>
               </div>
-            </div>
+            </router-link>
           </div>
 
           <!-- empty -->
