@@ -25,7 +25,7 @@
       <!-- desc -->
       <div
         v-show="width > 600"
-        class="hidden-2 h-50px flex-center px-26px indent-2em"
+        class="hidden-2 px-26px indent-2em"
         :title="blog.desc"
       >
         {{ blog.desc }}
@@ -99,10 +99,11 @@ onMounted(() => {
   -webkit-box-orient: vertical;
 }
 
-.matted-box:hover{
+.matted-box:hover {
   box-shadow: 0 0 20px #aaa;
 }
-.dark .matted-box:hover{
+
+.dark .matted-box:hover {
   box-shadow: 0 0 20px #bbb;
 }
 </style>

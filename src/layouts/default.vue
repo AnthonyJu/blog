@@ -30,9 +30,18 @@ const route = useRoute()
 const articleWidth = ref('max-w-100ch')
 
 // 根据路由设置显示宽度
-watch(() => route.path, () => {
-  if (articleWidth.value === '') setArticleWidth()
-  else setTimeout(setArticleWidth, 500)
+watch(() => route.path, (to, from) => {
+  // 从其他页面跳转到首页
+  if (to === '/' && from) {
+    setTimeout(setArticleWidth, 500)
+  }
+  // 从首页跳转到其他页面
+  else if (from === '/') {
+    setTimeout(setArticleWidth, 500)
+  }
+  else if (to !== '/' && !from) {
+    articleWidth.value = 'max-w-70ch'
+  }
 }, { immediate: true })
 
 function setArticleWidth() {
