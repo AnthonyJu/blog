@@ -10,27 +10,11 @@
 import AsideContents from './aside-contents.vue'
 import type { Contents } from '@/types/index'
 
-const contents = ref<Contents[]>([])
-
-const bounding = ref<IntersectionObserverEntry[]>([])
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    const index = bounding.value.findIndex(item => item.target.id === entry.target.id)
-    if (index > -1) {
-      bounding.value[index] = entry
-    }
-    else {
-      bounding.value.push(entry)
-    }
-  })
-})
-
-const lastScrollY = ref(0)
 let isScrollDown = true
-window.addEventListener('scroll', () => {
-  isScrollDown = window.scrollY > lastScrollY.value
-  lastScrollY.value = window.scrollY
-})
+const lastScrollY = ref(0)
+
+const contents = ref<Contents[]>([])
+const bounding = ref<IntersectionObserverEntry[]>([])
 
 const hightlightId = ref('')
 watchEffect(() => {
@@ -53,15 +37,6 @@ watchEffect(() => {
     }
   }
 }, { flush: 'post' })
-
-onMounted(() => {
-  const hTags = document.querySelectorAll<HTMLHeadElement>('h1,h2,h3,h4,h5,h6')
-  contents.value = createNestedList(hTags)
-  hTags.forEach((item) => {
-    const h = document.querySelector<HTMLHeadElement>(`#${item.id}`)
-    if (h) observer.observe(h)
-  })
-})
 
 function createNestedList(arr: NodeListOf<HTMLHeadElement>) {
   const result: Contents[] = []
@@ -242,6 +217,42 @@ function createNestedList(arr: NodeListOf<HTMLHeadElement>) {
 
   return result
 }
+
+function scrollListener() {
+  isScrollDown = window.scrollY > lastScrollY.value
+  lastScrollY.value = window.scrollY
+}
+
+onMounted(() => {
+  window.addEventListener('scroll', () => {
+    scrollListener()
+  })
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      const index = bounding.value.findIndex(item => item.target.id === entry.target.id)
+      if (index > -1) {
+        bounding.value[index] = entry
+      }
+      else {
+        bounding.value.push(entry)
+      }
+    })
+  })
+
+  const hTags = document.querySelectorAll<HTMLHeadElement>('h1,h2,h3,h4,h5,h6')
+  contents.value = createNestedList(hTags)
+  hTags.forEach((item) => {
+    const h = document.querySelector<HTMLHeadElement>(`#${item.id}`)
+    if (h) observer.observe(h)
+  })
+})
+
+onUnmounted(() => {
+  window.removeEventListener('scroll', () => {
+    scrollListener()
+  })
+})
 </script>
 
 <style lang='scss' scoped>
