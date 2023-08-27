@@ -7,9 +7,6 @@
 <script setup lang="ts">
 import zhCn from 'element-plus/dist/locale/zh-cn.mjs'
 
-// 检查博客是否有更新
-checkUpdate()
-
 // https://github.com/vueuse/head
 useHead({
   title: 'Ju Peng\'s Blog',
@@ -21,5 +18,10 @@ useHead({
       content: () => isDark.value ? '#121213' : '#ffffff',
     },
   ],
+})
+
+// 检查博客是否有更新
+onMounted(() => {
+  checkUpdate()
 })
 </script>
