@@ -8,7 +8,7 @@ meta:
 
 <route lang="yaml">
 meta:
-  title: 自定义ArcGIS Map Popup
+  title: 自定义 ArcGIS Map Popup
   desc: ArcGIS 自己的 Popup 组件无法满足工作中所需的样式，利用 Vue 的创建方式来实现 Popup 的完全自定义。
   keywords: [ArcGIS, Custom, Popup]
   date: 2023-06-28 15:02:23
@@ -16,7 +16,7 @@ meta:
 
 # 自定义ArcGIS Map Popup
 
-  ArcGIS 自己的 Popup 组件样式太过单一，且使用WebComponent实现，无法满足或修改为工作中UI所设计的样式，利用 Vue 的 `createApp` 方法来实现 Popup 的完全自定义。
+ArcGIS 自己的 Popup 组件样式太过单一，且使用WebComponent实现，无法满足或修改为工作中UI所设计的样式，利用 Vue 的 `createApp` 方法来实现 Popup 的完全自定义。
 
 ## 1. 手动开启 Popup
 
