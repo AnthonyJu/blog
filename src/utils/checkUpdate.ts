@@ -34,8 +34,10 @@ export async function checkUpdate() {
     // 提示博客有更新
     ElNotification.success({
       title: '博客有更新啦',
-      message: h(Countdown, { seconds: 5 }),
+      message: h(Countdown),
       duration: 0,
+      offset: 55,
+      showClose: false,
     })
   }
 }
