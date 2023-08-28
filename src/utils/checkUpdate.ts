@@ -6,13 +6,9 @@ export async function checkUpdate() {
   if (import.meta.env.DEV) return
 
   const { data } = await axios.get('/about')
-  const dom = document.createElement('div')
-  dom.innerHTML = data
+  const src = (document.querySelector('script[type="module"]') as HTMLScriptElement)?.src
 
-  const oldSrc = (dom.querySelector('script[type="module"]') as HTMLScriptElement)?.src
-  const newSrc = (document.querySelector('script[type="module"]') as HTMLScriptElement)?.src
-
-  if (oldSrc !== newSrc) {
+  if (!data.includes(src)) {
     // 创建一个倒计时组件
     const Countdown = defineComponent({
       data() {
