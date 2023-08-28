@@ -30,7 +30,7 @@
 
   <!-- Btn -->
   <a class="btn mb-20px" href="https://github.com/AnthonyJu" target="_blank">
-    <strong>Follow Me</strong>
+    <strong>FollowMe</strong>
     <div id="container-stars"><div id="stars" /></div>
     <div id="glow"><div class="circle" /><div class="circle" /></div>
   </a>
