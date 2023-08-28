@@ -19,7 +19,7 @@ export async function checkUpdate() {
       mounted() {
         setInterval(() => {
           this.countdown--
-          if (this.countdown === 0) location.reload()
+          if (this.countdown === 0) location.replace(location.href)
         }, 1000)
       },
       render() {
