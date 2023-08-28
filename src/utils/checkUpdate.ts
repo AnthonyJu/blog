@@ -5,16 +5,10 @@ export async function checkUpdate() {
   // 开发环境不检查更新
   if (import.meta.env.DEV) return
 
-  const { data } = await axios.get(`/about?time=${Date.now()}`, {
-    responseType: 'text',
-  })
-  // eslint-disable-next-line no-console
-  console.log('🚀 ~ file: checkUpdate.ts:10 ~ data:', data)
+  const { data } = await axios.get(`/about?time=${Date.now()}`)
   const src = (document.querySelector('script[type="module"]') as HTMLScriptElement)?.src
-  // eslint-disable-next-line no-console
-  console.log('🚀 ~ file: checkUpdate.ts:13 ~ src:', src)
 
-  if (!data.includes(src)) {
+  if (!data.includes(src.replace(location.origin, ''))) {
     // 创建一个倒计时组件
     const Countdown = defineComponent({
       data() {
