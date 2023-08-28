@@ -1,7 +1,7 @@
 <template>
   <el-row :gutter="20">
     <el-col :xs="24" :sm="7">
-      <Info />
+      1<Info />
       <Statistic />
       <!-- <Player /> -->
       <Weather />
