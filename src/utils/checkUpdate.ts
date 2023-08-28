@@ -5,7 +5,9 @@ export async function checkUpdate() {
   // 开发环境不检查更新
   if (import.meta.env.DEV) return
 
-  const { data } = await axios.get('/about')
+  const { data } = await axios.get('/about', {
+    responseType: 'text',
+  })
   const src = (document.querySelector('script[type="module"]') as HTMLScriptElement)?.src
 
   if (!data.includes(src)) {
