@@ -19,9 +19,4 @@ useHead({
     },
   ],
 })
-
-// 检查博客是否有更新
-onMounted(() => {
-  checkUpdate()
-})
 </script>
