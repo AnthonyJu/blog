@@ -9,7 +9,7 @@
     </transition>
   </article>
   <el-backtop />
-  <LayoutFooter />
+  <LayoutFooter ref="footer" />
   <Background />
 </template>
 
@@ -20,11 +20,11 @@ import LayoutFooter from './components/layout-footer.vue'
 import LayoutAside from './components/layout-aside.vue'
 
 const { y } = useWindowScroll()
-
 const { height, width } = useWindowSize()
-// 70: header height
-// 60: footer height
-const minHeight = computed(() => `${height.value - 70 - 60}px`)
+
+const footer = ref()
+const elSize = useElementSize(footer)
+const minHeight = computed(() => `${height.value - 70 - elSize.height.value ?? 60}px`) // 70: header height
 
 const route = useRoute()
 const articleWidth = ref('max-w-100ch')
