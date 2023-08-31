@@ -1,5 +1,5 @@
 <template>
-  <footer class="w-full flex-center flex-wrap gap-1 pt-20px text-14px text-slate">
+  <footer class="w-full flex-center flex-wrap gap-1 pb-10px pt-20px text-14px text-slate">
     <div>
       <span class="clip">JuPeng's Blog，Made with</span>
       <span mx-7px class="heartbeat">❤️</span>
