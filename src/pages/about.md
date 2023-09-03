@@ -23,17 +23,17 @@ title: 关于我
 
 ### My Technology Stack 👨‍💻
 - Basis：HTML、CSS、JavaScript、Typescript and a little C#
-- Framework：Vue、Uniapp、React
-- Efficiency：Unocss、Pinia、ElementPlus、VueUse、Echarts、ArcGIS
+- Framework：Vue、Uniapp、React、QFramework
+- Efficiency：Unocss、Pinia、VueUse、Echarts、ArcGIS、ElementPlus
 - Engineering：Vite、npm、yarn、pnpm
-- Server：Nestjs
-- Team：Git、SVN
+- Server：Nodejs、Nestjs
+- Team：Jira、SVN、Git
 - Tools：VSCode、Typora、Unity
 
 ### Contact Me ☎️
-- Email: [1662345805@qq.com](mailto:1662345805@qq.com)
-- Github: [AnthonyJu](https://github.com/AnthonyJu)
-- WeChat: <a class="group" underline cursor-pointer href="#hwy961117">
+- Email：[1662345805@qq.com](mailto:1662345805@qq.com)
+- Github：[AnthonyJu](https://github.com/AnthonyJu)
+- WeChat：<a class="group" underline cursor-pointer href="#hwy961117">
             hwy961117
             <img
               group-hover:block
