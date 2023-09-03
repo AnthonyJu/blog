@@ -137,7 +137,7 @@ if (!view.popup.visible && view.popup.title !== 'custom popup') {
 }
 ```
 
-> 本次使用的 ArcGIS 版本为4.27，如果你使用的版本不同，可能会出现一些问题，如：`view.openPopup` 无法打开 Popup，这时你可以使用 `view.popup.open` 来打开，其次使用 `view.popupEnabled` 属性可能会报错，这时你可以使用 `view.popup.autoOpenEnabled` 属性来代替，具体的属性和方法，可以查看 [ArcGIS API for JavaScript](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-MapView.html)。
+> 本次使用的 ArcGIS 版本为4.27，如果你使用的版本不同，可能会出现一些问题，如：`view.openPopup` 无法打开 Popup，这时你可以使用 `view.popup.open` 来打开，其次使用 `view.popupEnabled` 属性可能会报错，这时你可以使用 `view.popup.autoOpenEnabled` 属性来代替，具体的属性和方法，可以查看：[ArcGIS API for JavaScript](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-MapView.html)。
 
 ## 4. 示例与源码
 

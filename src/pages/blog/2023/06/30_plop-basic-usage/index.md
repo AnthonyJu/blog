@@ -49,7 +49,7 @@ meta:
 
 ## 什么是 Plop
 
-简单来说`Plop`就是是一个小型的、零依赖的、可编程的代码生成器，可以通过命令行，快速生成代码，减少重复代码。详情介绍可以参考 [What is Plop?](https://plopjs.com/documentation/#what-is-plop)。
+简单来说`Plop`就是是一个小型的、零依赖的、可编程的代码生成器，可以通过命令行，快速生成代码，减少重复代码。详情介绍可以参考[What is Plop?](https://plopjs.com/documentation/#what-is-plop)。
 
 ## 安装 Plop
 
@@ -182,7 +182,8 @@ title: {{ title}}
 meta:
   - name: description
     content: {{ desc }}
-  - keywords: {{ keywords }}
+  - name: keywords
+    content: {{ keywords }}
 ---
 
 <route lang="yaml">
