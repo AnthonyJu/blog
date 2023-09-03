@@ -40,12 +40,12 @@ watch(() => route.path, (to, from) => {
     setTimeout(setArticleWidth, 500)
   }
   else if (to !== '/' && !from) {
-    articleWidth.value = 'max-w-70ch'
+    articleWidth.value = 'max-w-75ch'
   }
 }, { immediate: true })
 
 function setArticleWidth() {
-  articleWidth.value = route.path === '/' ? 'max-w-100ch' : 'max-w-70ch'
+  articleWidth.value = route.path === '/' ? 'max-w-100ch' : 'max-w-75ch'
 }
 
 const showAside = computed(() => {

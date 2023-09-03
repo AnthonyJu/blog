@@ -257,7 +257,7 @@ onUnmounted(() => {
 
 <style lang='scss' scoped>
 .aside-content {
-  left: calc(70ch + (100% - 70ch) / 2 - 20px);
+  left: calc(75ch + (100% - 75ch) / 2 - 40px);
   width: 250px;
   padding: 0 20px 0 0;
 }
