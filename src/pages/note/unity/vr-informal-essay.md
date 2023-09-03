@@ -1,5 +1,10 @@
 ---
 title: VR 随笔
+meta:
+  - name: description
+    content: VR 开发中遇到的问题、解决方案、技巧等
+  - name: keywords
+    content: Unity, VR, Informal Essay
 ---
 
 <route lang="yaml">

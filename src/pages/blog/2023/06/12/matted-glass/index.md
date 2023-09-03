@@ -4,7 +4,7 @@ meta:
   - name: description
     content: 在网页开发过程中，些许的背景毛玻璃效果，会让页面看起来更加的高级一些。
   - name: keywords
-    content: [MattedGlass, CSS, Blur]
+    content: MattedGlass, CSS, Blur
 ---
 
 <route lang="yaml">

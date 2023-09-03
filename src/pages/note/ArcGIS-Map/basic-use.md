@@ -1,5 +1,10 @@
 ---
 title: ArcGIS API for JavaScript 基础使用
+meta:
+  - name: description
+    content: ArcGIS API for JavaScript 基础使用
+  - name: keywords
+    content: ArcGIS, Map, JavaScript
 ---
 
 <route lang="yaml">

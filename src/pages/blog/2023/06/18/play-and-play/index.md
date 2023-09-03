@@ -4,7 +4,7 @@ meta:
   - name: description
     content: 逛了小红楼美术馆，海军博物馆，吃了烤肉，去了八大峡，露营燕儿岛，还去了台东。
   - name: keywords
-    content: [生活, 美食, 露营]
+    content: 生活, 美食, 露营
 ---
 
 <route lang="yaml">

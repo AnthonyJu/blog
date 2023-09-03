@@ -4,7 +4,7 @@ meta:
   - name: description
     content: 使用 plopjs，通过命令行，快速生成博客模版，减少本博客因为特殊性，导致的重复代码。
   - name: keywords
-    content: [Plopjs, Generator, Template]
+    content: Plopjs, Generator, Template
 ---
 
 <route lang="yaml">

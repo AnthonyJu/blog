@@ -1,5 +1,10 @@
 ---
 title: HTML5新特性
+meta:
+  - name: description
+    content: HTML5 新特性
+  - name: keywords
+    content: HTML5, New Features
 ---
 
 <route lang="yaml">

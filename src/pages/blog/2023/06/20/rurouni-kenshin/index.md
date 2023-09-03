@@ -4,7 +4,7 @@ meta:
   - name: description
     content: 此版本的重点是开发人员体验的改进，特别是TypeScript对SFC的使用。
   - name: keywords
-    content: [Vue, TS, Script Setup]
+    content: Vue, TS, Script Setup
 ---
 
 <route lang="yaml">

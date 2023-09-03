@@ -1,5 +1,10 @@
 ---
 title: ES7-ES13新特性
+meta:
+  - name: description
+    content: ES7-ES13新特性
+  - name: keywords
+    content: ES7-ES13, New Features
 ---
 
 <route lang="yaml">

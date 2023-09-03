@@ -1,11 +1,16 @@
 ---
 title: JS基础知识
+meta:
+  - name: description
+    content: JS基础知识
+  - name: keywords
+    content: JS, Basic Knowledge
 ---
 
 <route lang="yaml">
 meta:
   title: JS基础知识
-  keywords: [JS, Basic]
+  keywords: [JS, Basic Knowledge]
   date: 2023-06-18 10:10:28
 </route>
 

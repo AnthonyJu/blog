@@ -4,7 +4,7 @@ meta:
   - name: description
     content: 在切换主题的时候，通过View Transitions API，实现炫酷的主题切换效果。
   - name: keywords
-    content: [DarkMode, View Transitions]
+    content: DarkMode, View Transitions
 ---
 
 <route lang="yaml">

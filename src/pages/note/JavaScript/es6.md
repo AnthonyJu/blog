@@ -1,5 +1,10 @@
 ---
 title: ES6新特性
+meta:
+  - name: description
+    content: ES6新特性
+  - name: keywords
+    content: ES6, New Features
 ---
 
 <route lang="yaml">

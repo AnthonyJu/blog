@@ -1,5 +1,10 @@
 ---
 title: git commit 提交规范
+meta:
+  - name: description
+    content: git commit 提交规范
+  - name: keywords
+    content: Git commit, Specification
 ---
 
 <route lang="yaml">

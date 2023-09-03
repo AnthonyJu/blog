@@ -4,7 +4,7 @@ meta:
   - name: description
     content: JS 中的深拷贝与浅拷贝的区别，以及实现与使用。
   - name: keywords
-    content: [JS, DeepClone]
+    content: JS, DeepClone
 ---
 
 <route lang="yaml">

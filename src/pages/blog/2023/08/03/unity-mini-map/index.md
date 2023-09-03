@@ -4,14 +4,14 @@ meta:
   - name: description
     content: 最近在做一个 VR 项目，由于地图场景有很多个，并且具有一定规模，需要一个小地图来指引用户所在位置。
   - name: keywords
-    content: [Unity, MiniMap, VR ]
+    content: Unity, MiniMap, VR
 ---
 
 <route lang="yaml">
 meta:
   title: Unity 中实现小地图
   desc: 最近在做一个 VR 项目，由于地图场景有很多个，并且具有一定规模，需要一个小地图来指引用户所在位置。
-  keywords: [Unity, MiniMap, VR ]
+  keywords: [Unity, MiniMap, VR]
   date: 2023-08-15 21:40:33
 </route>
 

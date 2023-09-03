@@ -4,7 +4,7 @@ meta:
   - name: description
     content: 记录下这个月的一些点点滴滴，分开写有点太多了，之前也没来得及记录，这次总起来记录一下吧。
   - name: keywords
-    content: [生活, 记录, 点滴]
+    content: 生活, 记录, 点滴
 ---
 
 <route lang="yaml">
