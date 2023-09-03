@@ -3,14 +3,15 @@ title: 使用 plop 生成模板
 meta:
   - name: description
     content: 使用 plopjs，通过命令行，快速生成博客模版，减少本博客因为特殊性，导致的重复代码。
-  - keywords: Plop,Generator,Template
+  - name: keywords
+    content: [Plopjs, Generator, Template]
 ---
 
 <route lang="yaml">
 meta:
   title: 使用 Plop 生成模板
   desc: 使用 plopjs，通过命令行，快速生成博客模版，减少本博客因为特殊性，导致的重复代码。
-  keywords: [Plopjs,Generator,Template]
+  keywords: [Plopjs, Generator, Template]
   date: 2023-06-30 21:30:59
 </route>
 

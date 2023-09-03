@@ -3,7 +3,8 @@ title: Vue 3.3 浪客剑心
 meta:
   - name: description
     content: 此版本的重点是开发人员体验的改进，特别是TypeScript对SFC的使用。
-  - keywords: Vue, TS, script setup
+  - name: keywords
+    content: [Vue, TS, Script Setup]
 ---
 
 <route lang="yaml">

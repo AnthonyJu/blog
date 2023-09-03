@@ -3,14 +3,15 @@ title: JS 中的深拷贝与浅拷贝
 meta:
   - name: description
     content: JS 中的深拷贝与浅拷贝的区别，以及实现与使用。
-  - keywords: JS，DeepClone
+  - name: keywords
+    content: [JS, DeepClone]
 ---
 
 <route lang="yaml">
 meta:
   title: JS 中的深拷贝与浅拷贝
   desc: JS 中的深拷贝与浅拷贝的区别，以及实现与使用。
-  keywords: [JS,DeepClone]
+  keywords: [JS, DeepClone]
   date: 2023-07-15 18:13:09
 </route>
 

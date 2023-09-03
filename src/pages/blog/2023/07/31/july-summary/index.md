@@ -3,14 +3,15 @@ title: 7月生活小记
 meta:
   - name: description
     content: 记录下这个月的一些点点滴滴，分开写有点太多了，之前也没来得及记录，这次总起来记录一下吧。
-  - keywords: 生活,记录,点滴
+  - name: keywords
+    content: [生活, 记录, 点滴]
 ---
 
 <route lang="yaml">
 meta:
   title: 7月生活小记
   desc: 记录下这个月的一些点点滴滴，分开写有点太多了🧐，之前也没来得及记录，这次总起来简单记录一下吧😬。
-  keywords: [生活,记录,点滴]
+  keywords: [生活, 记录, 点滴]
   date: 2023-07-31 19:54:22
 </route>
 

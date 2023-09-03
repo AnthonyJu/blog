@@ -3,7 +3,8 @@ title: ArcGIS for JS 绘制 圆弧
 meta:
   - name: description
     content: ArcGIS for JS 中并未提供绘制圆弧或是扇形的API，但在开发过程中又确实需要，在一番研究后找到了合适的方法生成圆弧。
-  - keywords: ArcGIS,Draw,Arc
+  - name: keywords
+    content: [ArcGIS, Draw, Arc]
 ---
 
 <route lang="yaml">
