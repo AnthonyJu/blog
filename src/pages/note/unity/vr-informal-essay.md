@@ -5,7 +5,7 @@ title: VR 随笔
 <route lang="yaml">
 meta:
   title: VR 随笔
-  keywords: [Unity,VR,Informal Essay]
+  keywords: [Unity, VR, Informal Essay]
   date: 2023-08-05 22:10:28
 </route>
 
@@ -48,7 +48,7 @@ meta:
 - Throwable脚本：`/SteamVR/InteractionSystem/Core/Scripts/Throwable.cs`
 
 - InteractableHoverEvents脚本：
-  
+
   `/SteamVR/InteractionSystem/Core/Scripts/InteractableHoverEvents.cs`
 
   此脚本需要一个可进行Hover的对象 `<Moving　Part>`
@@ -56,3 +56,17 @@ meta:
   该脚本有四个函数调用需要进行脚本编写实现：OnHandHoverBegin、OnAttachedToHand（Hand　hand）、OnDetachedFromHand（Hand　hand）
 
   Hand类型来自：using Valve.VR.InteractionSystem;
+
+## 4. 读取Resources文件夹下的json文件
+```cs
+public class YourType
+{
+    public string name;
+    public List<string> things;
+}
+
+// 读取json文件，获取json字符串
+string jsonStr = Resources.Load<TextAsset>("fileName").text;
+// 将json字符串转换为对象
+YourType jsonObj = JsonUtility.FromJson<YourType>(jsonStr);
+```
