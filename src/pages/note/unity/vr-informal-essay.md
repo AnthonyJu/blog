@@ -30,7 +30,6 @@ meta:
 
 选择要自定义的按键，点击编辑，找到 `Menu`，最后 `替换默认绑定` 即可，
 
-
 ## 2. 设置游戏中手持手柄
 
 在目录中找到如下预制体：`SteamVR` -> `Prefabs` -> `vr_glove_left_model_slim`，设置绑定脚本中的 `Range Of Motion` 为 `With controller`。
@@ -63,6 +62,7 @@ meta:
   Hand类型来自：using Valve.VR.InteractionSystem;
 
 ## 4. 读取Resources文件夹下的json文件
+
 ```cs
 public class YourType
 {
@@ -74,4 +74,11 @@ public class YourType
 string jsonStr = Resources.Load<TextAsset>("fileName").text;
 // 将json字符串转换为对象
 YourType jsonObj = JsonUtility.FromJson<YourType>(jsonStr);
+```
+
+## 5. 打开streamingAssets下的exe程序
+
+```cs
+string path = Application.streamingAssetsPath + "/sceneTwo/AdministrativeHall.exe";
+Application.OpenURL(path);
 ```
