@@ -95,12 +95,59 @@ const arcRings = [[...rings.slice(startAngle, endAngle + 1), [120.38, 36.06]]]
 
 自定义方法, 根据中心经纬度, 半径, 起始角度, 结束角度, 生成圆弧的方法如下:
 
-```js
-// TODO 自定义方法生成圆弧
+```ts
+/**
+ *  生成圆弧的 rings
+ * @param startAngle 开始角度
+ * @param endAngle 结束角度
+ * @param radius 半径
+ * @param center 圆心
+ */
+function generateArc(
+  startAngle: number,
+  endAngle: number,
+  radius: number,
+  center: [number, number]) {
+  const pointNum: number = 100
+  const points: [number, number][] = []
+  let sin: number, cos: number, x: number, y: number, angle: number
+  for (let i: number = 0; i <= pointNum; i++) {
+    angle = startAngle + ((endAngle - startAngle) * i) / pointNum
+    sin = Math.sin((angle * Math.PI) / 180)
+    cos = Math.cos((angle * Math.PI) / 180)
+    x = center[0] + radius * sin
+    y = center[1] + radius * cos
+    points.push([x, y])
+  }
+  return [points]
+}
+
+// 示例用法
+const arcRings = generateArc(0, 90, 1000, [120.38, 36.06])
+
+// 创建一个graphic
+const graphic = new Graphic({
+  geometry: new Polygon({
+    rings: arcRings,
+  }),
+  symbol: new SimpleFillSymbol({
+    color: [255, 0, 0, 0.5],
+    outline: {
+      color: [255, 0, 0, 0.5],
+      width: 2,
+    },
+  }),
+})
+
+// 添加扇形到地图
+view.graphics.add(graphic)
 ```
+
+### 注意事项
+>  - 生成的圆弧的点数越多，圆弧越平滑，但是性能越差，所以需要根据实际情况进行取舍。
+>  - 在正常创建的地图中，一般是3857也就是102100坐标系，改方法生成的圆弧是在4326坐标系下，因此其展示的时候为椭圆，你需要在创建地图时，指定坐标系为4326，但是一般地图均是在102100坐标系下，所以这种方法一般不适用于正常的地图，但是如果你的地图是在4326坐标系下，那么这种方法就可以使用了。
 
 ### 示例与源码
 
-```js
-// TODO 示例与源码
-```
+<CustomFrame route="/arcgis/draw-arc-custom" />
+
