@@ -10,6 +10,7 @@
         class="cursor-pointer text-30px text-white opacity-70"
         hover="opacity-100"
         i-ic-outline-play-circle-outline
+        title="播放"
         @click="audioState.audio?.play()"
       />
       <div
@@ -17,6 +18,7 @@
         class="ml-36px mt-30px cursor-pointer text-20px text-white opacity-70"
         hover="opacity-100"
         i-ic-outline-pause-circle-outline
+        title="暂停"
         @click="audioState.audio?.pause()"
       />
     </div>

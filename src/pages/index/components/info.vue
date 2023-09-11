@@ -3,6 +3,7 @@
     <img
       class="avatar max-h-210px cursor-pointer rounded-50%"
       border="~ gray-500"
+      hover="animate-spin"
       src="@/assets/avatar.png"
       alt="AnthonyJu"
       @click="$router.push('/about')"

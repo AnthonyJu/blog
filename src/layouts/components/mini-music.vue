@@ -18,6 +18,7 @@
     >
       <div
         class="text-18px text-black" i-carbon-pause-filled
+        title="暂停"
         @click="audioState.audio?.pause()"
       />
     </div>
