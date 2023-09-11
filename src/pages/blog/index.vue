@@ -1,5 +1,8 @@
 <template>
-  <div class="grid flex-col-center gap-20px" :class="`grid-cols-${gridNum}`">
+  <div
+    class="grid flex-col-center gap-20px"
+    style="grid-template-columns: repeat(auto-fit, minmax(min(230px, 100%), 1fr));"
+  >
     <div
       v-for="blog in blogs"
       :key="blog.title"
@@ -56,14 +59,6 @@
 <script setup lang='ts'>
 import pages from '~pages'
 
-const { width } = useWindowSize()
-// 根据屏幕宽度计算每行显示的博客数量
-const gridNum = computed(() => {
-  if (width.value <= 500) return 1
-  else if (width.value <= 800) return 2
-  else return 3
-})
-
 const allBlogs = getAllBlogs(pages)
 
 // 当前页
@@ -76,22 +71,6 @@ const blogs = computed(() => {
 </script>
 
 <style lang='scss' scoped>
-.grid-cols-1 {
-  grid-template-columns: repeat(1,minmax(0,1fr));
-
-  .blog-item {
-    height: 300px;
-  }
-}
-
-.grid-cols-2 {
-  grid-template-columns: repeat(2,minmax(0,1fr));
-}
-
-.grid-cols-3 {
-  grid-template-columns: repeat(3,minmax(0,1fr));
-}
-
 ::v-deep(.el-pagination) {
   --el-pagination-bg-color: transparent;
 
