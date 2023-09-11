@@ -30,16 +30,17 @@
     <el-dropdown
       class="absolute top-0 cursor-pointer text-22px -right-2px"
       size="large"
+      popper-class="music-type-dropdown"
       @command="handleCmd"
     >
       <div i-carbon-playlist />
       <template #dropdown>
         <el-dropdown-menu>
-          <el-dropdown-item command="热歌榜">热歌榜</el-dropdown-item>
-          <el-dropdown-item command="新歌榜">新歌榜</el-dropdown-item>
-          <el-dropdown-item command="飙升榜">飙升榜</el-dropdown-item>
-          <el-dropdown-item command="抖音榜">抖音榜</el-dropdown-item>
-          <el-dropdown-item command="电音榜">电音榜</el-dropdown-item>
+          <el-dropdown-item v-for="sort in sortList" :key="sort" :command="sort">
+            <span :class="audioState.sort === sort ? 'text-$el-color-primary' : ''">
+              {{ sort }}
+            </span>
+          </el-dropdown-item>
         </el-dropdown-menu>
       </template>
     </el-dropdown>
@@ -73,6 +74,8 @@
 
 <script setup lang='ts'>
 import type { Arrayable } from 'element-plus/lib/utils/typescript'
+
+const sortList = ['热歌榜', '新歌榜', '飙升榜', '抖音榜', '电音榜']
 
 // 设置当前播放时间
 function setCurrentTime(time: Arrayable<number>) {
@@ -108,6 +111,36 @@ function formatTime(time: number) {
 
   .el-slider__button-wrapper {
     display: none;
+  }
+}
+
+::v-deep(.music-type-dropdown) {
+  background: transparent;
+}
+</style>
+
+<style lang='scss'>
+.music-type-dropdown.el-dropdown__popper.el-popper {
+  background: transparent;
+  backdrop-filter: blur(12px);
+  border: none;
+  box-shadow: none;
+
+  .el-dropdown-menu {
+    background-color: rgba(124, 168, 255, 0.2);
+    border: none;
+    border-radius: 8px;
+  }
+
+  .el-dropdown-menu__item:not(.is-disabled):focus {
+    /* stylelint-disable-next-line custom-property-pattern */
+    --el-dropdown-menuItem-hover-fill: transparent;
+  }
+
+  .el-popper__arrow::before {
+    background-color: rgba(124, 168, 255, 0.2);
+    backdrop-filter: blur(12px);
+    border: none;
   }
 }
 </style>
