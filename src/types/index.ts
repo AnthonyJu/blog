@@ -27,3 +27,15 @@ export interface Contents {
   title: string
   children: Contents[]
 }
+
+export interface AudioState {
+  sort: string
+  audio: HTMLAudioElement | null
+  isPlaying: boolean
+  currentTime: number
+  duration: number
+  volume: number
+  title: string
+  poster: string
+  artists: string
+}

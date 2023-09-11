@@ -1,18 +1,93 @@
 <template>
-  <iframe
-    class="matted-box"
-    mt-20px
-    width="100%"
-    height="86"
-    allowtransparency="true"
-    src="//music.163.com/outchain/player?type=2&id=413142581&auto=1&height=66"
-  />
+  <div class="matted-box relative mt-20px h-86px flex items-center overflow-hidden p-10px">
+    <!-- 播放与暂停 -->
+    <div
+      class="absolute h-66px w-66px flex-center"
+      :class="audioState.isPlaying ? '' : 'bg-black bg-opacity-30'"
+    >
+      <div
+        v-show="!audioState.isPlaying"
+        class="cursor-pointer text-30px text-white opacity-70"
+        hover="opacity-100"
+        i-ic-outline-play-circle-outline
+        @click="play"
+      />
+      <div
+        v-show="audioState.isPlaying"
+        class="ml-36px mt-30px cursor-pointer text-20px text-white opacity-70"
+        hover="opacity-100"
+        i-ic-outline-pause-circle-outline
+        @click="pause"
+      />
+    </div>
+    <!-- 封面 -->
+    <img class="h-66px w-66px" :src="audioState.poster">
+
+    <!-- TODO 类型切换 -->
+    <div class="absolute top-0 cursor-pointer text-20px -right-2px" i-carbon-playlist />
+
+    <!-- 标题与进度 -->
+    <div class="h-full w-[calc(100%-66px)] flex-col justify-between pl-8px">
+      <div class="mt-6px flex-center">
+        <div class="mr-4px text-green" i-fxemoji-musicalnote />
+        <p class="flex-1 truncate" :title="`${audioState.title} - ${audioState.artists}`">
+          {{ audioState.title }}
+          <span class="text-14px"> - {{ audioState.artists }}</span>
+        </p>
+      </div>
+      <div class="flex-center">
+        <el-slider
+          v-model="audioState.currentTime"
+          class="flex-1"
+          :max="audioState.duration"
+          @input="setCurrentTime"
+        />
+        <p class="w-64px pl-10px text-14px">{{ `- ${getRemainTime}` }}</p>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script setup lang='ts'>
+// 播放音乐
+function play() {
+  audioState.audio?.play()
+}
 
+// 暂停音乐
+function pause() {
+  audioState.audio?.pause()
+}
+
+// 设置当前播放时间
+function setCurrentTime(time: number) {
+  audioState.audio!.currentTime = time
+}
+
+// 当前剩余时间
+const getRemainTime = computed(() => formatTime(audioState.duration - audioState.currentTime))
+
+// 格式化时间
+function formatTime(time: number) {
+  const min = Math.floor(time / 60)
+  const sec = Math.floor(time % 60)
+
+  // 不满10补0
+  const minStr = min < 10 ? `0${min}` : `${min}`
+  const secStr = sec < 10 ? `0${sec}` : `${sec}`
+
+  return `${minStr}:${secStr}`
+}
 </script>
 
 <style lang='scss' scoped>
+::v-deep(.el-slider) {
+  .el-slider__bar {
+    border-radius: var(--el-slider-border-radius);
+  }
 
+  .el-slider__button-wrapper {
+    display: none;
+  }
+}
 </style>

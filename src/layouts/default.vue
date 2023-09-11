@@ -8,8 +8,8 @@
       </div>
     </transition>
   </article>
-  <el-backtop />
   <LayoutFooter ref="footer" />
+  <el-backtop />
   <Background />
 </template>
 
@@ -18,6 +18,9 @@ import Background from './components/background.vue'
 import LayoutHeader from './components/layout-header.vue'
 import LayoutFooter from './components/layout-footer.vue'
 import LayoutAside from './components/layout-aside.vue'
+
+// 随机播放音乐
+useAudioPlayer()
 
 const { y } = useWindowScroll()
 const { height, width } = useWindowSize()
