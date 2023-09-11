@@ -10,27 +10,46 @@
         class="cursor-pointer text-30px text-white opacity-70"
         hover="opacity-100"
         i-ic-outline-play-circle-outline
-        @click="play"
+        @click="audioState.audio?.play()"
       />
       <div
         v-show="audioState.isPlaying"
         class="ml-36px mt-30px cursor-pointer text-20px text-white opacity-70"
         hover="opacity-100"
         i-ic-outline-pause-circle-outline
-        @click="pause"
+        @click="audioState.audio?.pause()"
       />
     </div>
+
     <!-- 封面 -->
     <img class="h-66px w-66px" :src="audioState.poster">
 
-    <!-- TODO 类型切换 -->
-    <div class="absolute top-0 cursor-pointer text-22px -right-2px" i-carbon-playlist />
+    <!-- 类型切换 -->
+    <el-dropdown
+      class="absolute top-0 cursor-pointer text-22px -right-2px"
+      size="large"
+      @command="handleCmd"
+    >
+      <div i-carbon-playlist />
+      <template #dropdown>
+        <el-dropdown-menu>
+          <el-dropdown-item command="热歌榜">热歌榜</el-dropdown-item>
+          <el-dropdown-item command="新歌榜">新歌榜</el-dropdown-item>
+          <el-dropdown-item command="飙升榜">飙升榜</el-dropdown-item>
+          <el-dropdown-item command="抖音榜">抖音榜</el-dropdown-item>
+          <el-dropdown-item command="电音榜">电音榜</el-dropdown-item>
+        </el-dropdown-menu>
+      </template>
+    </el-dropdown>
 
     <!-- 标题与进度 -->
     <div class="h-full w-[calc(100%-66px)] flex-col justify-between pl-8px">
       <div class="mt-8px flex-center">
         <div class="mr-4px text-green" i-fxemoji-musicalnote />
-        <p class="flex-1 truncate" :title="`${audioState.title} - ${audioState.artists}`">
+        <p
+          class="flex-1 truncate"
+          :title="`${audioState.title} - ${audioState.artists}`"
+        >
           {{ audioState.title }}
           <span class="text-14px"> - {{ audioState.artists }}</span>
         </p>
@@ -42,26 +61,25 @@
           :max="audioState.duration"
           @input="setCurrentTime"
         />
-        <p class="w-64px pb-2px pl-10px text-center text-14px">{{ `- ${getRemainTime}` }}</p>
+        <p class="w-64px pb-2px pl-10px text-center text-14px">
+          {{ `- ${getRemainTime}` }}
+        </p>
       </div>
     </div>
   </div>
 </template>
 
 <script setup lang='ts'>
-// 播放音乐
-function play() {
-  audioState.audio?.play()
-}
-
-// 暂停音乐
-function pause() {
-  audioState.audio?.pause()
-}
+import type { Arrayable } from 'element-plus/lib/utils/typescript'
 
 // 设置当前播放时间
-function setCurrentTime(time: number) {
-  audioState.audio!.currentTime = time
+function setCurrentTime(time: Arrayable<number>) {
+  audioState.audio!.currentTime = time as number
+}
+
+// 处理命令
+function handleCmd(cmd: string) {
+  audioState.sort = cmd
 }
 
 // 当前剩余时间

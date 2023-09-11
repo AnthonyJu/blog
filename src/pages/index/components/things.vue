@@ -1,6 +1,6 @@
 <template>
   <div class="clip h-47px flex-center pt-20px text-18px">
-    <span truncate :title="oneWord">{{ oneWord }}</span>
+    <span class="truncate px-10px" :title="oneWord">{{ oneWord }}</span>
   </div>
   <router-link
     v-for="blog in blogs"
