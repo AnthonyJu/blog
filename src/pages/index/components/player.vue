@@ -24,25 +24,25 @@
     <img class="h-66px w-66px" :src="audioState.poster">
 
     <!-- TODO 类型切换 -->
-    <div class="absolute top-0 cursor-pointer text-20px -right-2px" i-carbon-playlist />
+    <div class="absolute top-0 cursor-pointer text-22px -right-2px" i-carbon-playlist />
 
     <!-- 标题与进度 -->
     <div class="h-full w-[calc(100%-66px)] flex-col justify-between pl-8px">
-      <div class="mt-6px flex-center">
+      <div class="mt-8px flex-center">
         <div class="mr-4px text-green" i-fxemoji-musicalnote />
         <p class="flex-1 truncate" :title="`${audioState.title} - ${audioState.artists}`">
           {{ audioState.title }}
           <span class="text-14px"> - {{ audioState.artists }}</span>
         </p>
       </div>
-      <div class="flex-center">
+      <div class="mt-6px flex-center">
         <el-slider
           v-model="audioState.currentTime"
           class="flex-1"
           :max="audioState.duration"
           @input="setCurrentTime"
         />
-        <p class="w-64px pl-10px text-14px">{{ `- ${getRemainTime}` }}</p>
+        <p class="w-64px pb-2px pl-10px text-center text-14px">{{ `- ${getRemainTime}` }}</p>
       </div>
     </div>
   </div>
