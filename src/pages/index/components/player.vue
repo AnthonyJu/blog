@@ -48,7 +48,12 @@
     <!-- 标题与进度 -->
     <div class="h-full w-[calc(100%-66px)] flex-col justify-between pl-8px">
       <div class="mt-8px flex-center">
-        <div class="mr-4px text-green" i-fxemoji-musicalnote />
+        <div
+          class="mr-8px cursor-pointer text-green"
+          i-fxemoji-musicalnote
+          title="切换下一首"
+          @click="playMusic"
+        />
         <p
           class="flex-1 truncate"
           :title="`${audioState.title} - ${audioState.artists}`"
@@ -74,8 +79,6 @@
 
 <script setup lang='ts'>
 import type { Arrayable } from 'element-plus/lib/utils/typescript'
-
-const sortList = ['热歌榜', '新歌榜', '飙升榜', '抖音榜', '电音榜']
 
 // 设置当前播放时间
 function setCurrentTime(time: Arrayable<number>) {
