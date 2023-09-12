@@ -25,7 +25,7 @@ meta:
 
 ## 效果展示
 
-<script setup lang="ts">
+<script setup>
   import Demo from './components/demo.vue'
 </script>
 
