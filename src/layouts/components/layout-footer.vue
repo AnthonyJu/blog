@@ -2,7 +2,7 @@
   <footer class="w-full flex-center flex-wrap gap-1 pb-10px pt-20px text-14px text-slate">
     <div>
       <span class="clip">JuPeng's Blog，Made with</span>
-      <span mx-7px class="heartbeat">❤️</span>
+      <span class="heartbeat mx-7px inline-block">❤️</span>
       <span class="clip">by JuPeng</span>
     </div>
     <div v-show="width >= 650" mx-4px>|</div>
@@ -29,7 +29,7 @@ const { width } = useWindowSize()
 
 <style lang="scss" scoped>
 .heartbeat {
-  animation: heartbeat 1.5s ease infinite;
+  animation: heartbeat 1.5s infinite ease;
 }
 
 @keyframes heartbeat {
