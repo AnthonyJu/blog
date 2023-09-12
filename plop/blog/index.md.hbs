@@ -2,7 +2,7 @@
 title: {{ title}}
 meta:
   - name: description
-    content: {{ title }}
+    content: {{ desc }}
   - name: keywords
     content: {{ keywords }}
 ---
@@ -10,6 +10,7 @@ meta:
 <route lang="yaml">
 meta:
   title: {{ title}}
+  desc: {{ desc }}
   keywords: [{{ keywords }}]
   date: {{ date }}
 </route>
