@@ -9,6 +9,7 @@
     </transition>
   </article>
   <LayoutFooter ref="footer" />
+  <Rabbit />
   <MiniMusic />
   <el-backtop />
   <Background />
@@ -20,6 +21,7 @@ import LayoutHeader from './components/layout-header.vue'
 import LayoutFooter from './components/layout-footer.vue'
 import LayoutAside from './components/layout-aside.vue'
 import MiniMusic from './components/mini-music.vue'
+import Rabbit from './components/rabbit.vue'
 
 // 随机播放音乐
 useAudioPlayer()
