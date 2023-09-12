@@ -100,10 +100,10 @@ onMounted(() => {
 }
 
 .matted-box:hover {
-  box-shadow: 0 0 20px #aaa;
+  box-shadow: 0 0 20px #86ddea;
 }
 
 .dark .matted-box:hover {
-  box-shadow: 0 0 20px #bbb;
+  box-shadow: 0 0 20px #688ed6;
 }
 </style>
