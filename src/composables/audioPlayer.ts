@@ -3,6 +3,13 @@ import type { AudioState } from '@/types/index'
 
 const AUDIO_SRC = 'https://api.uomg.com/api/rand.music?format=json&sort='
 
+const audioInfo = ref({
+  url: '',
+  name: '',
+  picurl: '',
+  artistsname: '',
+})
+
 export const sortList = ['热歌榜', '新歌榜', '飙升榜', '抖音榜', '电音榜']
 
 export const audioState: AudioState = reactive({
@@ -19,18 +26,29 @@ export const audioState: AudioState = reactive({
 
 export async function playMusic() {
   const res = await axios.get(AUDIO_SRC + audioState.sort)
-  const { name, picurl, artistsname, url } = res.data.data
-  audioState.title = name
-  audioState.poster = picurl
-  audioState.artists = artistsname
+  audioInfo.value = res.data.data
 
   if (audioState.audio) {
-    audioState.audio.src = url
+    audioState.audio.src = audioInfo.value.url
     audioState.audio.load()
     audioState.audio.play()
   }
   else {
-    audioState.audio = new Audio(url)
+    audioState.title = audioInfo.value.name
+    audioState.poster = audioInfo.value.picurl
+    audioState.artists = audioInfo.value.artistsname
+    audioState.audio = new Audio(audioInfo.value.url)
+
+    audioState.audio.addEventListener('error', () => {
+      audioState.isPlaying = false
+      playMusic()
+    })
+
+    audioState.audio.addEventListener('canplay', () => {
+      audioState.title = audioInfo.value.name
+      audioState.poster = audioInfo.value.picurl
+      audioState.artists = audioInfo.value.artistsname
+    })
 
     audioState.audio.addEventListener('play', () => {
       audioState.isPlaying = true
@@ -52,7 +70,7 @@ export async function playMusic() {
   }
 }
 
-export default function useAudioPlayer() {
+export function useAudioPlayer() {
   watch(() => audioState.sort, playMusic)
 
   onMounted(playMusic)
