@@ -11,7 +11,7 @@
 
     <!-- Focusing -->
     <div
-      absolute z-10 flex-center cursor-pointer rounded-18px
+      absolute z-1 flex-center cursor-pointer rounded-18px
       class="group bottom-8% left-75% bg-$bg-color-opacity px-10px py-6px"
       cursor="default"
     >

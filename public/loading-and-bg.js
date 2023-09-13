@@ -1,0 +1,1 @@
+const start=(new Date).getTime();window.addEventListener("load",()=>{const e=(new Date).getTime()-start;e<1500?setTimeout(()=>{document.querySelector(".loading").style.display="none",document.querySelector("#app").style.display="block"},e-1500):(document.querySelector(".loading").style.display="none",document.querySelector("#app").style.display="block")});
