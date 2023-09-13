@@ -137,13 +137,14 @@ html:not(.dark) .shiki-dark {
   font-weight: 500 !important;
   background: var(--line-code-bg)!important;
   border-radius: 6px;
+  font-size: 14px !important;
 }
 
 .prose :where(:not(pre) > code):not(:where(.not-prose,.not-prose *))::before, .prose :where(:not(pre) > code):not(:where(.not-prose,.not-prose *))::after {
   content: '' !important;
 }
 
-.prose :where(code):not(:where(.not-prose,.not-prose *)) {
+.prose :where(pre > code):not(:where(.not-prose,.not-prose *)) {
   font-size: 16px !important;
 }
 
