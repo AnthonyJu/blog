@@ -66,6 +66,10 @@ export default function (
             title: 'Markdown',
             value: 'markdown',
           },
+          {
+            title: 'Others',
+            value: 'others',
+          },
         ],
       },
       {

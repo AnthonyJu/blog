@@ -101,6 +101,10 @@ const noteTypes = ref<NoteType[]>([
     name: 'Markdown',
     icon: 'i-vscode-icons:file-type-markdown',
   },
+  {
+    name: 'Others',
+    icon: 'i-vscode-icons-file-type-todo',
+  },
 ])
 
 const allNotes = pages.filter(page => page.path.startsWith('/note/')).map((page) => {
