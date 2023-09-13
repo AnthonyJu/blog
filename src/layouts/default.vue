@@ -12,11 +12,9 @@
   <Rabbit />
   <MiniMusic />
   <el-backtop />
-  <Background />
 </template>
 
 <script setup lang="ts">
-import Background from './components/background.vue'
 import LayoutHeader from './components/layout-header.vue'
 import LayoutFooter from './components/layout-footer.vue'
 import LayoutAside from './components/layout-aside.vue'

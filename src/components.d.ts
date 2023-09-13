@@ -7,6 +7,7 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
+    Background: typeof import('./components/background.vue')['default']
     CustomFrame: typeof import('./components/CustomFrame.vue')['default']
     ElBacktop: typeof import('element-plus/lib')['ElBacktop']
     ElButton: typeof import('element-plus/lib')['ElButton']

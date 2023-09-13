@@ -15,7 +15,7 @@
 
 <route lang="yaml">
 meta:
-  layout: error
+  layout: none
 </route>
 
 <style lang="scss" scoped>
