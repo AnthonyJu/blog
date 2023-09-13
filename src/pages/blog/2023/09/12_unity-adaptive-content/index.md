@@ -4,14 +4,14 @@ meta:
   - name: description
     content: 让 Unity 中 的Button组件，能够根据Text文本内容的多少来进行自适应宽高变化。
   - name: keywords
-    content: Unity, Button, Adaptive Content
+    content: Unity, Adaptive Content
 ---
 
 <route lang="yaml">
 meta:
   title: Unity 中 Button 自适应内容
   desc: 让 Unity 中 的Button组件，能够根据Text文本内容的多少来进行自适应宽高变化。
-  keywords: [Unity, Button, Adaptive Content]
+  keywords: [Unity, Adaptive Content]
   date: 2023-09-12 20:21:45
 </route>
 

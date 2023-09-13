@@ -1,8 +1,10 @@
 <template>
-  <img class="rabbit" src="@/assets/rabbit.png" :style="{ right }">
+  <img class="rabbit" src="https://www.macgf.com/img/tu02.png" :style="{ right }" @error="handleError">
 </template>
 
 <script setup lang='ts'>
+import Rabbit from '@/assets/rabbit.png'
+
 const { width } = useWindowSize()
 
 const right = computed(() => {
@@ -13,6 +15,10 @@ const right = computed(() => {
     return '-82px'
   }
 })
+
+function handleError(e: Event) {
+  (e.target as HTMLImageElement).src = Rabbit
+}
 </script>
 
 <style lang='scss' scoped>
