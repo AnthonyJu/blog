@@ -82,3 +82,16 @@ YourType jsonObj = JsonUtility.FromJson<YourType>(jsonStr);
 string path = Application.streamingAssetsPath + "/sceneTwo/AdministrativeHall.exe";
 Application.OpenURL(path);
 ```
+
+## 6. VR场景黑屏过渡
+
+在`VR Camera`上添加`SteamVR_Fade`脚本组件，调用`SteamVR_Fade.Start`方法即可。
+
+```cs
+using Valve.VR;
+
+// 第一个参数为渐变到的颜色，第二个参数为渐变的时间
+SteamVR_Fade.Start(Color.clear, 0); // 渐变到透明
+SteamVR_Fade.Start(Color.black, 1f); // 渐变到黑色
+```
+```
