@@ -94,4 +94,3 @@ using Valve.VR;
 SteamVR_Fade.Start(Color.clear, 0); // 渐变到透明
 SteamVR_Fade.Start(Color.black, 1f); // 渐变到黑色
 ```
-```

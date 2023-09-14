@@ -31,7 +31,7 @@ meta:
 
 这一步有两种方式，一种是在代码中创建，一种是在 Unity 中创建，我这里使用的是在代码中创建，代码如下：
 
-```csharp
+```cs
 // 创建 RenderTexture，1000 为宽度，1000 为高度，0 为深度
 RenderTexture rt = new RenderTexture(1000, 1000, 0);
 
@@ -43,7 +43,7 @@ camera.targetTexture = rt;
 
 创建一个 `小地图Canvas`，宽高与上一步创建的RenderTexture相同，使用缩放将物体缩放到游戏中合适的大小， 创建一个子物体 `RawImage`，然后将上面创建的 RenderTexture 赋值给 RawImage 的 `Texture` 属性，这样就可以将相机渲染的内容显示到 RawImage 上了。
 
-```csharp
+```cs
 // 将 RenderTexture 赋值给 RawImage 的 Texture 属性
 rawImage.texture = rt;
 ```
@@ -52,7 +52,7 @@ rawImage.texture = rt;
 
 在第一步中设置了 `Size`，这个值决定了相机的视野大小，也就是小地图的大小，所以在第四步中，在赋值时，我们需要计算坐标的缩放比例：
 
-```csharp
+```cs
 // 计算缩放比例，除以二是因为相机的 Size 是相机视野的一半
 scale = size / camera.orthographicSize / 2;
 ```
@@ -61,7 +61,7 @@ scale = size / camera.orthographicSize / 2;
 
 在 `小地图Canvas` 中创建一个位置图标，用来显示玩家的位置，然后将脚本挂载到玩家身上，在 `Update` 方法中，计算玩家与相机的相对位置，然后将比较后的位置赋值给位置图标的 `localPosition` 属性，这样就可以实现玩家位置的实时更新了。
 
-```csharp
+```cs
 // 将玩家的位置与相机的位置进行比较
 Vector3 pos = transform.position - camera.transform.position;
 
@@ -71,7 +71,7 @@ positionImage.localPosition = new Vector3(pos.x / size, pos.z / size, 0);
 
 ## 6. 核心代码
 
-```csharp
+```cs
 using QFramework;
 using UnityEngine;
 using UnityEngine.UI;
