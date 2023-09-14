@@ -119,7 +119,7 @@ export default defineConfig({
     // https://github.com/antfu/vite-plugin-pwa
     VitePWA({
       registerType: 'autoUpdate',
-      includeAssets: ['favicon.svg'],
+      includeAssets: ['favicon.svg', 'safari-pinned-tab.svg'],
       manifest: {
         name: 'JuPeng\'s Blog',
         short_name: 'JuPeng\'s Blog',
