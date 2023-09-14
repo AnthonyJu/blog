@@ -29,7 +29,8 @@ title: 使用 plop 生成模板
 meta:
   - name: description
     content: 使用 plop，通过命令行，快速生成博客模版，减少本博客因为特殊性，导致的重复代码。
-  - keywords: Plop,Generator,Template
+  - name: keywords
+    content: Plop, Generator, Template
 ---
 ```
 

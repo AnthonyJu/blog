@@ -155,6 +155,7 @@ export default defineConfig({
     formatting: 'minify',
     crittersOptions: {
       reduceInlineStyles: false,
+      preload: 'swap',
     },
     onFinished() {
       generateSitemap({ hostname: 'https://blog.jupeng.top' })
