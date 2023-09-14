@@ -1,5 +1,5 @@
 <template>
-  <header class="sticky left-0 top-0 z-10 flex-center">
+  <header class="sticky left-0 top-0 z-20 flex-center">
     <div class="h-70px max-w-100ch w-full flex-b-c px-15px">
       <!-- Logo -->
       <div class="logo h-40px w-110px cursor-pointer" @click="$router.push('/')" />
