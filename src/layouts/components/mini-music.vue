@@ -5,7 +5,7 @@
     class="fixed top-383px rounded-20px bg-light px-15px duration-400 -right-55px"
     hover="-right-20px"
   >
-    <div class="rhythm">
+    <div class="rhythm" title="切歌" @click="playMusic">
       <div class="load" />
       <div class="load" />
       <div class="load" />

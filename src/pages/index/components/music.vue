@@ -51,7 +51,7 @@
         <div
           class="mr-8px cursor-pointer text-green"
           i-fxemoji-musicalnote
-          title="切换下一首"
+          title="切歌"
           @click="playMusic"
         />
         <p
