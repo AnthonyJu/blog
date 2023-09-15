@@ -44,8 +44,8 @@ devDependencies:
     specifier: ^0.42.0
     version: 0.42.0(eslint@8.49.0)(typescript@5.2.2)
   '@anthony-ju/eslint-config':
-    specifier: ^0.2.1
-    version: 0.2.1
+    specifier: ^0.2.2
+    version: 0.2.2
   '@anthony-ju/stylelint-config':
     specifier: ^0.2.1
     version: 0.2.1(postcss@8.4.28)(stylelint@15.10.3)
@@ -140,8 +140,8 @@ devDependencies:
     specifier: ^0.23.8
     version: 0.23.8(rollup@2.79.1)(vite@4.4.9)
   vite-ssg:
-    specifier: ^0.23.1
-    version: 0.23.1(@unhead/vue@1.7.3)(critters@0.0.16)(vite@4.4.9)(vue-router@4.2.4)(vue@3.3.4)
+    specifier: ^0.23.2
+    version: 0.23.2(critters@0.0.16)(vite@4.4.9)(vue-router@4.2.4)(vue@3.3.4)
   vite-ssg-sitemap:
     specifier: ^0.5.1
     version: 0.5.1
@@ -367,8 +367,8 @@ packages:
     resolution: {integrity: sha512-dlR6LdS+0SzOAPx/TPRhnoi7hE251OVeT2Snw0RguNbBSbjUHdWr0l3vcUUDg26rEysT89kCbtw1lVorBXLLCg==}
     dev: true
 
-  /@anthony-ju/eslint-config@0.2.1:
-    resolution: {integrity: sha512-PMoXQJ+ajPk/VqjVKFN+qn1NzetFatoW7Oerz26KWOn8Pr7nB8w6oSYvrPq3nCdqaWiNE+3VCT+lHgLHqMb9ww==}
+  /@anthony-ju/eslint-config@0.2.2:
+    resolution: {integrity: sha512-Gyc/P+Svf1zZvk9mYP5Us0pLHWOI9GhHLM10yPTJZM8WnMsyIXhBBrMPm5rXaLo90UmzvdtqWGZ4OzantqxRUg==}
     dev: true
 
   /@anthony-ju/stylelint-config@0.2.1(postcss@8.4.28)(stylelint@15.10.3):
@@ -7740,7 +7740,7 @@ packages:
     resolution: {integrity: sha512-/5CMN3T0R4XTj4DcGaexo+roZSdSFW/0AOOTROrjxzCG1wrWXEsGbRKevjlIL+ZDE4sZlJr5ED4YW0yqmkK+eA==}
     dependencies:
       hosted-git-info: 2.8.9
-      resolve: 1.22.3
+      resolve: 1.22.4
       semver: 5.7.1
       validate-npm-package-license: 3.0.4
     dev: true
@@ -7760,7 +7760,7 @@ packages:
     engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
     dependencies:
       hosted-git-info: 6.1.1
-      is-core-module: 2.12.1
+      is-core-module: 2.13.0
       semver: 7.5.4
       validate-npm-package-license: 3.0.4
     dev: true
@@ -8396,9 +8396,9 @@ packages:
     engines: {node: '>= 0.8.0'}
     dev: true
 
-  /prettier@3.0.3:
-    resolution: {integrity: sha512-L/4pUDMxcNa8R/EthV08Zt42WBO4h1rarVtK0K+QJG0X187OLo7l699jWw0GKuwzkPQ//jMFA/8Xm6Fh3J/DAg==}
-    engines: {node: '>=14'}
+  /prettier@2.8.8:
+    resolution: {integrity: sha512-tdN8qQGvNjw4CHbY+XXk0JgCXn9QiF21a55rBe5LJAU+kDyC4WQn4+awm2Xfk2lQMk5fKup9XgzTZtGkjBdP9Q==}
+    engines: {node: '>=10.13.0'}
     hasBin: true
     dev: true
 
@@ -10459,12 +10459,11 @@ packages:
     resolution: {integrity: sha512-X3ZImSVpFMypBTIhaTqEOdKj7tO9n7Puzd8vsxuQluFUyu6x/e2Dzv8qk5qZsC34ZR6iHt0wa2sPhDu1OjdOsA==}
     dev: true
 
-  /vite-ssg@0.23.1(@unhead/vue@1.7.3)(critters@0.0.16)(vite@4.4.9)(vue-router@4.2.4)(vue@3.3.4):
-    resolution: {integrity: sha512-xISST4s5uDvysfQ0oN8QpnpKDGF7WF48/pnxCy801lVz1re7f2y8xLbHk44qPWdXh2gFqyv4rhZEVa1KrAuzqw==}
+  /vite-ssg@0.23.2(critters@0.0.16)(vite@4.4.9)(vue-router@4.2.4)(vue@3.3.4):
+    resolution: {integrity: sha512-j7HHqMB7MVM5Eqypjt92XU+x8tijFdeoICgzHeAMsSvqFp6nL6SdErPb5o7gj079SJuUPo0rUuQupkVoN/FsAg==}
     engines: {node: '>=14.0.0'}
     hasBin: true
     peerDependencies:
-      '@unhead/vue': ^1.1.26
       critters: ^0.0.16
       vite: ^2.0.0 || ^3.0.0 || ^4.0.0
       vue: ^3.2.10
@@ -10483,7 +10482,7 @@ packages:
       html5parser: 2.0.2
       jsdom: 22.1.0
       kolorist: 1.8.0
-      prettier: 3.0.3
+      prettier: 2.8.8
       vite: 4.4.9(@types/node@18.16.17)(sass@1.67.0)
       vue: 3.3.4
       vue-router: 4.2.4(vue@3.3.4)

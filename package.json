@@ -32,7 +32,7 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.42.0",
-    "@anthony-ju/eslint-config": "^0.2.1",
+    "@anthony-ju/eslint-config": "^0.2.2",
     "@anthony-ju/stylelint-config": "^0.2.1",
     "@types/markdown-it-link-attributes": "^3.0.1",
     "@types/nprogress": "^0.2.0",
@@ -64,7 +64,7 @@
     "vite-plugin-vue-devtools": "^0.5.1",
     "vite-plugin-vue-layouts": "^0.8.0",
     "vite-plugin-vue-markdown": "^0.23.8",
-    "vite-ssg": "^0.23.1",
+    "vite-ssg": "^0.23.2",
     "vite-ssg-sitemap": "^0.5.1",
     "vue-tsc": "^1.8.11"
   },
