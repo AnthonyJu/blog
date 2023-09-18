@@ -39,6 +39,8 @@ RenderTexture rt = new RenderTexture(1000, 1000, 0);
 camera.targetTexture = rt;
 ```
 
+在`Project`中右键创建一个`Custom Render Texture`，将`Camera`的`Output Texture`和第三步的`Image`的`Texture`设置为刚才新建的`Texture`。
+
 ## 3. 创建一个 RawImage
 
 创建一个 `小地图Canvas`，宽高与上一步创建的RenderTexture相同，使用缩放将物体缩放到游戏中合适的大小， 创建一个子物体 `RawImage`，然后将上面创建的 RenderTexture 赋值给 RawImage 的 `Texture` 属性，这样就可以将相机渲染的内容显示到 RawImage 上了。

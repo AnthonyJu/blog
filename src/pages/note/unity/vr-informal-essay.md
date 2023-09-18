@@ -94,3 +94,39 @@ using Valve.VR;
 SteamVR_Fade.Start(Color.clear, 0); // 渐变到透明
 SteamVR_Fade.Start(Color.black, 1f); // 渐变到黑色
 ```
+
+## 7. VR手柄提示
+
+```cs
+// 设置手柄提示
+void SetGrabPinchHint(bool isBoth, string text = null)
+{
+    for (int actionIndex = 0; actionIndex < SteamVR_Input.actionsIn.Length; actionIndex++)
+    {
+        ISteamVR_Action_In action = SteamVR_Input.actionsIn[actionIndex];
+        if (action.GetShortName() == "GrabPinch")
+        {
+            // 循环Hands,设置手柄提示
+            foreach (var hand in Hands)
+            {
+                if (action.GetActive(hand.handType))
+                {
+                    hand.TriggerHapticPulse(0);
+                    // 判断左右手
+                    if (hand.handType == SteamVR_Input_Sources.LeftHand)
+                    {
+                        // 左手
+                        ControllerButtonHints.ShowTextHint(hand, action, text ?? "左手按钮");
+                    }
+                    else
+                    {
+                        // 右手
+                        ControllerButtonHints.ShowTextHint(hand, action, text ?? "右手按钮");
+                    }
+                }
+            }
+            break;
+        }
+    }
+}
+```
