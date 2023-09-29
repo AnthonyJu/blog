@@ -50,10 +50,9 @@
         </div>
       </div>
     </div>
-
-    <!-- Pagination -->
-    <Pagination v-model="current" m-auto w-fit :total="allBlogs.length" />
   </div>
+  <!-- Pagination -->
+  <Pagination v-model="current" class="m-auto w-fit !mt-20px" :total="allBlogs.length" />
 </template>
 
 <script setup lang='ts'>
