@@ -1,5 +1,5 @@
 <template>
-  <img class="rabbit" src="https://www.macgf.com/img/tu02.png" :style="{ right }" @error="handleError">
+  <img class="rabbit" :src="Rabbit" :style="{ right }">
 </template>
 
 <script setup lang='ts'>
@@ -15,10 +15,6 @@ const right = computed(() => {
     return '-82px'
   }
 })
-
-function handleError(e: Event) {
-  (e.target as HTMLImageElement).src = Rabbit
-}
 </script>
 
 <style lang='scss' scoped>
