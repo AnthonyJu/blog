@@ -14,9 +14,9 @@ export function getAllBlogs(pages: RouteRecordRaw[]) {
     .map((page) => {
       const posterPath = `../pages${page.path}/poster.png`
       return {
-        ...page.meta,
         path: page.path,
         poster: allPoster[posterPath]?.default ?? AvatarPng,
+        ...page.meta,
       }
     }) as BlogInfo[]
 

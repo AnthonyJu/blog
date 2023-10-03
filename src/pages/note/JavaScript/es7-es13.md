@@ -91,7 +91,7 @@ const obj = {
 console.log(Object.values(obj))
 ```
 
-<img src="@/assets/note/javascript/image-20220920154527417.png" alt="image-20220920154527417"  />
+<img src="https://kodbox.jupeng.top/?explorer/share/file&hash=9aef40L8AHpKnZ4md7YDr7S5aePi7fN9U4tW1VDQuV0vXjECdTLaTtbUfhYI75fqhyY&name=/image-20220920154527417.png" alt="image-20220920154527417.png"/>
 
 ```javascript
 const obj = {
@@ -101,7 +101,7 @@ const obj = {
 console.log(Object.entries(obj))
 ```
 
-<img src="@/assets/note/javascript/image-20220920154622530.png" alt="image-20220920154622530"  />
+<img src="https://kodbox.jupeng.top/?explorer/share/file&hash=4692-a0RnMTBKwB9fdXNUHajbqcFf9l3qt-Ay3Pg8L-9J7a-aH9LbkK7AwlVHbcJvkk&name=/image-20220920154622530.png" alt="image-20220920154622530"  />
 
 ```javascript
 const obj = {
@@ -111,7 +111,7 @@ const obj = {
 console.log(Object.getOwnPropertyDescriptors(obj))
 ```
 
-<img src="@/assets/note/javascript/image-20220920155143538.png" alt="image-20220920155143538"  />
+<img src="https://kodbox.jupeng.top/?explorer/share/file&hash=5c29xtdHTs9kmW3B1xek04mo_t-8tZlcuRDQlvQ0wfNY5zCGs_mNnub7hVTVB6CjBEY&name=/image-20220920155143538.png" alt="image-20220920155143538"  />
 
 **克隆对象**
 
@@ -225,7 +225,7 @@ const res1 = reg.exec(str)
 console.log(res1)
 ```
 
-<img src="@/assets/note/javascript/image-20220921110518183.png" />
+<img src="https://kodbox.jupeng.top/?explorer/share/file&hash=2ec0vMqtYddvx5IEdOSDim_gYCNysAB33c3a6n--97GBTJAUQ4TrHHcFmunsUbVjeVY&name=/image-20220921110518183.png" />
 
 ```javascript
 const str = '今天是2022-10-10'
@@ -235,7 +235,7 @@ const res1 = reg.exec(str)
 console.log(res1)
 ```
 
-<img src="@/assets/note/javascript/image-20220921110644896.png" />
+<img src="https://kodbox.jupeng.top/?explorer/share/file&hash=bd74O0keAmQhop1Bur3JAl297C-6Kg4h_8VPUK6Eq0a44Fvr9AiRGT5L1NNrj12aXx8&name=/image-20220921110644896.png" />
 
 ### 3. Promise.finally()
 
@@ -274,7 +274,7 @@ console.log(syncI.next())
 console.log(syncI.next())
 ```
 
-<img src="@/assets/note/javascript/image-20220921132030973.png" />
+<img src="https://kodbox.jupeng.top/?explorer/share/file&hash=8dfeH2d6YDetS74sePok-iniDAXl3PRTHnnDQ-_q-6sRCGM0dEJ53AEnE2O-yiGGxiU&name=/image-20220921132030973.png" />
 
 
 ```javascript
@@ -288,7 +288,7 @@ syncI.next().value.then((res) => { console.log(res) })
 syncI.next().value.then((res) => { console.log(res) })
 ```
 
-<img src="@/assets/note/javascript/image-20220921132403676.png" />
+<img src="https://kodbox.jupeng.top/?explorer/share/file&hash=93adx6Sn9Y9NcZaZxVEfqOTjoG3jtSEil87F-yMDyRgm0i5EBgA4AJFzeIu66cWtdQM&name=/image-20220921132403676.png" />
 
 > `value`属性的返回值是一个 Promise 对象，用来放置异步操作。但是这样写很麻烦，不太符合直觉，语义也比较绕。
 
@@ -318,7 +318,7 @@ asyncI.next().then((res) => {
   })
 ```
 
-<img src="@/assets/note/javascript/image-20220921132528997.png" />
+<img src="https://kodbox.jupeng.top/?explorer/share/file&hash=daf2-LkoJa6-l3K9LNREHWD1YL9fx-vDTSmHbLT_67Aj61u4AY3msyB0qRrkfC8paYg&name=/image-20220921132528997.png" />
 
 #### 4-3 for await of
 
@@ -561,7 +561,7 @@ export * as obj1 from './1.js'
  </script>
 ```
 
-<img src="@/assets/note/javascript/image-20220922111416681.png" />
+<img src="https://kodbox.jupeng.top/?explorer/share/file&hash=94f3o477LY2Oyyppt_XrUI0321VKg9mWp0-6d7wSfPWDzl7waxzHT94BJ74wQPf_EJU&name=/image-20220922111416681.png" />
 
 ### 3.字符串的matchAll方法
 
@@ -1015,7 +1015,7 @@ const res = reg.exec(str)
 console.log(res)
 ```
 
-<img src="@/assets/note/javascript/image-20220927105243515.png" />
+<img src="https://kodbox.jupeng.top/?explorer/share/file&hash=183aHgL9L1bFpU8sfVaRuK5oEgZx1TR-YoWbu9d2lle7D_aVq0EcfN3VSMYggmn6rDI&name=/image-20220927105243515.png" />
 
 ### 8.findLast()和findLastIndex()函数
 

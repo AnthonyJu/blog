@@ -1142,7 +1142,7 @@ proxy.push(4)
 
 - **回调地狱，其实就是回调函数嵌套过多导致的**
 
-![回调地狱](@/assets/note/javascript/callback-hell.png)
+![回调地狱](https://kodbox.jupeng.top/?explorer/share/file&hash=877bpCZmhlVGe324IGbdL_jaZmeJDfVacNqYQdbLrlBsw6RXJILRM7w1-TfSS_AfLK4&name=/callback-hell.png)
 
 - 当代码成为这个结构以后，已经没有维护的可能了
 
@@ -1188,7 +1188,7 @@ Promise 对象通过自身的状态，来控制异步操作。Promise 实例具�
 异步操作失败，Promise 实例抛出一个错误（error），状态变为rejected。
  ```
 
-![image-20220902141409899](@/assets/note/javascript/image-20220902141409899.png)
+![image-20220902141409899](https://kodbox.jupeng.top/?explorer/share/file&hash=99ebvoQsXA_EzEodZ9C9ppxszR-f8Y3jayHrln5ZE-sYCAPtUL5_iWqMwaO6sPkPS0c&name=/image-20220902141409899.png)
 
 ### 16-4 Promise.all
 
@@ -1238,12 +1238,10 @@ function *gen() {
 }
 
 const g = gen()
-g.next()
-g.next()
-g.next()
+g.next() // 1
+g.next() // 2
+g.next() // 3
 ```
-
-![image-20220917070351858](@/assets/note/javascript/image-20220917070351858.png)
 
 > yield(产出)表达式是暂停执行的标记，而next方法可以恢复执行。
 
@@ -1262,7 +1260,7 @@ const res3 = g.next()
 console.log(res3)
 ```
 
-![image-20220917070836171](@/assets/note/javascript/image-20220917070836171.png)
+![image-20220917070836171](https://kodbox.jupeng.top/?explorer/share/file&hash=0388M1ApnWFL6RtRbCehKxgwNWe87mJvQFmr3JGndKejIakprFW23MqTinb4GhYQL-8&name=/image-20220917070836171.png)
 
 ```javascript
 function *gen() {
@@ -1278,7 +1276,7 @@ g.next('data-2')
 g.next('data-3')
 ```
 
-![image-20220917071219520](@/assets/note/javascript/image-20220917071219520.png)
+![image-20220917071219520](https://kodbox.jupeng.top/?explorer/share/file&hash=2735RShU9c-BfVUGRfw6dvF55DQH4yurYlp4gsZi_I0H3tAuPUUHPmkOHUpzjAmn4TA&name=/image-20220917071219520.png)
 
 ### 17-2 异步流程
 
