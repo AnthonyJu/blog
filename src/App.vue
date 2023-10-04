@@ -1,6 +1,7 @@
 <template>
   <el-config-provider :locale="zhCn">
     <RouterView />
+    <ImagePreview />
   </el-config-provider>
 </template>
 

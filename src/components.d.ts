@@ -25,6 +25,7 @@ declare module 'vue' {
     ElScrollbar: typeof import('element-plus/lib')['ElScrollbar']
     ElSlider: typeof import('element-plus/lib')['ElSlider']
     ElTag: typeof import('element-plus/lib')['ElTag']
+    ImagePreview: typeof import('./components/ImagePreview.vue')['default']
     Pagination: typeof import('./components/Pagination.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']

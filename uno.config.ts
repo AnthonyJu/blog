@@ -34,5 +34,5 @@ export default defineConfig({
     transformerDirectives(),
     transformerVariantGroup(),
   ],
-  safelist: 'prose m-auto text-left'.split(' '),
+  safelist: 'prose m-auto text-left query-target'.split(' '),
 })

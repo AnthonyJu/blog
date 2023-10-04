@@ -16,7 +16,6 @@
     "vitest",
     "vueuse"
   ],
-  "prettier.enable": false,
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },
