@@ -12,7 +12,7 @@ meta:
   title: TS 装饰器
   desc: Decorator是ES7的一个新语法，目前仍处于提案中，nestjs和ArkTS都用到了此语法。
   keywords: [TS Decorator, TS 装饰器]
-  date: 2023-08-03 20:06:51
+  date: 2023-08-10 20:06:51
 </route>
 
 # TS 装饰器
