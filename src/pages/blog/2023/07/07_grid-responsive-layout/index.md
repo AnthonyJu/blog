@@ -249,14 +249,82 @@ auto-fit和auto-fill关键字是设置固定轨道数的替代方法。它们告
 
 现在，最小列宽有两个选项。浏览器会选择最小值。一旦列的宽度小于 200px，100% 就是较小的值，因此以它为准。这意味着剩下的一列现在被设置为宽度：100%，因此在宽度不断减小的情况下，它仍能很好地适应其容器。
 
+### 7.3 auto-fit和auto-fill的区别
+
+在我们目前看到的示例中，auto-fit和auto-fill似乎没有任何区别。区别只出现在某些情况下，我们现在就来简单介绍一下。
+
+我们将剥离演示 HTML，使其只有四个 div，并设置以下 CSS：
+
+```scss
+.grid-6 {
+  grid-template-columns: repeat(auto-fill, minmax(min(100px, 100%), 1fr));
+}
+```
+
+<div class="grid-6">
+  <div /><div /><div /><div />
+</div>
+
+<style lang='scss'>
+.grid-6 {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100px, 100%), 1fr));
+  grid-gap: 15px;
+
+  div {
+    height: 50px;
+    background-color: var(--el-color-primary);
+  }
+}
+</style>
+
+浏览器正在计算容器中可以容纳多少个 div，并为它们留出空间。现有的每个 div 都有 100px 宽，左侧和右侧的空间也是如此。
+
+让我们切换到auto-fit：
+
+```scss
+.grid-7 {
+  grid-template-columns: repeat(auto-fit, minmax(min(100px, 100%), 1fr));
+}
+```
+
+<div class="grid-7">
+  <div /><div /><div /><div />
+</div>
+
+<style lang='scss'>
+.grid-7 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100px, 100%), 1fr));
+  grid-gap: 15px;
+
+  div {
+    height: 50px;
+    background-color: var(--el-color-primary);
+  }
+}
+</style>
+
+使用auto-fit功能时，浏览器也会为更多的 div 计算空间，但随后会将空间折叠为零宽度，并让现有的 div 展开以占据所有空间。
+
 ## 8、Grid 终极响应式布局 代码
 
-呃，是的就是上面 7.2 的代码，再贴一遍，方便复制粘贴🤪：
+呃，是的就是上面 7.2 和 7.3 的代码，再贴一遍，方便复制粘贴🤪：
+
+1、auto-fit，minmax()和min()
 
 ```scss
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100px, 100%), 1fr));
+}
+```
+
+2、auto-fill，minmax()和min()
+```scss
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100px, 100%), 1fr));
 }
 ```
 
