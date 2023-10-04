@@ -1,7 +1,7 @@
 <template>
   <div
-    class="grid flex-col-center gap-20px"
-    style="grid-template-columns: repeat(auto-fit, minmax(min(230px, 100%), 1fr));"
+    class="grid gap-20px"
+    style="grid-template-columns: repeat(auto-fill, minmax(min(230px, 100%), 1fr));"
   >
     <div
       v-for="blog in blogs"

@@ -18,6 +18,9 @@ const modelValue = defineModel()
 
 function currentChange(cur: number) {
   modelValue.value = cur
+
+  // 滚动到顶部
+  window.scrollTo({ top: 0, behavior: 'smooth' })
 }
 </script>
 
