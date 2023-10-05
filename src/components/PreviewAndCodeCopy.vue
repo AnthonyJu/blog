@@ -22,8 +22,8 @@
         <div i-carbon-zoom-out cursor-pointer @click="zoomOutClick" />
         <div i-carbon-zoom-in cursor-pointer @click="zoomInClick" />
         <div />
-        <div i-carbon-rotate cursor-pointer @click="rotateLeftClick" />
-        <div i-carbon-rotate-180 cursor-pointer @click="rotateRightClick" />
+        <div i-carbon-rotate cursor-pointer @click="rotate -= 90" />
+        <div i-carbon-rotate-180 cursor-pointer @click="rotate += 90" />
       </div>
     </div>
 
@@ -113,7 +113,7 @@ function onKeydown(event: KeyboardEvent) {
 watchEffect(() => {
   if (queryTarget.value) {
     // 获取 .query-target 下所有图片
-    const images = document.querySelectorAll('.query-target img') as NodeListOf<HTMLImageElement>
+    const images = document.querySelectorAll<HTMLImageElement>('.query-target img')
     // 为每个图片添加点击事件
     images.forEach((img, index) => {
       img.classList.add('cursor-pointer')
@@ -124,8 +124,34 @@ watchEffect(() => {
         nowIndex.value = index
       })
     })
+    // 为所有的代码块增加复制功能
+    addCodeCopy()
   }
 })
+
+const { copy: copyFn, copied, isSupported } = useClipboard()
+watchEffect(() => {
+  if (copied.value) {
+    ElMessage.success('复制成功')
+  }
+})
+function addCodeCopy() {
+  if (!isSupported.value) return
+  const pres = document.querySelectorAll<HTMLElement>('.query-target pre.shiki')
+  pres.forEach((pre) => {
+    const code = pre.querySelector('code')
+    if (code) {
+      const copy = document.createElement('div')
+      copy.classList.add('absolute', 'top-10px', 'right-8px', 'cursor-pointer', 'hover:opacity-75')
+      copy.innerHTML = '<div i-carbon-copy />'
+      copy.addEventListener('click', () => {
+        copyFn(code.innerText)
+      })
+      pre.classList.add('relative')
+      pre.appendChild(copy)
+    }
+  })
+}
 
 let startX = 0
 let startY = 0
@@ -192,14 +218,6 @@ function zoomOutClick() {
   if (zoom.value > 0.2) {
     zoom.value /= 1.2
   }
-}
-
-function rotateLeftClick() {
-  rotate.value -= 90
-}
-
-function rotateRightClick() {
-  rotate.value += 90
 }
 
 function reset() {
