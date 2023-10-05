@@ -37,6 +37,7 @@
         :style="imgStyle"
         class="el-image-viewer__img select-none !max-h-full !max-w-full"
         transition="transform 300"
+        @dblclick="zoomInClick"
       >
     </div>
   </div>
