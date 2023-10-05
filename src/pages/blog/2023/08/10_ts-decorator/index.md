@@ -17,7 +17,7 @@ meta:
 
 # TS 装饰器
 
-Decorator是ES7的一个新语法，目前仍处于提案中，[nestjs](https://nestjs.com/)和[ArkTS](https://developer.harmonyos.com/)都用到了此语法，在之前学习nestjs的时候，就对此语法有所了解，续考虑到ArkTS也用到了此语法，所以就打算复习记录一下。
+Decorator是ES7的一个新语法，目前仍处于提案中，[nestjs](https://nestjs.com/)和[ArkTS](https://developer.harmonyos.com/)都用到了此语法，在之前学习nestjs的时候，就对此语法有所了解，考虑到ArkTS也用到了此语法，所以就打算复习记录一下。
 
 ## 1. 什么是装饰器
 
@@ -455,3 +455,7 @@ logMethod1
 logClass2
 logClass1
 ```
+
+## 4. 装饰器文档
+
+> TS 装饰器：https://www.tslang.cn/docs/handbook/decorators.html
