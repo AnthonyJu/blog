@@ -209,6 +209,32 @@ console.log(modelValue.value)
 </script>
 ```
 
+```vue
+<!-- 之后：父组件 -->
+<template>
+  <ChildCom v-model="msg" />
+</template>
+
+<script setup>
+const msg = ref('hello')
+</script>
+
+<!-- 之后:子组件 -->
+<template>
+  <div @click="setMsg">
+    {{value}}
+  </div>
+</template>
+
+<script setup>
+const msg = defineModel()
+
+function setMsg() {
+  msg.value = 'world'
+}
+</script>
+```
+
 此功能是实验性的，需要明确的选择加入。以 Vite 为例：
 
 ```ts
