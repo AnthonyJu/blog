@@ -19,12 +19,38 @@ meta:
 
 <!-- TODO 补充 Simple Translator（简译）-->
 
-介绍一下自己前段时间开发的浏览器插件，一个是用于取色的[Color Picker](https://microsoftedge.microsoft.com/addons/detail/color-picker/kdalomkmijnajhdenobbpjckagnmgmdg?hl=zh-CN)，一个是用于管理扩展的[Extension Manager（极简）](https://microsoftedge.microsoft.com/addons/detail/extension-manager%EF%BC%88%E6%9E%81%E7%AE%80%EF%BC%89/pfiggkflfkhohkmegglgnlgakdbmjdfh?hl=zh-CN)，这两个都已经上架`Edge浏览器`的插件商店了，累计使用人数终于突破`500`人次啦😃。
+介绍一下自己前段时间开发的浏览器插件，一个是用于简单翻译的[Simple Translator（简译）](https://microsoftedge.microsoft.com/addons/detail/simple-translator（简易）/idejokphbhcbdjpibgibjppmolnmdlkj?hl=zh-CN)，一个是用于取色的[Color Picker](https://microsoftedge.microsoft.com/addons/detail/color-picker/kdalomkmijnajhdenobbpjckagnmgmdg?hl=zh-CN)，一个是用于管理扩展的[Extension Manager（极简）](https://microsoftedge.microsoft.com/addons/detail/extension-manager（极简）/pfiggkflfkhohkmegglgnlgakdbmjdfh?hl=zh-CN)，这三个都已经上架`Edge浏览器`的插件商店了，累计使用人数终于突破`600`余人次啦😃。
 
 ## 我的插件
 ### 1、Simple Translator（简译）
 
-制作中后续补充...
+对于我这种英语渣渣来说，经常需要用到`翻译`，但是要去翻译的时候操作步骤太多了，还不想仅因为一个翻译去搞个软件使用，就想到了开发个简易的翻译插件使用，此插件非常简洁，提供以下功能：
+
+- 开启插件`自动聚焦`到输入框，输入内容后`自动翻译`、`自动复制`
+- 支持英文译文的多种`命名`规范，如：`驼峰`、`常量`、`下划线`等
+- 支持`朗读`、提供`黑暗模式`
+
+![Simple Translator（简译）](./images/translator.png)
+
+#### 1.1 食用方式
+
+对于前端开发者，浏览器基本只要电脑开着，他就一直开着，因此步骤非常简单：
+
+> 点击插件图标 -> 输入内容 -> 此时已经自动翻译并复制到剪贴板 -> 粘贴使用
+
+你可以在设置里面设置一些参数，如：`默认命名规则`、`自动复制`、`朗读`、`百度翻译设置`等，手动复制时默认提供的，此外还提供了临时的命名转换按钮。
+
+#### 1.2 百度翻译设置
+
+> 1. 前往百度翻译开放平台：[https://fanyi-api.baidu.com](https://fanyi-api.baidu.com/)。
+> 2. 登陆或注册账号。
+> 3. 点击顶部`产品服务`，选择`通用文本翻译`，点击`立即使用`。
+> 4. 选择`个人开发者`，按提示输入剩余信息，点击`下一步`。
+> 5. 会提示进行身份认证，最好认证一下，翻译次数会多很多。
+> 6. 认证后，返回上一页，点击顶部`管理控制台`，选择`总览`，点击`立即开通`。
+> 7. 选择`通用文本翻译`，点击`下一步`。
+> 8. 如果你进行了第5步，就选择`开通高级版`，输入应用名称，点击`提交`。
+> 9. 返回总览，底部会有`APP ID`和`密钥`，将其填入插件设置中即可。
 
 ### 2、Color Picker
 
