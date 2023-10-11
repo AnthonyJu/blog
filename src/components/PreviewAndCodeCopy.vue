@@ -142,13 +142,15 @@ function addCodeCopy() {
     const code = pre.querySelector('code')
     if (code) {
       const copy = document.createElement('div')
-      copy.classList.add('absolute', 'top-10px', 'right-8px', 'cursor-pointer', 'hover:opacity-75')
+      copy.classList.add('absolute', 'top-6px', 'right-5px', 'cursor-pointer', 'hover:opacity-75')
+      copy.title = '复制代码'
       copy.innerHTML = '<div i-carbon-copy />'
       copy.addEventListener('click', () => {
         copyFn(code.innerText)
       })
-      pre.classList.add('relative')
-      pre.appendChild(copy)
+      const parent = pre.parentNode as HTMLDivElement
+      parent.classList.add('relative')
+      parent.appendChild(copy)
     }
   })
 }
