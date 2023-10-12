@@ -13,7 +13,6 @@ meta:
   desc: 好久没有团建了，终于迎来公司的团建，这次去的是微山湖🪷，总共就一天😂。
   keywords: [微山湖, 团建, 生活]
   date: 2023-09-24 11:19:17
-  poster: https://kodbox.jupeng.top/?explorer/share/file&hash=dc26CjxaOmDjFU5ss6K5e9sioCMbRZMSrU4_DtmyLcE1fY4DCYD2vpOyImIVI3WVwgc&name=/000D5B68-C3D6-4C9C-9B30-FD18B0284B07.jpeg
 </route>
 
 # 微山湖团建
