@@ -1,7 +1,9 @@
 <template>
   <el-config-provider :locale="zhCn">
     <RouterView />
-    <PreviewAndCodeCopy />
+    <client-only>
+      <PreviewAndCodeCopy />
+    </client-only>
   </el-config-provider>
 </template>
 
