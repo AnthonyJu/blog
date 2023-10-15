@@ -137,20 +137,22 @@ watchEffect(() => {
 })
 function addCodeCopy() {
   if (!isSupported.value) return
-  const pres = document.querySelectorAll<HTMLElement>('.query-target pre.shiki')
+  const preContent = document.querySelector<HTMLElement>('.query-target')
+  preContent!.classList.add('relative')
+  const pres = preContent!.querySelectorAll<HTMLElement>('pre.shiki')
   pres.forEach((pre) => {
     const code = pre.querySelector('code')
     if (code) {
       const copy = document.createElement('div')
-      copy.classList.add('absolute', 'top-6px', 'right-5px', 'cursor-pointer', 'hover:opacity-75')
-      copy.title = '复制代码'
-      copy.innerHTML = '<div i-carbon-copy />'
-      copy.addEventListener('click', () => {
-        copyFn(code.innerText)
-      })
-      const parent = pre.parentNode as HTMLDivElement
-      parent.classList.add('relative')
-      parent.appendChild(copy)
+      const text = code.textContent
+      if (text) {
+        copy.classList.add('absolute', '-mt-10px', `right-5px`, 'cursor-pointer', 'hover:opacity-75')
+        copy.title = '复制代码'
+        copy.innerHTML = '<div i-carbon-copy />'
+        copy.addEventListener('click', () => copyFn(text))
+        // 插入为第一个子元素
+        pre.insertBefore(copy, pre.firstChild)
+      }
     }
   })
 }
