@@ -79,7 +79,7 @@ http.logUrl()
 
 输出结果：
 
-```bush
+```
 [Function: HttpClient]
 https://www.baidu.com
 ```
@@ -110,7 +110,7 @@ http.run()
 
 输出结果：
 
-```bush
+```
 [Function: HttpClient]
 https://www.baidu.com
 ```
@@ -149,7 +149,7 @@ http.getData()
 
 输出结果：
 
-```bush
+```
 [Function: HttpClient]
 我是修改后的数据
 ```
@@ -183,7 +183,7 @@ console.log(http.url)
 
 输出结果：
 
-```bush
+```
 [Function: HttpClient]
 url
 https://www.baidu.com
@@ -255,7 +255,7 @@ http.getData(123, 'xxx')
 
 输出结果：
 
-```bush
+```
 [Function: HttpClient]
 getData
 {
@@ -309,7 +309,7 @@ http.logUrl()
 
 输出结果：
 
-```bush
+```
 [Function: HttpClient]
 getData
 {
@@ -350,7 +350,7 @@ class HttpClient {
 
 输出结果：
 
-```bush
+```
 [Function: HttpClient]
 getFn
 0
@@ -383,7 +383,7 @@ http.getFn('')
 
 输出结果：
 
-```bush
+```
 [Function: HttpClient]
 getFn
 0

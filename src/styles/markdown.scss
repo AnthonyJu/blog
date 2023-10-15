@@ -2,26 +2,22 @@
   padding: 0;
 }
 
+.shiki,
+.shiki span {
+  color: var(--shiki-light);
+  background: var(--shiki-light-bg);
+}
+
 .prose .shiki {
   font-family: 'DM Mono', monospace;
   font-size: 1.2em;
   line-height: 1.4;
 }
 
-.shiki-light {
-  background: #f8f8f8 !important;
-}
-
-.shiki-dark {
-  background: #0e0e0e !important;
-}
-
-html.dark .shiki-light {
-  display: none;
-}
-
-html:not(.dark) .shiki-dark {
-  display: none;
+html.dark .shiki,
+html.dark .shiki span {
+  color: var(--shiki-dark);
+  background: var(--shiki-dark-bg);
 }
 
 // 分割线
@@ -134,10 +130,10 @@ html:not(.dark) .shiki-dark {
   padding: 1.5px 6px;
   margin: 0 5px;
   font-family: 'DM Mono', monospace !important;
+  font-size: 14px !important;
   font-weight: 500 !important;
   background: var(--line-code-bg)!important;
   border-radius: 6px;
-  font-size: 14px !important;
 }
 
 .prose :where(:not(pre) > code):not(:where(.not-prose,.not-prose *))::before, .prose :where(:not(pre) > code):not(:where(.not-prose,.not-prose *))::after {

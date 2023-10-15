@@ -6,12 +6,12 @@ import generateSitemap from 'vite-ssg-sitemap'
 import Layouts from 'vite-plugin-vue-layouts'
 import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
-import Markdown from 'vite-plugin-vue-markdown'
+import Markdown from 'unplugin-vue-markdown/vite'
 import { VitePWA } from 'vite-plugin-pwa'
 import VueDevTools from 'vite-plugin-vue-devtools'
 import LinkAttributes from 'markdown-it-link-attributes'
 import Unocss from 'unocss/vite'
-import Shiki from 'markdown-it-shiki'
+import Shiki from 'markdown-it-shikiji'
 import ElementPlus from 'unplugin-element-plus/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 
@@ -98,14 +98,15 @@ export default defineConfig({
     Markdown({
       wrapperClasses: 'prose prose-sm m-auto text-left query-target',
       headEnabled: true,
-      markdownItSetup(md) {
+      async markdownItSetup(md) {
         // https://prismjs.com/
-        md.use(Shiki, {
-          theme: {
+        md.use(await Shiki({
+          defaultColor: false,
+          themes: {
             light: 'vitesse-light',
             dark: 'vitesse-dark',
           },
-        })
+        }))
         md.use(LinkAttributes, {
           matcher: (link: string) => /^https?:\/\//.test(link),
           attrs: {
