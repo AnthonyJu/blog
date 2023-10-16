@@ -1,3 +1,4 @@
+import { exec } from 'node:child_process'
 import { getDate } from '../date.js'
 
 export default function (
@@ -5,6 +6,11 @@ export default function (
   plop,
 ) {
   const { date } = getDate()
+
+  // 自定义打开文件action
+  plop.setActionType('openFile', (answers, config) => {
+    exec(`code ${config.path.replace('fileType', answers.type).replace('fileName', answers.fileName)}`)
+  })
 
   plop.setGenerator('note', {
     description: '创建一个note：',
@@ -104,6 +110,10 @@ export default function (
           desc: '{{desc}}',
           keywords: '{{keywords}}',
         },
+      },
+      {
+        type: 'openFile',
+        path: `./src/pages/note/fileType/fileName/index.md`,
       },
     ],
   })

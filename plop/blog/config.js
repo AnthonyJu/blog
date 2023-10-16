@@ -1,3 +1,4 @@
+import { exec } from 'node:child_process'
 import { getDate } from '../date.js'
 
 export default function (
@@ -5,6 +6,11 @@ export default function (
   plop,
 ) {
   const { date, year, realMonth, realDay } = getDate()
+
+  // 自定义打开文件action
+  plop.setActionType('openFile', (answers, config) => {
+    exec(`code ${config.path.replace('fileName', answers.fileName)}`)
+  })
 
   plop.setGenerator('blog', {
     description: '创建一个blog：',
@@ -41,6 +47,10 @@ export default function (
           desc: '{{desc}}',
           keywords: '{{keywords}}',
         },
+      },
+      {
+        type: 'openFile',
+        path: `./src/pages/blog/${year}/${realMonth}/${realDay}_fileName/index.md`,
       },
     ],
   })

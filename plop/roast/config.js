@@ -1,3 +1,4 @@
+import { exec } from 'node:child_process'
 import { getDate } from '../date.js'
 
 export default function (
@@ -5,6 +6,11 @@ export default function (
   plop,
 ) {
   const { date, timestamp } = getDate()
+
+  // 自定义打开文件action
+  plop.setActionType('openFile', (answers, config) => {
+    exec(`code ${config.path}`)
+  })
 
   plop.setGenerator('roast', {
     description: '增加一条roast：',
@@ -22,6 +28,10 @@ export default function (
         pattern: /(\[\n\s+{)/,
         template:
           `[\n  {\n    id: ${timestamp},\n    content: '{{roast}}',\n    date: '${date}',\n  },\n  {`,
+      },
+      {
+        type: 'openFile',
+        path: `./src/pages/roast/roastList.ts`,
       },
     ],
   })
