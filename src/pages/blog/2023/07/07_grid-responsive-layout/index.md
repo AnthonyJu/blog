@@ -48,19 +48,6 @@ Grid 布局是一种二维网格布局方式，可以将页面分成多个行和
   <div /><div /><div /><div /><div /><div /><div /><div />
 </div>
 
-<style lang='scss'>
-.grid-0 {
-  display: grid;
-  grid-template-rows: 50px 50px;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-gap: 15px;
-
-  div {
-    background-color: var(--el-color-primary);
-  }
-}
-</style>
-
 ## 2、repeat() 函数
 
 在上面的例子中，我们使用`grid-template-columns`和`grid-template-rows`属性来定义网格的列和行。但是，如果我们想要创建一个包含 100 列的网格，那么我们就需要写 100 个`1fr`，这样的代码显然是不可取的。
@@ -123,20 +110,6 @@ Grid 布局是一种二维网格布局方式，可以将页面分成多个行和
   <div /><div /><div /><div /><div /><div /><div /><div />
 </div>
 
-<style lang='scss'>
-.grid-1 {
-  display: grid;
-  grid-template-rows: 50px 50px;
-  grid-template-columns: repeat(5, minmax(100px, 1fr));
-  grid-gap: 15px;
-  overflow: auto;
-
-  div {
-    background-color: var(--el-color-primary);
-  }
-}
-</style>
-
 ## 5、使用min()或者max()
 
 `minmax()`函数的参数也可以是`min()`或`max()`函数。这两个函数都接收两个参数。`min()`函数应用两个值中较小的值，而`max()`函数应用较大的值。这在响应式环境中非常有用。
@@ -152,20 +125,6 @@ Grid 布局是一种二维网格布局方式，可以将页面分成多个行和
 <div class="grid-2">
   <div /><div /><div /><div /><div /><div /><div /><div />
 </div>
-
-<style lang='scss'>
-.grid-2 {
-  display: grid;
-  grid-template-rows: 50px 50px;
-  grid-template-columns: repeat(5, minmax(min(60px, 10vw), 1fr));
-  grid-gap: 15px;
-  overflow: auto;
-
-  div {
-    background-color: var(--el-color-primary);
-  }
-}
-</style>
 
 上面的代码设置了五列。在宽屏幕浏览器上，五列的间距均为`1fr`。在较窄的设备上，列会越来越窄。一旦达到`60px`和`10vw`之间的较低值，就会停止缩小。因此，在窄屏幕上，我们仍然会发现内容悬挂在容器外；要做到完全响应式，还有很长的路要走。
 
@@ -187,20 +146,6 @@ auto-fit和auto-fill关键字是设置固定轨道数的替代方法。它们告
   <div /><div /><div /><div /><div /><div /><div /><div />
 </div>
 
-<style lang='scss'>
-.grid-3 {
-  display: grid;
-  grid-template-rows: 50px 50px;
-  grid-template-columns: repeat(auto-fit, 200px);
-  grid-gap: 15px;
-  overflow: auto;
-
-  div {
-    background-color: var(--el-color-primary);
-  }
-}
-</style>
-
 在上面的演示中，div 的宽度被设置为`200px`，那些无法在一行中显示的 div 会被放到下一行。如果我们将`auto-fit`改为`auto-fill`，就会发现没有什么不同，因为在这种情况下，它们的作用是一样的。它们之间的区别只有在特殊情况下才会显现出来。
 
 ## 7、结合minmax()和auto-fit/auto-fill
@@ -217,19 +162,6 @@ auto-fit和auto-fill关键字是设置固定轨道数的替代方法。它们告
 <div class="grid-4">
   <div /><div /><div /><div /><div /><div /><div /><div />
 </div>
-
-<style lang='scss'>
-.grid-4 {
-  display: grid;
-  grid-template-rows: 50px 50px;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  grid-gap: 15px;
-
-  div {
-    background-color: var(--el-color-primary);
-  }
-}
-</style>
 
 每个 div 的宽度必须至少为`200px`。如果右侧有额外空间（小于 200 像素），div 会展开以填充空间。如果我们拓宽浏览器，一旦又有`200px`的空间，就会在行中添加另一个 div。同样的情况也会反过来发生：当我们缩小浏览器时，一旦没有至少`200px`的空间可以容纳，行中的最后一个 div 就会进入下一行。一旦该 div 掉下去，其余的 div 就会展开以填满该行。
 
@@ -265,19 +197,6 @@ auto-fit和auto-fill关键字是设置固定轨道数的替代方法。它们告
   <div /><div /><div /><div />
 </div>
 
-<style lang='scss'>
-.grid-6 {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(100px, 100%), 1fr));
-  grid-gap: 15px;
-
-  div {
-    height: 50px;
-    background-color: var(--el-color-primary);
-  }
-}
-</style>
-
 浏览器正在计算容器中可以容纳多少个 div，并为它们留出空间。现有的每个 div 都有 100px 宽，左侧和右侧的空间也是如此。
 
 让我们切换到auto-fit：
@@ -291,19 +210,6 @@ auto-fit和auto-fill关键字是设置固定轨道数的替代方法。它们告
 <div class="grid-7">
   <div /><div /><div /><div />
 </div>
-
-<style lang='scss'>
-.grid-7 {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100px, 100%), 1fr));
-  grid-gap: 15px;
-
-  div {
-    height: 50px;
-    background-color: var(--el-color-primary);
-  }
-}
-</style>
 
 使用auto-fit功能时，浏览器也会为更多的 div 计算空间，但随后会将空间折叠为零宽度，并让现有的 div 展开以占据所有空间。
 
@@ -332,3 +238,59 @@ auto-fit和auto-fill关键字是设置固定轨道数的替代方法。它们告
 
 > 1、译文：https://mp.weixin.qq.com/s/Ff5e4SXSC_RPMst_GA1wHg <br/>
 > 2、原文：https://www.sitepoint.com/css-grid-repeat-function
+
+<script setup>
+import { useStyleTag } from '@vueuse/core'
+useStyleTag(`
+  .grid-0 {
+    display: grid;
+    grid-template-rows: 50px 50px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 15px;
+  }
+  .grid-1 {
+    display: grid;
+    grid-template-rows: 50px 50px;
+    grid-template-columns: repeat(5, minmax(100px, 1fr));
+    grid-gap: 15px;
+    overflow: auto;
+  }
+  .grid-2 {
+    display: grid;
+    grid-template-rows: 50px 50px;
+    grid-template-columns: repeat(5, minmax(min(60px, 10vw), 1fr));
+    grid-gap: 15px;
+    overflow: auto;
+  }
+  .grid-3 {
+    display: grid;
+    grid-template-rows: 50px 50px;
+    grid-template-columns: repeat(auto-fit, 200px);
+    grid-gap: 15px;
+    overflow: auto;
+  }
+  .grid-4 {
+    display: grid;
+    grid-template-rows: 50px 50px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 15px;
+  }
+  .grid-0 div,.grid-1 div,.grid-2 div,.grid-3 div,.grid-4 div {
+    background-color: var(--el-color-primary);
+  }
+  .grid-6 {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100px, 100%), 1fr));
+    grid-gap: 15px;
+  }
+  .grid-7 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100px, 100%), 1fr));
+    grid-gap: 15px;
+  }
+  .grid-6 div,.grid-7 div {
+    height: 50px;
+    background-color: var(--el-color-primary);
+  }
+`)
+</script>
