@@ -113,7 +113,7 @@ export default function (
       },
       {
         type: 'openFile',
-        path: `./src/pages/note/fileType/fileName/index.md`,
+        path: `./src/pages/note/fileType/fileName.md`,
       },
     ],
   })
