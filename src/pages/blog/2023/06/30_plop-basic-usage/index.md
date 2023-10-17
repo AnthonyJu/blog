@@ -90,6 +90,8 @@ pnpm add plop -D
 在`plop/config.js`中，添加如下代码：
 
 ```js
+import { exec } from 'node:child_process'
+
 export default function (
   /** @type {import('plop').NodePlopAPI} */
   plop,
@@ -98,6 +100,11 @@ export default function (
 
   plop.setHelper('date', () => {
     return '2023-06-30 21:30:59'
+  })
+
+  // 自定义打开文件action
+  plop.setActionType('openFile', (answers, config) => {
+    exec(`code ${config.path.replace('fileName', answers.fileName)}`)
   })
 
   // 创建博客模版命令
@@ -136,6 +143,10 @@ export default function (
           keywords: '{{keywords}}',
         },
       },
+      {
+        type: 'openFile',
+        path: `./src/pages/blog/${today}_fileName/index.md`,
+      }
     ],
   })
 }
@@ -172,6 +183,37 @@ plop.setGenerator(name, config)
     - `templateFile`：模板文件的路径，用于根据用户输入和模板生成最终的文件内容。
 
 > 更多请查看：[setgenerator](https://plopjs.com/documentation/#setgenerator)
+
+### setActionType
+
+`setActionType` 方法允许您创建自己的 `Action`，这些操作可以在`plopFiles`中使用。这些基本上是高度可重用的自定义操作函数：
+
+```js
+import { exec } from 'node:child_process'
+
+// 自定义打开文件action
+plop.setActionType('openFile', (answers, config, plop) => {
+  exec(`code ${config.path.replace('fileName', answers.fileName)}`)
+})
+```
+
+例如在上面的代码中，我们注册了一个`openFile`的操作类型，目的是能够打开创建的文件，通过`VSCode`自带的`code`命令，打开文件。
+
+`setActionType` 方法的详细说明：
+
+```js
+plop.setActionType(name, handler)
+```
+
+- `name`：操作类型名称，用于标识操作类型。
+- `handler`：操作类型的处理函数，用于执行操作。处理函数接收三个参数：
+  - `answers`：用户输入的答案对象，包含用户输入的所有信息。
+  - `config`：操作配置对象，包含操作的所有配置信息。
+  - `plop`：Plop 实例，可以用于访问 Plop 的其他方法。
+
+> 更多请查看：[setactiontype](https://plopjs.com/documentation/#setactiontype)
+
+在上面的代码中，我们注册了一个`openFile`的操作类型，目的是能够打开创建的文件。
 
 ## 配置模版文件
 
