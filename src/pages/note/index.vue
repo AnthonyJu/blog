@@ -112,7 +112,7 @@ const allNotes = pages.filter(page => page.path.startsWith('/note/')).map((page)
     ...page.meta,
     path: page.path,
   }
-}) as any as Note[]
+}) as Note[]
 
 noteTypes.value = noteTypes.value.map((item) => {
   return {
