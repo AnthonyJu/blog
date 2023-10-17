@@ -2,7 +2,7 @@
 title: 自己开发的浏览器插件
 meta:
   - name: description
-    content: 介绍一下自己开发的浏览器插件，使用人数终于突破500人次了。
+    content: 介绍一下自己开发的浏览器插件，使用人数终于突破600人次了。
   - name: keywords
     content: Browser, Web Extensions
 ---
@@ -10,7 +10,7 @@ meta:
 <route lang="yaml">
 meta:
   title: 自己开发的浏览器插件
-  desc: 介绍一下自己开发的浏览器插件，使用人数终于突破500人次了。
+  desc: 介绍一下自己开发的浏览器插件，使用人数终于突破600人次了。
   keywords: [Browser, Web Extensions]
   date: 2023-08-20 20:44:32
 </route>
@@ -81,9 +81,7 @@ meta:
 
 谷歌浏览器是肯定没问题的跟Edge应该是一样的，其他浏览器没有测试过，再就是如果要在其他浏览器使用，包括谷歌浏览器，需要自己添加，因为谷歌商店的开发者需要花软妹币，而且需要绑定国外银行卡。具体操作如下
 
-<!-- TODO 补充 Simple Translator（简译）压缩包地址 -->
-
-> 1. 下载解压：[Simple Translator（简译）](https://github.com/AnthonyJu/webext-simple-translator)、[Color Picker](https://raw.githubusercontent.com/AnthonyJu/static/main/color-picker/extension.zip)、[Extension Manager（极简）](https://raw.githubusercontent.com/AnthonyJu/static/main/minimalism-extension-manager/extension.zip)
+> 1. 下载解压：[Simple Translator（简译）](https://raw.githubusercontent.com/AnthonyJu/static/main/simple-translator/extension.zip)、[Color Picker](https://raw.githubusercontent.com/AnthonyJu/static/main/color-picker/extension.zip)、[Extension Manager（极简）](https://raw.githubusercontent.com/AnthonyJu/static/main/minimalism-extension-manager/extension.zip)
 > 2. 打开浏览器设置，找到`扩展程序`，打开`开发者模式`。
 > 3. 点击`加载已解压的扩展程序`，选择解压后的文件夹即可。
 
