@@ -142,7 +142,7 @@ const isDark = root.classList.contains('dark')
 点击下面的按钮（或点击顶部的切换按钮），切换一下主题吧！🤗
 如果在切换时没有圆圈效果，那就是你的浏览器不支持该 API，可以使用 [can i use](https://caniuse.com/?search=view-transition) 查看浏览器兼容性。
 
-<script setup lang="ts">
+<script setup>
 import { toggleTheme } from '@/utils/toggleTheme'
 </script>
 
