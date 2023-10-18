@@ -1,3 +1,5 @@
+/* eslint-disable eslint-comments/no-unlimited-disable */
+/* eslint-disable */
 var isOpenFireworks = false
 
 function clickEffect() {

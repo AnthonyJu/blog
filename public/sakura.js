@@ -1,3 +1,5 @@
+/* eslint-disable eslint-comments/no-unlimited-disable */
+/* eslint-disable */
 var SAKURA_NUM = 30;
 
 var stop, isOpenSakura;

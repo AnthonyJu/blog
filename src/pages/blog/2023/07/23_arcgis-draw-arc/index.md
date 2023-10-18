@@ -107,7 +107,8 @@ function generateArc(
   startAngle: number,
   endAngle: number,
   radius: number,
-  center: [number, number]) {
+  center: [number, number]
+) {
   const pointNum: number = 100
   const points: [number, number][] = []
   let sin: number, cos: number, x: number, y: number, angle: number

@@ -1,1 +1,3 @@
+/* eslint-disable eslint-comments/no-unlimited-disable */
+/* eslint-disable */
 let loaded=false;const start=(new Date).getTime();setTimeout(()=>{if(loaded)return;document.body.removeChild(document.querySelector(".loading")),document.querySelector("#app").style.display="block";loaded=true},3000);window.addEventListener("load",()=>{if(loaded)return;const e=(new Date).getTime()-start;e<1500?setTimeout(()=>{document.body.removeChild(document.querySelector(".loading")),document.querySelector("#app").style.display="block"},e-1500):(document.body.removeChild(document.querySelector(".loading")),document.querySelector("#app").style.display="block");loaded=true});
