@@ -23,5 +23,8 @@
   "files.associations": {
     "*.css": "postcss"
   },
-  "editor.formatOnSave": false
+  "editor.formatOnSave": false,
+
+  // Enable the ESlint flat config support
+  "eslint.experimental.useFlatConfig": true
 }
