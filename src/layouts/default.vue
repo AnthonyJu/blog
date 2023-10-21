@@ -28,8 +28,8 @@ const { y } = useWindowScroll()
 const { height, width } = useWindowSize()
 
 const footer = ref()
-const elSize = useElementSize(footer)
-const minHeight = computed(() => `${height.value - 70 - elSize.height.value ?? 60}px`) // 70: header height
+const footerSize = useElementSize(footer)
+const minHeight = computed(() => `${height.value - 70 - footerSize.height.value - 30}px`) // 70: header height，30: footer padding
 
 const route = useRoute()
 const articleWidth = ref('max-w-100ch')
