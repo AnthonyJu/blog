@@ -55,7 +55,7 @@ declare type ParameterDecorator = (target: Object, propertyKey: string | symbol 
 
 主要作用：
 
-#### 2.1.1 类 普通装饰器
+#### 普通装饰器
 
 ```ts
 function logClass(target: any) {
@@ -84,7 +84,7 @@ http.logUrl()
 https://www.baidu.com
 ```
 
-#### 2.1.2 类 装饰器工厂
+#### 装饰器工厂
 
 ```ts
 function logClass(params: string) {
@@ -116,7 +116,7 @@ https://www.baidu.com
 ```
 
 
-#### 2.1.3 类 装饰器重载构造函数
+#### 装饰器重载构造函数
 
 ```ts
 function logClass(target: any) {
@@ -161,7 +161,7 @@ http.getData()
 - 对于静态成员来说是类的构造函数，对于实例成员是类的原型对象。
 - 成员的名字。
 
-#### 2.2.1 属性 普通装饰器
+#### 普通装饰器
 
 ```ts
 function logProperty(target: any, attr: any) {
@@ -189,7 +189,7 @@ url
 https://www.baidu.com
 ```
 
-#### 2.2.2 属性 装饰器工厂
+#### 装饰器工厂
 
 ```ts
 function logProperty(params: string) {
@@ -221,7 +221,7 @@ console.log(http.url)
 - 成员的名字。
 - 成员的属性描述符，可写`writable`，可枚举`enumerable`，可配置`configurable`
 
-#### 2.3.1 方法 普通装饰器
+#### 普通装饰器
 
 ```ts
 function logMethod(target: any, methodName: string, desc: PropertyDescriptor) {
@@ -268,7 +268,7 @@ getData
 我是getData里面的方法
 ```
 
-#### 2.3.2 方法 装饰器工厂
+#### 装饰器工厂
 
 ```ts
 function logMethod(params: string) {
@@ -332,7 +332,7 @@ https://www.baidu.com
 - 成员的名字。
 - 参数在函数参数列表中的`索引`。
 
-#### 2.4.1 参数 普通装饰器
+#### 普通装饰器
 
 ```ts
 function logParams(target: any, methodName: string, paramsIndex: number) {
@@ -356,7 +356,7 @@ getFn
 0
 ```
 
-#### 2.4.2 参数 装饰器工厂
+#### 装饰器工厂
 
 ```ts
 function logParams(params: string) {
