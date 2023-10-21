@@ -1,45 +1,43 @@
 <template>
-  <div>
-    <div class="clip h-30px pr-15px text-right">Some bits and pieces of notes</div>
-    <div class="overflow-hidden rounded bg-#fff9 dark:bg-#0009">
-      <el-collapse class="custom-collapse rounded" accordion>
-        <el-collapse-item v-for="item in noteTypes" :key="item.name">
-          <!-- collapse title -->
-          <template #title>
-            <span
-              :class="isDark ? item.darkIcon ?? item.icon : item.icon"
-              class="ml-20px mr-12px text-18px"
-            />
-            <span class="font-14px">{{ item.name }}</span>
-          </template>
+  <div class="clip h-30px pr-15px text-right">Some bits and pieces of notes</div>
+  <div class="overflow-hidden rounded bg-#fff9 dark:bg-#0009">
+    <el-collapse class="custom-collapse rounded" accordion>
+      <el-collapse-item v-for="item in noteTypes" :key="item.name">
+        <!-- collapse title -->
+        <template #title>
+          <span
+            :class="isDark ? item.darkIcon ?? item.icon : item.icon"
+            class="ml-20px mr-12px text-18px"
+          />
+          <span class="font-14px">{{ item.name }}</span>
+        </template>
 
-          <!-- collapse content -->
-          <div class="py-5px">
-            <router-link
-              v-for="(note, index) in item.notes"
-              :key="note.path"
-              :to="note.path"
-              class="flex cursor-pointer justify-between py-5px pl-55px pr-20px"
-            >
-              <!-- title -->
-              <div class="font-14px flex-1 truncate" hover="text-$text-hover">
-                {{ index + 1 }}、{{ note.title }}
-              </div>
+        <!-- collapse content -->
+        <div class="py-5px">
+          <router-link
+            v-for="(note, index) in item.notes"
+            :key="note.path"
+            :to="note.path"
+            class="flex cursor-pointer justify-between py-5px pl-55px pr-20px"
+          >
+            <!-- title -->
+            <div class="font-14px flex-1 truncate" hover="text-$text-hover">
+              {{ index + 1 }}、{{ note.title }}
+            </div>
 
-              <!-- keywords -->
-              <div class="truncate text-12px" :title="note.keywords?.join('，')">
-                <el-tag v-for="keyword in note.keywords" :key="keyword" class="mr-5px">
-                  {{ keyword }}
-                </el-tag>
-              </div>
-            </router-link>
-          </div>
+            <!-- keywords -->
+            <div class="truncate text-12px" :title="note.keywords?.join('，')">
+              <el-tag v-for="keyword in note.keywords" :key="keyword" class="mr-5px">
+                {{ keyword }}
+              </el-tag>
+            </div>
+          </router-link>
+        </div>
 
-          <!-- empty -->
-          <div v-if="item.notes?.length === 0" class="px-20px py-12px">嘤 嘤 嘤，马上了</div>
-        </el-collapse-item>
-      </el-collapse>
-    </div>
+        <!-- empty -->
+        <div v-if="item.notes?.length === 0" class="px-20px py-12px">嘤 嘤 嘤，马上了</div>
+      </el-collapse-item>
+    </el-collapse>
   </div>
 </template>
 
