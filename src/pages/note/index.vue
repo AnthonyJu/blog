@@ -2,7 +2,7 @@
   <div class="clip h-30px pr-15px text-right">Some bits and pieces of notes</div>
   <div class="overflow-hidden rounded bg-#fff9 dark:bg-#0009">
     <el-collapse class="custom-collapse rounded" accordion>
-      <el-collapse-item v-for="item in noteTypes" :key="item.name">
+      <el-collapse-item v-for="item in noteList" :key="item.name">
         <!-- collapse title -->
         <template #title>
           <span
@@ -42,10 +42,7 @@
 </template>
 
 <script setup lang='ts'>
-import type { Note, NoteType } from '@/types/index'
-import pages from '~pages'
-
-const noteTypes = ref<NoteType[]>([
+const noteTypes = [
   {
     name: 'HTML',
     icon: 'i-vscode-icons:file-type-html',
@@ -103,16 +100,9 @@ const noteTypes = ref<NoteType[]>([
     name: 'Others',
     icon: 'i-vscode-icons-file-type-todo',
   },
-])
+]
 
-const allNotes = pages.filter(page => page.path.startsWith('/note/')).map((page) => {
-  return {
-    ...page.meta,
-    path: page.path,
-  }
-}) as Note[]
-
-noteTypes.value = noteTypes.value.map((item) => {
+const noteList = noteTypes.map((item) => {
   return {
     ...item,
     notes: allNotes.filter(note => note.path.includes(`/note/${item.name.split(' ').join('-').toLowerCase()}`)),

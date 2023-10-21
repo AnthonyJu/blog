@@ -22,6 +22,7 @@
       <div class="my-10px">
         {{ blog.title }}
       </div>
+
       <!-- desc -->
       <div
         v-show="width > 600"
@@ -51,10 +52,7 @@
 
 <script setup lang='ts'>
 import axios from 'axios'
-import pages from '~pages'
 import type { BlogInfo } from '@/types/index'
-
-const allBlogs = getAllBlogs(pages)
 
 // 随机获取4篇blog
 const blogs = computed(() => {
@@ -81,11 +79,14 @@ interface OneWord {
 }
 const oneWord = ref('前进吧，星星在你的头上闪耀哦！')
 onMounted(() => {
-  width.value > 600 && axios.get('https://api.vvhan.com/api/ian?type=json').then((res: { data: OneWord }) => {
-    if (res.data.success) {
-      oneWord.value = `${res.data.data.vhan} ——${res.data.data.source}`
-    }
-  })
+  if (width.value > 600) {
+    axios.get('https://api.vvhan.com/api/ian?type=json')
+      .then((res: { data: OneWord }) => {
+        if (res.data.success) {
+          oneWord.value = `${res.data.data.vhan} ——${res.data.data.source}`
+        }
+      })
+  }
 })
 </script>
 

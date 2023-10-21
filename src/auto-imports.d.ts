@@ -7,6 +7,8 @@ export {}
 declare global {
   const EffectScope: typeof import('vue')['EffectScope']
   const ElMessage: typeof import('element-plus/lib')['ElMessage']
+  const allBlogs: typeof import('./stores/blogsAndNotes')['allBlogs']
+  const allNotes: typeof import('./stores/blogsAndNotes')['allNotes']
   const asyncComputed: typeof import('@vueuse/core')['asyncComputed']
   const audioState: typeof import('./composables/audioPlayer')['audioState']
   const autoResetRef: typeof import('@vueuse/core')['autoResetRef']
@@ -49,7 +51,9 @@ declare global {
   const isRef: typeof import('vue')['isRef']
   const makeDestructurable: typeof import('@vueuse/core')['makeDestructurable']
   const markRaw: typeof import('vue')['markRaw']
+  const myNum: typeof import('./stores/blogsAndNotes')['myNum']
   const nextTick: typeof import('vue')['nextTick']
+  const num: typeof import('./stores/test')['num']
   const onActivated: typeof import('vue')['onActivated']
   const onBeforeMount: typeof import('vue')['onBeforeMount']
   const onBeforeRouteLeave: typeof import('vue-router')['onBeforeRouteLeave']
@@ -306,6 +310,8 @@ declare module 'vue' {
   interface ComponentCustomProperties {
     readonly EffectScope: UnwrapRef<typeof import('vue')['EffectScope']>
     readonly ElMessage: UnwrapRef<typeof import('element-plus/lib')['ElMessage']>
+    readonly allBlogs: UnwrapRef<typeof import('./stores/blogsAndNotes')['allBlogs']>
+    readonly allNotes: UnwrapRef<typeof import('./stores/blogsAndNotes')['allNotes']>
     readonly asyncComputed: UnwrapRef<typeof import('@vueuse/core')['asyncComputed']>
     readonly audioState: UnwrapRef<typeof import('./composables/audioPlayer')['audioState']>
     readonly autoResetRef: UnwrapRef<typeof import('@vueuse/core')['autoResetRef']>
@@ -599,6 +605,8 @@ declare module '@vue/runtime-core' {
   interface ComponentCustomProperties {
     readonly EffectScope: UnwrapRef<typeof import('vue')['EffectScope']>
     readonly ElMessage: UnwrapRef<typeof import('element-plus/lib')['ElMessage']>
+    readonly allBlogs: UnwrapRef<typeof import('./stores/blogsAndNotes')['allBlogs']>
+    readonly allNotes: UnwrapRef<typeof import('./stores/blogsAndNotes')['allNotes']>
     readonly asyncComputed: UnwrapRef<typeof import('@vueuse/core')['asyncComputed']>
     readonly audioState: UnwrapRef<typeof import('./composables/audioPlayer')['audioState']>
     readonly autoResetRef: UnwrapRef<typeof import('@vueuse/core')['autoResetRef']>

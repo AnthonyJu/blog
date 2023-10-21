@@ -4,7 +4,7 @@
     style="grid-template-columns: repeat(auto-fill, minmax(min(230px, 100%), 1fr));"
   >
     <div
-      v-for="blog in blogs"
+      v-for="blog in blogList"
       :key="blog.title"
       class="blog-item group h-250px flex-col-center cursor-pointer overflow-hidden rounded-3"
       bg="#ffffff99 dark:#00000099"
@@ -56,13 +56,8 @@
 </template>
 
 <script setup lang='ts'>
-import pages from '~pages'
-
-const allBlogs = getAllBlogs(pages)
-
-// 当前页
 const current = ref(1)
-const blogs = computed(() => {
+const blogList = computed(() => {
   const start = (current.value - 1) * 15
   const end = start + 15
   return allBlogs.slice(start, end)
