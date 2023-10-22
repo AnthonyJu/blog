@@ -1,5 +1,5 @@
 import AvatarPng from '@/assets/avatar.png'
-import type { BlogInfo, Note } from '@/types/index'
+import type { BlogInfo } from '@/types/index'
 import pages from '~pages'
 
 const blogPosters = import.meta.glob<{ default: string }>(
@@ -28,13 +28,4 @@ export const randomBlogs = computed(() => {
     if (!randoms.includes(blog)) randoms.push(blog)
   }
   return randoms
-})
-
-export const allNotes = computed(() => {
-  return pages.filter(page => page.path.startsWith('/note/')).map((page) => {
-    return {
-      ...page.meta,
-      path: page.path,
-    }
-  }) as Note[]
 })

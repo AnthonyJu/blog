@@ -24,14 +24,14 @@ export default function (
     actions: [
       {
         type: 'modify',
-        path: '../../src/pages/roast/roastList.ts',
+        path: '../../src/stores/roasts.ts',
         pattern: /(\[\n\s+{)/,
         template:
           `[\n  {\n    id: ${timestamp},\n    content: '{{roast}}',\n    date: '${date}',\n  },\n  {`,
       },
       {
         type: 'openFile',
-        path: `./src/pages/roast/roastList.ts`,
+        path: `./src/stores/roasts.ts`,
       },
     ],
   })

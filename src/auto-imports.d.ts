@@ -7,8 +7,9 @@ export {}
 declare global {
   const EffectScope: typeof import('vue')['EffectScope']
   const ElMessage: typeof import('element-plus/lib')['ElMessage']
-  const allBlogs: typeof import('./stores/blogsAndNotes')['allBlogs']
-  const allNotes: typeof import('./stores/blogsAndNotes')['allNotes']
+  const allBlogs: typeof import('./stores/blogs')['allBlogs']
+  const allNotes: typeof import('./stores/notes')['allNotes']
+  const allRoasts: typeof import('./stores/roasts')['allRoasts']
   const asyncComputed: typeof import('@vueuse/core')['asyncComputed']
   const audioState: typeof import('./composables/audioPlayer')['audioState']
   const autoResetRef: typeof import('@vueuse/core')['autoResetRef']
@@ -51,9 +52,7 @@ declare global {
   const isRef: typeof import('vue')['isRef']
   const makeDestructurable: typeof import('@vueuse/core')['makeDestructurable']
   const markRaw: typeof import('vue')['markRaw']
-  const myNum: typeof import('./stores/blogsAndNotes')['myNum']
   const nextTick: typeof import('vue')['nextTick']
-  const num: typeof import('./stores/test')['num']
   const onActivated: typeof import('vue')['onActivated']
   const onBeforeMount: typeof import('vue')['onBeforeMount']
   const onBeforeRouteLeave: typeof import('vue-router')['onBeforeRouteLeave']
@@ -78,7 +77,7 @@ declare global {
   const preferredDark: typeof import('./composables/dark')['preferredDark']
   const provide: typeof import('vue')['provide']
   const provideLocal: typeof import('@vueuse/core')['provideLocal']
-  const randomBlogs: typeof import('./stores/blogsAndNotes')['randomBlogs']
+  const randomBlogs: typeof import('./stores/blogs')['randomBlogs']
   const reactify: typeof import('@vueuse/core')['reactify']
   const reactifyObject: typeof import('@vueuse/core')['reactifyObject']
   const reactive: typeof import('vue')['reactive']
@@ -311,8 +310,9 @@ declare module 'vue' {
   interface ComponentCustomProperties {
     readonly EffectScope: UnwrapRef<typeof import('vue')['EffectScope']>
     readonly ElMessage: UnwrapRef<typeof import('element-plus/lib')['ElMessage']>
-    readonly allBlogs: UnwrapRef<typeof import('./stores/blogsAndNotes')['allBlogs']>
-    readonly allNotes: UnwrapRef<typeof import('./stores/blogsAndNotes')['allNotes']>
+    readonly allBlogs: UnwrapRef<typeof import('./stores/blogs')['allBlogs']>
+    readonly allNotes: UnwrapRef<typeof import('./stores/notes')['allNotes']>
+    readonly allRoasts: UnwrapRef<typeof import('./stores/roasts')['allRoasts']>
     readonly asyncComputed: UnwrapRef<typeof import('@vueuse/core')['asyncComputed']>
     readonly audioState: UnwrapRef<typeof import('./composables/audioPlayer')['audioState']>
     readonly autoResetRef: UnwrapRef<typeof import('@vueuse/core')['autoResetRef']>
@@ -379,7 +379,7 @@ declare module 'vue' {
     readonly preferredDark: UnwrapRef<typeof import('./composables/dark')['preferredDark']>
     readonly provide: UnwrapRef<typeof import('vue')['provide']>
     readonly provideLocal: UnwrapRef<typeof import('@vueuse/core')['provideLocal']>
-    readonly randomBlogs: UnwrapRef<typeof import('./stores/blogsAndNotes')['randomBlogs']>
+    readonly randomBlogs: UnwrapRef<typeof import('./stores/blogs')['randomBlogs']>
     readonly reactify: UnwrapRef<typeof import('@vueuse/core')['reactify']>
     readonly reactifyObject: UnwrapRef<typeof import('@vueuse/core')['reactifyObject']>
     readonly reactive: UnwrapRef<typeof import('vue')['reactive']>
@@ -606,8 +606,9 @@ declare module '@vue/runtime-core' {
   interface ComponentCustomProperties {
     readonly EffectScope: UnwrapRef<typeof import('vue')['EffectScope']>
     readonly ElMessage: UnwrapRef<typeof import('element-plus/lib')['ElMessage']>
-    readonly allBlogs: UnwrapRef<typeof import('./stores/blogsAndNotes')['allBlogs']>
-    readonly allNotes: UnwrapRef<typeof import('./stores/blogsAndNotes')['allNotes']>
+    readonly allBlogs: UnwrapRef<typeof import('./stores/blogs')['allBlogs']>
+    readonly allNotes: UnwrapRef<typeof import('./stores/notes')['allNotes']>
+    readonly allRoasts: UnwrapRef<typeof import('./stores/roasts')['allRoasts']>
     readonly asyncComputed: UnwrapRef<typeof import('@vueuse/core')['asyncComputed']>
     readonly audioState: UnwrapRef<typeof import('./composables/audioPlayer')['audioState']>
     readonly autoResetRef: UnwrapRef<typeof import('@vueuse/core')['autoResetRef']>
@@ -674,7 +675,7 @@ declare module '@vue/runtime-core' {
     readonly preferredDark: UnwrapRef<typeof import('./composables/dark')['preferredDark']>
     readonly provide: UnwrapRef<typeof import('vue')['provide']>
     readonly provideLocal: UnwrapRef<typeof import('@vueuse/core')['provideLocal']>
-    readonly randomBlogs: UnwrapRef<typeof import('./stores/blogsAndNotes')['randomBlogs']>
+    readonly randomBlogs: UnwrapRef<typeof import('./stores/blogs')['randomBlogs']>
     readonly reactify: UnwrapRef<typeof import('@vueuse/core')['reactify']>
     readonly reactifyObject: UnwrapRef<typeof import('@vueuse/core')['reactifyObject']>
     readonly reactive: UnwrapRef<typeof import('vue')['reactive']>

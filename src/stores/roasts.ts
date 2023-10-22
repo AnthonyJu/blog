@@ -1,4 +1,4 @@
-export default [
+export const allRoasts = [
   {
     id: 1697812539421,
     content: '努力💪🏻不一定会得到什么，但不努力也不一定啥也得不到😂。',

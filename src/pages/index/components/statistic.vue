@@ -18,7 +18,7 @@
     @click="$router.push('/roast')"
   >
     <p
-      v-for="item in roastList.slice(0, 5)"
+      v-for="item in allRoasts.slice(0, 5)"
       :key="item.date"
       :title="`${useTimeAgo(item.date).value}：${item.content}`"
       class="truncate border-b border-#fff6 p-8px last:border-none"
@@ -30,7 +30,6 @@
 
 <script setup lang='ts'>
 import pages from '~pages'
-import roastList from '@/pages/roast/roastList'
 
 const statistics = [
   {
@@ -46,7 +45,7 @@ const statistics = [
   {
     name: 'roasts',
     path: '/roast',
-    count: roastList.length,
+    count: allRoasts.length,
   },
 ]
 </script>
