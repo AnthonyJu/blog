@@ -60,7 +60,7 @@ const current = ref(1)
 const blogList = computed(() => {
   const start = (current.value - 1) * 15
   const end = start + 15
-  return allBlogs.slice(start, end)
+  return allBlogs.value.slice(start, end)
 })
 </script>
 

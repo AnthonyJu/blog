@@ -2,27 +2,39 @@ import AvatarPng from '@/assets/avatar.png'
 import type { BlogInfo, Note } from '@/types/index'
 import pages from '~pages'
 
-// 获取所有博客的封面图
-const allPoster = import.meta.glob<{ default: string }>(
+const blogPosters = import.meta.glob<{ default: string }>(
   '../pages/blog/**/poster.png',
   { eager: true },
 )
 
-// 获取所有博客的信息
-export const allBlogs = pages
-  .filter(page => page.path.startsWith('/blog/'))
-  .map((page) => {
-    const posterPath = `../pages${page.path}/poster.png`
-    return {
-      path: page.path,
-      poster: allPoster[posterPath]?.default ?? AvatarPng,
-      ...page.meta,
-    }
-  }) as BlogInfo[]
+export const allBlogs = computed(() => {
+  return pages
+    .filter(page => page.path.startsWith('/blog/'))
+    .map((page) => {
+      const posterPath = `../pages${page.path}/poster.png`
+      return {
+        path: page.path,
+        poster: blogPosters[posterPath]?.default ?? AvatarPng,
+        ...page.meta,
+      }
+    }) as BlogInfo[]
+})
 
-export const allNotes = pages.filter(page => page.path.startsWith('/note/')).map((page) => {
-  return {
-    ...page.meta,
-    path: page.path,
+export const randomBlogs = computed(() => {
+  const randoms: BlogInfo[] = []
+  while (randoms.length < Math.min(4, allBlogs.value.length)) {
+    const index = Math.floor(Math.random() * allBlogs.value.length)
+    const blog = allBlogs.value[index]
+    if (!randoms.includes(blog)) randoms.push(blog)
   }
-}) as Note[]
+  return randoms
+})
+
+export const allNotes = computed(() => {
+  return pages.filter(page => page.path.startsWith('/note/')).map((page) => {
+    return {
+      ...page.meta,
+      path: page.path,
+    }
+  }) as Note[]
+})

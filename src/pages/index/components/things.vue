@@ -3,7 +3,7 @@
     <span class="truncate px-10px" :title="oneWord">{{ oneWord }}</span>
   </div>
   <router-link
-    v-for="blog in blogs"
+    v-for="blog in randomBlogs"
     :key="blog.path"
     class="matted-box mt-20px h-160px flex overflow-hidden transition duration-400 ease-in-out"
     cursor="pointer"
@@ -52,36 +52,24 @@
 
 <script setup lang='ts'>
 import axios from 'axios'
-import type { BlogInfo } from '@/types/index'
 
-// 随机获取4篇blog
-const blogs = computed(() => {
-  const randomBlogs: BlogInfo[] = []
-  while (randomBlogs.length < 4 && allBlogs.length > 0) {
-    const index = Math.floor(Math.random() * allBlogs.length)
-    const blog = allBlogs[index]
-    if (!randomBlogs.includes(blog)) {
-      randomBlogs.push(blog)
+interface OneWordRes {
+  data: {
+    success: boolean
+    data: {
+      vhan: string
+      source: string
     }
   }
-  return randomBlogs
-})
-
-const { width } = useWindowSize()
+}
 
 // 获取随机一言 https://api.vvhan.com/api/ian?type=json
-interface OneWord {
-  success: boolean
-  data: {
-    vhan: string
-    source: string
-  }
-}
+const { width } = useWindowSize()
 const oneWord = ref('前进吧，星星在你的头上闪耀哦！')
 onMounted(() => {
   if (width.value > 600) {
     axios.get('https://api.vvhan.com/api/ian?type=json')
-      .then((res: { data: OneWord }) => {
+      .then((res: OneWordRes) => {
         if (res.data.success) {
           oneWord.value = `${res.data.data.vhan} ——${res.data.data.source}`
         }
