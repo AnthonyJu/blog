@@ -107,9 +107,9 @@ const featureLayer = new FeatureLayer({
 })
 ```
 
-这里的`outFields`代表获取所有的属性，如果你只想获取部分属性，可以配置为`['name', 'age']`，这样就只会获取`name`和`age`属性。
+- 这里的`outFields`代表获取所有的属性，如果你只想获取部分属性，可以配置为`['name', 'age']`，这样就只会获取`name`和`age`属性。
 
-其次是[fields](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-FeatureLayer.html#fields)，这里是配置点位的属性，他需要与你在`source`中配置的`attributes`对应，如果你在`attributes`中配置了`name`属性，那么这里就需要配置`name`属性，否则获取不到。
+- 其次是[fields](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-FeatureLayer.html#fields)，这里是配置点位的属性，他需要与你在`source`中配置的`attributes`对应，如果你在`attributes`中配置了`name`属性，那么这里就需要配置`name`属性，否则获取不到。
 
 ## 2. 配置FeatureReduction
 
