@@ -56,6 +56,8 @@
 </template>
 
 <script setup lang='ts'>
+import { allBlogs } from '@/stores/blogs'
+
 const current = ref(1)
 const blogList = computed(() => {
   const start = (current.value - 1) * 15
