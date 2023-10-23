@@ -15,7 +15,7 @@ meta:
   date: 2023-10-22 19:56:11
 </route>
 
-# ArcGIS 特征缩减（聚合）
+# ArcGIS 特征缩减（点聚合）
 
 地图上的标记点很多时，当地图缩小时没有聚合功能，点位图标将聚到一起会非常难看，这时你只需要一个聚合功能，就可以解决这个问题。
 
@@ -27,7 +27,7 @@ meta:
 
 ### 1.1 创建方式
 
-但是使用`FeatureLayer`，是无法通过`add`方法添加点位的，我们需要使用`FeatureLayer`的`source`属性，来实现点位的添加，这也是`FeatureLayer`和的第二种[创建方式](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-FeatureLayer.html#constructors-summary)：
+但是使用`FeatureLayer`，是无法通过`add`方法添加点位的，我们需要使用`FeatureLayer`的`source`属性，来实现点位的添加，这也是`FeatureLayer`的第二种[创建方式](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-FeatureLayer.html#constructors-summary)：
 
 ```ts
 const featureLayer = new FeatureLayer({

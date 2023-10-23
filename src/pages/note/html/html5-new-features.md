@@ -150,16 +150,16 @@ canvas是HTML5新增的，一个可以使用脚本(通常为JavaScript) 在其�
 
 使用getCurrentPosition()方法来获取用户的位置。
 
-```javascript
-function getLocation(){
-	if (navigator.geolocation){
-		navigator.geolocation.getCurrentPosition((position) => {
-      console.log("Longitude: " + position.coords.longitude)
-      console.log("Latitude: " + position.coords.latitude)
+```js
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition((position) => {
+      console.log(`Longitude: ${position.coords.longitude}`)
+      console.log(`Latitude: ${position.coords.latitude}`)
     })
   }
-  else{
-    x.innerHTML="Geolocation is not supported by this browser.";
+  else {
+    x.innerHTML = 'Geolocation is not supported by this browser.'
   }
 }
 ```
@@ -203,12 +203,12 @@ localStorage：没有时间限制的数据存储
 
 sessionStorage:在浏览器关闭的时候就会清除。
 
-```javascript
-localStorage.setItem(key,value);//保存数据
-let value = localStorage.getItem(key);//读取数据
-localStorage.removeItem(key);//删除单个数据
-localStorage.clear();//删除所有数据
-let key = localStorage.key(index);//得到某个索引的值
+```js
+localStorage.setItem(key, value)// 保存数据
+let value = localStorage.getItem(key)// 读取数据
+localStorage.removeItem(key)// 删除单个数据
+localStorage.clear()// 删除所有数据
+let key = localStorage.key(index)// 得到某个索引的值
 ```
 
 ## 九、WebSocket
@@ -233,11 +233,11 @@ Web Worker可以通过加载一个脚本文件，进而创建一个独立工作�
 
 Web Worker的基本原理就是在当前javascript的主线程中，使用Worker类加载一个javascript文件来开辟一个新的线程，起到互不阻塞执行的效果，并且提供主线程和新县城之间数据交换的接口：postMessage、onmessage。
 
-```javascript
-//worker.js
-onmessage = function (evt){
-  var d = evt.data //通过evt.data获得发送来的数据
-  postMessage( d ) //将获取到的数据发送会主线程
+```js
+// worker.js
+onmessage = function (evt) {
+  const d = evt.data // 通过evt.data获得发送来的数据
+  postMessage(d) // 将获取到的数据发送会主线程
 }
 ```
 
