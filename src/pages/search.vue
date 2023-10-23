@@ -32,7 +32,7 @@
         :key="res.path"
         flex-col-center
         overflow="hidden"
-        class="relative h-100px cursor-pointer rounded-3 p-15px duration-500 ease-in-out"
+        class="relative h-100px cursor-pointer rounded-3 p-15px duration-150"
         bg="#ffffff77 dark:#00000077"
         hover="text-18px"
         @click="$router.push(res.path)"
