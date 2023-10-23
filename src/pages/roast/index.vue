@@ -20,8 +20,6 @@
 </template>
 
 <script setup lang="ts">
-import allRoasts from './roastList'
-
 const colorList = ['#f56a00', '#7265e6', '#ffbf00', '#00a2ae', ' #00a854']
 
 const current = ref(1)
