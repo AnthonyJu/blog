@@ -96,7 +96,7 @@ export default defineConfig({
 
     // https://github.com/antfu/vite-plugin-vue-markdown
     Markdown({
-      wrapperClasses: 'prose prose-sm m-auto text-left query-target',
+      wrapperClasses: 'prose prose-sm m-auto text-left query-target overflow-hidden',
       headEnabled: true,
       async markdownItSetup(md) {
         // https://prismjs.com/
