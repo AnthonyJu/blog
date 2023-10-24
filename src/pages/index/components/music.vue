@@ -80,6 +80,9 @@
 <script setup lang='ts'>
 import type { Arrayable } from 'element-plus/lib/utils/typescript'
 
+// 随机播放音乐
+useAudioPlayer()
+
 // 设置当前播放时间
 function setCurrentTime(time: Arrayable<number>) {
   audioState.audio!.currentTime = time as number
