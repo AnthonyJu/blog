@@ -23,6 +23,7 @@ declare module 'vue' {
     ElDropdownMenu: typeof import('element-plus/lib')['ElDropdownMenu']
     ElInput: typeof import('element-plus/lib')['ElInput']
     ElPagination: typeof import('element-plus/lib')['ElPagination']
+    ElProgress: typeof import('element-plus/lib')['ElProgress']
     ElRow: typeof import('element-plus/lib')['ElRow']
     ElScrollbar: typeof import('element-plus/lib')['ElScrollbar']
     ElSlider: typeof import('element-plus/lib')['ElSlider']

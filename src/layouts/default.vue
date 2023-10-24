@@ -1,6 +1,9 @@
 <template>
   <LayoutHeader :class="{ filterClass: y > 0 }" />
-  <article class="m-auto px-15px" :class="articleWidth" :style="{ minHeight }">
+  <article
+    ref="article" class="m-auto px-15px"
+    :class="articleWidth" :style="{ minHeight: `${minHeight}px` }"
+  >
     <transition name="fade" mode="out-in">
       <div :key="route.path">
         <router-view />
@@ -11,7 +14,16 @@
   <LayoutFooter ref="footer" />
   <Rabbit />
   <MiniMusic />
-  <el-backtop />
+  <el-backtop :visibility-height="10">
+    <el-progress
+      type="circle" :width="48"
+      :duration="1"
+      :percentage="precent"
+      :stroke-width="4"
+    >
+      <div i-streamline-emojis-rocket class="ml-12px mt-1px text-22px -rotate-45" />
+    </el-progress>
+  </el-backtop>
 </template>
 
 <script setup lang="ts">
@@ -27,9 +39,11 @@ useAudioPlayer()
 const { y } = useWindowScroll()
 const { height, width } = useWindowSize()
 
+const article = ref()
 const footer = ref()
 const footerSize = useElementSize(footer)
-const minHeight = computed(() => `${height.value - 70 - footerSize.height.value - 30}px`) // 70: header height，30: footer padding
+const minHeight = computed(() => height.value - 70 - footerSize.height.value - 30) // 70: header height，30: footer padding
+const precent = computed(() => y.value / (article.value?.offsetHeight - minHeight.value) * 100)
 
 const route = useRoute()
 const articleWidth = ref('max-w-100ch')
