@@ -6,7 +6,7 @@
     <div
       v-for="blog in blogList"
       :key="blog.title"
-      class="blog-item group h-250px flex-col-center cursor-pointer overflow-hidden rounded-3"
+      class="blog-item group h-260px flex-col-center cursor-pointer overflow-hidden rounded-3"
       bg="#ffffff99 dark:#00000099"
       @click="$router.push(blog.path)"
     >
@@ -20,8 +20,8 @@
           group-hover="scale-120"
         >
         <div
-          class="hidden full flex-center animate-fade-in bg-#000000aa p-10px"
-          text="center #fff 14px"
+          class="hidden full flex-center animate-fade-in bg-#000000aa p-16px indent-2em"
+          text="center #fff 14px justify"
           position="absolute top-0"
           group-hover="flex"
         >

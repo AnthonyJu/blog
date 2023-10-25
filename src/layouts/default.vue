@@ -30,6 +30,9 @@ import LayoutAside from './components/layout-aside.vue'
 import MiniMusic from './components/mini-music.vue'
 import Rabbit from './components/rabbit.vue'
 
+// 随机播放音乐
+useAudioPlayer()
+
 const { y } = useWindowScroll()
 const { height, width } = useWindowSize()
 

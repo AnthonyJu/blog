@@ -25,8 +25,8 @@
   <!-- Info -->
   <div px-2px>
     <div class="mt-10px text-20px font-bold">Ju Peng</div>
-    <div class="relative text-18px text-dark-300 -top-2px dark:text-gray-300">AnthonyJu</div>
-    <div mb-10px break-all>巴山楚水凄凉地，Responsibility。</div>
+    <div class="relative text-18px text-dark-200 -top-2px dark:text-gray-300">AnthonyJu</div>
+    <div mb-10px break-all>今朝有酒今朝醉，I can do this all day。</div>
   </div>
 
   <!-- Btn -->

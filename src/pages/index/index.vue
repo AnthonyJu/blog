@@ -1,12 +1,12 @@
 <template>
   <el-row :gutter="20">
-    <el-col :xs="24" :sm="7">
+    <el-col :xs="24" :sm="8">
       <Info />
       <Statistic />
       <Music v-show="audioState.audio" />
       <Weather />
     </el-col>
-    <el-col :xs="24" :sm="17">
+    <el-col :xs="24" :sm="16">
       <Carousel />
       <Things />
     </el-col>

@@ -17,22 +17,22 @@
       :src="blog.poster"
       :alt="blog.title"
     >
-    <div class="flex-col-center flex-1 py-6px">
+    <div class="flex-col flex-1 items-center justify-around py-10px">
       <!-- title -->
-      <div class="my-10px">
+      <div>
         {{ blog.title }}
       </div>
 
       <!-- desc -->
       <div
-        v-show="width > 600"
-        class="hidden-2 px-26px indent-2em"
+        v-show="width > 800"
+        class="hidden-3 px-25px text-justify indent-2em"
         :title="blog.desc"
       >
         {{ blog.desc }}
       </div>
 
-      <div class="my-10px flex-center flex-wrap gap-15px">
+      <div class="flex-center flex-wrap gap-15px">
         <!-- tags -->
         <div class="flex-center gap-5px truncate">
           <el-tag v-for="tag in blog.keywords" :key="tag" round>
@@ -79,12 +79,12 @@ onMounted(() => {
 </script>
 
 <style lang='scss' scoped>
-// 超出两行省略
-.hidden-2 {
+// 超出三行省略
+.hidden-3 {
   display: -webkit-box;
   overflow: hidden;
   text-overflow: ellipsis;
-  -webkit-line-clamp: 2; // 行数
+  -webkit-line-clamp: 3; // 行数
   -webkit-box-orient: vertical;
 }
 
