@@ -506,6 +506,10 @@ import { fetchData } from './api' // 使用上面 axios 定义的请求函数
 const { data, run } = useRequest(fetchData, {
   manual: true,
   defaultParams: { id: 1, name: 'Ju Peng' }, // 默认参数，必须是 YourData 类型，否则会报错
+  onSuccess: (res) => {
+    console.log(res.data) // res.data 的类型为 ResData
+    console.log(res.data.data) // data.data 的类型为 ReturnData
+  }
 })
 
 run({ id: 1, name: 'Ju Peng' }) // 调用传参数，必须是 YourData 类型，否则会报错
