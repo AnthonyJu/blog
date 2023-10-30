@@ -322,7 +322,8 @@ const graphic = new Graphic({
 })
 ```
 
-> 适用于所有的`ArcGIS API for JS`中类似的情况。
+> 适用于所有的`ArcGIS API for JS`中类似的情况。<br/>
+> ArcGIS API for JS文档：https://developers.arcgis.com/javascript/latest/api-reference/
 
 ### 2. ECharts + Vue-ECharts
 
