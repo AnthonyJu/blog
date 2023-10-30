@@ -19,7 +19,7 @@ meta:
 
 TS配合Vue3的setup语法糖的类型定义，及一些第三方插件的TS类型定义，以下示例代码在`unplugin-auto-import`插件的帮助下，可以自动导入，无需手动导入。
 
-## 一、 setup 中的 TS 类型定义
+## 一、setup 中的 TS 类型定义
 
 ### 1. props 类型标注
 
@@ -439,6 +439,79 @@ const options = ref<EChartsOption>({
 })
 ```
 
+> ECharts文档：https://echarts.apache.org/zh/index.html<br/>
+> Vue-ECharts文档：https://github.com/ecomfe/vue-echarts#readme
+
 ### 3. Axios
 
+```ts
+import axios from 'axios'
+import type { AxiosResponse } from 'axios'
+
+// 定义返回数据的类型，一般是后端返回的数据结构，比较通用，可以放在一个单独的文件中
+interface Res<T> {
+  code: number
+  data: T
+  // ...其他字段
+}
+
+// 根据具体接口定义返回数据的类型
+interface ReturnData {
+  id: number
+  age: string
+  parent: string
+  // ...其他字段
+}
+
+// 接口参数类型
+interface YourData {
+  id: number
+  name: string
+  // ...其他字段
+}
+
+// 请求函数通常放在单独文件中，使用时导入，以 post 请求为例
+async function fetchData(data: YourData) {
+  const res = await axios<Res<ReturnData>>({
+    method: 'post',
+    url: 'your url',
+    data,
+  })
+
+  // 如果只需要后端返回的数据，可以直接 return res.data
+  // 这样下面 then 中的res的类型就是 Res<ReturnData>
+  return res
+}
+
+// ts会自动推导出返回数据的类型
+const data: YourData = { id: 1, name: 'Ju Peng' }
+fetchData(data).then((res) => {
+  console.log(res.data) // res.data 的类型为 ResData
+  console.log(res.data.data) // data.data 的类型为 ReturnData
+})
+```
+
+> Axios文档：https://www.axios-http.cn
+
 ### 4. VueRequest
+
+`VueRequest`一般与`axios`配合使用，你只需要定义好axios请求函数，然后使用`useRequest`即可，ts会自动推导出返回数据的类型：
+
+```ts
+import { useRequest } from 'vue-request'
+
+import { fetchData } from './api' // 使用上面 axios 定义的请求函数
+
+const { data, run } = useRequest(fetchData, {
+  manual: true,
+  defaultParams: { id: 1, name: 'Ju Peng' }, // 默认参数，必须是 YourData 类型，否则会报错
+})
+
+run({ id: 1, name: 'Ju Peng' }) // 调用传参数，必须是 YourData 类型，否则会报错
+
+// data 的类型为 Ref<AxiosResponse<Res<ReturnData>>>
+console.log(data.value.data) // data.value.data 的类型为 ResData
+console.log(data.value.data.data) // data.value.data.data 的类型为 ReturnData
+```
+
+> VueRequest文档：https://www.attojs.com/

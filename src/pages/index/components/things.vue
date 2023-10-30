@@ -54,12 +54,10 @@
 import axios from 'axios'
 
 interface OneWordRes {
+  success: boolean
   data: {
-    success: boolean
-    data: {
-      vhan: string
-      source: string
-    }
+    vhan: string
+    source: string
   }
 }
 
@@ -68,8 +66,8 @@ const { width } = useWindowSize()
 const oneWord = ref('前进吧，星星在你的头上闪耀哦！')
 onMounted(() => {
   if (width.value > 600) {
-    axios.get('https://api.vvhan.com/api/ian?type=json')
-      .then((res: OneWordRes) => {
+    axios.get<OneWordRes>('https://api.vvhan.com/api/ian?type=json')
+      .then((res) => {
         if (res.data.success) {
           oneWord.value = `${res.data.data.vhan} ——${res.data.data.source}`
         }
