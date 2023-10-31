@@ -29,7 +29,7 @@ meta:
 
 ### 2. 安装 XR Plugin Management
 
-在工具栏中找到`Window -> Package Manager`，将左上角的资源来源改为`Unity Registry`，并在左侧搜索`XR Plugin Management`，点击左下角`install`:
+在工具栏中找到`Window -> Package Manager`，将左上角的资源来源改为`Unity Registry`，并在左侧搜索`XR Plugin Management`，点击右下角`install`:
 
 ![Package Manager](./images/20231031-155751-Q1.png)
 
@@ -91,7 +91,7 @@ meta:
 
 ![20231031-163453-in.png](./images/20231031-163453-in.png)
 
-展开此材质，将`Suface Inputs`中的`Base Map`改为，当前文件夹`Materials`下的`vr_globe_color_red`:
+展开此材质，将`Surface Inputs`中的`Base Map`改为，当前文件夹`Materials`下的`vr_globe_color_red`:
 
 ![20231031-163733-7E.png](./images/20231031-163733-7E.png)
 
@@ -126,7 +126,9 @@ meta:
 
 ### 1. DOTween
 
-前往[Unity Assets Store DOTween](https://assetstore.unity.com/packages/tools/animation/dotween-hotween-v2-27676)，登录后`添加至我的资源`,回到Unity`Window -> Package Manager`,将资源来源改为`My Assets`，选择`DOTween(HOTween v2)`，点击坐下角`Download`，然后点击`Import`：
+前往[Unity Assets Store DOTween](https://assetstore.unity.com/packages/tools/animation/dotween-hotween-v2-27676)登录后`添加至我的资源`。
+
+回到Unity`Window -> Package Manager`,将资源来源改为`My Assets`，选择`DOTween`，点击右下角`Download`，然后点击`Import`：
 
 ![20231031-172527-UI.png](./images/20231031-172527-UI.png)
 
