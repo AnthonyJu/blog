@@ -9,8 +9,6 @@ declare module 'vue' {
   export interface GlobalComponents {
     CustomFrame: typeof import('./components/CustomFrame.vue')['default']
     ElBacktop: typeof import('element-plus/lib')['ElBacktop']
-    ElBadge: typeof import('element-plus/lib')['ElBadge']
-    ElBandage: typeof import('element-plus/lib')['ElBandage']
     ElButton: typeof import('element-plus/lib')['ElButton']
     ElCarousel: typeof import('element-plus/lib')['ElCarousel']
     ElCarouselItem: typeof import('element-plus/lib')['ElCarouselItem']
