@@ -11,6 +11,7 @@ import { VitePWA } from 'vite-plugin-pwa'
 import VueDevTools from 'vite-plugin-vue-devtools'
 import LinkAttributes from 'markdown-it-link-attributes'
 import Unocss from 'unocss/vite'
+import viteImagemin from 'vite-plugin-imagemin'
 import Shiki from 'markdown-it-shikiji'
 import ElementPlus from 'unplugin-element-plus/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
@@ -93,6 +94,13 @@ export default defineConfig({
     // https://github.com/antfu/unocss
     // see uno.config.ts for config
     Unocss(),
+
+    viteImagemin({
+      pngquant: {
+        quality: [0.8, 0.9],
+        speed: 4,
+      },
+    }),
 
     // https://github.com/antfu/vite-plugin-vue-markdown
     Markdown({
