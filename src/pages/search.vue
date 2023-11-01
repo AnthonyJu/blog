@@ -1,7 +1,7 @@
 <template>
   <div :class="results.length ? '' : 'mt-100px'">
     <h1 class="clip h-50px text-center text-20px">搜索博客与笔记</h1>
-    <el-input
+    <ElInput
       v-model="searchValue"
       size="large"
       autofocus
@@ -44,9 +44,9 @@
           {{ res.meta.title }}
         </p>
         <div class="w-full flex-center gap-5px truncate" :title="res.meta.keywords?.join(',')">
-          <el-tag v-for="tag in res.meta.keywords" :key="tag" round>
+          <ElTag v-for="tag in res.meta.keywords" :key="tag" round>
             {{ tag }}
-          </el-tag>
+          </ElTag>
         </div>
       </div>
     </div>

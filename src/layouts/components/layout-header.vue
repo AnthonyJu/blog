@@ -7,7 +7,7 @@
       <div class="flex-center">
         <!--  Nav -->
         <nav v-if="width >= 600" class="flex gap-20px text-18px">
-          <router-link
+          <RouterLink
             v-for="item in navList"
             :key="item.path"
             :to="item.path"
@@ -15,11 +15,11 @@
             hover="text-$text-hover"
           >
             {{ item.name }}
-          </router-link>
+          </RouterLink>
         </nav>
 
         <!-- Search -->
-        <router-link
+        <RouterLink
           class="ml-20px cursor-pointer text-18px"
           active-class="clip-bg text-19px"
           hover="text-$text-hover"
@@ -59,7 +59,7 @@
             position="absolute right-0px top-30px"
             shadow="~ dark:shadow-gray-600"
           >
-            <router-link
+            <RouterLink
               v-for="item in navList"
               :key="item.path"
               :to="item.path"
@@ -67,7 +67,7 @@
               @click="delayCloseHandle"
             >
               {{ item.name }}
-            </router-link>
+            </RouterLink>
           </nav>
         </label>
       </div>

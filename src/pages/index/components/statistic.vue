@@ -1,6 +1,6 @@
 <template>
   <div class="matted-box flex">
-    <routerLink
+    <RouterLink
       v-for="item in statistics"
       :key="item.name"
       :to="item.path"
@@ -9,7 +9,7 @@
     >
       <span text-18px>{{ item.count }}</span>
       <span>{{ item.name }}</span>
-    </routerLink>
+    </RouterLink>
   </div>
 
   <!-- 最新的5条toast -->

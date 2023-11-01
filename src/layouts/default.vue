@@ -6,21 +6,21 @@
     :class="articleWidth"
     :style="{ minHeight: `${minHeight}px` }"
   >
-    <transition name="fade" mode="out-in">
+    <Transition name="fade" mode="out-in">
       <div :key="route.path">
-        <router-view />
+        <RouterView />
         <LayoutAside v-if="showAside" />
       </div>
-    </transition>
+    </Transition>
   </article>
   <LayoutFooter ref="footer" />
   <Rabbit />
   <MiniMusic />
-  <el-backtop :visibility-height="10">
-    <el-progress type="circle" :width="48" :duration="1" :percentage="precent" :stroke-width="4">
+  <ElBacktop :visibility-height="10">
+    <ElProgress type="circle" :width="48" :duration="1" :percentage="precent" :stroke-width="4">
       <div class="rocket ml-12px mt-1px -rotate-45" />
-    </el-progress>
-  </el-backtop>
+    </ElProgress>
+  </ElBacktop>
 </template>
 
 <script setup lang="ts">

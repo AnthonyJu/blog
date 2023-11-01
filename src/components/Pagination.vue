@@ -1,5 +1,5 @@
 <template>
-  <el-pagination
+  <ElPagination
     v-if="total > 15"
     class="mt-40px rounded-20px bg-light-100 px-10px py-4px dark:bg-dark-400"
     layout="prev, pager, next"

@@ -38,9 +38,9 @@
 
         <!-- tags -->
         <div class="w-full flex-center gap-5px truncate" :title="blog.keywords?.join(',')">
-          <el-tag v-for="tag in blog.keywords" :key="tag" round>
+          <ElTag v-for="tag in blog.keywords" :key="tag" round>
             {{ tag }}
-          </el-tag>
+          </ElTag>
         </div>
 
         <!-- date -->

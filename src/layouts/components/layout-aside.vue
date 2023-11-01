@@ -1,8 +1,8 @@
 <template>
   <aside class="aside-content fixed top-100px">
-    <el-scrollbar height="500px">
+    <ElScrollbar height="500px">
       <AsideContents :contents="contents" :hightlight-id="hightlightId" />
-    </el-scrollbar>
+    </ElScrollbar>
   </aside>
 </template>
 

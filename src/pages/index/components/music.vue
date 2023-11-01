@@ -27,7 +27,7 @@
     <img class="h-66px w-66px" :src="audioState.poster">
 
     <!-- 类型切换 -->
-    <el-dropdown
+    <ElDropdown
       class="absolute top-0 cursor-pointer text-22px -right-2px"
       size="large"
       popper-class="music-type-dropdown"
@@ -35,15 +35,15 @@
     >
       <div i-carbon-playlist />
       <template #dropdown>
-        <el-dropdown-menu>
-          <el-dropdown-item v-for="sort in sortList" :key="sort" :command="sort">
+        <ElDropdownMenu>
+          <ElDropdownItem v-for="sort in sortList" :key="sort" :command="sort">
             <span :class="audioState.sort === sort ? 'text-$el-color-primary' : ''">
               {{ sort }}
             </span>
-          </el-dropdown-item>
-        </el-dropdown-menu>
+          </ElDropdownItem>
+        </ElDropdownMenu>
       </template>
-    </el-dropdown>
+    </ElDropdown>
 
     <!-- 标题与进度 -->
     <div class="h-full w-[calc(100%-66px)] flex-col justify-between pl-8px">
@@ -63,7 +63,7 @@
         </p>
       </div>
       <div class="mt-6px flex-center">
-        <el-slider
+        <ElSlider
           v-model="audioState.currentTime"
           class="flex-1"
           :max="audioState.duration"

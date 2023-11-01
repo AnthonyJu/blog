@@ -9,7 +9,7 @@
           {{ item.title }}
         </p>
       </a>
-      <aside-contents
+      <AsideContents
         v-if="item.children"
         :contents="item.children"
         :hightlight-id="hightlightId"

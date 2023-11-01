@@ -2,7 +2,7 @@
   <div class="clip h-47px flex-center pt-20px text-18px">
     <span class="truncate px-10px" :title="oneWord">{{ oneWord }}</span>
   </div>
-  <router-link
+  <RouterLink
     v-for="blog in randomBlogs"
     :key="blog.path"
     class="matted-box mt-20px h-160px flex overflow-hidden transition duration-400 ease-in-out"
@@ -35,9 +35,9 @@
       <div class="flex-center flex-wrap gap-15px">
         <!-- tags -->
         <div class="flex-center gap-5px truncate">
-          <el-tag v-for="tag in blog.keywords" :key="tag" round>
+          <ElTag v-for="tag in blog.keywords" :key="tag" round>
             {{ tag }}
-          </el-tag>
+          </ElTag>
         </div>
 
         <!-- date -->
@@ -47,7 +47,7 @@
         </div>
       </div>
     </div>
-  </router-link>
+  </RouterLink>
 </template>
 
 <script setup lang='ts'>
