@@ -79,3 +79,8 @@ meta:
 
 <video src="./images/820_1698849497.mp4" controls></video>
 
+## 6. GitHub 万圣节万圣节彩蛋
+
+今天突然发现GitHub竟然有个万圣节🎃彩蛋哎：
+
+![Alt text](./images/WechatIMG800.png)
