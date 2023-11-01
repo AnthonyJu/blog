@@ -95,7 +95,7 @@ meta:
 
 ![20231031-163733-7E.png](./images/20231031-163733-7E.png)
 
-### 6. 运行测试
+### 7. 运行测试
 
 在运行前，随便添加两个参照物`Plane`和`Cube`，点击运行：
 
@@ -150,7 +150,11 @@ public interface IController : IBelongToArchitecture, ICanSendCommand, ICanGetSy
 
 来学习的隔壁公司自己整理的一些常用的Unity工具，前往[HKUnityTools](https://gitee.com/JingChanChangFan/hk_-unity-tools)的仓库，下载代码Zip包，解压后将目录`Assets`下的`HKTools`放到项目的`Assets`目录下即可。
 
-## 四、3D 项目和 URP 项目区别
+## 四、基础脚本
+
+写好一些基础脚本，方便后续开发使用，存在了[GitHub](https://github.com/AnthonyJu/_Scripts)，下载zip包解压后，放到项目的`Assets`目录下即可。
+
+## 五、3D 项目和 URP 项目区别
 
 二者之间主要是`渲染管线的不同`。`3D`项目使用的是旧的管线，即`Build in`渲染管线；而`URP`使用的是新的管线。再通俗一点地说，在两种工程里面的`shader`使用的语言不同，`Build in`管线是`CG`语言，而`URP`是`HLSL`语言。
 
