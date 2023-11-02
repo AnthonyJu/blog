@@ -1,81 +1,33 @@
 <template>
   <div
     v-show="audioState.isPlaying"
-    h-40px w-95px flex-center cursor-pointer
-    class="fixed top-383px rounded-20px bg-light px-15px duration-400 -right-55px"
-    hover="-right-20px"
+    h-40px flex-center cursor-pointer
+    class="fixed right-0 top-383px w-auto rounded-20px bg-light transition-all-1000"
+    transform="translate-x-[calc(100%-38px)] hover:translate-x-20px"
   >
-    <div class="rhythm" title="切歌" @click="playMusic">
-      <div class="load" />
-      <div class="load" />
-      <div class="load" />
-      <div class="load" />
-      <div class="load" />
-    </div>
+    <img
+      class="ml-5px mr-10px h-30px w-30px animate-spin animate-duration-2s rounded-15px"
+      :src="audioState.poster"
+      alt="封面"
+    >
     <div
-      class="flex-center flex-1 opacity-60"
+      class="mr-25px flex-center opacity-60"
       hover="opacity-100"
     >
       <div
-        class="text-18px text-black" i-carbon-pause-filled
+        class="mx-5px max-w-120px truncate text-black"
+        hover="text-primary"
+        title="切歌"
+        @click="playMusic"
+      >
+        {{ audioState.title }}
+      </div>
+      <div
+        class="w-32px text-18px text-black" i-carbon-pause-filled
+        hover="text-primary"
         title="暂停"
         @click="audioState.audio?.pause()"
       />
     </div>
   </div>
 </template>
-
-<script setup lang='ts'>
-
-</script>
-
-<style lang='scss' scoped>
-.rhythm {
-  display: flex;
-  gap: 2px;
-  align-items: flex-end;
-  height: 24px;
-
-  .load {
-    width: 2px;
-    background-color: limegreen;
-    border-radius: 5px;
-    animation: 1s rhythm infinite;
-
-    &:nth-child(1) {
-      animation-delay: 0.2s;
-    }
-
-    &:nth-child(2) {
-      animation-delay: 0.4s;
-    }
-
-    &:nth-child(3) {
-      animation-delay: 0.6s;
-    }
-
-    &:nth-child(4) {
-      animation-delay: 0.8s;
-    }
-  }
-
-}
-
-@keyframes rhythm {
-  0% {
-    height: 0.2em;
-  }
-
-  25% {
-    height: 0.7em;
-  }
-
-  50% {
-    height: 1.5em;
-  }
-
-  100% {
-    height: 0.2em;
-  }
-}
-</style>
