@@ -1,7 +1,7 @@
 {
   "type": "module",
   "private": true,
-  "packageManager": "pnpm@8.10.0",
+  "packageManager": "pnpm@8.10.2",
   "scripts": {
     "dev": "vite",
     "build": "vite-ssg build",
@@ -18,7 +18,7 @@
     "sizecheck": "npx vite-bundle-visualizer"
   },
   "dependencies": {
-    "@unhead/vue": "^1.8.1",
+    "@unhead/vue": "^1.8.2",
     "@unocss/reset": "^0.57.1",
     "@vueuse/core": "^10.5.0",
     "@vueuse/head": "^2.0.0",
@@ -29,9 +29,9 @@
     "vue-router": "^4.2.5"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^1.0.0-beta.29",
+    "@antfu/eslint-config": "^1.0.0",
     "@anthony-ju/eslint-config": "^0.2.2",
-    "@anthony-ju/stylelint-config": "^0.2.1",
+    "@anthony-ju/stylelint-config": "^0.2.2",
     "@types/markdown-it-link-attributes": "^3.0.3",
     "@types/nprogress": "^0.2.2",
     "@unocss/eslint-config": "^0.57.1",
@@ -45,7 +45,7 @@
     "markdown-it-link-attributes": "^4.0.1",
     "markdown-it-shikiji": "^0.6.10",
     "plop": "^4.0.0",
-    "pnpm": "^8.10.0",
+    "pnpm": "^8.10.2",
     "sass": "^1.69.5",
     "shikiji": "^0.6.10",
     "simple-git-hooks": "^2.9.0",

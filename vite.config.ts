@@ -95,6 +95,7 @@ export default defineConfig({
     // see uno.config.ts for config
     Unocss(),
 
+    // https://github.com/anncwb/vite-plugin-imagemin/tree/master/#readme
     viteImagemin({
       pngquant: {
         quality: [0.8, 0.9],
