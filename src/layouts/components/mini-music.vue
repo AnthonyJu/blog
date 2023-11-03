@@ -47,7 +47,7 @@
 </template>
 
 <script setup lang="ts">
-const canShow = ref(true)
+const canShow = ref(false)
 
 const showMini = computed(() => {
   return audioState.audio && (audioState.isPlaying || canShow.value)

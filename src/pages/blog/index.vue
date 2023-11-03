@@ -3,53 +3,56 @@
     class="grid gap-20px"
     style="grid-template-columns: repeat(auto-fill, minmax(min(230px, 100%), 1fr));"
   >
-    <div
-      v-for="blog in blogList"
-      :key="blog.title"
-      class="blog-item group h-260px flex-col-center cursor-pointer overflow-hidden rounded-3"
-      bg="#ffffff99 dark:#00000099"
-      @click="$router.push(blog.path)"
-    >
-      <!-- poster -->
-      <div class="relative w-full flex-1 overflow-hidden rounded-t-3">
-        <img
-          class="full transition duration-1000 ease-in-out"
-          object="cover"
-          :src="blog.poster"
-          :alt="blog.title"
-          group-hover="scale-120"
-        >
+    <template v-for="(blog, index) in blogList" :key="blog.title">
+      <el-badge value="new" :hidden="index + 1 > newCount.blog">
         <div
-          class="hidden full flex-center animate-fade-in bg-#000000aa p-16px indent-2em"
-          text="center #fff 14px justify"
-          position="absolute top-0"
-          group-hover="flex"
+          class="blog-item group h-260px flex-col-center cursor-pointer overflow-hidden rounded-3"
+          bg="#ffffff99 dark:#00000099"
+          @click="$router.push(blog.path)"
         >
-          {{ blog.desc }}
-        </div>
-      </div>
+          <!-- poster -->
+          <div class="relative w-full flex-1 overflow-hidden rounded-t-3">
+            <img
+              class="full transition duration-1000 ease-in-out"
+              object="cover"
+              :src="blog.poster"
+              :alt="blog.title"
+              group-hover="scale-120"
+            >
 
-      <!-- info -->
-      <div class="group h-100px w-full flex-col-center justify-around py-4px">
-        <!-- title -->
-        <div class="w-full truncate text-center" :title="blog.title">
-          {{ blog.title }}
-        </div>
+            <div
+              class="hidden full flex-center animate-fade-in bg-#000000aa p-16px indent-2em"
+              text="center #fff 14px justify"
+              position="absolute top-0"
+              group-hover="flex"
+            >
+              {{ blog.desc }}
+            </div>
+          </div>
 
-        <!-- tags -->
-        <div class="w-full flex-center gap-5px truncate" :title="blog.keywords?.join(',')">
-          <ElTag v-for="tag in blog.keywords" :key="tag" round>
-            {{ tag }}
-          </ElTag>
-        </div>
+          <!-- info -->
+          <div class="group h-100px w-full flex-col-center justify-around py-4px">
+            <!-- title -->
+            <div class="w-full truncate text-center" :title="blog.title">
+              {{ blog.title }}
+            </div>
 
-        <!-- date -->
-        <div class="flex-center text-14px opacity-65" :title="`编写于：${blog.date}`">
-          <div i-carbon-calendar-heat-map mr-5px />
-          <div>{{ blog.date }}</div>
+            <!-- tags -->
+            <div class="w-full flex-center gap-5px truncate" :title="blog.keywords?.join(',')">
+              <ElTag v-for="tag in blog.keywords" :key="tag" round>
+                {{ tag }}
+              </ElTag>
+            </div>
+
+            <!-- date -->
+            <div class="flex-center text-14px opacity-65" :title="`编写于：${blog.date}`">
+              <div i-carbon-calendar-heat-map mr-5px />
+              <div>{{ blog.date }}</div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
+      </el-badge>
+    </template>
   </div>
   <!-- Pagination -->
   <Pagination v-model="current" class="m-auto w-fit !mt-20px" :total="allBlogs.length" />
@@ -64,6 +67,10 @@ const blogList = computed(() => {
   const end = start + 15
   return allBlogs.value.slice(start, end)
 })
+
+onMounted(() => {
+  setCount('blog')
+})
 </script>
 
 <style lang='scss' scoped>
@@ -74,5 +81,10 @@ const blogList = computed(() => {
   button:disabled {
     background: transparent;
   }
+}
+
+::v-deep(.el-badge__content) {
+  top: 13px;
+  right: calc(30px + var(--el-badge-size) / 2);
 }
 </style>

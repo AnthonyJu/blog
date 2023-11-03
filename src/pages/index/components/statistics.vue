@@ -7,8 +7,14 @@
       hover="text-$text-hover"
       class="my-10px flex-col-center flex-1"
     >
-      <span text-18px>{{ item.count }}</span>
-      <span>{{ item.name }}</span>
+      <el-badge
+        :max="9"
+        :value="newCount[item.name]"
+        :hidden="newCount[item.name] === 0"
+      >
+        <span text-18px>{{ item.count }}</span>
+      </el-badge>
+      <span>{{ `${item.name}s` }}</span>
     </RouterLink>
   </div>
 
@@ -29,23 +35,22 @@
 </template>
 
 <script setup lang='ts'>
-import pages from '~pages'
-
-const statistics = [
-  {
-    name: 'blogs',
-    path: '/blog',
-    count: pages.filter(page => page.path.startsWith('/blog/')).length,
-  },
-  {
-    name: 'notes',
-    path: '/note',
-    count: pages.filter(page => page.path.startsWith('/note/')).length,
-  },
-  {
-    name: 'roasts',
-    path: '/roast',
-    count: allRoasts.length,
-  },
-]
+const { statistics } = useStatistics()
 </script>
+
+<style scoped lang='scss'>
+.matted-box {
+  a {
+    border-right: 1px solid rgba(255, 255, 255, 0.4);
+
+    &:last-child {
+      border-right: none;
+    }
+  }
+}
+
+::v-deep(.el-badge__content) {
+  top: 2px;
+  right: calc(-10px + var(--el-badge-size) / 2);
+}
+</style>

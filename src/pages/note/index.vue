@@ -109,6 +109,10 @@ const noteList = noteTypes.map((item) => {
     notes: allNotes.value.filter(note => note.path.includes(typeName)),
   }
 })
+
+onMounted(() => {
+  setCount('note')
+})
 </script>
 
 <style lang="scss" scoped>
