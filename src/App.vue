@@ -1,10 +1,10 @@
 <template>
-  <ElConfigProvider :locale="zhCn">
-    <RouterView />
+  <el-config-provider :locale="zhCn">
+    <router-view />
     <ClientOnly>
       <PreviewAndCodeCopy />
     </ClientOnly>
-  </ElConfigProvider>
+  </el-config-provider>
 </template>
 
 <script setup lang="ts">

@@ -35,9 +35,9 @@
       <div class="flex-center flex-wrap gap-15px">
         <!-- tags -->
         <div class="flex-center gap-5px truncate">
-          <ElTag v-for="tag in blog.keywords" :key="tag" round>
+          <el-tag v-for="tag in blog.keywords" :key="tag" round>
             {{ tag }}
-          </ElTag>
+          </el-tag>
         </div>
 
         <!-- date -->

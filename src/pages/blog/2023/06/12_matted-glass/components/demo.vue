@@ -10,29 +10,29 @@
     所以我把这些效果封装成了一个功能组件，只需要对某些固定的参数进行修改，再直接拷贝代码就可以了😊。
   </div>
 
-  <ElRow :gutter="20">
-    <ElCol :span="12" :xs="24">
+  <el-row :gutter="20">
+    <el-col :span="12" :xs="24">
       <div class="blog-box mt-30px p-16px">
         <div>圆角</div>
-        <ElSlider v-model="radius" />
+        <el-slider v-model="radius" />
         <div mt-8px>模糊</div>
-        <ElSlider v-model="blur" :max="20" />
+        <el-slider v-model="blur" :max="20" />
         <div mt-8px>透明</div>
-        <ElSlider v-model="opacity" :format-tooltip="(val) => val / 100" />
+        <el-slider v-model="opacity" :format-tooltip="(val) => val / 100" />
       </div>
-    </ElCol>
-    <ElCol :span="12" :xs="24">
+    </el-col>
+    <el-col :span="12" :xs="24">
       <div class="blog-box mt-30px px-15px py-10px">
         <div flex-b-c pb-6px>
           <span text-primary>代码实现</span>
-          <ElButton type="primary" link size="default" title="copy" @click="copy(cssCode)">
+          <el-button type="primary" link size="default" title="copy" @click="copy(cssCode)">
             <div i-carbon:copy />
-          </ElButton>
+          </el-button>
         </div>
         <div v-html="cssCode.replaceAll(';', ';<br />')" />
       </div>
-    </ElCol>
-  </ElRow>
+    </el-col>
+  </el-row>
 </template>
 
 <script setup lang="ts">

@@ -1,16 +1,16 @@
 <template>
-  <ElRow :gutter="20">
-    <ElCol :xs="24" :sm="8">
+  <el-row :gutter="20">
+    <el-col :xs="24" :sm="8">
       <MyInfo />
       <Statistics />
       <MusicPlayer v-show="audioState.audio" />
       <Weather />
-    </ElCol>
-    <ElCol :xs="24" :sm="16">
+    </el-col>
+    <el-col :xs="24" :sm="16">
       <Wallpaper />
       <RandomBlog />
-    </ElCol>
-  </ElRow>
+    </el-col>
+  </el-row>
 </template>
 
 <script setup lang="ts">

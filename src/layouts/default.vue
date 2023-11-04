@@ -8,7 +8,7 @@
   >
     <Transition name="fade" mode="out-in">
       <div :key="route.path">
-        <RouterView />
+        <router-view />
         <LayoutAside v-if="showAside" />
       </div>
     </Transition>
@@ -16,11 +16,11 @@
   <LayoutFooter ref="footer" />
   <Rabbit />
   <MiniMusic />
-  <ElBacktop :visibility-height="10">
-    <ElProgress type="circle" :width="48" :duration="1" :percentage="precent" :stroke-width="4">
+  <el-backtop :visibility-height="10">
+    <el-progress type="circle" :width="48" :duration="1" :percentage="precent" :stroke-width="4">
       <div class="rocket ml-12px mt-1px -rotate-45" />
-    </ElProgress>
-  </ElBacktop>
+    </el-progress>
+  </el-backtop>
 </template>
 
 <script setup lang="ts">

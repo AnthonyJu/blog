@@ -86,12 +86,12 @@ view.openPopup({ title: 'custom popup', content, location: e.mapPoint })
   <div class="h-200px flex-col-center bg-#fff">
     <div mb-10>自定义子组件</div>
     <div>
-      <ElButton type="primary" @click="onClick">
+      <el-button type="primary" @click="onClick">
         触发父组件事件
-      </ElButton>
-      <ElButton type="primary" @click="view.closePopup()">
+      </el-button>
+      <el-button type="primary" @click="view.closePopup()">
         关闭弹窗
-      </ElButton>
+      </el-button>
     </div>
   </div>
 </template>

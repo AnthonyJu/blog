@@ -1,6 +1,6 @@
 <template>
-  <ElCarousel class="blog-box rounded-12px border-none">
-    <ElCarouselItem
+  <el-carousel class="blog-box rounded-12px border-none">
+    <el-carousel-item
       v-for="index in 4"
       :key="index"
     >
@@ -9,8 +9,8 @@
         class="banner"
         :src="`https://api.yimian.xyz/img?type=moe&size=1920x1080&index=${index}`"
       >
-    </ElCarouselItem>
-  </ElCarousel>
+    </el-carousel-item>
+  </el-carousel>
 </template>
 
 <script setup lang="ts">
