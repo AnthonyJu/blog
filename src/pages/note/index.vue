@@ -9,7 +9,9 @@
             :class="isDark ? item.darkIcon ?? item.icon : item.icon"
             class="ml-20px mr-12px text-18px"
           />
-          <span class="font-14px">{{ item.name }}</span>
+          <el-badge is-dot :hidden="!newNotes.some(note => item.notes.includes(note))">
+            <span class="font-14px">{{ item.name }}</span>
+          </el-badge>
         </template>
 
         <!-- collapse content -->
@@ -18,12 +20,15 @@
             v-for="(note, index) in item.notes"
             :key="note.path"
             :to="note.path"
-            class="flex cursor-pointer justify-between py-5px pl-55px pr-20px"
+            class="flex cursor-pointer justify-between py-5px"
+            :class="width < 600 ? 'pl-25px pr-10px' : 'pl-40px pr-30px'"
           >
             <!-- title -->
-            <div class="font-14px flex-1 truncate" hover="text-$text-hover">
-              {{ index + 1 }}、{{ note.title }}
-            </div>
+            <el-badge value="new" :hidden="!newNotes.includes(note)">
+              <div class="font-14px flex-1 truncate" hover="text-$text-hover">
+                {{ index + 1 }}、{{ note.title }}
+              </div>
+            </el-badge>
 
             <!-- keywords -->
             <div class="truncate text-12px" :title="note.keywords?.join('，')">
@@ -42,6 +47,8 @@
 </template>
 
 <script setup lang='ts'>
+const { width } = useWindowSize()
+
 const noteTypes = [
   {
     name: 'HTML',
@@ -110,6 +117,10 @@ const noteList = noteTypes.map((item) => {
   }
 })
 
+const newNotes = allNotes.value.sort((a, b) => {
+  return new Date(b.date).getTime() - new Date(a.date).getTime()
+}).slice(0, newCount.note)
+
 onMounted(() => {
   setCount('note')
 })
@@ -134,5 +145,15 @@ onMounted(() => {
 
 .dark .custom-collapse {
   --el-collapse-border-color: #123b58;
+}
+
+::v-deep(.el-badge__content.is-dot) {
+  top: 16px;
+  right: -2px;
+}
+
+::v-deep(.el-badge__content) {
+  top: 10px;
+  right: -6px;
 }
 </style>

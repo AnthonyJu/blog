@@ -36,9 +36,26 @@ export function useStatistics() {
     const prevNoteCount = localStorage.getItem('prev-note-count')
     const prevRoastCount = localStorage.getItem('prev-roast-count')
 
-    newCount.blog = prevBlogCount ? allCount.value.blog - Number(prevBlogCount) : 0
-    newCount.note = prevNoteCount ? allCount.value.note - Number(prevNoteCount) : 0
-    newCount.roast = prevRoastCount ? allCount.value.roast - Number(prevRoastCount) : 0
+    if (prevBlogCount == null) {
+      localStorage.setItem('prev-blog-count', String(allCount.value.blog))
+    }
+    else {
+      newCount.blog = allCount.value.blog - Number(prevBlogCount)
+    }
+
+    if (prevNoteCount == null) {
+      localStorage.setItem('prev-note-count', String(allCount.value.note))
+    }
+    else {
+      newCount.note = allCount.value.note - Number(prevNoteCount)
+    }
+
+    if (prevRoastCount == null) {
+      localStorage.setItem('prev-roast-count', String(allCount.value.roast))
+    }
+    else {
+      newCount.roast = allCount.value.roast - Number(prevRoastCount)
+    }
   })
 
   return { statistics, newCount }
