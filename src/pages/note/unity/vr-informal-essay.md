@@ -130,3 +130,71 @@ void SetGrabPinchHint(bool isBoth, string text = null)
     }
 }
 ```
+
+## 8. 编辑器运行时
+
+编辑器运行时运行代码，可以使用`ExecuteInEditMode`特性，该特性可以让脚本在编辑器运行时运行。
+
+```cs
+using UnityEngine;
+
+[ExecuteInEditMode]
+public class Env_FlashPointCtrl : Controller
+{
+    [Header("点位名称")] public string pointName = "FlashPoint";
+
+    // 当pointName变化时，更新点位名称
+    void OnValidate()
+    {
+        gameObject.name = pointName;
+    }
+}
+```
+
+## 9. UI追踪玩家
+
+```cs
+using UnityEngine;
+
+public class VR_FollowCamCtrl : Controller
+{
+    [Header("追踪空物体"), SerializeField] Transform followMainCam_TF;
+    [Header("追踪速度"), SerializeField] float followSpeed = 3f;
+    [Header("追踪距离"), SerializeField] float distance = 0.8f;
+
+    void Update()
+    {
+        followMainCam_TF.position = Camera.main.transform.position + Vector3.ProjectOnPlane(Camera.main.transform.forward, Vector3.up).normalized * distance;
+
+        followMainCam_TF.LookAt(Camera.main.transform);
+
+        transform.position = Vector3.Lerp(transform.position, followMainCam_TF.position, Time.deltaTime * followSpeed);
+        // 使物体的朝向与相机的朝向相反
+        transform.rotation = Quaternion.LookRotation(transform.position - Camera.main.transform.position);
+    }
+}
+```
+
+## 10. VR手柄按键按下
+
+```cs
+using UnityEngine;
+
+public class VR_ControllerCtrl : Controller
+{
+    SteamVR_Action_Boolean point;
+
+    void Start()
+    {
+        point = SteamVR_Input.GetBooleanAction("Point");
+    }
+
+    void Update()
+    {
+        if (actionBoolean.GetStateDown(SteamVR_Input_Sources.Any))
+        {
+            Debug.Log("按下 Point");
+        }
+    }
+}
+```
