@@ -15,6 +15,7 @@
             <img
               class="full transition duration-1000 ease-in-out"
               object="cover"
+              loading="lazy"
               :src="blog.poster"
               :alt="blog.title"
               group-hover="scale-120"

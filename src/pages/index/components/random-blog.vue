@@ -14,6 +14,7 @@
       class="h-160px"
       :class="width > 600 ? 'w-210px' : 'w-45%'"
       object="cover"
+      loading="lazy"
       :src="blog.poster"
       :alt="blog.title"
     >
