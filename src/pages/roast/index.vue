@@ -10,10 +10,12 @@
       :style="{ 'background': colorList[index % 5], '--before-color': colorList[index % 5] }"
     >
       <el-badge value="new" :hidden="index + 1 > newCount.roast">
-        <p flex flex-1 items-center text-14px v-html="item.content" />
-        <div class="flex-center-r pt-4px text-14px" border="t dashed">
-          <div i-carbon-calendar-heat-map mr-5px text-14px />
-          <span>{{ item.date }}</span>
+        <div class="h-full flex-col">
+          <p flex flex-1 items-center text-14px v-html="item.content" />
+          <div class="flex-center-r pt-4px text-14px" border="t dashed">
+            <div i-carbon-calendar-heat-map mr-5px text-14px />
+            <span>{{ item.date }}</span>
+          </div>
         </div>
       </el-badge>
     </div>
