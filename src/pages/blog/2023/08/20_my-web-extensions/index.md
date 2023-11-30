@@ -17,7 +17,7 @@ meta:
 
 # 自己开发的浏览器插件
 
-介绍一下自己前段时间开发的浏览器插件，一个是用于简单翻译的[Simple Translator（简译）](https://microsoftedge.microsoft.com/addons/detail/idejokphbhcbdjpibgibjppmolnmdlkj?hl=zh-CN)，一个是用于取色的[Color Picker](https://microsoftedge.microsoft.com/addons/detail/kdalomkmijnajhdenobbpjckagnmgmdg?hl=zh-CN)，一个是用于管理扩展的[Extension Manager（极简）](https://microsoftedge.microsoft.com/addons/detail/pfiggkflfkhohkmegglgnlgakdbmjdfh?hl=zh-CN)，这三个都已经上架`Edge浏览器`的插件商店了，累计使用人数终于突破`600`余人次啦😃。
+介绍一下自己前段时间开发的浏览器插件，一个是用于简单翻译的[Simple Translator（简译）](https://microsoftedge.microsoft.com/addons/detail/idejokphbhcbdjpibgibjppmolnmdlkj?hl=zh-CN)，一个是用于取色的[Color Picker](https://microsoftedge.microsoft.com/addons/detail/kdalomkmijnajhdenobbpjckagnmgmdg?hl=zh-CN)，一个是用于管理扩展的[Extension Manager（极简）](https://microsoftedge.microsoft.com/addons/detail/pfiggkflfkhohkmegglgnlgakdbmjdfh?hl=zh-CN)，这三个都已经上架`Edge浏览器`的插件商店了，累计使用人数（2023-11-30）接近`1000`余人次啦😃。
 
 ## 我的插件
 ### 1、Simple Translator（简译）
