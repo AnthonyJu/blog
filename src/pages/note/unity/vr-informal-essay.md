@@ -198,3 +198,23 @@ public class VR_ControllerCtrl : Controller
     }
 }
 ```
+
+## 11. 游戏对象Y轴面朝相机
+
+```cs
+using UnityEngine;
+
+public class VR_FaceCameraCtrl : Controller
+{
+  void Update() {
+    // 获取摄像机的位置
+    Vector3 cameraPosition = Camera.main.transform.position;
+    // 计算物体需要朝向的方向向量
+    Vector3 targetDirection = new Vector3(cameraPosition.x - transform.position.x, 0, cameraPosition.z - transform.position.z);
+    // 使用LookRotation函数计算出旋转角度
+    Quaternion targetRotation = Quaternion.LookRotation(targetDirection, Vector3.up);
+    // 将物体的旋转角度设置为目标角度
+    transform.rotation = Quaternion.Euler(0, targetRotation.eulerAngles.y, 0);
+  }
+}
+```
