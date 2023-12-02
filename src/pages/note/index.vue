@@ -7,7 +7,7 @@
         <template #title>
           <span
             :class="isDark ? item.darkIcon ?? item.icon : item.icon"
-            class="ml-20px mr-12px text-18px"
+            class="ml-20px mr-12px text-18px color-red"
           />
           <el-badge is-dot :hidden="!newNotes.some(note => item.notes.includes(note))">
             <span class="font-14px">{{ item.name }}</span>
@@ -81,6 +81,10 @@ const noteTypes = [
   {
     name: 'NestJS',
     icon: 'i-vscode-icons:file-type-nestjs',
+  },
+  {
+    name: 'ThreeJS',
+    icon: 'i-skill-icons-threejs-light',
   },
   {
     name: 'Vite',

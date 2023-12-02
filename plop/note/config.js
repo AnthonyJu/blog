@@ -53,6 +53,10 @@ export default function (
             value: 'nestjs',
           },
           {
+            title: 'ThreeJS',
+            value: 'threejs',
+          },
+          {
             title: 'Vite',
             value: 'vite',
           },
