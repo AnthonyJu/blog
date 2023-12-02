@@ -234,3 +234,32 @@ const obj = {
 
 console.log(Array.from(obj).fill(1)) // [1, 1, 1]
 ```
+
+## 11. Object.groupBy
+
+`Object.groupBy(array, key)`方法会将一个数组`array`中的元素按照指定的`key`属性进行分组，`Object.groupBy`方法返回一个对象，对象中的每个属性都是一个数组，数组中的元素都是`array`中的元素，`array`中的元素按照指定的`key`属性进行分组，如果`array`中的元素没有指定的`key`属性，那么该元素会被忽略。
+
+```js
+const arr = [
+  { name: '张三', type: 'human' },
+  { name: '小白', type: 'dog' },
+  { name: '小黑', type: 'cat' },
+  { name: '李四', type: 'human' },
+  { name: '小黄', type: 'dog' },
+]
+
+console.log(Object.groupBy(arr, 'type'))
+// {
+//   human: [
+//     {name:"张三",type:"human"},
+//     {name:"李四",type:"human"}
+//   ],
+//   dog: [
+//     {name:"小白",type:"dog"},
+//     {name:"小黄",type:"dog"}
+//   ],
+//   cat: [
+//     {name:"小黑",type:"cat"}
+//   ]
+// }
+```
