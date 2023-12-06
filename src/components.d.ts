@@ -10,6 +10,7 @@ declare module 'vue' {
     CustomFrame: typeof import('./components/CustomFrame.vue')['default']
     ElBacktop: typeof import('element-plus/lib')['ElBacktop']
     ElBadge: typeof import('element-plus/lib')['ElBadge']
+    ElButton: typeof import('element-plus/lib')['ElButton']
     ElCarousel: typeof import('element-plus/lib')['ElCarousel']
     ElCarouselItem: typeof import('element-plus/lib')['ElCarouselItem']
     ElCol: typeof import('element-plus/lib')['ElCol']
