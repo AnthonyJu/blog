@@ -6,5 +6,8 @@ export default antfu(
     ...ant_ju,
     unocss: true,
     formatters: true,
+    rules: {
+      'max-len': 'off',
+    },
   },
 )

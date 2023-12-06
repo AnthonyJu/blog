@@ -83,7 +83,7 @@ html.dark .shiki span {
   font-size: 1.1em;
 }
 
-.prose :where(img,video):not(:where(.not-prose,.not-prose *)) {
+.prose :where(img, video):not(:where(.not-prose, .not-prose *)) {
   max-width: 100%;
   margin: auto;
 }
@@ -115,7 +115,7 @@ html.dark .shiki span {
 }
 
 .dark .prose a {
-  background: var(--vp-background-rainbow-lighter)!important;
+  background: var(--vp-background-rainbow-lighter) !important;
   -webkit-background-clip: text !important;
   background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
@@ -127,21 +127,22 @@ html.dark .shiki span {
 }
 
 // 行内代码
-.prose :where(:not(pre) > code):not(:where(.not-prose,.not-prose *)) {
+.prose :where(:not(pre) > code):not(:where(.not-prose, .not-prose *)) {
   padding: 1.5px 6px;
   margin: 0 5px;
   font-family: 'DM Mono', monospace !important;
   font-size: 14px !important;
   font-weight: 500 !important;
-  background: var(--line-code-bg)!important;
+  background: var(--line-code-bg) !important;
   border-radius: 6px;
 }
 
-.prose :where(:not(pre) > code):not(:where(.not-prose,.not-prose *))::before, .prose :where(:not(pre) > code):not(:where(.not-prose,.not-prose *))::after {
+.prose :where(:not(pre) > code):not(:where(.not-prose, .not-prose *))::before,
+.prose :where(:not(pre) > code):not(:where(.not-prose, .not-prose *))::after {
   content: '' !important;
 }
 
-.prose :where(pre > code):not(:where(.not-prose,.not-prose *)) {
+.prose :where(pre > code):not(:where(.not-prose, .not-prose *)) {
   font-size: 16px !important;
 }
 

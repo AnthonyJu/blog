@@ -6,7 +6,6 @@
 
 /* 自定义变量，只需要重写你需要的即可 */
 @forward 'element-plus/theme-chalk/src/common/var.scss' with (
-
   $colors: (
     'primary': (
       'base': #2fc8fc,
@@ -17,7 +16,7 @@
   ),
   $message: (
     'bg-color': '#ffffff',
-  ),
+  )
 );
 
 /* 自定义黑暗变量 */
