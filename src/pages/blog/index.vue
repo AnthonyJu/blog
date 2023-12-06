@@ -6,8 +6,9 @@
     <template v-for="(blog, index) in blogList" :key="blog.title">
       <el-badge value="new" :hidden="index + 1 > newCount.blog">
         <div
-          class="blog-item group h-260px flex-col-center cursor-pointer overflow-hidden rounded-3"
+          class="blog-item group flex-col-center cursor-pointer overflow-hidden rounded-3"
           bg="#ffffff99 dark:#00000099"
+          :class="width < 510 ? 'h-320px' : 'h-260px'"
           @click="$router.push(blog.path)"
         >
           <!-- poster -->
@@ -68,6 +69,8 @@ const blogList = computed(() => {
   const end = start + 15
   return allBlogs.value.slice(start, end)
 })
+
+const { width } = useWindowSize()
 
 onMounted(() => {
   setCount('blog')
