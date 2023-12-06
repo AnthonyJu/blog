@@ -70,9 +70,7 @@ Grid 布局是一种二维网格布局方式，可以将页面分成多个行和
 
 可以是以下三种之一：
 
-- 数字（比如1，2，3）
--`auto-fit`关键字
--`auto-fill`关键字
+- 数字（比如1，2，3）-`auto-fit`关键字 -`auto-fill`关键字
 
 显然，数字值设定了特定的轨道数。但是，`auto-fit`和`auto-fill`可以根据可用空间的大小，设置不同数量的轨道。这使得它们在没有媒体查询的响应式布局中非常方便。下面我们将对它们进行详细介绍。
 
@@ -153,6 +151,7 @@ auto-fit和auto-fill关键字是设置固定轨道数的替代方法。它们告
 ### 7.1 使用auto-fit和minmax()
 
 下面示例中，minmax()设置了最大列宽为200px，最小列宽为1fr：
+
 ```scss
 .grid-4 {
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -227,6 +226,7 @@ auto-fit和auto-fill关键字是设置固定轨道数的替代方法。它们告
 ```
 
 2、auto-fill，minmax()和min()
+
 ```scss
 .grid {
   display: grid;

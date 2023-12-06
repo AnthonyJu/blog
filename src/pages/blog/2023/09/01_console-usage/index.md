@@ -163,4 +163,3 @@ console.log('%cHello World', 'color: #309eff; font-size: 20px;')
 `console.log` 可以添加样式，只需要在第一个参数中添加 `%c`，后面的参数就是样式，当然你也可以提前定义好样式，然后将其传入第二个参数中：
 
 ![style](./images/style.png)
-

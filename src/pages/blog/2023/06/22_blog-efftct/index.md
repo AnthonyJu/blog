@@ -56,6 +56,7 @@ toggleSakura()
 ```
 
 启用与禁用方式：
+
 ```ts
 toggleFireworks()
 ```

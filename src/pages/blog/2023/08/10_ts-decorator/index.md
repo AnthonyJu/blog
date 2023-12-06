@@ -115,7 +115,6 @@ http.run()
 https://www.baidu.com
 ```
 
-
 #### 装饰器重载构造函数
 
 ```ts
@@ -389,7 +388,6 @@ getFn
 0
 https://www.baidu.com
 ```
-
 
 ## 3. 装饰器的执行顺序
 

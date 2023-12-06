@@ -20,7 +20,7 @@ meta:
 
 ### 1、安装
 
- [点击查看文档](https://developers.arcgis.com/javascript/latest/es-modules/)
+[点击查看文档](https://developers.arcgis.com/javascript/latest/es-modules/)
 
 ```bash
 npm install @arcgis/core
@@ -47,7 +47,7 @@ import MapView from '@arcgis/core/views/MapView'
 
 [点击查看文档](https://developers.arcgis.com/javascript/latest/sample-code/intro-mapview/#4-create-a-2d-view)
 
-[点击查看Map文档](https://developers.arcgis.com/javascript/latest/api-reference/esri-Map.html)    [点击查看MapView文档](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-MapView.html)
+[点击查看Map文档](https://developers.arcgis.com/javascript/latest/api-reference/esri-Map.html) [点击查看MapView文档](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-MapView.html)
 
 ```vue
 <template>
@@ -103,8 +103,6 @@ const scaleBar = new ScaleBar({ view, unit: 'metric' })
 view.ui.add(scaleBar, { position: 'bottom-right' })
 ```
 
-
-
 ### 5、使用自定义瓦片地图
 
 [点击查看TileLayer文档](https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-TileLayer.html)
@@ -130,32 +128,32 @@ const map = new Map({ basemap: mapBaseMap })
 
 [点击查看SimpleFillSymbol文档](https://developers.arcgis.com/javascript/latest/api-reference/esri-symbols-SimpleFillSymbol.html)
 
-  ```ts
-  import MapImageLayer from '@arcgis/core/layers/MapImageLayer'
+```ts
+import MapImageLayer from '@arcgis/core/layers/MapImageLayer'
 
-  const imageLayer = new MapImageLayer({
-    url: 'http://xxx.xxx.xxx.xxx:xxxx/arcgis/rest/services/JNORCL/GEO_JN_XZQH/MapServer',
-    visible: true,
-    sublayers: [
-      {
-        id: 2,
-        title: '县',
-        renderer: new SimpleRenderer({
-          symbol: new SimpleFillSymbol({
-            color: [0, 0, 0, 0],
-            outline: {
-              color: '#05e4c6',
-              width: 2.5,
-            },
-          }),
+const imageLayer = new MapImageLayer({
+  url: 'http://xxx.xxx.xxx.xxx:xxxx/arcgis/rest/services/JNORCL/GEO_JN_XZQH/MapServer',
+  visible: true,
+  sublayers: [
+    {
+      id: 2,
+      title: '县',
+      renderer: new SimpleRenderer({
+        symbol: new SimpleFillSymbol({
+          color: [0, 0, 0, 0],
+          outline: {
+            color: '#05e4c6',
+            width: 2.5,
+          },
         }),
-        labelsVisible: true,
-        visible: true,
-      },
-    ],
-  })
-  map.add(imageLayer)
-  ```
+      }),
+      labelsVisible: true,
+      visible: true,
+    },
+  ],
+})
+map.add(imageLayer)
+```
 
 ### 7、添加图形覆盖物
 
@@ -392,6 +390,3 @@ layer.queryFeatures(queryParams).then((results) => {
   // do something
 })
 ```
-
-
-

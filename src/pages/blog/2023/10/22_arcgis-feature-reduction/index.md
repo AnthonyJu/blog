@@ -86,6 +86,7 @@ const featureLayer = new FeatureLayer({
   }),
 })
 ```
+
 具体你想使用什么样的样式，就配置什么样的样式，这里就不多说了，你可以在[官方文档](https://developers.arcgis.com/javascript/latest/api-reference/)中找到相关支持`Point`的Simple相关类。
 
 ### 1.3 获取点位信息

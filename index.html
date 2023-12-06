@@ -1,49 +1,55 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="msapplication-TileColor" content="#00aba9">
-  <meta name="baidu-site-verification" content="codeva-whGoT5Pc2K" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-  <link rel="icon" type="image/png" href="/favicon.ico">
-  <link rel="apple-touch-icon" sizes="180x180" href="/pwa-192x192.png">
-  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-  <link rel="stylesheet" href="/loading-and-bg.css">
-  <script type="text/javascript" src="/loading-and-bg.js"></script>
-  <script>
-    (function () {
-      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
-      const setting = localStorage.getItem('vueuse-color-scheme') || 'auto'
-      if (setting === 'dark' || (prefersDark && setting !== 'light')) {
-        document.documentElement.classList.toggle('dark', true)
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="msapplication-TileColor" content="#00aba9" />
+    <meta name="baidu-site-verification" content="codeva-whGoT5Pc2K" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="upgrade-insecure-requests"
+    />
+    <link rel="icon" type="image/png" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/pwa-192x192.png" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+    <link rel="stylesheet" href="/loading-and-bg.css" />
+    <script type="text/javascript" src="/loading-and-bg.js"></script>
+    <script>
+      ;(function () {
+        const prefersDark =
+          window.matchMedia &&
+          window.matchMedia('(prefers-color-scheme: dark)').matches
+        const setting = localStorage.getItem('vueuse-color-scheme') || 'auto'
+        if (setting === 'dark' || (prefersDark && setting !== 'light')) {
+          document.documentElement.classList.toggle('dark', true)
+        } else {
+          document.documentElement.classList.toggle('light', true)
+        }
+      })()
+      if (!navigator.userAgent.includes('Chrome')) {
+        document.documentElement.classList.add('not-chrome')
       }
-      else {
-        document.documentElement.classList.toggle('light', true)
-      }
-    })()
-    if (!navigator.userAgent.includes('Chrome')) {
-      document.documentElement.classList.add('not-chrome')
-    }
-  </script>
-</head>
+    </script>
+  </head>
 
-<body>
-  <div class="loading">
-    <span></span>
-    <span></span>
-  </div>
+  <body>
+    <div class="loading">
+      <span></span>
+      <span></span>
+    </div>
 
-  <main id="app" class="hidden animate-fade-in"></main>
+    <main id="app" class="hidden animate-fade-in"></main>
 
-  <div class="bg-1"></div>
-  <div class="bg-2"></div>
+    <div class="bg-1"></div>
+    <div class="bg-2"></div>
 
-  <script src="/sakura.js"></script>
-  <script src="/fireworks.js"></script>
-  <script type="module" src="/src/main.ts"></script>
-  <noscript>This website requires JavaScript to function properly. Please enable JavaScript to continue.</noscript>
-</body>
+    <script src="/sakura.js"></script>
+    <script src="/fireworks.js"></script>
+    <script type="module" src="/src/main.ts"></script>
 
+    <noscript>
+      This website requires JavaScript to function properly. Please enable
+      JavaScript to continue.
+    </noscript>
+  </body>
 </html>

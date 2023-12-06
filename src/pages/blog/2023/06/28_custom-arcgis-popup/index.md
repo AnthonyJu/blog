@@ -142,4 +142,3 @@ if (!view.popup.visible && view.popup.title !== 'custom popup') {
 ## 4. 示例与源码
 
 <CustomFrame route="/arcgis/costom-popup" />
-

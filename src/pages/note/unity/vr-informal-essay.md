@@ -20,7 +20,7 @@ meta:
 
 在 Unity 顶部菜单栏选择 `Window` -> `SteamVR_Input`，打开 SteamVR Input 窗口。
 
-在 `Action` 标签页中，选择 `Create New Action Set`，创建一个新的 Action Set，命名为 `Menu`，点击  `Save and Generate` 保存。
+在 `Action` 标签页中，选择 `Create New Action Set`，创建一个新的 Action Set，命名为 `Menu`，点击 `Save and Generate` 保存。
 
 ![SteamVR Input](./images/steamvr-input-1.png)
 

@@ -22,6 +22,7 @@ meta:
 这篇文章概述了 3.3 中突出显示的功能。有关更改的完整列表，请参阅[GitHub 上的完整更改日志](https://github.com/vuejs/core/blob/main/CHANGELOG.md#330-2023-05-08)。
 
 > 依赖关系更新，升级到 3.3 时，建议同时更新以下依赖项：
+>
 > - Volar / vue-tsc@^1.6.4
 > - vite@^4.3.5
 > - @vitejs/plugin-vue@^4.2.0
@@ -102,6 +103,7 @@ const emit = defineEmits<{
   bar: [name: string, ...rest: any[]]
 }>()
 ```
+
 在类型文字中，键是事件名称，值是指定附加参数的数组类型。虽然不是必需的，但是您可以使用带标签的元组元素来实现显式性，就像上面的示例一样。
 
 仍然支持调用签名语法。
@@ -121,8 +123,8 @@ defineSlots<{
 
 `defineSlots()`只接受一个类型参数，没有运行时参数。类型参数应该是一个类型字面量
 
-  - key 是 slot 名称
-  - value 是 slot 函数
+- key 是 slot 名称
+- value 是 slot 函数
 
 `defineSlots`的返回值与 `useSlots` 返回的 slots 对象相同。
 
@@ -175,8 +177,8 @@ export default { plugins: [vue({ propsDestructure: true })] }
 
 以前，对于支持v-model双向绑定的组件，它需要:
 
-  1. 声明一个prop
-  2. 当打算更新prop时触发相应的事件： `update:propName`
+1. 声明一个prop
+2. 当打算更新prop时触发相应的事件： `update:propName`
 
 ```vue
 <!-- 之前 -->

@@ -14,25 +14,25 @@ meta:
   date: 2023-06-18 14:22:19
 </route>
 
-# ES6新特性​
+# ES6新特性
 
 ## 1、初识ES6
 
 > ECMAScript 6.0（以下简称 ES6）是 JavaScript 语言的下一代标准，已经在 2015 年 6 月正式发布了。它的目标，是使得 JavaScript 语言可以用来编写复杂的大型应用程序，成为企业级开发语言。
 
--  1997年：ECMAScript 1.0
+- 1997年：ECMAScript 1.0
 
--  1998年：ECMAScript 2.0
+- 1998年：ECMAScript 2.0
 
--  1999年：ECMAScript 3.0
+- 1999年：ECMAScript 3.0
 
--  2006年：ECMAScript 4.0 未通过
+- 2006年：ECMAScript 4.0 未通过
 
--  2009年：ECMAScript 5.0
+- 2009年：ECMAScript 5.0
 
--  2015年：ECMAScript 6.0
+- 2015年：ECMAScript 6.0
 
--  至今，版本号改用年号的形式。
+- 至今，版本号改用年号的形式。
 
 ## 2、let声明变量与const声明常量
 
@@ -166,8 +166,6 @@ meta:
   const { name, age, gender } = obj
   ```
 
-
-
 ### 3-2 解构数组
 
 - 快速的从数组中获取成员
@@ -189,8 +187,6 @@ meta:
   // arr 必须是一个数组
   const [a, b, c] = arr
   ```
-
-
 
 ## 4、模版字符串
 
@@ -439,8 +435,6 @@ const obj = [{
 console.log(obj.flatMap(item => item.list))
 ```
 
-
-
 ## 8.对象扩展
 
 ### 8-1 对象简写
@@ -498,6 +492,7 @@ const obj3 = {
 Object.assign(obj1, obj2, obj3)
 // obj1 {name: 'tiechui', age: 100}
 ```
+
 ### 8-4 Object.is
 
 方法判断两个值是否是相同的值
@@ -509,8 +504,6 @@ console.log(+0 === -0) // true
 console.log(Object.is(NaN, NaN)) // true
 console.log(Object.is(+0, -0)) // false
 ```
-
-
 
 ## 9.函数扩展
 
@@ -762,8 +755,6 @@ console.log(i.next())
 
 > ES6 规定，默认的 Iterator 接口部署在数据结构的Symbol.iterator属性，或者说，一个数据结构只要具有Symbol.iterator属性，就可以认为是“可遍历的”（iterable）。Symbol.iterator属性本身是一个函数，就是当前数据结构默认的遍历器生成函数。执行这个函数，就会返回一个遍历器。
 
-
-
 原生默认具备 Iterator 接口的数据结构如下。
 
 - Array
@@ -772,8 +763,6 @@ console.log(i.next())
 - String
 - arguments 对象
 - NodeList 对象
-
-
 
 **如何对于对象进行for fo遍历？**
 
@@ -836,8 +825,6 @@ s2.add(2)
 s2.add(3)
 console.log(s2)
 ```
-
-
 
 ### 12-2 实例的属性和方法
 
@@ -1097,7 +1084,7 @@ proxy.push(4)
 
 ## 16.Promise
 
-> Promise 是异步编程的一种解决方案，比传统的解决方案回调函数,  更合理和更强大。ES6 将其写进了语言标准，统一了用法，原生提供了Promise对象 。
+> Promise 是异步编程的一种解决方案，比传统的解决方案回调函数, 更合理和更强大。ES6 将其写进了语言标准，统一了用法，原生提供了Promise对象 。
 
 - 指定回调函数方式更灵活易懂。
 
@@ -1146,7 +1133,6 @@ proxy.push(4)
 
 - 当代码成为这个结构以后，已经没有维护的可能了
 
-
 ### 16-2 Promise使用
 
 - 语法：
@@ -1166,27 +1152,27 @@ proxy.push(4)
 
 Promise 对象通过自身的状态，来控制异步操作。Promise 实例具有三种状态。
 
- ```
+```
 异步操作未完成（pending）
 异步操作成功（fulfilled）
 异步操作失败（rejected）
- ```
+```
 
 这三种的状态的变化途径只有两种。
 
- ```
+```
 从“未完成”到“成功”
 从“未完成”到“失败”
- ```
+```
 
 一旦状态发生变化，就凝固了，不会再有新的状态变化。这也是 Promise 这个名字的由来，它的英语意思是“承诺”，一旦承诺成效，就不得再改变了。这也意味着，Promise 实例的状态变化只可能发生一次。
 
 因此，Promise 的最终结果只有两种。
 
- ```
+```
 异步操作成功，Promise 实例传回一个值（value），状态变为fulfilled。
 异步操作失败，Promise 实例抛出一个错误（error），状态变为rejected。
- ```
+```
 
 ![image-20220902141409899](https://kodbox.jupeng.top/?explorer/share/file&hash=99ebvoQsXA_EzEodZ9C9ppxszR-f8Y3jayHrln5ZE-sYCAPtUL5_iWqMwaO6sPkPS0c&name=/image-20220902141409899.png)
 
@@ -1214,8 +1200,6 @@ const p = Promise.race([p1, p2, p3])
 
 上面代码中，只要`p1`、`p2`、`p3`之中有一个实例率先改变状态，`p`的状态就跟着改变。那个率先改变的 Promise 实例的返回值，就传递给`p`的回调函数。
 
-
-
 ## 17.Generator 函数
 
 > Generator 函数是 ES6 提供的一种异步编程解决方案
@@ -1223,8 +1207,6 @@ const p = Promise.race([p1, p2, p3])
 > Generator 函数是一个状态机，封装了多个内部状态。
 >
 > 执行 Generator 函数会返回一个遍历器对象，也就是说，Generator 函数除了状态机，还是一个遍历器对象生成函数。返回的遍历器对象，可以依次遍历 Generator 函数内部的每一个状态。
-
-
 
 ### 17-1 基本语法
 

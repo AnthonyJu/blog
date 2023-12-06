@@ -20,11 +20,11 @@ meta:
 
 html5语义标签，可以使开发者更方便清晰构建页面的布局
 
-| 标签      | 描述                               |
-| --------- | ---------------------------------- |
+| 标签    | 描述                               |
+| ------- | ---------------------------------- |
 | header  | 定义了文档的头部区域               |
 | footer  | 定义了文档的尾部区域               |
-| nav    | 定义文档的导航                     |
+| nav     | 定义文档的导航                     |
 | section | 定义文档中的节                     |
 | article | 定义文章                           |
 | aside   | 定义页面以外的内容                 |
@@ -43,10 +43,11 @@ html5提供了音频和视频文件的标准，既使用audio元素。
 音频：
 
 ```html
-<audio controls>    //controls属性提供添加播放、暂停和音量控件。
-  <source src="horse.ogg" type="audio/ogg">
-  <source src="horse.mp3" type="audio/mpeg">
-	您的浏览器不支持 audio 元素。        //浏览器不支持时显示文字
+<audio controls>
+  //controls属性提供添加播放、暂停和音量控件。
+  <source src="horse.ogg" type="audio/ogg" />
+  <source src="horse.mp3" type="audio/mpeg" />
+  您的浏览器不支持 audio 元素。 //浏览器不支持时显示文字
 </audio>
 ```
 
@@ -54,9 +55,9 @@ html5提供了音频和视频文件的标准，既使用audio元素。
 
 ```html
 <video width="320" height="240" controls>
-  <source src="movie.mp4" type="video/mp4">
-  <source src="movie.ogg" type="video/ogg">
-	您的浏览器不支持Video标签。
+  <source src="movie.mp4" type="video/mp4" />
+  <source src="movie.ogg" type="video/ogg" />
+  您的浏览器不支持Video标签。
 </video>
 ```
 
@@ -82,8 +83,8 @@ html5修改一些新的input输入特性，改善更好的输入控制和验证
 
 html5新增了五个表单元素
 
-| 元素        | 描述 |
-| ---------- | ---------------------------------------------- |
+| 元素     | 描述                                           |
+| -------- | ---------------------------------------------- |
 | datalist | 用户会在他们输入数据时看到域定义选项的下拉列表 |
 | progress | 进度条，展示连接/下载进度                      |
 | meter    | 刻度值，用于某些计量，例如温度、重量等         |
@@ -92,15 +93,15 @@ html5新增了五个表单元素
 
 html5新增表单属性
 
-| 属性         | 描述                                  |
-| ------------ | ------------------------------------- |
-| placeholder   | 输入框默认提示文字                    |
-| required     | 要求输入的内容是否可为空              |
-| pattern      | 描述一个正则表达式验证输入的值        |
-| min/max      | 设置元素最小/最大值                   |
-| step         | 为输入域规定合法的数字间隔            |
+| 属性         | 描述                                |
+| ------------ | ----------------------------------- |
+| placeholder  | 输入框默认提示文字                  |
+| required     | 要求输入的内容是否可为空            |
+| pattern      | 描述一个正则表达式验证输入的值      |
+| min/max      | 设置元素最小/最大值                 |
+| step         | 为输入域规定合法的数字间隔          |
 | width/height | 用于image类型input标签图像高度/宽度 |
-| autofocus    | 规定在页面加载时，域自动获得焦点      |
+| autofocus    | 规定在页面加载时，域自动获得焦点    |
 | multiple     | 规定input元素中可选择多个值         |
 
 ## 四、Canvas
@@ -117,8 +118,6 @@ canvas是HTML5新增的，一个可以使用脚本(通常为JavaScript) 在其�
 - SVG图像在放大或改变尺寸的情况下其图形质量不会有损失
 - SVG是万维网联盟的标准
 
-
-
 ### 2. SVG的优势
 
 与其他图像格式相比，是哟个SVG的优势在于：
@@ -128,7 +127,6 @@ canvas是HTML5新增的，一个可以使用脚本(通常为JavaScript) 在其�
 - SVG是可伸缩的
 - SVG图像可在任何的分辨率下被高质量的打印
 - SVG可在图像质量不下降的情况下被放大
-
 
 ### 3. SVG与Canvas区别
 
@@ -175,9 +173,9 @@ function getLocation() {
 ```html
 <div draggable="true" ondragstart="drag(event)"></div>
 <script>
-function drag(ev){
-	console.log(ev);
-}
+  function drag(ev) {
+    console.log(ev)
+  }
 </script>
 ```
 
@@ -213,19 +211,19 @@ let key = localStorage.key(index)// 得到某个索引的值
 
 ## 九、WebSocket
 
-  WebSocket协议为web应用程序客户端和服务端之间提供了一种全双工通信机制。
+WebSocket协议为web应用程序客户端和服务端之间提供了一种全双工通信机制。
 
 特点：
 
- （1）握手阶段采用HTTP协议，默认端口是80和443
+（1）握手阶段采用HTTP协议，默认端口是80和443
 
- （2）建立在TCP协议基础之上，和http协议同属于应用层
+（2）建立在TCP协议基础之上，和http协议同属于应用层
 
- （3）可以发送文本，也可以发送二进制数据。
+（3）可以发送文本，也可以发送二进制数据。
 
- （4）没有同源限制，客户端可以与任意服务器通信。
+（4）没有同源限制，客户端可以与任意服务器通信。
 
- （5）协议标识符是ws（如果加密，为wss），如ws://localhost:8023
+（5）协议标识符是ws（如果加密，为wss），如ws://localhost:8023
 
 ## 十、WebWorker
 
@@ -242,19 +240,20 @@ onmessage = function (evt) {
 ```
 
 ```html
-<!DOCTYPE HTML>
+<!doctype html>
 <html>
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-		<script type="text/javascript">
-			//WEB页主线程
-			var worker = new Worker("worker.js") //创建一个Worker对象并向它传递将在新线程中执行的脚本的URL
-        worker.postMessage("hello world")     //向worker发送数据
-        worker.onmessage = function(evt){     //接收worker传过来的数据函数
-        console.log(evt.data);              //输出worker发送来的数据
-			}
-		</script>
-	</head>
-	<body></body>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script type="text/javascript">
+      //WEB页主线程
+      var worker = new Worker('worker.js') //创建一个Worker对象并向它传递将在新线程中执行的脚本的URL
+      worker.postMessage('hello world') //向worker发送数据
+      worker.onmessage = function (evt) {
+        //接收worker传过来的数据函数
+        console.log(evt.data) //输出worker发送来的数据
+      }
+    </script>
+  </head>
+  <body></body>
 </html>
 ```

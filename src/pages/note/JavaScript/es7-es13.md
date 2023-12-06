@@ -176,7 +176,6 @@ test(
 
 > 『末尾逗号』在添加新的参数、属性、元素时是有用的，你可以直接新加一行而不必给上一行再补充一个逗号，这样使版本控制工具的修改记录也更加整洁
 
-
 ## 三、ES9新特性
 
 ### 1. 对象的剩余参数与扩展运算符
@@ -276,7 +275,6 @@ console.log(syncI.next())
 
 <img src="https://kodbox.jupeng.top/?explorer/share/file&hash=8dfeH2d6YDetS74sePok-iniDAXl3PRTHnnDQ-_q-6sRCGM0dEJ53AEnE2O-yiGGxiU&name=/image-20220921132030973.png" />
 
-
 ```javascript
 function* fn() {
   yield new Promise(resolve => resolve('1111'))
@@ -291,8 +289,6 @@ syncI.next().value.then((res) => { console.log(res) })
 <img src="https://kodbox.jupeng.top/?explorer/share/file&hash=93adx6Sn9Y9NcZaZxVEfqOTjoG3jtSEil87F-yMDyRgm0i5EBgA4AJFzeIu66cWtdQM&name=/image-20220921132403676.png" />
 
 > `value`属性的返回值是一个 Promise 对象，用来放置异步操作。但是这样写很麻烦，不太符合直觉，语义也比较绕。
-
-
 
 #### 4-2 异步遍历器生成函数
 
@@ -535,7 +531,7 @@ export default {
 }
 ```
 
-#### 2-3 export * as obj from 'module'
+#### 2-3 export \* as obj from 'module'
 
 ```javascript
 // 1.js
@@ -639,7 +635,6 @@ for (const i of str.matchAll(reg)) {
 ### 5. globalThis
 
 > globalThis 提供了一个标准的方式来获取不同环境下的全局 this 对象（也就是全局对象自身）。不像 window 或者 self这些属性，它确保可以在有无窗口的各种环境下正常工作。所以，你可以安心的使用 globalThis，不必担心它的运行环境。为便于记忆，你只需要记住，全局作用域中的 this 就是 globalThis。
->
 
 ```javascript
 //es6-shim
@@ -704,7 +699,7 @@ else {
 
 ### 6.空值合并运算符
 
-> **空值合并运算符（*??*）**是一个逻辑运算符。当左侧操作数为 null 或 undefined 时，其返回右侧的操作数。否则返回左侧的操作数。
+> **空值合并运算符（_??_）**是一个逻辑运算符。当左侧操作数为 null 或 undefined 时，其返回右侧的操作数。否则返回左侧的操作数。
 
 ```javascript
 const obj = {

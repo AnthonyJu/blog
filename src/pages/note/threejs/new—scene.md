@@ -21,108 +21,112 @@ meta:
 ## 代码
 
 ```html
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-
-  <style type="text/css">
-    * {
-      margin: 0;
-      padding: 0;
-    }
-
-    html,
-    body {
-      margin: 0;
-    }
-  </style>
-
-  <script type="importmap">
-    {
-      "imports": {
-        "three": "https://unpkg.com/three@0.159.0/build/three.module.js",
-        "three/addons/": "https://unpkg.com/three@0.159.0/examples/jsm/"
+    <style type="text/css">
+      * {
+        margin: 0;
+        padding: 0;
       }
-    }
-  </script>
-</head>
 
-<body>
+      html,
+      body {
+        margin: 0;
+      }
+    </style>
 
-  <script type="module">
-    import * as THREE from 'three';
-    import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
-    import Stats from 'three/addons/libs/stats.module.js';
-    import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
-    import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
-    import { SMAAPass } from 'three/addons/postprocessing/SMAAPass.js';
-    import { OutputPass } from 'three/addons/postprocessing/OutputPass.js';
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@0.159.0/build/three.module.js",
+          "three/addons/": "https://unpkg.com/three@0.159.0/examples/jsm/"
+        }
+      }
+    </script>
+  </head>
 
-    const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+  <body>
+    <script type="module">
+      import * as THREE from 'three'
+      import { OrbitControls } from 'three/addons/controls/OrbitControls.js'
+      import Stats from 'three/addons/libs/stats.module.js'
+      import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js'
+      import { RenderPass } from 'three/addons/postprocessing/RenderPass.js'
+      import { SMAAPass } from 'three/addons/postprocessing/SMAAPass.js'
+      import { OutputPass } from 'three/addons/postprocessing/OutputPass.js'
 
-    const renderer = new THREE.WebGLRenderer();
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    document.body.appendChild(renderer.domElement);
+      const scene = new THREE.Scene()
+      const camera = new THREE.PerspectiveCamera(
+        75,
+        window.innerWidth / window.innerHeight,
+        0.1,
+        1000,
+      )
 
-    const geometry = new THREE.BoxGeometry(1, 1, 1);
-    const material = new THREE.MeshBasicMaterial({ color: "#409eff" });
-    const cube = new THREE.Mesh(geometry, material);
-    scene.add(cube);
+      const renderer = new THREE.WebGLRenderer()
+      renderer.setSize(window.innerWidth, window.innerHeight)
+      document.body.appendChild(renderer.domElement)
 
-    camera.position.z = 5;
+      const geometry = new THREE.BoxGeometry(1, 1, 1)
+      const material = new THREE.MeshBasicMaterial({ color: '#409eff' })
+      const cube = new THREE.Mesh(geometry, material)
+      scene.add(cube)
 
-    const controls = new OrbitControls(camera, renderer.domElement);
+      camera.position.z = 5
 
-    const composer = new EffectComposer(renderer);
-    const renderPass = new RenderPass(scene, camera);
-    composer.addPass(renderPass);
-    const smaaPass = new SMAAPass(window.innerWidth * renderer.getPixelRatio(), window.innerHeight * renderer.getPixelRatio());
-    composer.addPass(smaaPass);
-    const outputPass = new OutputPass();
-    composer.addPass(outputPass);
+      const controls = new OrbitControls(camera, renderer.domElement)
 
-    const stats = new Stats();
-    document.body.appendChild(stats.dom);
+      const composer = new EffectComposer(renderer)
+      const renderPass = new RenderPass(scene, camera)
+      composer.addPass(renderPass)
+      const smaaPass = new SMAAPass(
+        window.innerWidth * renderer.getPixelRatio(),
+        window.innerHeight * renderer.getPixelRatio(),
+      )
+      composer.addPass(smaaPass)
+      const outputPass = new OutputPass()
+      composer.addPass(outputPass)
 
-    function animate() {
-      requestAnimationFrame(animate);
+      const stats = new Stats()
+      document.body.appendChild(stats.dom)
 
-      stats.begin();
+      function animate() {
+        requestAnimationFrame(animate)
 
-      cube.rotation.x += 0.01;
-      cube.rotation.y += 0.01;
+        stats.begin()
 
-      controls.update();
+        cube.rotation.x += 0.01
+        cube.rotation.y += 0.01
 
-      composer.render();
+        controls.update()
 
-      renderer.render(scene, camera);
+        composer.render()
 
-      stats.end();
-    }
+        renderer.render(scene, camera)
 
-    window.addEventListener( 'resize', onWindowResize );
+        stats.end()
+      }
 
-    function onWindowResize() {
+      window.addEventListener('resize', onWindowResize)
 
-      const width = window.innerWidth;
-      const height = window.innerHeight;
+      function onWindowResize() {
+        const width = window.innerWidth
+        const height = window.innerHeight
 
-      camera.aspect = width / height;
-      camera.updateProjectionMatrix();
+        camera.aspect = width / height
+        camera.updateProjectionMatrix()
 
-      renderer.setSize(width, height);
-      composer.setSize(width, height);
-    }
+        renderer.setSize(width, height)
+        composer.setSize(width, height)
+      }
 
-    animate();
-  </script>
-</body>
-
+      animate()
+    </script>
+  </body>
 </html>
 ```

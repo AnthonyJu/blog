@@ -30,6 +30,7 @@ let big: bigint = 100n;
 ```
 
 > 注意
+>
 > 1. 虽然`number`和`bigint`都表示数字，但是这两个类型不兼容。
 > 2. `undefined`和`null`是所有类型的子类型，可以赋值给任意类型，但是在`tsconfig.json`中配置了`strictNullChecks`为true时，不能赋值给其他类型。
 
@@ -169,6 +170,7 @@ let result4 = buildName("Bob", "Adams"); // 正常，返回 "Bob Adams"
 ```
 
 > 注意
+>
 > 1. 可选参数必须跟在必须参数后面。
 > 2. 默认参数不需要跟在必须参数后面。
 

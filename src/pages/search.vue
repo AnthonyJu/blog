@@ -106,7 +106,7 @@ const results = computed(() => {
     })
     const isInTitle = (article.meta?.title as string).includes(searchValue.value)
     return isKeyword || isInTitle
-  }) as any as { path: string; meta: Article }[]
+  }) as any as { path: string, meta: Article }[]
 })
 </script>
 

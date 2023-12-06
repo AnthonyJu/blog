@@ -27,6 +27,7 @@ sudo postconf -e 'myorigin = $myhostname'
 sudo postconf -e 'smtpd_banner = $myhostname ESMTP'
 sudo postconf -e 'smtp_generic_maps = hash:/etc/postfix/generic'
 ```
+
 编辑`/etc/postfix/generic`文件：
 
 ```shell

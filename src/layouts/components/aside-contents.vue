@@ -21,7 +21,7 @@
 <script setup lang='ts'>
 import type { Contents } from '@/types/index'
 
-defineProps<{ contents: Contents[]; hightlightId: string }>()
+defineProps<{ contents: Contents[], hightlightId: string }>()
 
 function scrollTo(event: Event, id: string) {
   event.preventDefault()
