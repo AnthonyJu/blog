@@ -3,10 +3,11 @@ import ant_ju from '@anthony-ju/eslint-config'
 
 export default antfu(
   {
-    ...ant_ju,
     unocss: true,
     formatters: true,
+    ignorePatterns: ant_ju.ignorePatterns,
     rules: {
+      ...ant_ju.rules,
       'max-len': 'off',
     },
   },

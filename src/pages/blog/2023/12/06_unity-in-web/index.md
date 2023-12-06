@@ -105,109 +105,88 @@ public class CubeCtrl : MonoBehaviour
 
 ## Web 端实现
 
-固定写法，都是JS在啥框架都一样，就简单在`HTML`中写了，哈哈哈哈，直接上代码：
+固定写法，都是JS在啥框架都一样，下面这是写在vue里面了：
 
-```html
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Unity与Web交互</title>
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
+```vue
+<template>
+  <div full overflow-hidden>
+    <canvas id="unity-canvas" style="width: 1920px; height: 1080px;" />
+    <button id="btn">
+      旋转Cube
+    </button>
+  </div>
+</template>
+
+<script setup lang="ts">
+// UnityInstance 用于存储 Unity 实例
+let UnityInstance: any = null
+
+// buildUrl 为 Unity 打包后的文件夹路径，我改为了unity，就是上面打包的Build文件夹
+const buildUrl = './unity'
+const config = {
+  dataUrl: `${buildUrl}/Builds.data`,
+  frameworkUrl: `${buildUrl}/Builds.framework.js`,
+  codeUrl: `${buildUrl}/Builds.wasm`,
+  streamingAssetsUrl: 'StreamingAssets',
+  companyName: 'DefaultCompany',
+  productName: 'WebGL',
+  productVersion: '0.1',
+}
+
+// 这是 Unity 调用 Web 端的方法，在 jslib 文件中定义的函数
+window.WebMethod = function (str: string) {
+  alert(str)
+}
+
+onMounted(() => {
+  // 设置 canvas 的宽高
+  const canvas = document.querySelector<HTMLCanvasElement>('#unity-canvas')
+  canvas!.style.width = `${window.innerWidth}px`
+  canvas!.style.height = `${window.innerHeight}px`
+  window.addEventListener('resize', () => {
+    canvas!.style.width = `${window.innerWidth}px`
+    canvas!.style.height = `${window.innerHeight}px`
+  })
+
+  // 加载 Unity
+  const script = document.createElement('script')
+  script.src = `${buildUrl}/Builds.loader.js`
+  document.body.appendChild(script)
+  script.onload = () => {
+    createUnityInstance(
+      canvas,
+      config,
+      (progress: number) => {
+        console.log(`加载中:${progress * 100}%`,)
       }
-
-      html,
-      body {
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-      }
-
-      #btn {
-        width: 100px;
-        height: 40px;
-        margin: auto;
-        position: fixed;
-        right: 0;
-        left: 0;
-        top: 10px;
-        z-index: 999;
-      }
-    </style>
-  </head>
-
-  <body>
-    <canvas id="unity-canvas"></canvas>
-    <button id="btn">旋转Cube</button>
-
-    <script>
-      // UnityInstance 用于存储 Unity 实例
-      let UnityInstance = null
-
-      // buildUrl 为 Unity 打包后的文件夹路径，我改为了unity，就是上面打包的Build文件夹
-      const buildUrl = './unity'
-      const config = {
-        dataUrl: buildUrl + '/Builds.data',
-        frameworkUrl: buildUrl + '/Builds.framework.js',
-        codeUrl: buildUrl + '/Builds.wasm',
-        streamingAssetsUrl: 'StreamingAssets',
-        companyName: 'DefaultCompany',
-        productName: 'WebGL',
-        productVersion: '0.1',
-      }
-
-      // 设置 canvas 的宽高
-      const canvas = document.querySelector('#unity-canvas')
-      canvas.width = window.innerWidth
-      canvas.height = window.innerHeight
-      window.addEventListener('resize', () => {
-        canvas.width = window.innerWidth
-        canvas.height = window.innerHeight
+    )
+      .then((unityInstance) => {
+        // 加载完成后，将 UnityInstance 赋值给全局变量
+        UnityInstance = unityInstance
       })
+      .catch((message) => {
+        console.log(message)
+      })
+  }
 
-      // 加载 Unity
-      const script = document.createElement('script')
-      script.src = buildUrl + '/Builds.loader.js'
-      document.body.appendChild(script)
-      script.onload = () => {
-        createUnityInstance(canvas, config, (progress) => {
-          console.log(
-            '加载中:' +
-              (progress < 1 ? progress.toFixed(2) : progress) * 100 +
-              '%',
-          )
-        })
-          .then((unityInstance) => {
-            // 加载完成后，将 UnityInstance 赋值给全局变量
-            UnityInstance = unityInstance
-          })
-          .catch((message) => {
-            console.log(message)
-          })
-      }
-
-      // 这是 Unity 调用 Web 端的方法，在 jslib 文件中定义的函数
-      function WebMethod(str) {
-        alert(str)
-      }
-
-      // 前端页面向unity页面传值需用到UnityInstance.SendMessage()函数，调用格式如下：
-      // SendMessage(unityObject,unityMethodName,value)
-      // unityObject——unity脚本挂载对象名
-      // unityMethodName——unity脚本内调用方法名（需为public方法）
-      // value——前端需要传出的值
-      const btn = document.getElementById('btn')
-      btn.onclick = function () {
-        UnityInstance.SendMessage('Cube', 'RotateX', 20)
-      }
-    </script>
-  </body>
-</html>
+  // 前端页面向unity页面传值需用到UnityInstance.SendMessage()函数，调用格式如下：
+  // SendMessage(unityObject,unityMethodName,value)
+  // unityObject——unity脚本挂载对象名
+  // unityMethodName——unity脚本内调用方法名（需为public方法）
+  // value——前端需要传出的值
+  const btn = document.getElementById('btn')
+  btn!.onclick = function () {
+    UnityInstance.SendMessage('Cube', 'RotateX', 20)
+  }
+})
+</script>
 ```
+
+## 注意有坑
+
+> 1. 用于接收 Web 端调用的函数必须为`public`，否则会报错。
+> 2. 用于 Unity 调用 Web 端的函数必须挂在 UnityInstance 所在的 `window` 上，否则会报错。
+> 3. canvas 的style中必须设置`width`和`height`，否则在移动端和Mac（我要是没有Mac还真发现不了了😡）上会出现显示问题。
 
 ## 官方文档
 
