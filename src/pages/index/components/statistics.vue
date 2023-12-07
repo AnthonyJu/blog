@@ -41,7 +41,7 @@ const { statistics } = useStatistics()
 <style scoped lang='scss'>
 .matted-box {
   a {
-    border-right: 1px solid rgba(255, 255, 255, 0.4);
+    border-right: 1px solid rgb(255 255 255 / 40%);
 
     &:last-child {
       border-right: none;

@@ -7,8 +7,8 @@
     "blog": "plop --plopfile ./plop/blog/config.js",
     "note": "plop --plopfile ./plop/note/config.js",
     "roast": "plop --plopfile ./plop/roast/config.js",
-    "lint": "eslint .",
-    "lint:style": "stylelint .",
+    "lint": "eslint --fix",
+    "lint:style": "stylelint --fix \"src/**/*.{vue,scss}\"",
     "typecheck": "vue-tsc --noEmit",
     "build": "vite-ssg build",
     "preview": "vite preview",
@@ -31,8 +31,8 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.3.4",
-    "@anthony-ju/eslint-config": "^0.2.3",
-    "@anthony-ju/stylelint-config": "^0.2.3",
+    "@anthony-ju/eslint-config": "^0.2.4",
+    "@anthony-ju/stylelint-config": "^0.2.5",
     "@types/markdown-it-link-attributes": "^3.0.4",
     "@types/nprogress": "^0.2.3",
     "@unocss/eslint-config": "^0.58.0",
@@ -51,6 +51,7 @@
     "shikiji": "^0.7.6",
     "simple-git-hooks": "^2.9.0",
     "stylelint": "^15.11.0",
+    "stylelint-stylistic": "^0.4.3",
     "taze": "^0.13.0",
     "typescript": "^5.3.3",
     "unocss": "^0.58.0",
@@ -75,6 +76,6 @@
     "pre-commit": "pnpm lint-staged"
   },
   "lint-staged": {
-    "*.vue,*.md,*.ts": "eslint --fix"
+    "*": "eslint --fix"
   }
 }

@@ -93,7 +93,7 @@ html.dark .shiki span {
   margin: 0 5px;
   font-weight: 900;
   background: var(--vp-background-rainbow-darker) !important;
-  -webkit-background-clip: text !important;
+  background-clip: text !important;
   background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
 
@@ -116,7 +116,7 @@ html.dark .shiki span {
 
 .dark .prose a {
   background: var(--vp-background-rainbow-lighter) !important;
-  -webkit-background-clip: text !important;
+  background-clip: text !important;
   background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
 }
@@ -151,9 +151,9 @@ blockquote {
   padding: 0.5em 1em;
   margin: 2em 0 !important;
   font-style: normal !important;
-  background-color: rgba(255, 255, 255, 0.25);
+  background-color: rgb(255 255 255 / 25%);
   backdrop-filter: blur(6px);
   border-left: 4px solid var(--el-color-primary) !important;
   border-radius: 8px;
-  box-shadow: rgba(142, 142, 142, 0.25) 0 6px 15px 0;
+  box-shadow: rgb(142 142 142 / 25%) 0 6px 15px 0;
 }

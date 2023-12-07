@@ -64,7 +64,7 @@ watch(copied, (val) => {
   left: 20%;
   width: 150px;
   height: 150px;
-  background: linear-gradient(135deg,#ffb566,#f67);
+  background: linear-gradient(135deg, #ffb566, #f67);
   border-radius: 50%;
   animation: bounce-down 5s linear infinite;
 }
@@ -75,7 +75,7 @@ watch(copied, (val) => {
   bottom: 10%;
   width: 100px;
   height: 100px;
-  background: linear-gradient(135deg,#de82ca,#5ee7f5);
+  background: linear-gradient(135deg, #de82ca, #5ee7f5);
   border-radius: 50%;
   animation: bounce-down 8s linear infinite;
 }

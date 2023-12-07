@@ -1,14 +1,14 @@
 .blog-box {
-  background-color: rgba(255, 255, 255, 0.25);
+  background-color: rgb(255 255 255 / 25%);
   backdrop-filter: blur(6px);
-  border: 0.625px solid rgba(255, 255, 255, 0.25);
+  border: 0.625px solid rgb(255 255 255 / 25%);
   border-radius: 25px;
-  box-shadow: rgba(142, 142, 142, 0.25) 0 6px 15px 0;
+  box-shadow: rgb(142 142 142 / 25%) 0 6px 15px 0;
 }
 
 .matted-box {
-  background-color: rgba(124, 168, 255, 0.15);
+  background-color: rgb(124 168 255 / 15%);
   backdrop-filter: blur(5px);
   border-radius: 12px;
-  box-shadow: rgba(142, 142, 142, 0.4) 0 0 6px 0;
+  box-shadow: rgb(142 142 142 / 40%) 0 0 6px 0;
 }

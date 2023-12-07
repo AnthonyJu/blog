@@ -1,5 +1,5 @@
 <template>
-  <div v-if="isShow" tabindex="-1" class="el-image-viewer__wrapper" style="z-index: 2004">
+  <div v-if="isShow" tabindex="-1" class="el-image-viewer__wrapper" style="z-index: 2004;">
     <!-- Mask -->
     <div class="el-image-viewer__mask opacity-75 -z-1" />
 

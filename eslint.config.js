@@ -6,8 +6,6 @@ export default antfu(
     ignores,
     unocss: true,
     formatters: true,
-  },
-  {
     rules: {
       ...rules,
       'max-len': 'off',

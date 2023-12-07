@@ -50,7 +50,7 @@ onMounted(() => {
     height: 0;
     margin-top: 26px;
     margin-left: -5px;
-    content: '';
+    content: "";
     border: 10px solid transparent;
     border-right: 0;
     border-bottom: 0;

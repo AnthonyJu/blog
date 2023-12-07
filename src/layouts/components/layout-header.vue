@@ -111,14 +111,14 @@ function delayCloseHandle() {
 
 <style lang="scss" scoped>
 .logo {
-  background-image: url('@/assets/logo.png');
+  background-image: url("@/assets/logo.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 110px;
 }
 
 .dark .logo {
-  background-image: url('@/assets/logo-dark.png');
+  background-image: url("@/assets/logo-dark.png");
 }
 
 .burger {
@@ -142,7 +142,7 @@ function delayCloseHandle() {
   background: var(--text-color);
   border-radius: 9px;
   opacity: 1;
-  transition: .25s ease-in-out;
+  transition: 0.25s ease-in-out;
   transform: rotate(0deg);
 }
 
@@ -202,7 +202,7 @@ function delayCloseHandle() {
     height: 44px;
     background-color: #ffcf96;
     border-radius: 50px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    box-shadow: 0 2px 6px rgb(0 0 0 / 30%);
     transition: all 400ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
     transform: rotate(-45deg);
   }
@@ -267,7 +267,9 @@ function delayCloseHandle() {
     height: 3px;
   }
 
-  .star--4, .star--5, .star--6 {
+  .star--4,
+  .star--5,
+  .star--6 {
     opacity: 0;
     transition: all 300ms 0 cubic-bezier(0.445, 0.05, 0.55, 0.95);
   }

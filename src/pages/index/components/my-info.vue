@@ -43,7 +43,7 @@
 
 <style lang="scss" scoped>
 .avatar {
-  box-shadow: rgba(142, 142, 142, 0.5) 0 6px 15px 0;
+  box-shadow: rgb(142 142 142 / 50%) 0 6px 15px 0;
 }
 
 .btn {
@@ -55,8 +55,9 @@
   height: 42px;
   cursor: pointer;
   user-select: none;
-  background-image: linear-gradient(#444444a0, #444444a0),
-    linear-gradient(137.48deg, #c592ff 10%,#8991fc 45%, #5194f8 67%, rgb(27, 181, 241) 87%);
+  background-image:
+    linear-gradient(#444444a0, #444444a0),
+    linear-gradient(137.48deg, #c592ff 10%, #8991fc 45%, #5194f8 67%, rgb(27 181 241) 87%);
   background-clip: content-box, border-box;
   background-origin: border-box;
   background-size: 300% 300%;
@@ -68,8 +69,9 @@
 }
 
 .dark .btn {
-  background-image: linear-gradient(#212121cc, #212121cc),
-    linear-gradient(137.48deg, #b16dff 10%,#6973ff 45%, #1a69df 67%, rgb(9, 140, 192) 87%);
+  background-image:
+    linear-gradient(#212121cc, #212121cc),
+    linear-gradient(137.48deg, #b16dff 10%, #6973ff 45%, #1a69df 67%, rgb(9 140 192) 87%);
 }
 
 #container-stars {
@@ -105,11 +107,11 @@ strong {
 }
 
 .circle:nth-of-type(1) {
-  background: rgba(254, 83, 186, 0.636);
+  background: rgb(254 83 186 / 63.6%);
 }
 
 .circle:nth-of-type(2) {
-  background: rgba(142, 81, 234, 0.704);
+  background: rgb(142 81 234 / 70.4%);
 }
 
 .btn:hover #container-stars {
@@ -117,7 +119,7 @@ strong {
 }
 
 .btn:hover {
-  transform: scale(1.1)
+  transform: scale(1.1);
 }
 
 .btn:active {
@@ -144,7 +146,7 @@ strong {
   left: -100rem;
   width: 100%;
   height: 100%;
-  content: '';
+  content: "";
   background-image: radial-gradient(#fff 1px, transparent 1%);
   background-size: 50px 50px;
   animation: anim-star-rotate 90s linear infinite;
@@ -156,7 +158,7 @@ strong {
   left: -50%;
   width: 170%;
   height: 500%;
-  content: '';
+  content: "";
   background-image: radial-gradient(#fff 1px, transparent 1%);
   background-size: 50px 50px;
   opacity: 0.5;
@@ -199,17 +201,17 @@ strong {
 
 @keyframes pulse-3011 {
   0% {
-    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+    box-shadow: 0 0 0 0 rgb(0 0 0 / 70%);
     transform: scale(0.75);
   }
 
   70% {
-    box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+    box-shadow: 0 0 0 10px rgb(0 0 0 / 0%);
     transform: scale(1);
   }
 
   100% {
-    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    box-shadow: 0 0 0 0 rgb(0 0 0 / 0%);
     transform: scale(0.75);
   }
 }

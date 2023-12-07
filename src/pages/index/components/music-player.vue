@@ -130,7 +130,7 @@ function formatTime(time: number) {
   box-shadow: none;
 
   .el-dropdown-menu {
-    background-color: rgba(124, 168, 255, 0.2);
+    background-color: rgb(124 168 255 / 20%);
     border: none;
     border-radius: 8px;
   }
@@ -141,7 +141,7 @@ function formatTime(time: number) {
   }
 
   .el-popper__arrow::before {
-    background-color: rgba(124, 168, 255, 0.2);
+    background-color: rgb(124 168 255 / 20%);
     backdrop-filter: blur(12px);
     border: none;
   }
