@@ -1,7 +1,7 @@
 <template>
   <el-carousel class="blog-box rounded-12px border-none">
     <el-carousel-item
-      v-for="index in 4"
+      v-for="index in imgList.length"
       :key="index"
     >
       <img
@@ -19,8 +19,9 @@ import img1 from '@/assets/wallpaper/1.jpg'
 import img2 from '@/assets/wallpaper/2.jpg'
 import img3 from '@/assets/wallpaper/3.jpg'
 import img4 from '@/assets/wallpaper/4.jpg'
+import img5 from '@/assets/wallpaper/5.jpg'
 
-const imgList = [img1, img2, img3, img4]
+const imgList = [img1, img2, img3, img4, img5]
 
 function handleImgError(e: any) {
   e.target.src = imgList[e.target.src.split('index=')[1] - 1]
