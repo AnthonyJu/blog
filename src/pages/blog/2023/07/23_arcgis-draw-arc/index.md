@@ -89,7 +89,7 @@ const arcRings = [[...rings.slice(startAngle, endAngle + 1), [120.38, 36.06]]]
 
 ### 示例与源码
 
-<CustomFrame route="/arcgis/draw-arc-by-circle" />
+<CustomFrame route="/arcgis/3_draw-arc-by-circle" />
 
 ## 2. 通过自定义方法生成圆弧
 
@@ -151,4 +151,4 @@ view.graphics.add(graphic)
 
 ### 示例与源码
 
-<CustomFrame route="/arcgis/draw-arc-custom" />
+<CustomFrame route="/arcgis/4_draw-arc-custom" />

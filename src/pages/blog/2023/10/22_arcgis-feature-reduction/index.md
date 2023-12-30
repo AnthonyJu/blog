@@ -219,4 +219,4 @@ const featureLayer = new FeatureLayer({
 
 ## 3. 示例与源码
 
-<CustomFrame route="/arcgis/feature-reduction" />
+<CustomFrame route="/arcgis/5_feature-reduction" />

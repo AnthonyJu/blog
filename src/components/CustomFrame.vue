@@ -33,16 +33,16 @@ const props = defineProps<{ route: string }>()
 
 const src = computed(() => {
   if (props.route.startsWith('http')) return props.route
-  return `https://jupeng-demo.netlify.app/#${props.route}`
+  return `https://vitesse-plain-pro.netlify.app/#${props.route}?demo=true`
 })
 
 const href = computed(() => {
   // 如果props.route只含有一个/，则路径为 /pages${props.route}/index.vue
   if (props.route.split('/').length === 2) {
-    return `https://github.com/AnthonyJu/demo/blob/main/src/pages${props.route}/index.vue`
+    return `https://github.com/AnthonyJu/vitesse-plain-pro/blob/main/src/pages${props.route}/index.vue`
   }
   else {
-    return `https://github.com/AnthonyJu/demo/blob/main/src/pages${props.route}.vue`
+    return `https://github.com/AnthonyJu/vitesse-plain-pro/blob/main/src/pages${props.route}.vue`
   }
 })
 
