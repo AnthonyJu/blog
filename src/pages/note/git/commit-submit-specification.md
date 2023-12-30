@@ -35,13 +35,22 @@ meta:
 type 用于说明 commit 的类别，只允许使用下面 7 个标识。
 
 ```markdown
-feat：新功能（feature）
+feat：新增功能或特性（feature）
 fix：修补 bug
-docs：文档（documentation）
-style： 格式（不影响代码运行的变动）
-refactor：重构（即不是新增功能，也不是修改 bug 的代码变动）
+docs：文档变动（documentation）
+style： 代码格式（不影响代码运行的变动）
+refactor：代码重构（即不是新增功能，也不是修改 bug 的代码变动）
 test：增加测试
-chore：构建过程或辅助工具的变动
+chore：变更构建流程或辅助工具
+```
+
+其他类别：
+
+```markdown
+build：变更项目构建或外部依赖（例如 scopes: webpack、gulp、npm 等）
+perf：改善性能 (A code change that improves performance)
+revert：代码回退
+ci：变更项目持续集成流程（例如 scopes: Travis、Circle、Jenkins、GitLab CI、等）
 ```
 
 如果 type 为 feat 和 fix，则该 commit 将肯定出现在 Change log 之中。
