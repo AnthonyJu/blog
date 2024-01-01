@@ -19,7 +19,7 @@ meta:
 
 此版本侧重于开发人员体验改进 - 特别是 TypeScript 的 SFC 使用。结合[Vue Language Tools](https://github.com/vuejs/language-tools/)（以前称为 Volar）的 1.6 版本，我们解决了将 Vue 与 TypeScript 一起使用时的许多长期存在的痛点`<script setup>`。
 
-这篇文章概述了 3.3 中突出显示的功能。有关更改的完整列表，请参阅[GitHub 上的完整更改日志](https://github.com/vuejs/core/blob/main/CHANGELOG.md#330-2023-05-08)。
+有关更改的完整列表，请参阅[GitHub 上的完整更改日志](https://github.com/vuejs/core/blob/main/CHANGELOG.md#330-2023-05-08)。
 
 > 依赖关系更新，升级到 3.3 时，建议同时更新以下依赖项：
 >
