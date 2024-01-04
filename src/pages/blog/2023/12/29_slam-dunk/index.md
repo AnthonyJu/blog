@@ -17,7 +17,7 @@ meta:
 
 # Vue 3.4 灌篮高手
 
-昨天，Vue3.4`灌篮高手`正式发布，此版本包括一些实质性的内部改进-最值得注意的是`重写`的模板解析器，速度提高了`2倍`，以及`重构`的反应系统，使效果触发更加准确和高效。它还打包了大量的生活质量API改进，包括`defineModel`的稳定和绑定道具时的`同名简写`。
+昨天，Vue3.4`灌篮高手🏀`正式发布，此版本包括一些实质性的内部改进-最值得注意的是`重写`的模板解析器，速度提高了`2倍`，以及`重构`的反应系统，使效果触发更加准确和高效。它还打包了大量的生活质量API改进，包括`defineModel`的稳定和绑定道具时的`同名简写`。
 
 有关更改的完整列表，请参阅[GitHub 上的完整更改日志](https://github.com/vuejs/core/blob/main/CHANGELOG.md#340-2023-12-28)。
 
@@ -86,7 +86,12 @@ const model3 = defineModel('title', { required: true })
 const model4 = defineModel({ type: String })
 
 // or use in ts
-const model4 = defineModel<string>()
+const model5 = defineModel<string>()
+
+// default model with options, required removes possible undefined values
+const model6 = defineModel<string>({ required: true })
+
+const [modelValue, modifiers] = defineModel<string, 'trim' | 'uppercase'>()
 ```
 
 > Context：[RFC#503](https://github.com/vuejs/rfcs/discussions/503)

@@ -171,7 +171,7 @@ watchEffect(() => {
 export default { plugins: [vue({ propsDestructure: true })] }
 ```
 
-> 详细信息：[RFC #502](https://github.com/vuejs/rfcs/discussions/502)
+> 详细信息：[RFC#502](https://github.com/vuejs/rfcs/discussions/502)
 
 ### 2. defineModel
 
@@ -241,10 +241,20 @@ function setMsg() {
 
 ```ts
 // vite.config.js
-export default { plugins: [vue({ defineModel: true })] }
+import Vue from '@vitejs/plugin-vue'
+
+export default {
+  plugins: [
+    Vue({
+      script: {
+        defineModel: true
+      },
+    }),
+  ]
+}
 ```
 
-> 详细信息：[RFC #503](https://github.com/vuejs/rfcs/discussions/503)
+> 详细信息：[RFC#503](https://github.com/vuejs/rfcs/discussions/503)
 
 ## 三、其他值得注意的功能
 
