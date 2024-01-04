@@ -168,7 +168,17 @@ watchEffect(() => {
 
 ```ts
 // vite.config.js
-export default { plugins: [vue({ propsDestructure: true })] }
+import Vue from '@vitejs/plugin-vue'
+
+export default {
+  plugins: [
+    Vue({
+      script: {
+        propsDestructure: true
+      },
+    }),
+  ]
+}
 ```
 
 > 详细信息：[RFC#502](https://github.com/vuejs/rfcs/discussions/502)
