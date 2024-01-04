@@ -48,7 +48,7 @@ declare module 'vue-router/auto/routes' {
     '/blog/2023/06/14_theme-switch/': RouteRecordInfo<'/blog/2023/06/14_theme-switch/', '/blog/2023/06/14_theme-switch', Record<never, never>, Record<never, never>>,
     '/blog/2023/06/18_play-and-play/': RouteRecordInfo<'/blog/2023/06/18_play-and-play/', '/blog/2023/06/18_play-and-play', Record<never, never>, Record<never, never>>,
     '/blog/2023/06/20_rurouni-kenshin/': RouteRecordInfo<'/blog/2023/06/20_rurouni-kenshin/', '/blog/2023/06/20_rurouni-kenshin', Record<never, never>, Record<never, never>>,
-    '/blog/2023/06/22_blog-efftct/': RouteRecordInfo<'/blog/2023/06/22_blog-efftct/', '/blog/2023/06/22_blog-efftct', Record<never, never>, Record<never, never>>,
+    '/blog/2023/06/22_blog-effect/': RouteRecordInfo<'/blog/2023/06/22_blog-effect/', '/blog/2023/06/22_blog-effect', Record<never, never>, Record<never, never>>,
     '/blog/2023/06/28_custom-arcgis-popup/': RouteRecordInfo<'/blog/2023/06/28_custom-arcgis-popup/', '/blog/2023/06/28_custom-arcgis-popup', Record<never, never>, Record<never, never>>,
     '/blog/2023/06/30_plop-basic-usage/': RouteRecordInfo<'/blog/2023/06/30_plop-basic-usage/', '/blog/2023/06/30_plop-basic-usage', Record<never, never>, Record<never, never>>,
     '/blog/2023/07/07_grid-responsive-layout/': RouteRecordInfo<'/blog/2023/07/07_grid-responsive-layout/', '/blog/2023/07/07_grid-responsive-layout', Record<never, never>, Record<never, never>>,
