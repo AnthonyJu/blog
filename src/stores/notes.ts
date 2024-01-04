@@ -1,11 +1,12 @@
 import type { Note } from '@/types/index'
-import pages from '~pages'
 
 export const allNotes = computed(() => {
-  return pages.filter(page => page.path.startsWith('/note/')).map((page) => {
+  return (noteRoutes.map((page) => {
     return {
       ...page.meta,
-      path: page.path,
+      path: page.name as string,
     }
-  }) as Note[]
+  }) as Note[]).sort((a, b) => {
+    return new Date(a.date).getTime() - new Date(b.date).getTime()
+  })
 })

@@ -1,7 +1,6 @@
 import path from 'node:path'
 import { defineConfig } from 'vite'
 import Vue from '@vitejs/plugin-vue'
-import Pages from 'vite-plugin-pages'
 import generateSitemap from 'vite-ssg-sitemap'
 import Layouts from 'vite-plugin-vue-layouts'
 import Components from 'unplugin-vue-components/vite'
@@ -13,6 +12,8 @@ import LinkAttributes from 'markdown-it-link-attributes'
 import Unocss from 'unocss/vite'
 import viteImagemin from 'vite-plugin-imagemin'
 import Shiki from 'markdown-it-shikiji'
+import VueRouter from 'unplugin-vue-router/vite'
+import { VueRouterAutoImports } from 'unplugin-vue-router'
 import ElementPlus from 'unplugin-element-plus/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 
@@ -48,10 +49,13 @@ export default defineConfig({
       },
     }),
 
-    // https://github.com/hannoeru/vite-plugin-pages
-    Pages({
-      exclude: ['**/components/*.vue'],
-      extensions: ['vue', 'md'],
+    // https://github.com/posva/unplugin-vue-router
+    VueRouter({
+      extensions: ['.vue', '.md'],
+      routeBlockLang: 'yaml',
+      dts: 'src/typed-router.d.ts',
+      exclude: ['**/components/**/*'],
+
     }),
 
     // https://github.com/JohnCampionJr/vite-plugin-vue-layouts
@@ -61,9 +65,13 @@ export default defineConfig({
     AutoImport({
       imports: [
         'vue',
-        'vue-router',
         '@vueuse/head',
         '@vueuse/core',
+        VueRouterAutoImports,
+        {
+          // add any other imports you were relying on
+          'vue-router/auto': ['useLink'],
+        },
       ],
       dts: 'src/auto-imports.d.ts',
       dirs: [
@@ -72,7 +80,7 @@ export default defineConfig({
         'src/utils',
       ],
       vueTemplate: true,
-      resolvers: [ElementPlusResolver({ importStyle: 'sass', ssr: true })],
+      resolvers: [ElementPlusResolver()],
     }),
 
     // https://github.com/antfu/unplugin-vue-components
@@ -81,7 +89,7 @@ export default defineConfig({
       extensions: ['vue', 'md'],
       // allow auto import and register components used in markdown
       include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
-      resolvers: [ElementPlusResolver({ importStyle: 'sass', ssr: true })],
+      resolvers: [ElementPlusResolver()],
       dts: 'src/components.d.ts',
     }),
 
@@ -173,6 +181,6 @@ export default defineConfig({
 
   ssr: {
     // TODO: workaround until they support native ESM
-    noExternal: ['workbox-window'],
+    noExternal: ['workbox-window', 'element-plus'],
   },
 })

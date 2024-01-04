@@ -114,7 +114,7 @@ const noteTypes = [
 ]
 
 const noteList = noteTypes.map((item) => {
-  const typeName = `/note/${item.name.split(' ').join('-').toLowerCase()}`
+  const typeName = `/note/${item.name}`
   return {
     ...item,
     notes: allNotes.value.filter(note => note.path.includes(typeName)),

@@ -40,11 +40,11 @@
         <div class="badge absolute">
           <span>{{ res.path.startsWith('/blog') ? 'Blog' : 'Note' }}</span>
         </div>
-        <p class="w-full flex-1 truncate text-center" :title="res.meta.title">
-          {{ res.meta.title }}
+        <p class="w-full flex-1 truncate text-center" :title="res.title">
+          {{ res.title }}
         </p>
-        <div class="w-full flex-center gap-5px truncate" :title="res.meta.keywords?.join(',')">
-          <el-tag v-for="tag in res.meta.keywords" :key="tag" round>
+        <div class="w-full flex-center gap-5px truncate" :title="res.keywords?.join(',')">
+          <el-tag v-for="tag in res.keywords" :key="tag" round>
             {{ tag }}
           </el-tag>
         </div>
@@ -54,9 +54,6 @@
 </template>
 
 <script setup lang='ts'>
-import pages from '~pages'
-import type { Article } from '@/types/index'
-
 const { width } = useWindowSize()
 // 根据屏幕宽度计算每行显示的博客数量
 const gridNum = computed(() => {
@@ -66,15 +63,13 @@ const gridNum = computed(() => {
 })
 
 // 筛选出所有以 /blog、/note 开头的路由
-const articles = pages.filter((page) => {
-  return page.path.startsWith('/blog/') || page.path.startsWith('/note/')
-})
+const articles = [...allBlogs.value, ...allNotes.value]
 
 // 获取所有文章的关键词
 const allKeywords = computed(() => {
   const keywords: string[] = []
   articles.forEach((article) => {
-    keywords.push(...article.meta?.keywords as string[] || [])
+    keywords.push(...article.keywords as string[] || [])
   })
   // 计算每个关键词出现的次数
   const keywordsCount = keywords.reduce((prev, curr) => {
@@ -100,13 +95,13 @@ const placeholder = ref('搜索目标为文章标题与关键词')
 const results = computed(() => {
   if (!searchValue.value) return []
   else return articles.filter((article) => {
-    const keywords = (article.meta?.keywords ?? []) as string[]
+    const keywords = (article.keywords ?? []) as string[]
     const isKeyword = keywords.some((item) => {
       return item.toLowerCase().includes(searchValue.value.toLowerCase())
     })
-    const isInTitle = (article.meta?.title as string).includes(searchValue.value)
+    const isInTitle = (article.title as string).includes(searchValue.value)
     return isKeyword || isInTitle
-  }) as any as { path: string, meta: Article }[]
+  })
 })
 </script>
 
@@ -118,7 +113,8 @@ const results = computed(() => {
 
   .el-input__wrapper {
     background-color: #fff9;
-    box-shadow: 0 0 0 1.5px var(--el-input-border-color, var(--el-border-color)) inset;
+    box-shadow: 0 0 0 1.5px var(--el-input-border-color, var(--el-border-color))
+      inset;
 
     .el-input__inner {
       text-align: center;

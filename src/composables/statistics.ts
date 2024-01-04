@@ -1,5 +1,3 @@
-import pages from '~pages'
-
 interface StatisticsItem {
   name: 'blog' | 'note' | 'roast'
   path: '/blog' | '/note' | '/roast'
@@ -8,8 +6,8 @@ interface StatisticsItem {
 
 const allCount = computed(() => {
   return {
-    blog: pages.filter(page => page.path.startsWith('/blog/')).length,
-    note: pages.filter(page => page.path.startsWith('/note/')).length,
+    blog: blogRoutes.length,
+    note: noteRoutes.length,
     roast: allRoasts.length,
   }
 })
