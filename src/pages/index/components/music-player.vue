@@ -28,12 +28,12 @@
 
     <!-- 类型切换 -->
     <el-dropdown
-      class="absolute top-0 cursor-pointer text-22px -right-2px"
+      class="top-0 cursor-pointer !absolute -right-2px"
       size="large"
       popper-class="music-type-dropdown"
       @command="handleCmd"
     >
-      <div i-carbon-playlist />
+      <div class="text-22px" i-carbon-playlist />
       <template #dropdown>
         <el-dropdown-menu>
           <el-dropdown-item v-for="sort in sortList" :key="sort" :command="sort">
