@@ -6,6 +6,7 @@
       src="@/assets/avatar.png" alt="AnthonyJu"
     >
     <div
+      v-motion-pop-visible
       class="roast-content ml-20px max-w-70% flex-col rounded px-8px py-4px text-#fff"
       :style="{ 'background': colorList[index % 5], '--before-color': colorList[index % 5] }"
     >
