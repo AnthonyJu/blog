@@ -80,6 +80,7 @@ declare module 'vue-router/auto/routes' {
     '/note/JavaScript/js-basic': RouteRecordInfo<'/note/JavaScript/js-basic', '/note/JavaScript/js-basic', Record<never, never>, Record<never, never>>,
     '/note/Markdown/basic-grammar': RouteRecordInfo<'/note/Markdown/basic-grammar', '/note/Markdown/basic-grammar', Record<never, never>, Record<never, never>>,
     '/note/Others/centos': RouteRecordInfo<'/note/Others/centos', '/note/Others/centos', Record<never, never>, Record<never, never>>,
+    '/note/Others/npm-options': RouteRecordInfo<'/note/Others/npm-options', '/note/Others/npm-options', Record<never, never>, Record<never, never>>,
     '/note/ThreeJS/new-scene': RouteRecordInfo<'/note/ThreeJS/new-scene', '/note/ThreeJS/new-scene', Record<never, never>, Record<never, never>>,
     '/note/TypeScript/ts-basic': RouteRecordInfo<'/note/TypeScript/ts-basic', '/note/TypeScript/ts-basic', Record<never, never>, Record<never, never>>,
     '/note/Unity/vr-informal-essay': RouteRecordInfo<'/note/Unity/vr-informal-essay', '/note/Unity/vr-informal-essay', Record<never, never>, Record<never, never>>,
