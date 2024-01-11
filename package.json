@@ -7,7 +7,7 @@
     "blog": "plop --plopfile ./plop/blog/config.js",
     "note": "plop --plopfile ./plop/note/config.js",
     "roast": "plop --plopfile ./plop/roast/config.js",
-    "lint": "eslint --fix",
+    "lint": "eslint --fix \"src/**/*.{js,ts,vue,md}\"",
     "lint:style": "stylelint --fix \"src/**/*.{vue,scss}\"",
     "typecheck": "vue-tsc --noEmit",
     "build": "vite-ssg build",
