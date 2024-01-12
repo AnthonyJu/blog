@@ -14,7 +14,7 @@
 <script setup lang='ts'>
 defineProps<{ total: number }>()
 
-const modelValue = defineModel()
+const modelValue = defineModel<number>()
 
 function currentChange(cur: number) {
   modelValue.value = cur

@@ -113,7 +113,8 @@ const results = computed(() => {
 
   .el-input__wrapper {
     background-color: #fff9;
-    box-shadow: 0 0 0 1.5px var(--el-input-border-color, var(--el-border-color))
+    box-shadow:
+      0 0 0 1.5px var(--el-input-border-color, var(--el-border-color))
       inset;
 
     .el-input__inner {

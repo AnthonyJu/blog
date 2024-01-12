@@ -18,7 +18,7 @@ export const routerOptions: RouterOptions = {
 
 export const install: UserModule = ({ isClient, router }) => {
   if (isClient) {
-    router.beforeEach((to, from, next) => {
+    router.beforeEach((_to, _from, next) => {
       next()
     })
   }
