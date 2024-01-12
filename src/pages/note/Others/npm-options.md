@@ -37,3 +37,33 @@ npm 的一些命令选项的使用与作用表述。
 ## 2. npm config get registry
 
 查看当前的 npm 镜像源地址。
+
+```bash
+npm config get registry
+```
+
+## 3. npm publish --access public
+
+发布以 用户 为 scope 的公开包，例如 用户 @anthony-ju 下创建 my-package 包，那么发布时需要使用`npm publish --access public`:
+
+```json
+{
+  "name": "@anthony-ju/my-package",
+  "version": "1.0.0"
+  // ...
+}
+```
+
+```bash
+npm publish --access public
+```
+
+## 4. cnpm sync [package-name]
+
+同步 npm 包到 cnpm 源，例如同步`@anthony-ju/my-package`包到 cnpm 源：
+
+```bash
+cnpm sync @anthony-ju/my-package
+```
+
+> 前提是你已经安装了 cnpm，如果没有安装，可以使用`npm install -g cnpm`安装。
