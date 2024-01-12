@@ -6,7 +6,7 @@
     <template v-for="(blog, index) in blogList" :key="blog.title">
       <el-badge value="new" :hidden="index + 1 > newCount.blog">
         <div
-          v-motion-slide-visible-bottom
+          v-motion-roll-bottom
           class="blog-item group flex-col-center cursor-pointer overflow-hidden rounded-3"
           bg="#ffffff99 dark:#00000099"
           :class="width < 510 ? 'h-320px' : 'h-260px'"

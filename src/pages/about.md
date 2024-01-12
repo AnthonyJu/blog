@@ -26,12 +26,12 @@ title: 关于我
 ### My Technology Stack 👨‍💻
 
 - Basis：HTML、CSS、JavaScript、Typescript and a little C#
-- Framework：Vue、Uniapp、React、QFramework
-- Efficiency：Unocss、Pinia、VueUse、Echarts、ArcGIS、ElementPlus
-- Engineering：Vite、npm、yarn、pnpm
+- Framework：Vue、Uniapp、React、Nuxt、QFramework
+- Efficiency：Unocss、Pinia、VueUse、ElementPlus、Echarts、ArcGIS、Threejs
+- Engineering：Vite、npm、cnpm、pnpm
 - Server：Nodejs、Nestjs
 - Team：Jira、SVN、Git
-- Tools：VSCode、Typora、Unity
+- Tools：VSCode、Typora、VS、Unity
 
 ### Contact Me ☎️
 

@@ -30,6 +30,7 @@
       <div
         v-for="res in results"
         :key="res.path"
+        v-motion-pop
         flex-col-center
         overflow="hidden"
         class="relative h-100px cursor-pointer rounded-3 p-15px duration-150"
