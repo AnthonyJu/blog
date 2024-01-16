@@ -318,7 +318,6 @@ import { UnwrapRef } from 'vue'
 declare module 'vue' {
   interface ComponentCustomProperties {
     readonly EffectScope: UnwrapRef<typeof import('vue')['EffectScope']>
-    readonly ElMessage: UnwrapRef<typeof import('element-plus/es')['ElMessage']>
     readonly allBlogs: UnwrapRef<typeof import('./stores/blogs')['allBlogs']>
     readonly allNotes: UnwrapRef<typeof import('./stores/notes')['allNotes']>
     readonly allRoasts: UnwrapRef<typeof import('./stores/roasts')['allRoasts']>
@@ -623,7 +622,6 @@ declare module 'vue' {
 declare module '@vue/runtime-core' {
   interface ComponentCustomProperties {
     readonly EffectScope: UnwrapRef<typeof import('vue')['EffectScope']>
-    readonly ElMessage: UnwrapRef<typeof import('element-plus/es')['ElMessage']>
     readonly allBlogs: UnwrapRef<typeof import('./stores/blogs')['allBlogs']>
     readonly allNotes: UnwrapRef<typeof import('./stores/notes')['allNotes']>
     readonly allRoasts: UnwrapRef<typeof import('./stores/roasts')['allRoasts']>
