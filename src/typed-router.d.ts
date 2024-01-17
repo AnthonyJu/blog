@@ -73,6 +73,7 @@ declare module 'vue-router/auto/routes' {
     '/note/ArcGIS-Map/advanced-usage': RouteRecordInfo<'/note/ArcGIS-Map/advanced-usage', '/note/ArcGIS-Map/advanced-usage', Record<never, never>, Record<never, never>>,
     '/note/ArcGIS-Map/basic-use': RouteRecordInfo<'/note/ArcGIS-Map/basic-use', '/note/ArcGIS-Map/basic-use', Record<never, never>, Record<never, never>>,
     '/note/Git/commit-submit-specification': RouteRecordInfo<'/note/Git/commit-submit-specification', '/note/Git/commit-submit-specification', Record<never, never>, Record<never, never>>,
+    '/note/Git/gitbub-hosts': RouteRecordInfo<'/note/Git/gitbub-hosts', '/note/Git/gitbub-hosts', Record<never, never>, Record<never, never>>,
     '/note/HTML/html5-new-features': RouteRecordInfo<'/note/HTML/html5-new-features', '/note/HTML/html5-new-features', Record<never, never>, Record<never, never>>,
     '/note/JavaScript/es2023': RouteRecordInfo<'/note/JavaScript/es2023', '/note/JavaScript/es2023', Record<never, never>, Record<never, never>>,
     '/note/JavaScript/es6': RouteRecordInfo<'/note/JavaScript/es6', '/note/JavaScript/es6', Record<never, never>, Record<never, never>>,
