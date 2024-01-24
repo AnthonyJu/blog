@@ -24,34 +24,84 @@ hosts 文件是一个没有扩展名的文本文件，它可以用来映射 IP �
 
 ## hosts 文件的位置
 
-### Windows
-
-hosts 文件的位置在：
+`Windows` hosts 文件的位置在：
 
 ```bash
-C:\Windows\System32\drivers\etc
+C:\Windows\System32\drivers\etc\hosts
 ```
 
-### Mac OS
-
-hosts 文件的位置在：
+`Mac OS` hosts 文件的位置在：
 
 ```bash
 /etc/hosts
 ```
 
-## 添加 github 的 hosts
+## 打开 hosts 文件
 
 - `Windows`可以通过`记事本`或其他编辑器打开 hosts 文件。
 - `MacOS`可以通过 vim 打开 hosts 文件：
+
+通过`vscode`打开 hosts 文件：
+
+```bash
+code C:\Windows\System32\drivers\etc\hosts
+```
+
+Mac 通过`vim`打开 hosts 文件：
 
 ```bash
 sudo vim /etc/hosts
 ```
 
-在 hosts 文件中添加以下内容：
+## 获取 github hosts 地址
 
-```txt
-# GitHub
-140.82.114.4 github.com
+github的定期更新地址：
+
+1. https://hosts.gitcdn.top/hosts.txt
+2. https://raw.hellogithub.com/hosts
+
+## 配置 hosts 文件
+
+将获取到的 hosts 文件内容复制到 hosts 文件中，保存即可。
+
+如果没生效：
+
+- `Windows`可以尝试重启电脑，或运行`ipconfig /flushdns`命令，刷新 DNS 缓存。
+- `MacOS`可以尝试重启网络，或运行`sudo killall -HUP mDNSResponder; sudo dscacheutil -flushcache`命令，刷新 DNS 缓存。
+
+> `MacOS`具体版本可查看：[Reset the DNS cache in OS X](https://support.apple.com/en-us/101481)
+
+## 验证是否生效
+
+在终端中运行以下命令：
+
+```bash
+ping github.com
 ```
+
+## 当你学会了魔法
+
+当你学会了`魔法`，你可以通过代理的方式来加速访问 github、git 仓库拉取推送等：
+
+终端中运行以下命令：
+
+```bash
+git config --global http.proxy 代理地址:端口号
+git config --global https.proxy 代理地址:端口号
+```
+
+取消代理：
+
+```bash
+git config --global --unset http.proxy
+git config --global --unset https.proxy
+```
+
+检查代理是否设置成功：
+
+```bash
+git config --global --get http.proxy
+git config --global --get https.proxy
+```
+
+> `代理地址:端口号`：例如：127.0.0.1:3456，具体是多少可以在你的`施法工具`中查看。
