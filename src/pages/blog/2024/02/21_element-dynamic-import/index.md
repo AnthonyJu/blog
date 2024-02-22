@@ -70,7 +70,7 @@ export default defineConfig({
   "compilerOptions": {
     "types": [
       // ...
-      "element-plus"
+      "element-plus/global"
     ]
   }
 }
