@@ -91,28 +91,30 @@ export default defineConfig({
         'src/utils',
       ],
       vueTemplate: true,
-      resolvers: [ElementPlusResolver()],
+      resolvers: [ElementPlusResolver({ importStyle: 'sass' })],
     }),
 
     // https://github.com/antfu/unplugin-vue-components
     Components({
       // allow auto load markdown components under `./src/components/`
       extensions: ['vue', 'md'],
+      dts: 'src/components.d.ts',
       // allow auto import and register components used in markdown
       include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
       resolvers: process.env.NODE_ENV === 'production' ? ElementPlusResolver({ importStyle: 'sass' }) : undefined,
-      dts: 'src/components.d.ts',
     }),
 
     {
       name: 'vite:element-plus-auto-import-in-dev',
       transform(code, id) {
         if (process.env.NODE_ENV === 'development' && /src\/main.ts$/.test(id)) {
+          const codeList = code.split('export const createApp = ViteSSG(')
           return {
-            code: `
+            code: `${codeList[0]}
                   import ElementPlus from 'element-plus';
                   import 'element-plus/dist/index.css';
-                  ${code.split('(ctx) => {').join('(ctx) => {ctx.app.use(ElementPlus);')};
+                  export const createApp = ViteSSG(
+                  ${codeList[1].split('(ctx) => {').join('(ctx) => {ctx.app.use(ElementPlus);')};
                 `,
             map: null,
           }
