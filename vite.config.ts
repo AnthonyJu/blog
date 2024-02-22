@@ -1,4 +1,5 @@
 import path from 'node:path'
+import process from 'node:process'
 import { defineConfig } from 'vite'
 import Vue from '@vitejs/plugin-vue'
 import generateSitemap from 'vite-ssg-sitemap'
@@ -14,7 +15,6 @@ import viteImagemin from 'vite-plugin-imagemin'
 import Shiki from 'markdown-it-shikiji'
 import VueRouter from 'unplugin-vue-router/vite'
 import { VueRouterAutoImports } from 'unplugin-vue-router'
-import ElementPlus from 'unplugin-element-plus/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 
 export default defineConfig({
@@ -40,22 +40,33 @@ export default defineConfig({
     },
   },
 
-  plugins: [
-    // https://github.com/vitejs/vite-plugin-vue/tree/main/packages/plugin-vue#readme
-    Vue({
-      include: [/\.vue$/, /\.md$/],
-      script: {
-        propsDestructure: true,
-      },
-    }),
+  optimizeDeps: {
+    include: [
+      '@element-plus/icons-vue',
+      '@vueuse/core',
+      'axios',
+      'element-plus/es',
+      'element-plus/es/components/base/style/index',
+      'element-plus/es/components/message/style/index',
+      'unplugin-vue-router/runtime',
+    ],
+  },
 
+  plugins: [
     // https://github.com/posva/unplugin-vue-router
     VueRouter({
       extensions: ['.vue', '.md'],
       routeBlockLang: 'yaml',
       dts: 'src/typed-router.d.ts',
       exclude: ['**/components/**/*'],
+    }),
 
+    // https://github.com/vitejs/vite-plugin-vue/tree/main/packages/plugin-vue#readme
+    Vue({
+      include: [/\.vue$/, /\.md$/],
+      script: {
+        propsDestructure: true,
+      },
     }),
 
     // https://github.com/JohnCampionJr/vite-plugin-vue-layouts
@@ -89,14 +100,25 @@ export default defineConfig({
       extensions: ['vue', 'md'],
       // allow auto import and register components used in markdown
       include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
-      resolvers: [ElementPlusResolver()],
+      resolvers: process.env.NODE_ENV === 'production' ? ElementPlusResolver({ importStyle: 'sass' }) : undefined,
       dts: 'src/components.d.ts',
     }),
 
-    // https://github.com/element-plus/unplugin-element-plus
-    ElementPlus({
-      useSource: true,
-    }),
+    {
+      name: 'vite:element-plus-auto-import-in-dev',
+      transform(code, id) {
+        if (process.env.NODE_ENV === 'development' && /src\/main.ts$/.test(id)) {
+          return {
+            code: `
+                  import ElementPlus from 'element-plus';
+                  import 'element-plus/dist/index.css';
+                  ${code.split('(ctx) => {').join('(ctx) => {ctx.app.use(ElementPlus);')};
+                `,
+            map: null,
+          }
+        }
+      },
+    },
 
     // https://github.com/antfu/unocss
     // see uno.config.ts for config
