@@ -69,6 +69,7 @@ declare module 'vue-router/auto/routes' {
     '/blog/2023/12/02_ios-listing-process/': RouteRecordInfo<'/blog/2023/12/02_ios-listing-process/', '/blog/2023/12/02_ios-listing-process', Record<never, never>, Record<never, never>>,
     '/blog/2023/12/06_unity-in-web/': RouteRecordInfo<'/blog/2023/12/06_unity-in-web/', '/blog/2023/12/06_unity-in-web', Record<never, never>, Record<never, never>>,
     '/blog/2023/12/29_slam-dunk/': RouteRecordInfo<'/blog/2023/12/29_slam-dunk/', '/blog/2023/12/29_slam-dunk', Record<never, never>, Record<never, never>>,
+    '/blog/2024/02/21_element-dynamic-import/': RouteRecordInfo<'/blog/2024/02/21_element-dynamic-import/', '/blog/2024/02/21_element-dynamic-import', Record<never, never>, Record<never, never>>,
     '/note/': RouteRecordInfo<'/note/', '/note', Record<never, never>, Record<never, never>>,
     '/note/ArcGIS-Map/advanced-usage': RouteRecordInfo<'/note/ArcGIS-Map/advanced-usage', '/note/ArcGIS-Map/advanced-usage', Record<never, never>, Record<never, never>>,
     '/note/ArcGIS-Map/basic-use': RouteRecordInfo<'/note/ArcGIS-Map/basic-use', '/note/ArcGIS-Map/basic-use', Record<never, never>, Record<never, never>>,
