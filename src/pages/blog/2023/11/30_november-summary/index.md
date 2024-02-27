@@ -1,5 +1,5 @@
 ---
-title: 11月生活小记
+title: 2023年11月生活小记
 meta:
   - name: description
     content: emmmmm，感觉这个11月过的好快啊，不知道有什么可以记录的，且写且看吧。
@@ -9,13 +9,13 @@ meta:
 
 <route lang="yaml">
 meta:
-  title: 11月生活小记
+  title: 2023年11月生活小记
   desc: emmmmm，感觉这个11月过的好快啊，不知道有什么可以记录的，且写且看吧😂。
   keywords: [生活, 记录, 点滴]
   date: 2023-11-30 21:18:40
 </route>
 
-# 11月生活小记
+# 2023年11月生活小记
 
 emmmmm，感觉这个11月过的好快啊，不知道有什么可以记录的，且写且看吧😂。
 
