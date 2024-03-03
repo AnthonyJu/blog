@@ -69,7 +69,7 @@ declare module 'vue-router/auto/routes' {
     '/blog/2023/12/02_ios-listing-process/': RouteRecordInfo<'/blog/2023/12/02_ios-listing-process/', '/blog/2023/12/02_ios-listing-process', Record<never, never>, Record<never, never>>,
     '/blog/2023/12/06_unity-in-web/': RouteRecordInfo<'/blog/2023/12/06_unity-in-web/', '/blog/2023/12/06_unity-in-web', Record<never, never>, Record<never, never>>,
     '/blog/2023/12/29_slam-dunk/': RouteRecordInfo<'/blog/2023/12/29_slam-dunk/', '/blog/2023/12/29_slam-dunk', Record<never, never>, Record<never, never>>,
-    '/blog/2024/01/22_null/': RouteRecordInfo<'/blog/2024/01/22_null/', '/blog/2024/01/22_null', Record<never, never>, Record<never, never>>,
+    '/blog/2024/01/17_null/': RouteRecordInfo<'/blog/2024/01/17_null/', '/blog/2024/01/17_null', Record<never, never>, Record<never, never>>,
     '/blog/2024/01/31_january-summary/': RouteRecordInfo<'/blog/2024/01/31_january-summary/', '/blog/2024/01/31_january-summary', Record<never, never>, Record<never, never>>,
     '/blog/2024/02/21_element-dynamic-import/': RouteRecordInfo<'/blog/2024/02/21_element-dynamic-import/', '/blog/2024/02/21_element-dynamic-import', Record<never, never>, Record<never, never>>,
     '/blog/2024/02/29_february-summary/': RouteRecordInfo<'/blog/2024/02/29_february-summary/', '/blog/2024/02/29_february-summary', Record<never, never>, Record<never, never>>,
