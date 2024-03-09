@@ -1,4 +1,4 @@
-import { routes } from 'vue-router/auto/routes'
+import { routes } from 'vue-router/auto-routes'
 import type { RouteRecordRaw } from 'vue-router'
 
 // 展开routes获取所有的单个路由

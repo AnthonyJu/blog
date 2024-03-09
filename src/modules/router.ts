@@ -1,7 +1,7 @@
 import type { RouterOptions } from 'vite-ssg'
 import { setupLayouts } from 'virtual:generated-layouts'
 
-import { routes } from 'vue-router/auto/routes'
+import { routes } from 'vue-router/auto-routes'
 import type { UserModule } from '@/types'
 
 export const routerOptions: RouterOptions = {
