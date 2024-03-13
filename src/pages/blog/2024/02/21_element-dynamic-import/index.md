@@ -43,8 +43,8 @@ export default defineConfig({
         if (process.env.NODE_ENV === 'development' && /src\/main.ts$/.test(id)) {
           return {
             code: `
-              import ElementPlus from 'element-plus';
-              import 'element-plus/dist/index.css';
+              import ElementPlus from 'element-plus'
+              import 'element-plus/theme-chalk/src/index.scss'
               ${code.split('const app = createApp(App)').join('const app = createApp(App);app.use(ElementPlus);')};
             `,
             map: null,
@@ -62,6 +62,8 @@ export default defineConfig({
 - `code`: 用于修改入口文件的代码，将 ElementPlus 注入到 app 中。
 - `map`: 用于 sourcemap，这里不需要 sourcemap，所以设置为 null。
 - `split`: 此处是为了避免在`APP.vue`中使用了`el-config-provider`，导致页面比`ElementPlus`加载快,因此需要在`mount`之前引入`ElementPlus`。
+
+> 引入css的时候最好是用以上的方式，如果使用`import 'element-plus/dist/index.css'`的方式，可能会存在自定义样式覆盖不到的问题。
 
 在`tsconfig.json`中添加 element-plus 的类型声明：
 
@@ -102,7 +104,6 @@ export default defineConfig({
 
 > `unplugin-vue-components`的具体配置项可以查看[Github](https://github.com/antfu/unplugin-vue-components)。
 > `ElementPlusResolver`具体配置项可以查看[官方文档](https://element-plus.gitee.io/zh-CN/guide/quickstart.html#按需导入)或者[Github](https://github.com/unplugin/unplugin-vue-components)。
-
 
 ## 还需注意
 

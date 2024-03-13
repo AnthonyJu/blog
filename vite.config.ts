@@ -111,8 +111,8 @@ export default defineConfig({
           const codeList = code.split('export const createApp = ViteSSG(')
           return {
             code: `${codeList[0]}
-                  import ElementPlus from 'element-plus';
-                  import 'element-plus/dist/index.css';
+                  import ElementPlus from 'element-plus'
+                  import 'element-plus/theme-chalk/src/index.scss'
                   export const createApp = ViteSSG(
                   ${codeList[1].split('(ctx) => {').join('(ctx) => {ctx.app.use(ElementPlus);')};
                 `,
