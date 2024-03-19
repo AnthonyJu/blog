@@ -1,5 +1,4 @@
 import AvatarPng from '@/assets/avatar.png'
-import type { BlogInfo } from '@/types/index'
 
 const blogPosters = import.meta.glob<{ default: string }>(
   '../pages/blog/**/poster.png',

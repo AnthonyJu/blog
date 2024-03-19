@@ -1,34 +1,34 @@
-export interface Note {
+interface Note {
   title: string
   keywords: string[]
   path: string
   date: string
 }
 
-export interface NoteType {
+interface NoteType {
   name: string
   icon: string
   darkIcon?: string
   notes?: Note[]
 }
 
-export interface BlogInfo extends Note {
+interface BlogInfo extends Note {
   desc: string
   poster: string
 }
 
-export interface Article extends Note {
+interface Article extends Note {
   desc?: string
   poster?: string
 }
 
-export interface Contents {
+interface Contents {
   id: string
   title: string
   children: Contents[]
 }
 
-export interface AudioState {
+interface AudioState {
   sort: string
   audio: HTMLAudioElement | null
   isPlaying: boolean

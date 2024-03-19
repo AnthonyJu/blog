@@ -1,5 +1,3 @@
-import type { Note } from '@/types/index'
-
 export const allNotes = computed(() => {
   return (noteRoutes.map((page) => {
     return {
