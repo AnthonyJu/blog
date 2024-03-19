@@ -1,20 +1,25 @@
 ---
-title: 配置 github 的 hosts
+title: github加速、git代理
 meta:
   - name: description
-    content: 通过在 hosts 文件中配置 github 域名对应的 IP 来加速访问。
+    content: 正常情况下进行github加速访问，github提交进行代理访问。
   - name: keywords
-    content: GitHub, hosts
+    content: github, git, proxy
 ---
 
 <route lang="yaml">
 meta:
-  title: 配置 github 的 hosts
-  keywords: [GitHub, hosts]
-  date: 2024-01-17 20:50:05
+  title: github加速、git代理
+  desc: 正常情况下进行github加速访问，github提交进行代理访问。
+  keywords: [github, git, proxy]
+  date: 2024-03-19 20:03:28
 </route>
 
-# 配置 github 的 hosts
+# github加速、git代理
+
+正常情况下进行github加速访问，github提交进行代理访问。
+
+## 配置 github 的 hosts
 
 通过在 hosts 文件中配置 github 域名对应的 IP 来加速访问。
 
@@ -30,7 +35,7 @@ hosts 文件是一个没有扩展名的文本文件，它可以用来映射 IP �
 C:\Windows\System32\drivers\etc\hosts
 ```
 
-`Mac OS` hosts 文件的位置在：
+`MacOS` hosts 文件的位置在：
 
 ```bash
 /etc/hosts
