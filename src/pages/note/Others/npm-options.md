@@ -42,7 +42,15 @@ npm 的一些命令选项的使用与作用表述。
 npm config get registry
 ```
 
-## 3. npm publish --access public
+## 3. npm config set registry [registry]
+
+设置 npm 镜像源地址。
+
+```bash
+npm config set registry https://registry.npm.taobao.org
+```
+
+## 4. npm publish --access public
 
 发布以 用户 为 scope 的公开包，例如 用户 @anthony-ju 下创建 my-package 包，那么发布时需要使用`npm publish --access public`:
 
@@ -58,7 +66,7 @@ npm config get registry
 npm publish --access public
 ```
 
-## 4. cnpm sync [package-name]
+## 5. cnpm sync [package-name]
 
 同步 npm 包到 cnpm 源，例如同步`@anthony-ju/my-package`包到 cnpm 源：
 
