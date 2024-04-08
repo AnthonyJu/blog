@@ -16,6 +16,7 @@ import viteImagemin from 'vite-plugin-imagemin'
 import Shiki from '@shikijs/markdown-it'
 import VueRouter from 'unplugin-vue-router/vite'
 import { VueRouterAutoImports } from 'unplugin-vue-router'
+import ElementPlus from 'unplugin-element-plus/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 
 export default defineConfig({
@@ -105,23 +106,27 @@ export default defineConfig({
       resolvers: process.env.NODE_ENV === 'production' ? ElementPlusResolver({ importStyle: 'sass' }) : undefined,
     }),
 
-    {
-      name: 'vite:element-plus-auto-import-in-dev',
-      transform(code, id) {
-        if (process.env.NODE_ENV === 'development' && /src\/main.ts$/.test(id)) {
-          const codeList = code.split('export const createApp = ViteSSG(')
-          return {
-            code: `${codeList[0]}
+    // https://github.com/element-plus/unplugin-element-plus/tree/main/#readme
+    process.env.NODE_ENV === 'development'
+      ? {
+          name: 'vite:element-plus-auto-import-in-dev',
+          transform(code, id) {
+            if (/src\/main.ts$/.test(id)) {
+              const codeList = code.split('export const createApp = ViteSSG(')
+              return {
+                code: `
+                  ${codeList[0]}
                   import ElementPlus from 'element-plus'
                   import 'element-plus/theme-chalk/src/index.scss'
                   export const createApp = ViteSSG(
                   ${codeList[1].split('(ctx) => {').join('(ctx) => {ctx.app.use(ElementPlus);')};
                 `,
-            map: null,
-          }
+                map: null,
+              }
+            }
+          },
         }
-      },
-    },
+      : ElementPlus({ useSource: true }),
 
     // // 更新文件时自动添加lastmod
     // {
