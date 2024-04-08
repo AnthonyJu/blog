@@ -53,6 +53,7 @@ declare module 'vue-router/auto-routes' {
     '/blog/2024/02/21_element-dynamic-import/': RouteRecordInfo<'/blog/2024/02/21_element-dynamic-import/', '/blog/2024/02/21_element-dynamic-import', Record<never, never>, Record<never, never>>,
     '/blog/2024/02/29_february-summary/': RouteRecordInfo<'/blog/2024/02/29_february-summary/', '/blog/2024/02/29_february-summary', Record<never, never>, Record<never, never>>,
     '/blog/2024/03/19_github-git-proxy/': RouteRecordInfo<'/blog/2024/03/19_github-git-proxy/', '/blog/2024/03/19_github-git-proxy', Record<never, never>, Record<never, never>>,
+    '/blog/2024/03/31_march-summary/': RouteRecordInfo<'/blog/2024/03/31_march-summary/', '/blog/2024/03/31_march-summary', Record<never, never>, Record<never, never>>,
     '/blog/2024/04/08_jsdoc/': RouteRecordInfo<'/blog/2024/04/08_jsdoc/', '/blog/2024/04/08_jsdoc', Record<never, never>, Record<never, never>>,
     '/note/': RouteRecordInfo<'/note/', '/note', Record<never, never>, Record<never, never>>,
     '/note/ArcGIS-Map/advanced-usage': RouteRecordInfo<'/note/ArcGIS-Map/advanced-usage', '/note/ArcGIS-Map/advanced-usage', Record<never, never>, Record<never, never>>,
