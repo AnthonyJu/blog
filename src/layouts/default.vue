@@ -40,7 +40,7 @@ const article = ref()
 const footer = ref()
 const footerSize = useElementSize(footer)
 const minHeight = computed(() => height.value - 70 - footerSize.height.value - 30) // 70: header height，30: footer padding
-const precent = computed(() => y.value / (article.value?.offsetHeight - minHeight.value) * 100)
+const precent = computed(() => Math.floor(y.value / (article.value?.offsetHeight - minHeight.value) * 100))
 
 const route = useRoute()
 const articleWidth = ref('max-w-100ch')
