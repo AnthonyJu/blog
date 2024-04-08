@@ -1,4 +1,4 @@
-// import fs from 'node:fs'
+import fs from 'node:fs'
 import path from 'node:path'
 import process from 'node:process'
 import { defineConfig } from 'vite'
@@ -128,25 +128,30 @@ export default defineConfig({
         }
       : ElementPlus({ useSource: true }),
 
-    // // 更新文件时自动添加lastmod
-    // {
-    //   name: 'print-file-name-on-save',
-    //   handleHotUpdate({ file, timestamp }) {
-    //     if ((file.includes('/blog/') || file.includes('/note/')) && file.endsWith('.md')) {
-    //       const content = fs.readFileSync(file, 'utf-8')
-    //       // 正则读取文件内容中的lastmod 和 </route>之间的内容
-    //       const lastmod = content.match(/lastmod: (.+?)\n/)?.[1]
-    //       if (lastmod && timestamp - new Date(lastmod).getTime() < 1000) return
-    //       // 如果lastmod存在则替换，否则添加
-    //       const newLastmod = new Date().toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai' }).replaceAll('/', '-')
-    //       const newContent
-    //       = lastmod
-    //         ? content.replace(/lastmod: .+/, `lastmod: ${newLastmod}`)
-    //         : content.replace(/<\/route>/, `  lastmod: ${newLastmod}\n</route>`)
-    //       fs.writeFileSync(file, newContent, 'utf-8')
-    //     }
-    //   },
-    // },
+    // 更新文件时自动添加lastmod
+    {
+      name: 'vite:update-md-lastmod',
+      handleHotUpdate({ file, timestamp }) {
+        if ((file.includes('/blog/') || file.includes('/note/')) && file.endsWith('.md')) {
+          // 读取文件内容
+          const content = fs.readFileSync(file, 'utf-8')
+          // 正则读取文件内容中的latestmod
+          const latestmod = content.match(/latestmod: (.+?)\n/)?.[1]
+          // 如果时间间隔小于3h则不更新
+          if (latestmod && timestamp - new Date(latestmod).getTime() < 1000 * 60 * 60 * 3) return
+          // 获取当前时间
+          const newLatestmod = new Date().toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai' }).replaceAll('/', '-')
+          // 格式化newLastmod为yyyy-MM-dd HH:mm:ss
+          const newLatestmodFormatted = `${newLatestmod.split(' ')[0].split('-').map(item => item.padStart(2, '0')).join('-')} ${newLatestmod.split(' ')[1]}`
+          // 更新文件内容
+          const newContent = latestmod
+            ? content.replace(/lastmod: (.+?)\n {2}latestmod: (.+?)\n<\/route>/, `lastmod: ${latestmod}\n  latestmod: ${newLatestmodFormatted}\n</route>`)
+            : content.replace(/<\/route>/, `  lastmod: ${newLatestmodFormatted}\n  latestmod: ${newLatestmodFormatted}\n</route>`)
+          // 写入文件
+          fs.writeFileSync(file, newContent, 'utf-8')
+        }
+      },
+    },
 
     // https://github.com/antfu/unocss
     // see uno.config.ts for config
